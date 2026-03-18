@@ -16,9 +16,10 @@ html {
 }
 body {
   font-size: max(1.6rem, 14px);
+  font-family: vars.$font-inter;
 }
 img {
-  width: 100%;
+  max-width: 100%;
   object-fit: cover;
 }
 a {

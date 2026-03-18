@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/google-fonts'],
+  modules: ['@nuxtjs/google-fonts', '@nuxtjs/i18n', '@nuxt/eslint'],
   css: ['~/assets/scss/main.scss'],
   app: {
     head: {
@@ -30,7 +30,31 @@ export default defineNuxtConfig({
   googleFonts: {
     display: 'swap',
     families: {
-      Amarante: [400]
+      Inter: [300, 400, 500, 600, 700],
+      'DM Sans': [300, 400, 500, 600, 700]
     }
+  },
+  i18n: {
+    defaultLocale: 'ru',
+    // baseUrl: 'https://www.tifw.uz/',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root'
+    },
+    locales: [
+      {
+        code: 'en',
+        language: 'en-US',
+        name: 'Eng',
+        file: 'en.json'
+      },
+      {
+        code: 'ru',
+        language: 'ru-RU',
+        name: 'Рус',
+        file: 'ru.json'
+      }
+    ]
   }
 });

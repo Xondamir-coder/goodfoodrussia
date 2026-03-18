@@ -5,6 +5,12 @@ $bp-lg: 992px;
 $bp-xl: 1200px;
 $bp-xxl: 1400px;
 
-$font-rubik-distressed: 'Rubik Distressed', Helvetica;
-$font-bebas: 'Bebas Neue', Helvetica;
-$font-amarante: 'Amarante', Helvetica;
+$font-inter: 'Inter', sans-serif;
+$font-dm-sans: 'DM Sans', sans-serif;
+
+:root {
+  --spacing-inline: 12rem;
+  @media screen and (max-width: $bp-lg) {
+    --spacing-inline: max(4.6rem, 16px);
+  }
+}
