@@ -31,7 +31,8 @@ export default defineNuxtConfig({
     display: 'swap',
     families: {
       Inter: [300, 400, 500, 600, 700],
-      'DM Sans': [300, 400, 500, 600, 700]
+      'DM Sans': [300, 400, 500, 600, 700],
+      Dongle: [700]
     }
   },
   i18n: {

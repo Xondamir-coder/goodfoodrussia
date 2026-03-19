@@ -29,7 +29,7 @@ const currentSlide = useState('currentSlide');
   gap: 0.4rem;
   border-radius: 9.9rem;
   background: rgba(8, 18, 59, 0.6);
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(2px);
   position: absolute;
   right: 2rem;
   top: 25vh;

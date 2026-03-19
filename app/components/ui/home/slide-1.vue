@@ -29,19 +29,15 @@
 
 <style lang="scss" scoped>
 .slide {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   position: relative;
   overflow: hidden;
-  height: calc(100dvh - 6rem);
-  padding-inline: var(--spacing-inline);
   &__picture {
     position: absolute;
     width: 105%;
     left: 50%;
     bottom: 0;
-    translate: -50% 63%;
+    translate: -50% 70%;
   }
   &__content {
     display: flex;

@@ -3,10 +3,7 @@
     <UiPicture src="lemons-flying.png" alt="lemons" class="slide__lemon" />
     <UiPicture src="lemons-flying.png" alt="lemons" class="slide__lemon" />
     <UiPicture src="lemons-leaves.png" alt="lemons" class="slide__lemon" />
-    <div class="slide__top">
-      <span>{{ $t('home.slide-2.title') }}</span>
-      <p>{{ $t('home.slide-2.text') }}</p>
-    </div>
+    <UiHomeSlideHeader :title="$t('home.slide-2.title')" :text="$t('home.slide-2.text')" />
     <div class="slide__cards">
       <div v-for="card in cards" :key="card.title" class="slide__card">
         <div class="slide__card-icontainer">
@@ -85,54 +82,27 @@ const cards = computed(() =>
 
 <style lang="scss" scoped>
 .slide {
-  padding-inline: var(--spacing-inline);
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  padding-block: 1.6rem;
   position: relative;
   &__lemon {
     position: absolute;
-    &:first-child {
+    &:first-of-type {
       width: 70rem;
       left: -25%;
       top: -22%;
       transform: rotate(-153.026deg);
     }
-    &:nth-child(2) {
+    &:nth-of-type(2) {
       width: 70rem;
       right: -30%;
       bottom: -22%;
       transform: rotate(19deg);
     }
-    &:nth-child(3) {
+    &:last-of-type {
       width: 50.3rem;
       left: 50%;
       bottom: 0;
       translate: -50% 52%;
       z-index: 2;
-    }
-  }
-  &__top {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    gap: 1rem;
-    color: var(--Smalt-300, #b8caed);
-
-    span {
-      text-align: center;
-      font-size: 2rem;
-      font-weight: 700;
-      line-height: 128%;
-    }
-    p {
-      text-align: center;
-      font-family: vars.$font-dm-sans;
-      font-size: 1.8rem;
-      line-height: 128%;
-      letter-spacing: -0.036rem;
-      max-width: 45ch;
     }
   }
   &__card {
