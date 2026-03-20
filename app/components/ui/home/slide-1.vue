@@ -29,9 +29,8 @@
 
 <style lang="scss" scoped>
 .slide {
+  @include mix.home-slide;
   align-items: center;
-  position: relative;
-  overflow: hidden;
   &__picture {
     position: absolute;
     width: 105%;

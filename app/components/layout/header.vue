@@ -1,13 +1,13 @@
 <template>
   <header class="header">
-    <NuxtLink to="/" class="header__logo-container">
+    <NuxtLink :to="$localePath('/')" class="header__logo-container">
       <SvgLogo class="header__logo" />
     </NuxtLink>
     <nav class="header__nav">
       <NuxtLink
         v-for="link in links"
         :key="link.path"
-        :to="link.path"
+        :to="$localePath(link.path)"
         class="header__nav-link"
         active-class="active"
       >
@@ -35,6 +35,8 @@ const links = computed(() =>
   align-items: center;
   justify-content: space-between;
   height: 6rem;
+  z-index: 10;
+  position: relative;
   &__nav {
     display: flex;
     &-link {

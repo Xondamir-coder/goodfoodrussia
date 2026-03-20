@@ -82,19 +82,20 @@ const cards = computed(() =>
 
 <style lang="scss" scoped>
 .slide {
-  position: relative;
+  @include mix.home-slide;
   &__lemon {
     position: absolute;
+    pointer-events: none;
     &:first-of-type {
       width: 70rem;
-      left: -25%;
-      top: -22%;
+      left: -26%;
+      top: -13%;
       transform: rotate(-153.026deg);
     }
     &:nth-of-type(2) {
       width: 70rem;
-      right: -30%;
-      bottom: -22%;
+      right: -28%;
+      bottom: -27%;
       transform: rotate(19deg);
     }
     &:last-of-type {

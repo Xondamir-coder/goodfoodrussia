@@ -15,7 +15,15 @@
 <script setup>
 import { IconsHome, IconsUser, IconsBuilding, IconsDiscount, IconsChecklist } from '#components';
 
-const items = [IconsHome, IconsUser, IconsBuilding, IconsDiscount, IconsChecklist];
+const items = [
+  IconsHome,
+  IconsUser,
+  IconsBuilding,
+  IconsDiscount,
+  IconsChecklist,
+  IconsChecklist,
+  IconsChecklist
+];
 
 const currentSlide = useState('currentSlide');
 </script>
@@ -34,6 +42,7 @@ const currentSlide = useState('currentSlide');
   right: 2rem;
   top: 25vh;
   translate: 0 0;
+  z-index: 5;
   &__button {
     @include mix.flex-center;
     width: 4.2rem;

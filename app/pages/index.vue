@@ -2,6 +2,7 @@
   <main class="home">
     <component :is="slide" v-for="(slide, i) in slides" v-show="i === currentSlide" :key="i" />
     <UiHomeNavbar />
+    <UiPicture src="home-bg.png" alt="background" class="home__bg" />
   </main>
 </template>
 
@@ -16,7 +17,8 @@ import {
   UiHomeSlide7
 } from '#components';
 
-const currentSlide = useState('currentSlide', () => 3);
+// 7 slides: 0 - 6
+const currentSlide = useState('currentSlide', () => 4);
 
 const slides = [
   UiHomeSlide1,
@@ -31,17 +33,15 @@ const slides = [
 
 <style lang="scss" scoped>
 .home {
-  position: relative;
   min-height: calc(100dvh - 6rem);
   display: flex;
 
-  & > *:not(:last-child) {
-    padding-inline: var(--spacing-inline);
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    padding-block: 1.6rem;
-    flex: 1;
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 }
 </style>

@@ -1,5 +1,15 @@
 @use './variables' as vars;
 
+@mixin home-slide {
+  padding-inline: var(--spacing-inline);
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-block: 1.6rem;
+  flex: 1;
+  z-index: 1;
+}
+
 // Layout related
 @mixin grid-center {
   display: grid;

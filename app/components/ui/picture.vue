@@ -55,5 +55,8 @@ const splittedName = computed(() => props.src.replace(/\.[^/.]+$/, ''));
   display: flex;
   overflow: hidden;
   max-width: 100%;
+  & > *:last-child {
+    flex: 1;
+  }
 }
 </style>

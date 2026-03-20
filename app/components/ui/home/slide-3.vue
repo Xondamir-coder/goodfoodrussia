@@ -44,7 +44,7 @@ const items = computed(() =>
 
 <style lang="scss" scoped>
 .slide {
-  position: relative;
+  @include mix.home-slide;
   & > *:not(picture) {
     z-index: 1;
   }
@@ -53,12 +53,12 @@ const items = computed(() =>
     width: 57rem;
     &:first-of-type {
       left: -13%;
-      bottom: -25%;
+      bottom: -22%;
       transform: rotate(-33.662deg);
     }
     &:last-of-type {
       right: -13%;
-      top: -15%;
+      top: -6%;
       transform: rotate(-21.532deg);
     }
   }

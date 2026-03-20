@@ -54,7 +54,7 @@ const cards = computed(() =>
 
 <style lang="scss" scoped>
 .slide {
-  position: relative;
+  @include mix.home-slide;
   & > *:not(picture) {
     z-index: 1;
   }
@@ -65,12 +65,12 @@ const cards = computed(() =>
     &:first-of-type {
       transform: rotate(17.363deg);
       left: -10%;
-      top: 0%;
+      top: 13%;
     }
     &:last-of-type {
       transform: rotate(-15deg);
-      right: -12%;
-      bottom: 0%;
+      right: -9%;
+      bottom: 2%;
     }
   }
   &__card {

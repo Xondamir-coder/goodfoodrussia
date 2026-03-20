@@ -24,15 +24,15 @@ defineProps({
   flex-direction: column;
   align-self: center;
   gap: 1rem;
-  color: var(--Smalt-300, #b8caed);
 
   span {
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.6rem;
     font-weight: 700;
     line-height: 128%;
   }
   p {
+    color: var(--Smalt-300, #b8caed);
     text-align: center;
     font-family: vars.$font-dm-sans;
     font-size: 1.8rem;
