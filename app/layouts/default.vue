@@ -14,6 +14,8 @@
   color: #fff;
   overflow: hidden;
   position: relative;
+  display: flex;
+  flex-direction: column;
   &__shadows {
     position: absolute;
     inset: 0;

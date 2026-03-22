@@ -13,8 +13,8 @@
       </button>
     </div>
     <div class="slide__container">
-      <div class="slide__block"></div>
-      <div class="slide__block"></div>
+      <div class="slide__block"/>
+      <div class="slide__block"/>
       <div class="slide__footer">
         <div class="slide__footer-iconbox">
           <IconsR class="slide__footer-icon" />

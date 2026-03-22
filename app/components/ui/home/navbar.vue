@@ -7,7 +7,7 @@
       :class="{ active: i === currentSlide }"
       @click="currentSlide = i"
     >
-      <component class="navbar__button-icon" :is="item" />
+      <component :is="item" class="navbar__button-icon" />
     </button>
   </div>
 </template>
