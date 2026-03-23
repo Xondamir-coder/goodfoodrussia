@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/google-fonts', '@nuxtjs/i18n', '@nuxt/eslint'],
+  modules: ['@nuxtjs/google-fonts', '@nuxtjs/i18n', '@nuxt/eslint', '@pinia/nuxt'],
   css: ['~/assets/scss/main.scss'],
   app: {
     head: {
@@ -30,8 +30,8 @@ export default defineNuxtConfig({
   googleFonts: {
     display: 'swap',
     families: {
-      Inter: [300, 400, 500, 600, 700],
-      'DM Sans': [300, 400, 500, 600, 700],
+      Inter: '300..700',
+      'Nunito Sans': '300..700',
       Dongle: [700]
     }
   },

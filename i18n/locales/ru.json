@@ -16,6 +16,10 @@
   "ml": "мл",
   "kg": "кг",
   "l": "л",
+  "fatContent": "Жирность",
+  "processingType": "Тип обработки",
+  "volumes": "Объемы",
+  "similarProducts": "Похожие продукты",
 
   "home": {
     "slide-1": {
@@ -257,54 +261,7 @@
           "val": "1 л"
         }
       ]
-    },
-    "cards": [
-      {
-        "title": "Вода Пилигрим минеральная негазированная",
-        "weight": "500 мл",
-        "image": "piligrim.jpg"
-      },
-      {
-        "title": "Молоко Parmalat ультрапастеризованное",
-        "weight": "500 мл",
-        "image": "parmalat.jpg"
-      },
-      {
-        "title": "Йогурт Danone натуральный",
-        "weight": "400 г",
-        "image": "danone.jpg"
-      },
-      {
-        "title": "Молоко Parmalat ультрапастеризованное",
-        "weight": "500 мл",
-        "image": "parmalat.jpg"
-      },
-      {
-        "title": "Йогурт Danone натуральный",
-        "weight": "400 г",
-        "image": "danone.jpg"
-      },
-      {
-        "title": "Вода Пилигрим минеральная негазированная",
-        "weight": "500 мл",
-        "image": "piligrim.jpg"
-      },
-      {
-        "title": "Вода Пилигрим минеральная негазированная",
-        "weight": "500 мл",
-        "image": "piligrim.jpg"
-      },
-      {
-        "title": "Йогурт Danone натуральный",
-        "weight": "400 г",
-        "image": "danone.jpg"
-      },
-      {
-        "title": "Молоко Parmalat ультрапастеризованное",
-        "weight": "500 мл",
-        "image": "parmalat.jpg"
-      }
-    ]
+    }
   },
 
   "header": {

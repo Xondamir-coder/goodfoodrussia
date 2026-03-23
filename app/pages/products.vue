@@ -1,5 +1,8 @@
 <template>
   <main class="products">
+    <Teleport to="body">
+      <UiProductsModal :product-i-d="productID" @change="assignProductID" />
+    </Teleport>
     <div class="products__header">
       <h1 class="products__header-title">{{ $t('products.title') }}</h1>
       <div class="products__header-sorts">
@@ -17,17 +20,28 @@
     <div class="products__container">
       <UiProductsFilters />
       <ul class="products__cards">
-        <li v-for="(card, i) in useMapRt('products.cards')" :key="i">
-          <UiProductsCard :="card" />
+        <li v-for="(product, i) in products" :key="i">
+          <UiProductsCard :product @click="assignProductID(product.id)" />
         </li>
       </ul>
+      <UiPagination />
     </div>
   </main>
 </template>
 
 <script setup>
-const sortID = ref(0);
+const { products } = useApiStore();
 
+const sortID = ref(0);
+const productID = ref();
+
+watch(productID, () => {
+  document.body.classList.toggle('overflow-hidden', productID.value);
+});
+
+const assignProductID = id => {
+  productID.value = id;
+};
 const activateSort = id => {
   sortID.value = id;
 };
@@ -39,7 +53,7 @@ const activateSort = id => {
   display: flex;
   flex-direction: column;
   gap: 3.9rem;
-  font-family: vars.$font-dm-sans;
+  font-family: vars.$font-nunito-sans;
   padding-inline: var(--spacing-inline);
   padding-top: 2.4rem;
   padding-bottom: 3.75rem;
@@ -70,6 +84,11 @@ const activateSort = id => {
     grid-template-columns: 1fr 2.8fr;
     align-items: flex-start;
     gap: 2rem;
+    & > *:last-child {
+      grid-column: 2 / 3;
+      margin-top: 5.3rem - 2rem;
+      padding-left: 6.4rem;
+    }
   }
   &__cards {
     display: grid;

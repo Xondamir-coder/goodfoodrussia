@@ -13,8 +13,8 @@
       </button>
     </div>
     <div class="slide__container">
-      <div class="slide__block"/>
-      <div class="slide__block"/>
+      <div class="slide__block" />
+      <div class="slide__block" />
       <div class="slide__footer">
         <div class="slide__footer-iconbox">
           <IconsR class="slide__footer-icon" />
@@ -133,7 +133,7 @@ const links = computed(() =>
       display: flex;
       gap: 1.8rem;
       &-link {
-        font-family: vars.$font-dm-sans;
+        font-family: vars.$font-nunito-sans;
         font-size: 1.4rem;
         font-weight: 400;
         letter-spacing: 0.014rem;
@@ -242,7 +242,7 @@ const links = computed(() =>
       align-items: center;
       gap: 1.2rem;
       text-align: center;
-      font-family: vars.$font-dm-sans;
+      font-family: vars.$font-nunito-sans;
       font-weight: 500;
       &-icon {
         width: 1.2rem;

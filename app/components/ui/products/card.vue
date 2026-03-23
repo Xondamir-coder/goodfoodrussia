@@ -1,37 +1,31 @@
 <template>
   <div class="card">
-    <UiPicture :src="image" alt="card title" class="card__pic" />
+    <UiPicture :src="product.image" alt="card title" class="card__pic" />
     <div class="card__content">
       <h3 class="card__content-title">
-        {{ title }}
+        {{ product.title }}
       </h3>
       <span class="card__content-weight">
-        {{ weight }}
+        {{ product.volume }}
       </span>
     </div>
-    <button class="card__button">
+    <button class="card__button" @click="emits('click')">
       {{ $t('readMore') }}
     </button>
   </div>
 </template>
-
 <script setup>
+import { Product } from '~/types/product';
+
+const emits = defineEmits(['click']);
+
 defineProps({
-  image: {
-    type: String,
-    required: true
-  },
-  title: {
-    type: String,
-    required: true
-  },
-  weight: {
-    type: String,
-    required: true
+  product: {
+    required: true,
+    type: Object
   }
 });
 </script>
-
 <style lang="scss" scoped>
 .card {
   flex: 1;
@@ -47,6 +41,7 @@ defineProps({
   &__pic {
     aspect-ratio: 23.7/18.1;
     border-radius: 1.2rem;
+    user-select: none;
   }
   &__button {
     margin-top: auto;
@@ -59,6 +54,12 @@ defineProps({
     justify-content: center;
     align-items: center;
     font-weight: 500;
+    transition-property: color, background;
+    transition-duration: 0.4s;
+    &:hover {
+      background: #fff;
+      color: #000;
+    }
   }
   &__content {
     display: flex;

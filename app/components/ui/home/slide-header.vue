@@ -34,7 +34,7 @@ defineProps({
   p {
     color: var(--Smalt-300, #b8caed);
     text-align: center;
-    font-family: vars.$font-dm-sans;
+    font-family: vars.$font-nunito-sans;
     font-size: 1.8rem;
     line-height: 128%;
     letter-spacing: -0.036rem;

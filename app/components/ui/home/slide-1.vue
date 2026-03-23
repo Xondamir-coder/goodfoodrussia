@@ -47,7 +47,7 @@
       padding-inline: 2.4rem;
       height: 5rem;
       border-radius: 0.8rem;
-      font-family: vars.$font-dm-sans;
+      font-family: vars.$font-nunito-sans;
       font-size: 1.4rem;
       font-weight: 600;
       line-height: 128%;
@@ -82,7 +82,7 @@
     }
     &-text {
       text-align: center;
-      font-family: vars.$font-dm-sans;
+      font-family: vars.$font-nunito-sans;
       font-size: 2rem;
       font-weight: 400;
       line-height: 128%;
@@ -105,7 +105,7 @@
         background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
       }
       span {
-        font-family: vars.$font-dm-sans;
+        font-family: vars.$font-nunito-sans;
         font-size: 1.4rem;
         letter-spacing: 0.014rem;
       }
