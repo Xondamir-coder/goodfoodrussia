@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1",
+    "date": "12 марта 2025",
+    "image": "recipes-1.jpg",
+    "title": "Крем-суп с молочными сливками 20%",
+    "categories": ["Для HoReCa", "Супы"]
+  },
+  {
+    "id": "2",
+    "date": "12 марта 2025",
+    "image": "recipes-2.jpg",
+    "title": "Крем-суп с молочными сливками 20%",
+    "categories": ["Для HoReCa", "Супы"]
+  },
+  {
+    "id": "3",
+    "date": "12 марта 2025",
+    "image": "recipes-3.jpg",
+    "title": "Крем-суп с молочными сливками 20%",
+    "categories": ["Для HoReCa", "Супы"]
+  },
+  {
+    "id": "4",
+    "date": "12 марта 2025",
+    "image": "recipes-4.jpg",
+    "title": "Крем-суп с молочными сливками 20%",
+    "categories": ["Для HoReCa", "Супы"]
+  },
+  {
+    "id": "5",
+    "date": "12 марта 2025",
+    "image": "recipes-5.jpg",
+    "title": "Крем-суп с молочными сливками 20%",
+    "categories": ["Для HoReCa", "Супы"]
+  },
+  {
+    "id": "6",
+    "date": "12 марта 2025",
+    "image": "recipes-6.jpg",
+    "title": "Крем-суп с молочными сливками 20%",
+    "categories": ["Для HoReCa", "Супы"]
+  }
+]

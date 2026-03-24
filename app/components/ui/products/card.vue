@@ -15,14 +15,14 @@
   </div>
 </template>
 <script setup>
-import { Product } from '~/types/product';
+import Product from '~/types/product';
 
 const emits = defineEmits(['click']);
 
 defineProps({
   product: {
     required: true,
-    type: Object
+    type: Product
   }
 });
 </script>

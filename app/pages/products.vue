@@ -5,17 +5,7 @@
     </Teleport>
     <div class="products__header">
       <h1 class="products__header-title">{{ $t('products.title') }}</h1>
-      <div class="products__header-sorts">
-        <button
-          v-for="(sort, i) in useMapRt('products.sort')"
-          :key="i"
-          class="products__header-sort"
-          :class="{ active: sortID === i }"
-          @click="activateSort(i)"
-        >
-          {{ sort }}
-        </button>
-      </div>
+      <UiSortingBar v-model="typeID" :types="useMapRt('products.sort')" />
     </div>
     <div class="products__container">
       <UiProductsFilters />
@@ -24,7 +14,7 @@
           <UiProductsCard :product @click="assignProductID(product.id)" />
         </li>
       </ul>
-      <UiPagination />
+      <UiPagination v-model="activePage" :total="7" />
     </div>
   </main>
 </template>
@@ -32,24 +22,17 @@
 <script setup>
 const { products } = useApiStore();
 
-const sortID = ref(0);
+const activePage = ref(1);
+const typeID = ref(0);
 const productID = ref();
-
-watch(productID, () => {
-  document.body.classList.toggle('overflow-hidden', productID.value);
-});
 
 const assignProductID = id => {
   productID.value = id;
-};
-const activateSort = id => {
-  sortID.value = id;
 };
 </script>
 
 <style lang="scss" scoped>
 .products {
-  z-index: 1;
   display: flex;
   flex-direction: column;
   gap: 3.9rem;
@@ -60,19 +43,7 @@ const activateSort = id => {
   &__header {
     display: flex;
     justify-content: space-between;
-    &-sorts {
-      display: flex;
-      gap: 2.4rem;
-    }
-    &-sort {
-      font-weight: 700;
-      letter-spacing: -0.036rem;
-      color: #b8caed;
-      transition: color 0.3s;
-      &.active {
-        color: #fff;
-      }
-    }
+
     &-title {
       font-size: 2.6rem;
       font-family: vars.$font-inter;

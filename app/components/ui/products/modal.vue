@@ -1,6 +1,11 @@
 <template>
-  <Transition name="modal">
-    <div v-if="productID" class="modal-container" @click.self="emits('change', null)">
+  <Transition name="appear">
+    <div
+      v-if="productID"
+      ref="containerRef"
+      class="modal-container"
+      @click.self="emits('change', null)"
+    >
       <div class="modal-container__images">
         <button v-for="item in mappedProducts" :key="item.id" @click="emits('change', item.id)">
           <UiPicture
@@ -11,69 +16,78 @@
           />
         </button>
       </div>
-      <div class="modal">
-        <div class="modal__top">
-          <UiPicture :src="product.image" alt="card title" class="modal__top-pic" />
-        </div>
-        <div class="modal__middle">
-          <div class="modal__middle-top">
-            <h3 class="modal__middle-title">
-              {{ product.title }}
-            </h3>
-            <span class="modal__middle-volume">
-              {{ product.volume }}
-            </span>
-          </div>
-          <div v-for="(items, key) in productOptions" :key="key" class="modal__middle-row">
-            <span class="modal__middle-row-label">{{ $t(key) }}</span>
-            <ul class="modal__middle-row-items">
-              <li v-for="item in items" :key="item" class="modal__middle-row-item">
-                {{ item }}
-              </li>
-            </ul>
-          </div>
-          <div v-if="product.badges.length" class="modal__middle-bottom">
-            <div v-for="badge in product.badges" :key="badge.icon" class="modal__middle-bottom-col">
-              <img :src="`/images/${badge.icon}.png`" class="modal__middle-bottom-icon" />
-              <span class="modal__middle-bottom-label">{{ badge.label }}</span>
+      <div class="modal-wrapper">
+        <Transition name="modal">
+          <div :key="productID" class="modal">
+            <div class="modal__top">
+              <UiPicture :src="product.image" alt="card title" class="modal__top-pic" />
+            </div>
+            <div class="modal__middle">
+              <div class="modal__middle-top">
+                <h3 class="modal__middle-title">
+                  {{ product.title }}
+                </h3>
+                <span class="modal__middle-volume">
+                  {{ product.volume }}
+                </span>
+              </div>
+              <div v-for="(items, key) in productOptions" :key="key" class="modal__middle-row">
+                <span class="modal__middle-row-label">{{ $t(key) }}</span>
+                <ul class="modal__middle-row-items">
+                  <li v-for="item in items" :key="item" class="modal__middle-row-item">
+                    {{ item }}
+                  </li>
+                </ul>
+              </div>
+              <div v-if="product.badges.length" class="modal__middle-bottom">
+                <div
+                  v-for="badge in product.badges"
+                  :key="badge.icon"
+                  class="modal__middle-bottom-col"
+                >
+                  <img :src="`/images/${badge.icon}.png`" class="modal__middle-bottom-icon" />
+                  <span class="modal__middle-bottom-label">{{ badge.label }}</span>
+                </div>
+              </div>
+            </div>
+            <div v-if="product.tabs.length" class="modal__content">
+              <div class="modal__content-top" :style="`--travel: ${activeTab * 50}%`">
+                <button
+                  v-for="(tab, i) in product.tabs"
+                  :key="tab"
+                  class="modal__content-top-button"
+                  @click="activeTab = i"
+                >
+                  {{ tab }}
+                </button>
+              </div>
+              <div v-for="spec in product.specs" :key="spec.group" class="modal__content-row">
+                <span class="modal__content-row-label">
+                  {{ spec.group }}
+                </span>
+                <div v-for="item in spec.items" :key="item.label" class="modal__content-row-item">
+                  <span>{{ item.label }}</span>
+                  <div class="modal__content-row-dots" />
+                  <span>{{ item.value }}</span>
+                </div>
+              </div>
+            </div>
+            <div v-if="product.similar.length" class="modal__wrapper">
+              <h3 class="modal__wrapper-title">
+                {{ $t('similarProducts') }}
+              </h3>
+              <UiSlider>
+                <UiProductsCard
+                  v-for="p in product.similar"
+                  :key="p.id"
+                  :product="p"
+                  class="modal__bottom-card"
+                  @click="_ => emits('change', p.id)"
+                />
+              </UiSlider>
             </div>
           </div>
-        </div>
-        <div class="modal__content">
-          <div class="modal__content-top" :style="`--travel: ${activeTab * 50}%`">
-            <button
-              v-for="(tab, i) in product.tabs"
-              :key="tab"
-              class="modal__content-top-button"
-              @click="activeTab = i"
-            >
-              {{ tab }}
-            </button>
-          </div>
-          <div v-for="spec in product.specs" :key="spec.group" class="modal__content-row">
-            <span class="modal__content-row-label">
-              {{ spec.group }}
-            </span>
-            <div v-for="item in spec.items" :key="item.label" class="modal__content-row-item">
-              <span>{{ item.label }}</span>
-              <div class="modal__content-row-dots" />
-              <span>{{ item.value }}</span>
-            </div>
-          </div>
-        </div>
-        <div v-if="product.similar.length" class="modal__wrapper">
-          <h3 class="modal__wrapper-title">
-            {{ $t('similarProducts') }}
-          </h3>
-          <UiSlider>
-            <UiProductsCard
-              v-for="p in product.similar"
-              :key="p.id"
-              :product="p"
-              class="modal__bottom-card"
-            />
-          </UiSlider>
-        </div>
+        </Transition>
       </div>
       <button class="modal-container__close" @click="emits('change', null)" />
     </div>
@@ -83,6 +97,7 @@
 <script setup>
 const { products } = useApiStore();
 
+const containerRef = ref();
 const activeTab = ref(0);
 
 const mappedProducts = products.map(p => ({
@@ -104,6 +119,20 @@ const { productID } = defineProps({
   }
 });
 const emits = defineEmits(['change']);
+
+watch(
+  () => productID,
+  () => {
+    if (productID && containerRef.value) {
+      containerRef.value.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
+    document.body.classList.toggle('overflow-hidden', productID);
+  }
+);
 </script>
 
 <style lang="scss" scoped>
@@ -112,12 +141,20 @@ const emits = defineEmits(['change']);
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  width: 45.14%;
+
   font-family: vars.$font-nunito-sans;
   margin-bottom: 1.2rem;
 
   & > *:not(.modal__top):not(.modal__wrapper) {
     padding: 2.4rem;
+  }
+  &-wrapper {
+    position: relative;
+    width: 45%;
+    & > * {
+      position: absolute;
+      width: 100%;
+    }
   }
   &__wrapper {
     padding-bottom: 1.2rem;
@@ -375,6 +412,15 @@ const emits = defineEmits(['change']);
       }
     }
   }
+}
+
+.appear-enter-active,
+.appear-leave-active {
+  transition: opacity 0.4s;
+}
+.appear-enter-from,
+.appear-leave-to {
+  opacity: 0;
 }
 
 .modal-enter-active,

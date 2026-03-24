@@ -1,7 +1,9 @@
 <template>
   <div class="layout">
     <LayoutHeader />
-    <slot />
+    <div class="layout__slot">
+      <slot />
+    </div>
     <div class="layout__shadows" />
   </div>
 </template>
@@ -16,6 +18,9 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  &__slot {
+    z-index: 1;
+  }
   &__shadows {
     position: absolute;
     inset: 0;

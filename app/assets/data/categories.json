@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Fruits & Vegetables",
+    "country": "Uzbekistan",
+    "image": "veggies.png"
+  },
+  {
+    "name": "Dried Fruits & Nuts",
+    "country": "Moscow",
+    "image": "nuts.png"
+  },
+  {
+    "name": "Confectionery",
+    "country": "Norway",
+    "image": "sweets.png"
+  },
+  {
+    "name": "Dairy Products",
+    "country": "Norway",
+    "image": "dairy.png"
+  },
+  {
+    "name": "Meat & Poultry",
+    "country": "Norway",
+    "image": "meats.png"
+  },
+  {
+    "name": "Grains & Cereals",
+    "country": "Norway",
+    "image": "grains.png"
+  },
+  {
+    "name": "Beverages",
+    "country": "Norway",
+    "image": "drinks.png"
+  },
+  {
+    "name": "Canned Foods",
+    "country": "Norway",
+    "image": "cans.png"
+  },
+  {
+    "name": "Dairy Products",
+    "country": "Norway",
+    "image": "dairy.png"
+  },
+  {
+    "name": "Dried Fruits & Nuts",
+    "country": "Norway",
+    "image": "nuts.png"
+  },
+  {
+    "name": "Fruits & Vegetables",
+    "country": "Uzbekistan",
+    "image": "veggies.png"
+  },
+  {
+    "name": "Confectionery",
+    "country": "Norway",
+    "image": "sweets.png"
+  }
+]

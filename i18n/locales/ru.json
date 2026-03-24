@@ -59,57 +59,7 @@
     },
     "slide-3": {
       "title": "Избранные категории",
-      "text": "Откройте для себя готовые к экспорту российские продукты питания в ключевых категориях. От свежих продуктов до переработанных товаров — напрямую свяжитесь с надежными производителями.",
-      "categories": [
-        {
-          "name": "Fruits & Vegetables",
-          "country": "Uzbekistan"
-        },
-        {
-          "name": "Dried Fruits & Nuts",
-          "country": "Moscow"
-        },
-        {
-          "name": "Confectionery",
-          "country": "Norway"
-        },
-        {
-          "name": "Dairy Products",
-          "country": "Norway"
-        },
-        {
-          "name": "Meat & Poultry",
-          "country": "Norway"
-        },
-        {
-          "name": "Grains & Cereals",
-          "country": "Norway"
-        },
-        {
-          "name": "Beverages",
-          "country": "Norway"
-        },
-        {
-          "name": "Canned Foods",
-          "country": "Norway"
-        },
-        {
-          "name": "Dairy Products",
-          "country": "Norway"
-        },
-        {
-          "name": "Dried Fruits & Nuts",
-          "country": "Norway"
-        },
-        {
-          "name": "Fruits & Vegetables",
-          "country": "Uzbekistan"
-        },
-        {
-          "name": "Confectionery",
-          "country": "Norway"
-        }
-      ]
+      "text": "Откройте для себя готовые к экспорту российские продукты питания в ключевых категориях. От свежих продуктов до переработанных товаров — напрямую свяжитесь с надежными производителями."
     },
     "slide-4": {
       "title": "Избранные производители",
@@ -135,39 +85,7 @@
     },
     "slide-5": {
       "title": "Рецепты с нашей продукцией",
-      "text": "Соединяем вас с готовыми к экспорту производителями.",
-      "cards": [
-        {
-          "date": "12 марта 2025",
-          "title": "Крем-суп с молочными сливками 20%",
-          "categories": ["Для HoReCa", "Супы"]
-        },
-        {
-          "date": "12 марта 2025",
-          "title": "Крем-суп с молочными сливками 20%",
-          "categories": ["Для HoReCa", "Супы"]
-        },
-        {
-          "date": "12 марта 2025",
-          "title": "Крем-суп с молочными сливками 20%",
-          "categories": ["Для HoReCa", "Супы"]
-        },
-        {
-          "date": "12 марта 2025",
-          "title": "Крем-суп с молочными сливками 20%",
-          "categories": ["Для HoReCa", "Супы"]
-        },
-        {
-          "date": "12 марта 2025",
-          "title": "Крем-суп с молочными сливками 20%",
-          "categories": ["Для HoReCa", "Супы"]
-        },
-        {
-          "date": "12 марта 2025",
-          "title": "Крем-суп с молочными сливками 20%",
-          "categories": ["Для HoReCa", "Супы"]
-        }
-      ]
+      "text": "Соединяем вас с готовыми к экспорту производителями."
     },
     "slide-6": {
       "title": "Масштаб и доверие в цифрах",
@@ -262,6 +180,11 @@
         }
       ]
     }
+  },
+
+  "recipes": {
+    "title": "Рецепты",
+    "sort": ["Все", "Завтраки", "Основные блюда", "Десерты", "Салаты", "Супы"]
   },
 
   "header": {

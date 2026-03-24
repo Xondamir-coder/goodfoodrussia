@@ -18,7 +18,7 @@ import {
 } from '#components';
 
 // 7 slides: 0 - 6
-const currentSlide = useState('currentSlide', () => 4);
+const currentSlide = useState('currentSlide', () => 0);
 
 const slides = [
   UiHomeSlide1,

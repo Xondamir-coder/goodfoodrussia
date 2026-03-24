@@ -111,6 +111,7 @@ onUnmounted(() => {
 
 <style lang="scss">
 .slider {
+  width: 100%;
   overflow: hidden;
   cursor: grab;
   user-select: none;

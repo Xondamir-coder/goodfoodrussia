@@ -43,19 +43,7 @@ export class ProductOptions {
   }
 }
 
-export class ProductSimilar {
-  image = '';
-  title = '';
-  volume = '';
-
-  constructor(raw) {
-    this.image = raw.image;
-    this.title = raw.title;
-    this.volume = raw.volume;
-  }
-}
-
-export class Product {
+export default class Product {
   id = '';
   image = '';
   title = '';
@@ -67,7 +55,7 @@ export class Product {
   tabs = [];
   /** @type {ProductSpecGroup[]} */
   specs = [];
-  /** @type {ProductSimilar[]} */
+  /** @type {Product[]} */
   similar = [];
 
   constructor(raw) {
@@ -79,6 +67,6 @@ export class Product {
     this.badges = (raw.badges ?? []).map(b => new ProductBadge(b));
     this.tabs = raw.tabs ?? [];
     this.specs = (raw.specs ?? []).map(group => new ProductSpecGroup(group));
-    this.similar = (raw.similar ?? []).map(item => new ProductSimilar(item));
+    this.similar = (raw.similar ?? []).map(item => new Product(item));
   }
 }

@@ -1,10 +1,25 @@
 {
   "learnMore": "Узнать больше",
-  "exploreCatalogue": "Explore catalogue",
-  "submitRequest": "Submit a request",
+  "exploreCatalogue": "Изучить каталог",
+  "submitRequest": "Отправить заявку",
   "readMore": "Подробнее",
   "allRecipes": "All recipes",
   "copyright": "© {year}, All Rights Reserved",
+  "from": "от",
+  "to": "до",
+  "category": "Категория",
+  "price": "Цена",
+  "brand": "Бренд",
+  "productType": "Тип продукта",
+  "volume": "Объем",
+  "weight": "Вес",
+  "ml": "мл",
+  "kg": "кг",
+  "l": "л",
+  "fatContent": "Жирность",
+  "processingType": "Тип обработки",
+  "volumes": "Объемы",
+  "similarProducts": "Похожие продукты",
 
   "home": {
     "slide-1": {
@@ -13,7 +28,7 @@
       "text": "Исследуйте продукты, бренды и регионы - создайте надежные партнерские отношения по снабжению."
     },
     "slide-2": {
-      "label": "Профессиональная презентация",
+      "title": "Профессиональная презентация",
       "text": "Возможность увидеть продукты на месте, протестировать их и провести деловые встречи.",
       "cards": [
         {
@@ -43,7 +58,7 @@
       ]
     },
     "slide-3": {
-      "label": "Избранные категории",
+      "title": "Избранные категории",
       "text": "Откройте для себя готовые к экспорту российские продукты питания в ключевых категориях. От свежих продуктов до переработанных товаров — напрямую свяжитесь с надежными производителями.",
       "categories": [
         {
@@ -120,39 +135,7 @@
     },
     "slide-5": {
       "title": "Рецепты с нашей продукцией",
-      "text": "Соединяем вас с готовыми к экспорту производителями.",
-      "cards": [
-        {
-          "date": "12 марта 2025",
-          "title": "Крем-суп с молочными сливками 20%",
-          "categories": ["Для HoReCa", "Супы"]
-        },
-        {
-          "date": "12 марта 2025",
-          "title": "Крем-суп с молочными сливками 20%",
-          "categories": ["Для HoReCa", "Супы"]
-        },
-        {
-          "date": "12 марта 2025",
-          "title": "Крем-суп с молочными сливками 20%",
-          "categories": ["Для HoReCa", "Супы"]
-        },
-        {
-          "date": "12 марта 2025",
-          "title": "Крем-суп с молочными сливками 20%",
-          "categories": ["Для HoReCa", "Супы"]
-        },
-        {
-          "date": "12 марта 2025",
-          "title": "Крем-суп с молочными сливками 20%",
-          "categories": ["Для HoReCa", "Супы"]
-        },
-        {
-          "date": "12 марта 2025",
-          "title": "Крем-суп с молочными сливками 20%",
-          "categories": ["Для HoReCa", "Супы"]
-        }
-      ]
+      "text": "Соединяем вас с готовыми к экспорту производителями."
     },
     "slide-6": {
       "title": "Масштаб и доверие в цифрах",
@@ -183,6 +166,69 @@
     "slide-7": {
       "title": "Build Reliable Supply Partnerships",
       "text": "Explore export-ready products and start cooperation with trusted Russian manufacturers through our official showroom platform."
+    }
+  },
+
+  "products": {
+    "title": "Продукты",
+    "sort": ["По популярности", "По наличию", "По цене"],
+    "filters": {
+      "title": "Филтры",
+      "new": "Новинки",
+      "special": "Спецпредложения",
+      "priceRange": "Ценовой диапазон",
+      "categories": [
+        {
+          "key": "drinks",
+          "val": "Напитки"
+        },
+        {
+          "key": "milkProducts",
+          "val": "Молочные продукты"
+        },
+        {
+          "key": "fruitJuices",
+          "val": "Соки и нектары"
+        },
+        {
+          "key": "yogurts",
+          "val": "Йогурты и десерты"
+        },
+        {
+          "key": "plantMilk",
+          "val": "Растительное молоко"
+        }
+      ],
+      "brands": [
+        {
+          "key": "piligrim",
+          "val": "Пилигрим"
+        },
+        {
+          "key": "parmalat",
+          "val": "Parmalat"
+        }
+      ],
+      "productTypes": [
+        {
+          "key": "water",
+          "val": "Вода"
+        },
+        {
+          "key": "milk",
+          "val": "Молоко"
+        }
+      ],
+      "volumes": [
+        {
+          "key": "500ml",
+          "val": "500 мл"
+        },
+        {
+          "key": "1l",
+          "val": "1 л"
+        }
+      ]
     }
   },
 
