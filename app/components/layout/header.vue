@@ -10,6 +10,7 @@
         :to="$localePath(link.path)"
         class="header__nav-link"
         active-class="active"
+        :class="{ active: link.path !== '/' && $route.path.includes(link.path) }"
       >
         <span>{{ link.name }}</span>
       </NuxtLink>
