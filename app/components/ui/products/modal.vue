@@ -76,15 +76,17 @@
               <h3 class="modal__wrapper-title">
                 {{ $t('similarProducts') }}
               </h3>
-              <UiSlider>
-                <UiProductsCard
-                  v-for="p in product.similar"
-                  :key="p.id"
-                  :product="p"
-                  class="modal__bottom-card"
-                  @click="_ => emits('change', p.id)"
-                />
-              </UiSlider>
+              <div class="modal__slider">
+                <swiper slides-per-view="auto" :grab-cursor="true" :space-between="12">
+                  <swiper-slide v-for="p in product.similar" :key="p.id" class="modal__slide">
+                    <UiProductsCard
+                      :product="p"
+                      class="modal__bottom-card"
+                      @click="emits('change', p.id)"
+                    />
+                  </swiper-slide>
+                </swiper>
+              </div>
             </div>
           </div>
         </Transition>
@@ -95,6 +97,9 @@
 </template>
 
 <script setup>
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+
 const { products } = useApiStore();
 
 const containerRef = ref();
@@ -167,12 +172,17 @@ watch(
       font-weight: 700;
     }
   }
+  &__slider {
+    display: flex;
+  }
+  &__slide {
+    width: 27rem;
+    display: flex;
+  }
   &__bottom {
     display: flex;
 
     &-card {
-      flex-shrink: 0;
-      width: 27rem;
       background:
         radial-gradient(
           109.11% 102.52% at 15.57% 3.03%,

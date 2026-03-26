@@ -132,6 +132,16 @@ const labels = [
 ];
 
 const recipe = recipes.find(p => p.id === route.params.id);
+
+let layoutEl;
+onMounted(() => {
+  layoutEl = document.querySelector('.layout');
+  layoutEl.style.overflow = 'visible';
+});
+
+onBeforeUnmount(() => {
+  layoutEl.style.overflow = '';
+});
 </script>
 
 <style lang="scss" scoped>
@@ -139,6 +149,7 @@ p {
   line-height: 135%;
 }
 .recipe {
+  position: relative;
   display: grid;
   grid-template-columns: 2.5375fr 1fr;
   gap: 2rem;
@@ -228,6 +239,8 @@ p {
     }
   }
   &__right {
+    position: sticky;
+    top: max(1.6rem, 10px);
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
