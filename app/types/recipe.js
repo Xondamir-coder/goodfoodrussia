@@ -6,6 +6,10 @@ export default class Recipe {
   /** @type {string[]} */
   categories = [];
 
+  static fromJSON(raw) {
+    return new Recipe(raw);
+  }
+
   constructor(raw) {
     this.id = raw.id;
     this.date = raw.date;

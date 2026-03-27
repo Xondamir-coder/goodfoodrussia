@@ -1,5 +1,3 @@
-// types/product.js
-
 export class ProductBadge {
   icon = '';
   label = '';
@@ -57,6 +55,10 @@ export default class Product {
   specs = [];
   /** @type {Product[]} */
   similar = [];
+
+  static fromJSON(raw) {
+    return new Product(raw);
+  }
 
   constructor(raw) {
     this.id = raw.id;

@@ -3,6 +3,10 @@ export default class Category {
   country = '';
   image = '';
 
+  static fromJSON(raw) {
+    return new Category(raw);
+  }
+
   constructor(raw) {
     this.name = raw.name;
     this.country = raw.country;

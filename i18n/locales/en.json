@@ -20,6 +20,14 @@
   "processingType": "Тип обработки",
   "volumes": "Объемы",
   "similarProducts": "Похожие продукты",
+  "share": "Поделиться",
+  "address": "Адрес",
+  "tel": "Тел.",
+  "email": "Почта",
+  "socials": "Соцсети",
+  "onMap": "На карте",
+  "messageUs": "Написать нам",
+  "telegram": "телеграм-канал",
 
   "home": {
     "slide-1": {
@@ -59,57 +67,7 @@
     },
     "slide-3": {
       "title": "Избранные категории",
-      "text": "Откройте для себя готовые к экспорту российские продукты питания в ключевых категориях. От свежих продуктов до переработанных товаров — напрямую свяжитесь с надежными производителями.",
-      "categories": [
-        {
-          "name": "Fruits & Vegetables",
-          "country": "Uzbekistan"
-        },
-        {
-          "name": "Dried Fruits & Nuts",
-          "country": "Moscow"
-        },
-        {
-          "name": "Confectionery",
-          "country": "Norway"
-        },
-        {
-          "name": "Dairy Products",
-          "country": "Norway"
-        },
-        {
-          "name": "Meat & Poultry",
-          "country": "Norway"
-        },
-        {
-          "name": "Grains & Cereals",
-          "country": "Norway"
-        },
-        {
-          "name": "Beverages",
-          "country": "Norway"
-        },
-        {
-          "name": "Canned Foods",
-          "country": "Norway"
-        },
-        {
-          "name": "Dairy Products",
-          "country": "Norway"
-        },
-        {
-          "name": "Dried Fruits & Nuts",
-          "country": "Norway"
-        },
-        {
-          "name": "Fruits & Vegetables",
-          "country": "Uzbekistan"
-        },
-        {
-          "name": "Confectionery",
-          "country": "Norway"
-        }
-      ]
+      "text": "Откройте для себя готовые к экспорту российские продукты питания в ключевых категориях. От свежих продуктов до переработанных товаров — напрямую свяжитесь с надежными производителями."
     },
     "slide-4": {
       "title": "Избранные производители",
@@ -230,6 +188,29 @@
         }
       ]
     }
+  },
+
+  "recipes": {
+    "title": "Рецепты",
+    "sort": ["Все", "Завтраки", "Основные блюда", "Десерты", "Салаты", "Супы"]
+  },
+
+  "recipe": {
+    "share": "Поделиться рецептом",
+    "shareText": "Поделитесь этим рецептом с друзьями и сохраните его, чтобы приготовить позже.",
+    "desc": "Описание",
+    "ingr": "Ингредиенты",
+    "method": "Способ приготовления"
+  },
+
+  "contacts": {
+    "title": "Контакты",
+    "text": "Свяжитесь с командой GooFood, если у вас есть вопросы, предложения или вы хотите узнать больше о нашем сервисе. Мы всегда рады помочь.",
+    "address": "Ташкент, Узбекистан ул. Шота Руставели 12"
+  },
+
+  "media": {
+    "types": ["Новости", "События", "Галерея"]
   },
 
   "header": {
