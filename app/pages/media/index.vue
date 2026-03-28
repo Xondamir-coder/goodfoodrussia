@@ -24,11 +24,19 @@
 <script setup>
 import { UiMediaEventsCard, UiMediaGalleryCard, UiMediaNewsCard } from '#components';
 
-const activePage = ref(1);
+const cookie = useCookie('media_page_id', {
+  maxAge: 60 * 60 * 24 * 7
+});
+
+const activePage = ref(+cookie.value || 0);
+
+watch(activePage, () => {
+  cookie.value = activePage.value;
+});
 
 const { mediaNews, mediaEvents, mediaGallery } = useApiStore();
 
-const media = computed(() => [
+const media = [
   {
     arr: mediaNews,
     card: UiMediaNewsCard
@@ -41,7 +49,7 @@ const media = computed(() => [
     arr: mediaGallery,
     card: UiMediaGalleryCard
   }
-]);
+];
 </script>
 
 <style lang="scss" scoped>
@@ -51,10 +59,20 @@ const media = computed(() => [
   display: flex;
   flex-direction: column;
   gap: 3.9rem;
+
   &__list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(max(300px, 37.6rem), 1fr));
     gap: 1.2rem;
+    transition:
+      opacity 0.5s,
+      translate 0.5s;
+    &.hidden {
+      height: 0;
+      opacity: 0;
+      pointer-events: none;
+      translate: 0 25px;
+    }
     &:nth-child(2) {
       gap: 0;
       & > *:nth-child(3n - 2) {
@@ -62,9 +80,6 @@ const media = computed(() => [
           border-left: 1px solid rgba(255, 255, 255, 0.1);
         }
       }
-    }
-    &.hidden {
-      display: none;
     }
     &-item {
       display: flex;

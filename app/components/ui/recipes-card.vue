@@ -1,6 +1,6 @@
 <template>
   <NuxtLink :to="$localePath(`/recipes/${recipe.id}`)" class="recipes-card">
-    <UiPicture :src="recipe.image" :alt="recipe.title" class="recipes-card__pic" />
+    <UiPicture :src="recipe.banner" :alt="recipe.title" class="recipes-card__pic" />
     <div class="recipes-card__content">
       <span class="recipes-card__date">
         {{ recipe.date }}

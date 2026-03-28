@@ -55,9 +55,9 @@
           </li>
         </ul>
         <div class="contacts__cta">
-          <div class="contacts__cta-tg">
-            <IconsTelegram class="contacts__cta-tg-icon" />
-          </div>
+          <UiIconButton class="contacts__cta-tg">
+            <IconsTelegram />
+          </UiIconButton>
           <button class="contacts__cta-button">
             {{ $t('messageUs') }}
           </button>
@@ -196,10 +196,14 @@
   &__cta {
     display: flex;
     gap: 1.6rem;
+    height: 5rem;
+    &-tg {
+      width: 5rem;
+    }
     &-button {
       font-family: vars.$font-nunito-sans;
       display: flex;
-      padding: 1.6rem 2.4rem;
+      padding: 0 2.4rem;
       justify-content: center;
       align-items: center;
       gap: 1rem;
@@ -209,17 +213,6 @@
       color: var(--Main-Green-950, #001a0d);
       font-size: 1.4rem;
       font-weight: 600;
-    }
-    &-tg {
-      @include mix.flex-center;
-      width: 5rem;
-      height: 5rem;
-      border-radius: 0.8rem;
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
-      &-icon {
-        width: 48%;
-      }
     }
   }
 }

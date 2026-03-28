@@ -1,8 +1,8 @@
 <template>
   <div class="pagination">
-    <button class="pagination__button" @click="changePage('prev')">
-      <IconsArrowLeftIos class="pagination__button-icon" />
-    </button>
+    <UiIconButton @click="changePage('prev')">
+      <IconsArrowLeftIos />
+    </UiIconButton>
     <div class="pagination__container">
       <button
         v-for="i in total"
@@ -14,9 +14,9 @@
         <span>{{ i }}</span>
       </button>
     </div>
-    <button class="pagination__button" @click="changePage('next')">
-      <IconsArrowLeftIos class="pagination__button-icon" />
-    </button>
+    <UiIconButton @click="changePage('next')">
+      <IconsArrowRightIos />
+    </UiIconButton>
   </div>
 </template>
 
@@ -85,21 +85,8 @@ const changePage = dir => {
     }
   }
   &__button {
-    @include mix.flex-center;
-    width: 48px;
-    height: 48px;
-    border-radius: 8px;
-    border: 1px solid #9098b0;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
-    transition: background 0.3s;
     &:last-of-type {
       rotate: 180deg;
-    }
-    &:hover {
-      background: #ffffff5b;
-    }
-    &-icon {
-      width: 21%;
     }
   }
 }
