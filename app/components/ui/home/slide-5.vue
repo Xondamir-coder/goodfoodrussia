@@ -6,7 +6,7 @@
         <UiRecipesCard :recipe />
       </li>
     </ul>
-    <UiBlueButton :text="$t('allRecipes')" />
+    <UiBaseButton :text="$t('allRecipes')" variant="blue" />
     <UiPicture src="pomegranate-1.png" alt="pomegranates" class="slide__pic" />
     <UiPicture src="pomegranate-2.png" alt="pomegranates" class="slide__pic" />
   </div>

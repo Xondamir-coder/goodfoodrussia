@@ -8,7 +8,7 @@
         <UiCategoryCard :category />
       </li>
     </ul>
-    <UiBlueButton :text="$t('exploreCatalogue')" />
+    <UiBaseButton :text="$t('exploreCatalogue')" variant="blue" />
   </div>
 </template>
 

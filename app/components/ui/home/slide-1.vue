@@ -13,12 +13,8 @@
         {{ $t('home.slide-1.text') }}
       </p>
       <div class="slide__content-buttons">
-        <button class="slide__content-button">
-          <span>{{ $t('learnMore') }}</span>
-        </button>
-        <button class="slide__content-button">
-          <span>{{ $t('exploreCatalogue') }}</span>
-        </button>
+        <UiBaseButton :text="$t('learnMore')" variant="glass" />
+        <UiBaseButton :text="$t('exploreCatalogue')" variant="white" />
       </div>
     </div>
     <UiPicture src="burger.png" alt="burger" class="slide__picture" />
@@ -31,6 +27,8 @@
 .slide {
   @include mix.home-slide;
   align-items: center;
+  gap: 5.5rem;
+  padding-top: 2.4rem;
   &__picture {
     position: absolute;
     width: 105%;
@@ -43,28 +41,6 @@
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    &-button {
-      padding-inline: 2.4rem;
-      height: 5rem;
-      border-radius: 0.8rem;
-      font-family: vars.$font-nunito-sans;
-      font-size: 1.4rem;
-      font-weight: 600;
-      line-height: 128%;
-      &:first-child {
-        color: var(--Greyscale-200, #f1f2f4);
-        border: 1px solid rgba(255, 255, 255, 0.6);
-        background: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0) 0%,
-          rgba(255, 255, 255, 0.2) 100%
-        );
-      }
-      &:last-child {
-        color: #001a0d;
-        background: #fff;
-      }
-    }
     &-buttons {
       display: flex;
       gap: 1.6rem;

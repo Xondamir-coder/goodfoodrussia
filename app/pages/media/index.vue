@@ -1,38 +1,22 @@
 <template>
-  <main class="media">
-    <div class="media__header">
-      <h1 class="media__header-title">
-        {{ $t('media.title') }}
-      </h1>
-      <UiSortingBar v-model="activePage" :types="useMapRt('media.types')" />
-    </div>
-    <div class="media__container">
-      <ul
-        v-for="(el, i) in media"
-        :key="i"
-        class="media__list"
-        :class="{ hidden: i !== activePage }"
-      >
+  <UiPageContainer
+    v-slot="{ sortId, activePage, setActivePage }"
+    :title="$t('media.title')"
+    :types="useMapRt('media.types')"
+  >
+    <div class="media">
+      <ul v-for="(el, i) in media" :key="i" class="media__list" :class="{ hidden: i !== sortId }">
         <li v-for="item in el.arr" :key="item.id" class="media__list-item">
           <component :is="el.card" :data="item" />
         </li>
       </ul>
+      <UiPagination :total="5" :model-value="activePage" @update:model-value="setActivePage" />
     </div>
-  </main>
+  </UiPageContainer>
 </template>
 
 <script setup>
 import { UiMediaEventsCard, UiMediaGalleryCard, UiMediaNewsCard } from '#components';
-
-const cookie = useCookie('media_page_id', {
-  maxAge: 60 * 60 * 24 * 7
-});
-
-const activePage = ref(+cookie.value || 0);
-
-watch(activePage, () => {
-  cookie.value = activePage.value;
-});
 
 const { mediaNews, mediaEvents, mediaGallery } = useApiStore();
 
@@ -54,12 +38,12 @@ const media = [
 
 <style lang="scss" scoped>
 .media {
-  padding-block: 2.4rem;
-  padding-inline: var(--spacing-inline);
   display: flex;
   flex-direction: column;
-  gap: 3.9rem;
-
+  & > *:last-child {
+    align-self: center;
+    margin-top: max(5.25rem, 20px);
+  }
   &__list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(max(300px, 37.6rem), 1fr));
@@ -87,11 +71,6 @@ const media = [
         flex: 1;
       }
     }
-  }
-  &__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
   }
 }
 </style>

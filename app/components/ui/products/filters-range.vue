@@ -252,14 +252,14 @@ function onKeydown(thumb, event) {
 
 <style lang="scss">
 $blue-fill: #2f68cf;
-$thumb-size: 2rem;
-$track-height: 0.8rem;
+$thumb-size: max(2rem, 20px);
+$track-height: max(0.8rem, 8px);
 
 .price-range {
   user-select: none;
   display: flex;
   flex-direction: column;
-  gap: 1.6rem + 0.7rem;
+  gap: calc(max(1.6rem, 16px) + max(0.7rem, 7px));
 
   &__labels {
     display: flex;
@@ -267,13 +267,14 @@ $track-height: 0.8rem;
   }
   &__field {
     display: flex;
-    height: 5rem;
-    padding: 1.6rem;
+    height: max(5rem, 42px);
+    padding-inline: max(1.6rem, 16px);
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: max(1rem, 10px);
+    font-size: max(1.6rem, 16px);
     flex: 1 0 0;
-    border-radius: 0.8rem;
+    border-radius: max(0.8rem, 8px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     background: rgba(255, 255, 255, 0.08);
     transition:
@@ -318,7 +319,7 @@ $track-height: 0.8rem;
     top: 0;
     height: 100%;
     background: $blue-fill;
-    border-radius: 3.4rem;
+    border-radius: max(3.4rem, 34px);
     pointer-events: none;
   }
 

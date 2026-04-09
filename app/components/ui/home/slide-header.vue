@@ -38,7 +38,7 @@ defineProps({
     font-size: 1.8rem;
     line-height: 128%;
     letter-spacing: -0.036rem;
-    max-width: 45ch;
+    max-width: 53ch;
   }
 }
 </style>

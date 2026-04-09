@@ -58,9 +58,7 @@
           <UiIconButton class="contacts__cta-tg">
             <IconsTelegram />
           </UiIconButton>
-          <button class="contacts__cta-button">
-            {{ $t('messageUs') }}
-          </button>
+          <UiBaseButton :text="$t('messageUs')" variant="white" @click="showContactsModal = true" />
         </div>
       </div>
     </div>
@@ -100,16 +98,19 @@
       </svg>
       <UiPicture src="map.jpg" alt="map" class="contacts__right-map" />
     </div>
+    <UiContactsModal />
   </main>
 </template>
 
-<script setup></script>
+<script setup>
+const showContactsModal = useState('showContactsModal');
+</script>
 
 <style lang="scss" scoped>
 .contacts {
   margin-inline: var(--spacing-inline);
   padding-block: 2.4rem;
-  min-height: calc(100vh - 6rem);
+  min-height: calc(100vh - max(6rem, 60px));
   display: grid;
   grid-template-columns: 1fr 1.4042fr;
   &__top {
@@ -200,19 +201,8 @@
     &-tg {
       width: 5rem;
     }
-    &-button {
-      font-family: vars.$font-nunito-sans;
-      display: flex;
-      padding: 0 2.4rem;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
+    & > *:last-child {
       flex: 1;
-      border-radius: 0.8rem;
-      background: #fff;
-      color: var(--Main-Green-950, #001a0d);
-      font-size: 1.4rem;
-      font-weight: 600;
     }
   }
 }

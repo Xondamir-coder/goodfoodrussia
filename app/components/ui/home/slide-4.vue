@@ -22,7 +22,7 @@
           <p class="slide__card-text">{{ card.text }}</p>
         </li>
       </ul>
-      <UiBlueButton :text="$t('submitRequest')" />
+      <UiBaseButton :text="$t('submitRequest')" variant="blue" />
     </div>
     <UiPicture src="strawberries.png" alt="strawberries" class="slide__pic" />
     <UiPicture src="strawberries-sliced.png" alt="strawberries" class="slide__pic" />

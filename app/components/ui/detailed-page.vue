@@ -21,6 +21,14 @@
       <section v-if="data.gallery" class="detailed-page__gallery">
         <div class="detailed-page__gallery-top">
           <h3>{{ $t('mediaIndex.photoGallery') }}</h3>
+          <div class="detailed-page__gallery-top-arrows">
+            <UiIconButton>
+              <IconsArrowLeftIos />
+            </UiIconButton>
+            <UiIconButton>
+              <IconsArrowRightIos />
+            </UiIconButton>
+          </div>
         </div>
         <div class="detailed-page__gallery-slider">
           <swiper :grab-cursor="true" slides-per-view="auto" :space-between="12">
@@ -58,7 +66,8 @@ const { data } = defineProps({
 <style lang="scss">
 .detailed-page {
   padding-inline: var(--spacing-inline);
-  padding-block: 2.4rem;
+  padding-top: 2.4rem;
+  padding-bottom: 13.6rem;
   display: grid;
   grid-template-columns: 2.5375fr 1fr;
   gap: 2rem;
@@ -93,6 +102,10 @@ const { data } = defineProps({
       display: flex;
       align-items: center;
       justify-content: space-between;
+      &-arrows {
+        display: flex;
+        gap: max(8px, 0.8rem);
+      }
     }
     &-slide {
       width: max(30.4rem, 250px);

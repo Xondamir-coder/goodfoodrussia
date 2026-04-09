@@ -53,14 +53,29 @@ const dropdownRows = computed(() => [
 .filters {
   display: flex;
   flex-direction: column;
-  border-radius: 1.5rem;
+  border-radius: max(1.5rem, 12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: linear-gradient(180deg, rgba(211, 135, 255, 0) 0%, rgba(211, 135, 255, 0.05) 100%);
   backdrop-filter: blur(50px);
   display: flex;
-  padding: 2rem;
+  padding: max(2rem, 16px);
   flex-direction: column;
-  gap: 2rem;
+
+  @media screen and (max-width: vars.$bp-xl) {
+    display: none;
+  }
+
+  & > *:last-child {
+    padding-top: max(1.6rem, 12px);
+  }
+  & > *:not(:last-child) {
+    padding-block: max(1.6rem, 12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  & > *:first-child {
+    padding-top: 0;
+    padding-bottom: max(2rem, 16px);
+  }
   &__top {
     display: flex;
     justify-content: space-between;
@@ -68,16 +83,16 @@ const dropdownRows = computed(() => [
     align-self: stretch;
   }
   &__title {
-    font-size: 2.4rem;
+    font-size: max(2.4rem, 20px);
     font-weight: 700;
   }
   &__label {
-    font-size: 1.4rem;
+    font-size: max(1.4rem, 14px);
     font-weight: 700;
   }
   &__arrow {
     flex-shrink: 0;
-    width: 1.4rem;
+    width: max(1.4rem, 10px);
     transition: rotate 0.5s;
   }
 }

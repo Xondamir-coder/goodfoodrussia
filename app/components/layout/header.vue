@@ -3,18 +3,21 @@
     <NuxtLink :to="$localePath('/')" class="header__logo-container">
       <SvgLogo class="header__logo" />
     </NuxtLink>
-    <nav class="header__nav">
-      <NuxtLink
-        v-for="link in links"
-        :key="link.path"
-        :to="$localePath(link.path)"
-        class="header__nav-link"
-        active-class="active"
-        :class="{ active: link.path !== '/' && $route.path.includes(link.path) }"
-      >
-        <span>{{ link.name }}</span>
-      </NuxtLink>
-    </nav>
+    <div class="header__right">
+      <nav class="header__nav">
+        <NuxtLink
+          v-for="link in links"
+          :key="link.path"
+          :to="$localePath(link.path)"
+          class="header__nav-link"
+          active-class="active"
+          :class="{ active: link.path !== '/' && $route.path.includes(link.path) }"
+        >
+          <span>{{ link.name }}</span>
+        </NuxtLink>
+      </nav>
+      <UiHeaderLang />
+    </div>
   </header>
 </template>
 
@@ -31,22 +34,30 @@ const links = computed(() =>
 
 <style lang="scss" scoped>
 .header {
-  padding-inline: var(--spacing-inline);
+  margin-inline: var(--spacing-inline);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 6rem;
+  height: max(6rem, 60px);
   z-index: 10;
   position: relative;
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: max(2rem, 10px);
+  }
   &__nav {
     display: flex;
+    @media screen and (max-width: vars.$bp-lg) {
+      display: none;
+    }
     &-link {
       color: #e5efff;
-      font-size: 1.4rem;
+      font-size: max(1.4rem, 14px);
       font-weight: 500;
-      padding: 1.1rem 1.6rem;
+      padding: max(1.1rem, 11px) max(1.6rem, 16px);
       position: relative;
-      border-radius: 9.9rem;
+      border-radius: max(9.9rem, 99px);
       overflow: hidden;
       display: flex;
       span {
@@ -73,7 +84,7 @@ const links = computed(() =>
     }
   }
   &__logo {
-    width: 7.6095rem;
+    width: max(7.6095rem, 77px);
     &-container {
       display: flex;
     }

@@ -32,10 +32,11 @@
   "watch": "Посмотреть",
 
   "home": {
+    "navbar": ["Главное", "Главное", "Главное", "Главное", "Главное", "Главное", "Главное"],
     "slide-1": {
       "label": "Проверенные производители",
-      "title": "Шоурум российских производителей в Узбекистане",
-      "text": "Исследуйте продукты, бренды и регионы - создайте надежные партнерские отношения по снабжению."
+      "title": "Showroom of Russian Manufacturers in Uzbekistan",
+      "text": "Explore products, brands, and regions — build reliable supply partnerships."
     },
     "slide-2": {
       "title": "Профессиональная презентация",

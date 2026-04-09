@@ -16,11 +16,11 @@ const emits = defineEmits(['switch']);
 
 <style lang="scss" scoped>
 .switch {
-  width: 4.2rem;
-  height: 2.4rem;
+  width: max(4.2rem, 42px);
+  height: max(2.4rem, 24px);
   flex-shrink: 0;
   background-color: rgba(203, 213, 224, 0.5);
-  border-radius: 3.4rem;
+  border-radius: max(3.4rem, 16px);
   position: relative;
   transition: background 0.3s;
 
@@ -31,14 +31,14 @@ const emits = defineEmits(['switch']);
       scale: 1;
     }
     .switch__circle {
-      translate: calc(100% - 0.2rem);
+      translate: calc(100% - max(0.2rem, 2px));
     }
   }
   &__circle {
     width: 47.62%;
     position: absolute;
-    inset-block: 0.2rem;
-    left: 0.2rem;
+    inset-block: max(0.2rem, 2px);
+    left: max(0.2rem, 2px);
     background-color: #fff;
     border-radius: 50%;
     transition: translate 0.3s;

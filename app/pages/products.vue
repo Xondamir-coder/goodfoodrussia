@@ -1,29 +1,27 @@
 <template>
-  <main class="products">
+  <UiPageContainer
+    v-slot="{ activePage, setActivePage }"
+    :title="$t('products.title')"
+    :types="useMapRt('products.sort')"
+  >
     <Teleport to="body">
       <UiProductsModal :product-i-d="productID" @change="assignProductID" />
     </Teleport>
-    <div class="products__header">
-      <h1 class="products__header-title">{{ $t('products.title') }}</h1>
-      <UiSortingBar v-model="typeID" :types="useMapRt('products.sort')" />
-    </div>
-    <div class="products__container">
+    <div class="products-container">
       <UiProductsFilters />
-      <ul class="products__cards">
+      <ul class="products-cards">
         <li v-for="(product, i) in products" :key="i">
           <UiProductsCard :product @click="assignProductID(product.id)" />
         </li>
       </ul>
-      <UiPagination v-model="activePage" :total="7" />
+      <UiPagination :total="7" :model-value="activePage" @update:model-value="setActivePage" />
     </div>
-  </main>
+  </UiPageContainer>
 </template>
 
 <script setup>
 const { products } = useApiStore();
 
-const activePage = ref(1);
-const typeID = ref(0);
 const productID = ref();
 
 const assignProductID = id => {
@@ -33,39 +31,28 @@ const assignProductID = id => {
 
 <style lang="scss" scoped>
 .products {
-  display: flex;
-  flex-direction: column;
-  gap: 3.9rem;
-  font-family: vars.$font-nunito-sans;
-  padding-inline: var(--spacing-inline);
-  padding-top: 2.4rem;
-  padding-bottom: 3.75rem;
-  &__header {
-    display: flex;
-    justify-content: space-between;
-
-    &-title {
-      font-size: 2.6rem;
-      font-family: vars.$font-inter;
-      font-weight: 700;
-    }
-  }
-  &__container {
+  &-container {
     display: grid;
     grid-template-columns: 1fr 2.8fr;
     align-items: flex-start;
-    gap: 2rem;
-    & > *:last-child {
-      grid-column: 2 / 3;
-      margin-top: 5.3rem - 2rem;
-      padding-left: 6.4rem;
+    column-gap: 2rem;
+    row-gap: max(5.25rem, 20px);
+    @media screen and (max-width: vars.$bp-xl) {
+      grid-template-columns: 1fr;
+      column-gap: 0;
+    }
+    @media screen and (min-width: vars.$bp-xl) {
+      & > *:last-child {
+        grid-column: 2 / 3;
+        padding-left: 6.4rem;
+      }
     }
   }
-  &__cards {
+  &-cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(max(27rem, 250px), 1fr));
-    row-gap: 2rem;
-    column-gap: 1.2rem;
+    row-gap: max(2rem, 12px);
+    column-gap: max(1.2rem, 10px);
     & > * {
       display: flex;
     }

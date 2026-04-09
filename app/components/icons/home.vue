@@ -1,18 +1,12 @@
 <template>
-  <svg viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
-      d="M15.157 6.33951L10.5737 2.77444C9.74642 2.13048 8.5876 2.13048 7.75954 2.77444L3.17621 6.33951C2.61781 6.7734 2.29163 7.44104 2.29163 8.1484V13.75C2.29163 15.0158 3.31753 16.0417 4.58329 16.0417H13.75C15.0157 16.0417 16.0416 15.0158 16.0416 13.75V8.1484C16.0416 7.44104 15.7154 6.7734 15.157 6.33951Z"
-      stroke="white"
-      stroke-width="1.375"
+      d="M14.25 7.35V3.375H12V5.325L9 2.625L1.5 9.375H3.75V15.375H8.25V10.875H9.75V15.375H14.25V9.375H16.5L14.25 7.35ZM12.75 13.875H11.25V9.375H6.75V13.875H5.25V8.0175L9 4.6425L12.75 8.0175V13.875Z"
+      fill="white"
     />
     <path
-      d="M6.875 12.9861H11.4583"
-      stroke="white"
-      stroke-width="1.375"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      d="M7.5 7.875H10.5C10.5 7.05 9.825 6.375 9 6.375C8.175 6.375 7.5 7.05 7.5 7.875Z"
+      fill="white"
     />
   </svg>
 </template>

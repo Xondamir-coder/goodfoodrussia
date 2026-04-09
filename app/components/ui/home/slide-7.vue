@@ -7,10 +7,9 @@
       <p class="slide__box-text">
         {{ $t('home.slide-7.text') }}
       </p>
-      <button class="slide__box-button">
-        <span>{{ $t('readMore') }}</span>
-        <IconsRightArrow class="slide__box-button-icon" />
-      </button>
+      <UiBaseButton :text="$t('readMore')" variant="glass">
+        <IconsRightArrow />
+      </UiBaseButton>
     </div>
     <div class="slide__container">
       <div class="slide__block" />
@@ -226,28 +225,6 @@ const links = computed(() =>
       max-width: 50ch;
       margin-top: 1rem;
       margin-bottom: 4.3rem;
-    }
-    &-button {
-      display: flex;
-      width: 28rem;
-      height: 4.2rem;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-      flex-shrink: 0;
-      border-radius: 0.8rem;
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      text-align: center;
-      font-family: vars.$font-nunito-sans;
-      font-weight: 500;
-      &-icon {
-        width: 1.2rem;
-        fill: #f5f5f5;
-      }
     }
   }
 }

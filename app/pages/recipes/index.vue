@@ -1,39 +1,29 @@
 <template>
-  <main class="recipes">
-    <div class="recipes__header">
-      <h1 class="recipes__header-title">{{ $t('recipes.title') }}</h1>
-      <UiSortingBar v-model="typeID" :types="useMapRt('recipes.sort')" />
-    </div>
-    <div class="recipes__container">
-      <ul class="recipes__cards">
+  <UiPageContainer
+    v-slot="{ activePage, setActivePage }"
+    :title="$t('recipes.title')"
+    :types="useMapRt('recipes.sort')"
+  >
+    <div class="recipes-container">
+      <ul class="recipes-cards">
         <li v-for="(recipe, i) in recipes" :key="i">
           <UiRecipesCard :recipe />
         </li>
       </ul>
-      <UiPagination v-model="activePage" :total="4" />
+      <UiPagination :total="4" :model-value="activePage" @update:model-value="setActivePage" />
     </div>
-    <UiPicture src="recipes-banner.png" alt="banner" class="recipes__pic" />
-    <UiPicture src="recipes-banner.png" alt="banner" class="recipes__pic" />
-  </main>
+    <UiPicture src="recipes-banner.png" alt="banner" class="recipes-pic" />
+    <UiPicture src="recipes-banner.png" alt="banner" class="recipes-pic" />
+  </UiPageContainer>
 </template>
 
 <script setup>
-const typeID = ref(0);
 const { recipes } = useApiStore();
-
-const activePage = ref(1);
 </script>
 
 <style lang="scss" scoped>
 .recipes {
-  display: flex;
-  flex-direction: column;
-  gap: 3.9rem;
-  padding-inline: var(--spacing-inline);
-  padding-top: 2.4rem;
-  padding-bottom: 3.75rem;
-  position: relative;
-  &__pic {
+  &-pic {
     position: absolute;
     z-index: -1;
     &:first-of-type {
@@ -49,28 +39,21 @@ const activePage = ref(1);
       transform: rotate(118.894deg);
     }
   }
-  &__container {
+  &-container {
     display: flex;
     flex-direction: column;
-    gap: 5.25rem;
+    gap: max(5.25rem, 20px);
     & > *:last-child {
       align-self: center;
     }
   }
-  &__cards {
+  &-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(max(38rem, 300px), 1fr));
-    row-gap: 2rem;
-    column-gap: 1.6rem;
-  }
-  &__header {
-    display: flex;
-    justify-content: space-between;
-
-    &-title {
-      font-size: 2.6rem;
-      font-family: vars.$font-inter;
-      font-weight: 700;
+    grid-template-columns: repeat(auto-fill, minmax(max(37rem, 250px), 1fr));
+    row-gap: max(2rem, 12px);
+    column-gap: max(1.6rem, 14px);
+    li {
+      display: flex;
     }
   }
 }

@@ -11,9 +11,10 @@ defineEmits(['click']);
 <style lang="scss" scoped>
 .icon-button {
   @include mix.flex-center;
-  width: 4.2rem;
+  flex-shrink: 0;
+  width: max(4.2rem, 40px);
   aspect-ratio: 1;
-  border-radius: 0.8rem;
+  border-radius: max(0.8rem, 8px);
   border: 1px solid rgba(255, 255, 255, 0.6);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
   transition: background 0.3s;

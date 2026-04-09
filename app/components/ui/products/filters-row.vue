@@ -77,16 +77,16 @@ onMounted(() => {
   &__items {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: max(1.2rem, 12px);
     &-item {
       user-select: none;
       cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 0.8rem;
+      gap: max(0.8rem, 8px);
       color: #fff;
-      font-size: 1.4rem;
-      letter-spacing: 0.007rem;
+      font-size: max(1.4rem, 14px);
+      letter-spacing: max(0.007rem, 0.07px);
     }
   }
   &__row {
@@ -95,7 +95,7 @@ onMounted(() => {
     transition: gap 0.7s;
     gap: 0;
     &.show {
-      gap: 1.6rem;
+      gap: max(1.6rem, 16px);
       .filters__arrow {
         rotate: -540deg;
       }

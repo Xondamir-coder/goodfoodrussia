@@ -7,29 +7,40 @@
       :class="{ active: i === currentSlide }"
       @click="currentSlide = i"
     >
-      <component :is="item" class="navbar__button-icon" />
+      <span class="navbar__button-label">{{ item.label }}</span>
+      <component :is="item.icon" class="navbar__button-icon" />
     </button>
   </div>
 </template>
 
 <script setup>
-import { IconsHome, IconsUser, IconsBuilding, IconsDiscount, IconsChecklist } from '#components';
-
-const items = [
+import {
   IconsHome,
-  IconsUser,
-  IconsBuilding,
-  IconsDiscount,
-  IconsChecklist,
-  IconsChecklist,
-  IconsChecklist
+  IconsFileOpen,
+  IconsWidgets,
+  IconsFormatShapes,
+  IconsDining,
+  IconsAutoGraph,
+  IconsRocket
+} from '#components';
+
+const icons = [
+  IconsHome,
+  IconsFileOpen,
+  IconsWidgets,
+  IconsFormatShapes,
+  IconsDining,
+  IconsAutoGraph,
+  IconsRocket
 ];
+const items = useMapRt('home.navbar').map((l, i) => ({ label: l, icon: icons[i] }));
 
 const currentSlide = useState('currentSlide');
 </script>
 
 <style lang="scss" scoped>
 .navbar {
+  width: 5rem;
   display: flex;
   padding: 0.6rem;
   flex-direction: column;
@@ -44,13 +55,17 @@ const currentSlide = useState('currentSlide');
   translate: 0 0;
   z-index: 5;
   &__button {
-    @include mix.flex-center;
-    width: 4.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0;
     height: 4.2rem;
-    border-radius: 50%;
+    padding: 1.1rem;
+    border-radius: 9.9rem;
     transition: background 0.4s;
     overflow: hidden;
     position: relative;
+    transition: gap 1s;
+    align-self: flex-end;
     &:hover::after {
       scale: 1 0.45;
       transition-duration: 0.4s;
@@ -59,21 +74,33 @@ const currentSlide = useState('currentSlide');
       content: '';
       position: absolute;
       inset: 0;
-      background:
-        linear-gradient(180deg, rgba(170, 205, 255, 0) 0%, rgba(0, 217, 255, 0.3) 100%),
-        linear-gradient(0deg, rgba(0, 67, 255, 0.2) 0%, rgba(0, 67, 255, 0.2) 100%),
-        rgba(244, 245, 245, 0.2);
-      transition: scale 0.6s;
+      background: linear-gradient(to bottom, #2f417b, #2b78ac);
+      backdrop-filter: blur(15px);
+      transition: scale 1s;
       scale: 1 0;
       transform-origin: bottom;
     }
     &-icon {
-      width: 47%;
+      flex-shrink: 0;
+      width: 1.8rem;
       fill: none;
       z-index: 1;
     }
-    &.active::after {
-      scale: 1;
+    &-label {
+      max-width: 0;
+      z-index: 1;
+      transition: max-width 1s;
+      overflow: hidden;
+    }
+    &.active {
+      gap: 1rem;
+
+      &::after {
+        scale: 1;
+      }
+      .navbar__button-label {
+        max-width: 100px;
+      }
     }
   }
 }

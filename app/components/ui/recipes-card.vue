@@ -30,24 +30,29 @@ defineProps({
 
 <style lang="scss" scoped>
 .recipes-card {
+  flex: 1;
   display: flex;
-  padding: 2rem;
+  padding: max(2rem, 12px);
   flex-direction: column;
   align-items: flex-start;
-  gap: 2rem;
-  border-radius: 1.5rem;
+  gap: max(2rem, 12px);
+  border-radius: max(1.5rem, 12px);
   border: 1px solid rgba(255, 255, 255, 0.16);
   background: linear-gradient(180deg, rgba(211, 135, 255, 0) 0%, rgba(211, 135, 255, 0.05) 100%);
   backdrop-filter: blur(50px);
   &__content {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: max(0.8rem, 8px);
   }
   &__pic {
+    align-self: stretch;
     aspect-ratio: 33/16;
     position: relative;
-    border-radius: 1.2rem;
+    border-radius: max(1.2rem, 8px);
+    @media screen and (max-width: vars.$bp-sm) {
+      aspect-ratio: 24.4/18;
+    }
 
     &::after {
       content: '';
@@ -57,28 +62,28 @@ defineProps({
     }
   }
   &__date {
-    font-size: 1.4rem;
+    font-size: max(1.4rem, 12px);
     font-weight: 400;
   }
   &__title {
-    font-size: 1.8rem;
+    font-size: max(1.8rem, 14px);
     font-weight: 700;
     line-height: 135%;
   }
   &__cats {
     display: flex;
-    gap: 0.9rem;
+    gap: max(0.9rem, 9px);
   }
   &__cat {
     display: flex;
-    height: 3.2rem;
-    padding-inline: 1.6rem;
+    height: max(3.2rem, 32px);
+    padding-inline: max(1.6rem, 16px);
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    border-radius: 9.9rem;
+    border-radius: max(9.9rem, 99px);
     background: rgba(7, 37, 59, 0.2);
-    font-size: 1.2rem;
+    font-size: max(1.2rem, 12px);
     font-weight: 600;
   }
 }

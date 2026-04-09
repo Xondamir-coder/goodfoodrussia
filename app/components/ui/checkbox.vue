@@ -1,6 +1,6 @@
 <template>
   <label :for="attrs.id" class="checkbox">
-    <input :id="attrs.id" v-model="model" type="checkbox" name="checkbox" class="checkbox__input" >
+    <input :id="attrs.id" v-model="model" type="checkbox" name="checkbox" class="checkbox__input" />
     <svg class="checkbox__icon" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         fill-rule="evenodd"
@@ -25,13 +25,13 @@ const model = defineModel({
 .checkbox {
   @include mix.flex-center;
   position: relative;
-  width: 1.6rem;
-  height: 1.6rem;
+  width: max(1.6rem, 16px);
+  height: max(1.6rem, 16px);
   flex-shrink: 0;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
   border: 1px solid #6b708f;
   overflow: hidden;
-  border-radius: 0.4rem;
+  border-radius: max(0.4rem, 4px);
   cursor: pointer;
   transition:
     background 0.3s,
@@ -58,7 +58,7 @@ const model = defineModel({
     transition:
       opacity 0.3s,
       scale 0.3s;
-    width: 0.9333rem;
+    width: max(0.9333rem, 10px);
   }
 }
 </style>
