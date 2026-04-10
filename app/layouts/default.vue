@@ -51,6 +51,14 @@
   --spacing-v-top-lg: calc(max(6.6rem, 50px) + var(--spacing-v-top-sm));
   --spacing-v-bottom: 12rem;
 
+  @media screen and (max-width: vars.$bp-lg) {
+    --spacing-h-sm: max(2.5rem, 15px);
+    --spacing-h-lg: calc(max(3rem, 16px) + var(--spacing-h-sm));
+    --spacing-v-top-sm: max(4rem, 60px);
+    --spacing-v-top-lg: calc(max(3rem, 50px) + var(--spacing-v-top-sm));
+    --spacing-v-bottom: 6rem;
+  }
+
   background: var(--Smalt-950, #061852);
   color: #fff;
   overflow: hidden;

@@ -9,57 +9,53 @@
           {{ $t('contacts.text') }}
         </p>
       </div>
-      <div class="contacts__bottom">
-        <ul class="contacts__list">
-          <li class="contacts__item">
-            <h3 class="contacts__item-label">
-              {{ $t('address') }}
-            </h3>
-            <div class="contacts__item-cta">
-              <span>{{ $t('contacts.address') }}</span>
-              <a href="https://yandex.uz/maps/-/CPVBJVIh" target="_blank" rel="noopener noreferrer">
-                {{ $t('onMap') }}
-              </a>
-            </div>
-          </li>
-          <li class="contacts__item">
-            <h3 class="contacts__item-label">
-              {{ $t('tel') }}
-            </h3>
-            <div class="contacts__item-cta">
-              <a href="tel:+998 (90) 123-45-67"> +998 (90) 123-45-67 </a>
-              <a href="tel:+998 (90) 123-45-67"> +998 (90) 123-45-67 </a>
-            </div>
-          </li>
-          <li class="contacts__item">
-            <h3 class="contacts__item-label">
-              {{ $t('email') }}
-            </h3>
-            <div class="contacts__item-cta">
-              <a href="mailto:support@goofood.uz"> support@goofood.uz </a>
-            </div>
-          </li>
-          <li class="contacts__item">
-            <h3 class="contacts__item-label">
-              {{ $t('email') }}
-            </h3>
-            <div class="contacts__item-cta">
-              <a href="http://telegram.org" target="_blank" rel="noopener noreferrer">
-                {{ $t('telegram') }}
-              </a>
-              <a href="http://instagram.com" target="_blank" rel="noopener noreferrer">
-                instagram
-              </a>
-              <a href="http://facebook.com" target="_blank" rel="noopener noreferrer"> facebook </a>
-            </div>
-          </li>
-        </ul>
-        <div class="contacts__cta">
-          <UiIconButton class="contacts__cta-tg">
-            <IconsTelegram />
-          </UiIconButton>
-          <UiBaseButton :text="$t('messageUs')" variant="white" @click="showContactsModal = true" />
-        </div>
+      <ul class="contacts__list">
+        <li class="contacts__item">
+          <h3 class="contacts__item-label">
+            {{ $t('address') }}
+          </h3>
+          <div class="contacts__item-cta">
+            <span>{{ $t('contacts.address') }}</span>
+            <a href="https://yandex.uz/maps/-/CPVBJVIh" target="_blank" rel="noopener noreferrer">
+              {{ $t('onMap') }}
+            </a>
+          </div>
+        </li>
+        <li class="contacts__item">
+          <h3 class="contacts__item-label">
+            {{ $t('tel') }}
+          </h3>
+          <div class="contacts__item-cta">
+            <a href="tel:+998 (90) 123-45-67"> +998 (90) 123-45-67 </a>
+            <a href="tel:+998 (90) 123-45-67"> +998 (90) 123-45-67 </a>
+          </div>
+        </li>
+        <li class="contacts__item">
+          <h3 class="contacts__item-label">
+            {{ $t('email') }}
+          </h3>
+          <div class="contacts__item-cta">
+            <a href="mailto:support@goofood.uz"> support@goofood.uz </a>
+          </div>
+        </li>
+        <li class="contacts__item">
+          <h3 class="contacts__item-label">
+            {{ $t('socials') }}
+          </h3>
+          <div class="contacts__item-cta">
+            <a href="http://telegram.org" target="_blank" rel="noopener noreferrer">
+              {{ $t('telegram') }}
+            </a>
+            <a href="http://instagram.com" target="_blank" rel="noopener noreferrer"> instagram </a>
+            <a href="http://facebook.com" target="_blank" rel="noopener noreferrer"> facebook </a>
+          </div>
+        </li>
+      </ul>
+      <div class="contacts__cta">
+        <UiIconButton class="contacts__cta-tg">
+          <IconsTelegram />
+        </UiIconButton>
+        <UiBaseButton :text="$t('messageUs')" variant="white" @click="showContactsModal = true" />
       </div>
     </div>
     <div class="contacts__right">
@@ -109,28 +105,31 @@ const showContactsModal = useState('showContactsModal');
 <style lang="scss" scoped>
 .contacts {
   margin-inline: var(--spacing-inline);
-  padding-block: 2.4rem;
+  padding-block: max(2.4rem, 16px);
   min-height: calc(100vh - max(6rem, 60px));
   display: grid;
   grid-template-columns: 1fr 1.4042fr;
+  @media screen and (max-width: vars.$bp-md) {
+    grid-template-columns: 1fr;
+  }
   &__top {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: max(1.2rem, 12px);
   }
   &__text {
-    font-size: 1.4rem;
+    font-size: max(1.4rem, 14px);
     opacity: 0.5;
     line-height: 135%;
   }
   &__title {
-    font-size: 2.6rem;
+    font-size: max(2.6rem, 20px);
     font-weight: 700;
   }
   &__list {
     display: flex;
     flex-direction: column;
-    gap: 3.2rem;
+    gap: max(3.2rem, 24px);
   }
   &__item {
     display: flex;
@@ -138,13 +137,24 @@ const showContactsModal = useState('showContactsModal');
     align-items: flex-start;
     font-weight: 500;
     font-family: vars.$font-nunito-sans;
+    gap: 6px;
+    @media screen and (max-width: vars.$bp-sm) {
+      flex-direction: column;
+    }
 
+    &-label {
+      font-size: max(1.6rem, 16px);
+      font-weight: 700;
+    }
     &-cta {
-      width: 40%;
+      width: max(40%, max(18rem, 160px));
       display: flex;
       flex-direction: column;
-      gap: 1.2rem;
+      gap: max(1.2rem, 6px);
       align-items: flex-start;
+      @media screen and (max-width: vars.$bp-sm) {
+        width: 100%;
+      }
       span {
         color: rgba(255, 255, 255, 0.8);
       }
@@ -168,21 +178,19 @@ const showContactsModal = useState('showContactsModal');
     background: linear-gradient(180deg, rgba(211, 135, 255, 0) 0%, rgba(211, 135, 255, 0.05) 100%);
     backdrop-filter: blur(50px);
     display: flex;
-    padding: 2.4rem;
+    padding: max(2.4rem, 16px);
     flex-direction: column;
     justify-content: space-between;
-    gap: 6.4rem;
-  }
-  &__bottom {
-    display: flex;
-    flex-direction: column;
-    gap: 6.4rem;
+    gap: 24px;
   }
   &__right {
     position: relative;
     display: flex;
     &-map {
       flex: 1;
+      @media screen and (max-width: vars.$bp-md) {
+        aspect-ratio: 27.4/18;
+      }
     }
     &-icon {
       position: absolute;
@@ -190,16 +198,15 @@ const showContactsModal = useState('showContactsModal');
       left: 50%;
       translate: -50% -50%;
       z-index: 1;
-      width: 5.6rem;
+      width: max(5.6rem, 48px);
       fill: none;
     }
   }
   &__cta {
     display: flex;
-    gap: 1.6rem;
-    height: 5rem;
+    gap: max(1.6rem, 16px);
     &-tg {
-      width: 5rem;
+      width: max(5rem, 50px);
     }
     & > *:last-child {
       flex: 1;

@@ -46,7 +46,7 @@ const showContactsModal = useState('showContactsModal', () => false);
 <style lang="scss" scoped>
 .success-modal {
   display: flex;
-  width: max(30%, 320px);
+  width: max(30%, 350px);
   padding: max(2.4rem, 24px);
   flex-direction: column;
   justify-content: center;
@@ -63,6 +63,10 @@ const showContactsModal = useState('showContactsModal', () => false);
   backdrop-filter: blur(10px);
   font-family: vars.$font-nunito-sans;
   transition: all 0.5s;
+  color: #fff;
+  @media screen and (max-width: vars.$bp-sm) {
+    width: 86%;
+  }
   &.hidden {
     opacity: 0;
     pointer-events: none;

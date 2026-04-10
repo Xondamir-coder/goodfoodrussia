@@ -263,11 +263,11 @@ $track-height: max(0.8rem, 8px);
 
   &__labels {
     display: flex;
-    gap: 1.2rem;
+    gap: max(1.2rem, 12px);
   }
   &__field {
     display: flex;
-    height: max(5rem, 42px);
+    height: max(5rem, 50px);
     padding-inline: max(1.6rem, 16px);
     justify-content: center;
     align-items: center;

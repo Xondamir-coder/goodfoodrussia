@@ -1,43 +1,45 @@
 <template>
-  <Transition name="appear">
-    <div v-if="showContactsModal" class="modal-container" @click.self="showContactsModal = false">
-      <div :class="{ hidden: success }" class="modal">
-        <h2 class="modal__title">
-          {{ $t('contactsModal.title') }}
-        </h2>
-        <form class="modal__form" @submit.prevent="submitForm">
-          <div v-for="(row, i) in rows" :key="i" class="modal__row">
-            <label :for="`form-input-${i}`" class="modal__row-label">
-              {{ row.label }}
-            </label>
-            <input
-              v-model="row.val.value"
-              :required="row.required"
-              :type="row.type"
-              class="modal__row-input"
-              :placeholder="row.placeholder"
-            />
-          </div>
-          <p class="modal__form-text">
-            {{ $t('contactsModal.text') }}
-          </p>
-          <div :class="{ loading: isLoading }" class="modal__form-container">
-            <UiBaseButton
-              :text="$t('send')"
-              variant="white"
-              class="modal__form-button"
-              :disabled="isLoading"
-            />
-            <UiSpinLoader />
-          </div>
-        </form>
-        <button class="modal__close" @click="showContactsModal = false">
-          <IconsClose class="modal__close-icon" />
-        </button>
+  <Teleport to="body">
+    <Transition name="appear">
+      <div v-if="showContactsModal" class="modal-container" @click.self="showContactsModal = false">
+        <div :class="{ hidden: success }" class="modal">
+          <h2 class="modal__title">
+            {{ $t('contactsModal.title') }}
+          </h2>
+          <form class="modal__form" @submit.prevent="submitForm">
+            <div v-for="(row, i) in rows" :key="i" class="modal__row">
+              <label :for="`form-input-${i}`" class="modal__row-label">
+                {{ row.label }}
+              </label>
+              <input
+                v-model="row.val.value"
+                :required="row.required"
+                :type="row.type"
+                class="modal__row-input"
+                :placeholder="row.placeholder"
+              />
+            </div>
+            <p class="modal__form-text">
+              {{ $t('contactsModal.text') }}
+            </p>
+            <div :class="{ loading: isLoading }" class="modal__form-container">
+              <UiBaseButton
+                :text="$t('send')"
+                variant="white"
+                class="modal__form-button"
+                :disabled="isLoading"
+              />
+              <UiSpinLoader />
+            </div>
+          </form>
+          <button class="modal__close" @click="showContactsModal = false">
+            <IconsClose class="modal__close-icon" />
+          </button>
+        </div>
+        <UiSuccessModal :class="{ hidden: !success }" />
       </div>
-      <UiSuccessModal :class="{ hidden: !success }" />
-    </div>
-  </Transition>
+    </Transition>
+  </Teleport>
 </template>
 
 <script setup>
@@ -112,12 +114,16 @@ const rows = [
       rgba(0, 98, 255, 0) 100%
     ),
     rgba(0, 28, 73, 0.8);
+  color: #fff;
   backdrop-filter: blur(10px);
   font-size: max(1.4rem, 14px);
-  width: max(42%, 500px);
+  width: max(42%, 400px);
   font-family: vars.$font-nunito-sans;
   position: relative;
   transition: all 0.5s;
+  @media screen and (max-width: vars.$bp-sm) {
+    width: 100%;
+  }
   &.hidden {
     opacity: 0;
     pointer-events: none;

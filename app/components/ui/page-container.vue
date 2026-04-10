@@ -20,7 +20,7 @@
 
 <script setup>
 const sortID = ref(0);
-const activePage = ref(0);
+const activePage = ref(1);
 
 const setActivePage = value => {
   activePage.value = value;
@@ -65,6 +65,7 @@ defineProps({
     display: flex;
     gap: max(2.4rem, 12px);
     @media screen and (max-width: vars.$bp-sm) {
+      max-width: 100%;
       overflow-x: auto;
       scrollbar-width: 0;
       &::-webkit-scrollbar {

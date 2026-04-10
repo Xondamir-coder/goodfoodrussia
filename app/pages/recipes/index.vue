@@ -38,6 +38,9 @@ const { recipes } = useApiStore();
       top: 15%;
       transform: rotate(118.894deg);
     }
+    @media screen and (max-width: vars.$bp-md) {
+      display: none;
+    }
   }
   &-container {
     display: flex;

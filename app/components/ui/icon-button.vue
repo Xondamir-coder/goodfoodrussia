@@ -23,7 +23,7 @@ defineEmits(['click']);
   }
   & > * {
     fill: #fff;
-    width: 57%;
+    width: 50%;
   }
 }
 </style>
