@@ -46,8 +46,8 @@ const media = [
   }
   &__list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(max(300px, 37.6rem), 1fr));
-    gap: 1.2rem;
+    grid-template-columns: repeat(auto-fill, minmax(max(250px, 37.6rem), 1fr));
+    gap: max(1.2rem, 12px);
     transition:
       opacity 0.5s,
       translate 0.5s;
@@ -58,10 +58,13 @@ const media = [
       translate: 0 25px;
     }
     &:nth-child(2) {
-      gap: 0;
-      & > *:nth-child(3n - 2) {
-        & > * {
-          border-left: 1px solid rgba(255, 255, 255, 0.1);
+      @media screen and (min-width: vars.$bp-md) {
+        gap: 0;
+
+        & > *:nth-child(3n - 2) {
+          & > * {
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+          }
         }
       }
     }

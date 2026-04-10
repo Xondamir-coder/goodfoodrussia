@@ -37,28 +37,31 @@ const labels = [data.date, data.city];
 .card {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: max(1.6rem, 16px);
   font-family: vars.$font-nunito-sans;
-  border-radius: 1.5rem;
+  border-radius: max(1.5rem, 12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: linear-gradient(180deg, rgba(211, 135, 255, 0) 0%, rgba(211, 135, 255, 0.05) 100%);
   backdrop-filter: blur(50px);
-  padding-top: 1.6rem;
+  padding-top: max(1.6rem, 12px);
   &__top {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: max(0.8rem, 8px);
   }
   &__banner {
-    border-radius: 1.2rem;
+    border-radius: max(1.2rem, 8px);
     aspect-ratio: 34.4/18.1;
+    @media screen and (max-width: vars.$bp-sm) {
+      aspect-ratio: 24.4/14;
+    }
   }
   &__container {
     flex: 1;
-    padding-inline: 1.6rem;
+    padding-inline: max(1.6rem, 12px);
     display: grid;
     grid-auto-rows: 1fr max-content max-content;
-    gap: 1.6rem;
+    gap: max(1.6rem, 16px);
   }
   &__labels {
     display: flex;
@@ -77,17 +80,17 @@ const labels = [data.date, data.city];
     }
   }
   &__text {
-    font-size: 1.4rem;
+    font-size: max(1.4rem, 12px);
     line-height: 135%;
     opacity: 0.5;
   }
   &__title {
-    font-size: 2.4rem;
+    font-size: max(2.4rem, 14px);
     font-weight: 700;
   }
   &__button {
-    height: 5rem;
-    padding: 0 2.4rem;
+    height: max(5rem, 42px);
+    padding-inline: max(2.4rem, 24px);
     border-top: 1px solid rgba(255, 255, 255, 0.12);
   }
 }

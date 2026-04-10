@@ -52,6 +52,9 @@ defineProps({
     justify-content: space-between;
     gap: 16px;
     flex-wrap: wrap;
+    @media screen and (max-width: vars.$bp-sm) {
+      flex-direction: column;
+    }
   }
   &__title {
     font-size: max(2.6rem, 20px);
