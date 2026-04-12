@@ -11,6 +11,7 @@
             : $route.path.slice(1)
     "
   >
+    <div id="layout-teleport" />
     <LayoutHeader />
     <div class="layout__patterns">
       <!-- header -->
@@ -35,7 +36,7 @@
     <div class="layout__slot">
       <slot />
     </div>
-    <div class="layout__shadows" />
+    <div v-if="!$route.path.includes('services')" class="layout__shadows" />
   </div>
 </template>
 

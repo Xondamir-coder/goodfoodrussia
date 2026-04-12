@@ -5,21 +5,21 @@
       :srcset="`/images/576/${splittedName}.avif`"
       type="image/avif"
       media="(max-width: 575px)"
-    >
+    />
 
     <!-- 576–1023 -->
     <source
       :srcset="`/images/1024/${splittedName}.avif`"
       type="image/avif"
       media="(min-width: 576px) and (max-width: 1023px)"
-    >
+    />
 
     <!-- ≥1024 -->
     <source
       :srcset="`/images/1440/${splittedName}.avif`"
       type="image/avif"
       media="(min-width: 1024px)"
-    >
+    />
 
     <!-- Fallback compressed -->
     <img
@@ -27,7 +27,7 @@
       :alt="alt"
       :class="imageClass"
       class="my-picture__image"
-    >
+    />
   </picture>
 </template>
 
@@ -54,7 +54,9 @@ const splittedName = computed(() => props.src.replace(/\.[^/.]+$/, ''));
 .my-picture {
   display: flex;
   overflow: hidden;
-  max-width: 100%;
+  @media screen and (min-width: vars.$bp-sm) {
+    max-width: 100%;
+  }
   & > *:last-child {
     flex: 1;
   }

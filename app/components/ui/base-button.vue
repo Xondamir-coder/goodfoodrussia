@@ -33,11 +33,12 @@ defineProps({
   justify-content: center;
   gap: max(1rem, 10px);
   align-items: center;
+  fill: #fff;
+  --icon-size: max(1.6rem, 14px);
 
   &__icon {
     @include mix.flex-center;
-    width: max(1.6rem, 14px);
-    fill: #fff;
+    width: var(--icon-size);
   }
 
   &--blue {
@@ -51,6 +52,7 @@ defineProps({
   }
 
   &--white {
+    fill: #000;
     background: #fff;
     color: var(--Main-Green-950, #001a0d);
   }
