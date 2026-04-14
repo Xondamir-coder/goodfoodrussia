@@ -3,9 +3,9 @@
     <div class="footer__block" />
     <div class="footer__block" />
     <div class="footer__top">
-      <UiGlassBezel class="footer__iconbox">
+      <div class="footer__iconbox">
         <IconsR class="footer__icon" />
-      </UiGlassBezel>
+      </div>
       <nav class="footer__nav">
         <NuxtLink
           v-for="link in links"
@@ -129,6 +129,7 @@ const links = computed(() =>
   }
   &__iconbox {
     @include mix.flex-center;
+    @include mix.glass-bezel;
     --gb-angle: 180deg;
     width: max(4.4rem, 44px);
     height: max(4.4rem, 44px);

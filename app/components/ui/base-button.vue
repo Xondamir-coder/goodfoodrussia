@@ -1,5 +1,5 @@
 <template>
-  <button class="button" :class="`button--${variant}`">
+  <button class="button" :class="`button--${variant}`" @click="$emit('click')">
     <span>{{ text }}</span>
     <div v-if="$slots.default" class="button__icon">
       <slot />
@@ -8,6 +8,7 @@
 </template>
 
 <script setup>
+defineEmits(['click']);
 defineProps({
   variant: {
     type: String,
@@ -46,8 +47,8 @@ defineProps({
   }
 
   &--glass {
+    @include mix.glass-bezel;
     color: var(--Greyscale-200, #f1f2f4);
-    border: 1px solid rgba(255, 255, 255, 0.6);
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
   }
 

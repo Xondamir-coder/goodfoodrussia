@@ -1,6 +1,6 @@
 <template>
   <main class="home">
-    <component :is="slide" v-for="(slide, i) in slides" v-show="i === currentSlide" :key="i" />
+    <component :is="slide" v-for="(slide, i) in slides" v-show="i === +query?.slide" :key="i" />
     <UiHomeNavbar />
     <!-- <UiPicture src="home-bg.png" alt="background" class="home__bg" /> -->
   </main>
@@ -17,18 +17,15 @@ import {
   UiHomeSlide7
 } from '#components';
 
+const route = useRoute();
 const router = useRouter();
-const { query } = useRoute();
 
-// 7 slides: 0 - 6
-const currentSlide = useState('currentSlide', () => +query?.slide - 1 || 0);
+const query = computed(() => route.query);
 
-watch(currentSlide, () => {
-  router.replace({
-    query: {
-      slide: currentSlide.value + 1
-    }
-  });
+onUpdated(() => {
+  if (!query.value?.slide) {
+    router.replace({ query: { slide: 0 } });
+  }
 });
 
 const slides = [

@@ -15,6 +15,14 @@ const changeLang = () => {
 
 <style lang="scss" scoped>
 .header-lang {
+  @include mix.glass-bezel(
+    (
+      border-color: 90 106 138,
+      fade-start-opacity: 1,
+      angle: 150deg,
+      fade-end-pos: 50%
+    )
+  );
   display: flex;
   padding: max(1rem, 10px);
   justify-content: center;

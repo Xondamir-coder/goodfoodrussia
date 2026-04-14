@@ -52,6 +52,14 @@ const links = computed(() =>
       display: none;
     }
     &-link {
+      @include mix.glass-bezel(
+        (
+          border-color: 156 193 255,
+          fade-start-opacity: 0.85,
+          fade-end-pos: 50%,
+          angle: 160deg
+        )
+      );
       color: #e5efff;
       font-size: max(1.4rem, 14px);
       font-weight: 500;
@@ -60,6 +68,11 @@ const links = computed(() =>
       border-radius: max(9.9rem, 99px);
       overflow: hidden;
       display: flex;
+      &::before {
+        opacity: 0;
+        transition: opacity 0.4s;
+      }
+
       span {
         z-index: 1;
       }
@@ -77,6 +90,9 @@ const links = computed(() =>
           linear-gradient(180deg, rgba(170, 205, 255, 0) 0%, rgba(0, 217, 255, 0.3) 100%),
           rgba(0, 67, 255, 0.2);
         transform-origin: bottom;
+      }
+      &.active::before {
+        opacity: 1;
       }
       &.active::after {
         scale: 1;

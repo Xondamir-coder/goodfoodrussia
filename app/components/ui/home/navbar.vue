@@ -4,8 +4,8 @@
       v-for="(item, i) in items"
       :key="i"
       class="navbar__button"
-      :class="{ active: i === currentSlide }"
-      @click="currentSlide = i"
+      :class="{ active: i === +query?.slide }"
+      @click="changeSlide(i)"
     >
       <span class="navbar__button-label">{{ item.label }}</span>
       <component :is="item.icon" class="navbar__button-icon" />
@@ -24,6 +24,17 @@ import {
   IconsRocket
 } from '#components';
 
+const route = useRoute();
+const router = useRouter();
+
+const query = computed(() => route.query);
+
+const changeSlide = newIndex => {
+  router.replace({
+    query: { slide: newIndex }
+  });
+};
+
 const icons = [
   IconsHome,
   IconsFileOpen,
@@ -34,8 +45,6 @@ const icons = [
   IconsRocket
 ];
 const items = useMapRt('home.navbar').map((l, i) => ({ label: l, icon: icons[i] }));
-
-const currentSlide = useState('currentSlide');
 </script>
 
 <style lang="scss" scoped>

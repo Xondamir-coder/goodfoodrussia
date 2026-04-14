@@ -39,7 +39,7 @@
         <p class="services__header-text">{{ $t('services.reasons.text') }}</p>
       </div>
       <div class="reasons__cards">
-        <UiGlassBezel v-for="card in reasonsCards" :key="card.title" class="reasons__card">
+        <div v-for="card in reasonsCards" :key="card.title" class="reasons__card">
           <div class="reasons__card-left">
             <component :is="card.icon" class="reasons__card-left-icon" />
             <h3 class="reasons__card-left-title">
@@ -49,7 +49,7 @@
           <p class="reasons__card-text">
             {{ card.text }}
           </p>
-        </UiGlassBezel>
+        </div>
       </div>
     </section>
     <section class="process services__section">
@@ -352,10 +352,14 @@ const processCards = useMapRt('services.process.cards').map((el, i) => ({
     gap: max(1.2rem, 12px);
   }
   &__card {
-    --gb-border-color: 135 217 255;
-    --gb-fade-start-opacity: 0.3;
-    --gb-angle: 170deg;
-    --gb-fade-end-pos: 70%;
+    @include mix.glass-bezel(
+      (
+        border-color: 135 217 255,
+        fade-start-opacity: 0.3,
+        angle: 170deg,
+        fade-end-pos: 70%
+      )
+    );
 
     aspect-ratio: 113.6/18.2;
     display: flex;

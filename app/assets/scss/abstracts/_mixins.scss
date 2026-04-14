@@ -1,5 +1,64 @@
 @use './variables' as vars;
 
+@use 'sass:map';
+@use 'sass:string';
+
+@mixin glass-bezel($config: ()) {
+  $defaults: (
+    border-width: 1px,
+    border-color: 255 255 255,
+    fade-start-opacity: 0.45,
+    fade-end-opacity: 0,
+    fade-start-pos: 0%,
+    fade-end-pos: 100%,
+    angle: 180deg
+  );
+
+  $cfg: map.merge($defaults, $config);
+
+  $color: map.get($cfg, border-color);
+  $start-opacity: map.get($cfg, fade-start-opacity);
+  $end-opacity: map.get($cfg, fade-end-opacity);
+
+  // We wrap the entire rgb() call in quotes and then unquote it.
+  // This prevents the Sass compiler from trying to process the
+  // space-separated "255 255 255" as a single argument.
+  $start-color: string.unquote('rgb(#{$color} / #{$start-opacity})');
+  $end-color: string.unquote('rgb(#{$color} / #{$end-opacity})');
+
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: map.get($cfg, border-width);
+
+    background: linear-gradient(
+      map.get($cfg, angle),
+      #{$start-color} map.get($cfg, fade-start-pos),
+      #{$end-color} map.get($cfg, fade-end-pos)
+    );
+
+    pointer-events: none;
+
+    // This mask logic hides the background of the pseudo-element
+    // everywhere EXCEPT where the padding (the border) exists.
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  // Ensure children stay above the absolute-positioned bezel
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
 @mixin home-slide {
   padding-inline: var(--spacing-inline);
   display: flex;
