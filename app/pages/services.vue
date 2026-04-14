@@ -38,8 +38,8 @@
         </h2>
         <p class="services__header-text">{{ $t('services.reasons.text') }}</p>
       </div>
-      <ul class="reasons__cards">
-        <li v-for="card in reasonsCards" :key="card.title" class="reasons__card">
+      <div class="reasons__cards">
+        <UiGlassBezel v-for="card in reasonsCards" :key="card.title" class="reasons__card">
           <div class="reasons__card-left">
             <component :is="card.icon" class="reasons__card-left-icon" />
             <h3 class="reasons__card-left-title">
@@ -49,8 +49,8 @@
           <p class="reasons__card-text">
             {{ card.text }}
           </p>
-        </li>
-      </ul>
+        </UiGlassBezel>
+      </div>
     </section>
     <section class="process services__section">
       <div class="services__header">
@@ -75,34 +75,34 @@
               {{ $t('step')[0].toUpperCase() + $t('step').slice(1) }} {{ i + 1 }}
             </div>
           </li>
+          <svg
+            v-for="i in 3"
+            :key="i"
+            class="process__arrow"
+            viewBox="0 0 233 60"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              opacity="0.1"
+              d="M231.472 20.6151C231.999 20.4494 232.292 19.888 232.126 19.3611L229.426 10.7757C229.26 10.2488 228.699 9.95605 228.172 10.1217C227.645 10.2874 227.352 10.8488 227.518 11.3757L229.918 19.0072L222.286 21.4072C221.76 21.5729 221.467 22.1343 221.632 22.6612C221.798 23.188 222.36 23.4808 222.886 23.3151L231.472 20.6151ZM0.671875 58.6618L1.34423 59.402C17.4796 44.7461 51.7191 22.9456 93.5121 10.8648C135.292 -1.21229 184.508 -3.54614 230.709 20.5478L231.172 19.6611L231.634 18.7744C184.835 -5.63128 135.052 -3.22478 92.9567 8.94342C50.8747 21.1078 16.3642 43.0574 -0.000479579 57.9215L0.671875 58.6618Z"
+              fill="url(#paint0_linear_491_2020)"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_491_2020"
+                x1="0.671875"
+                y1="26.7347"
+                x2="219.672"
+                y2="-0.335974"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="white" stop-opacity="0" />
+                <stop offset="1" stop-color="white" />
+              </linearGradient>
+            </defs>
+          </svg>
         </ul>
-        <svg
-          v-for="i in 3"
-          :key="i"
-          class="process__arrow"
-          viewBox="0 0 233 60"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            opacity="0.1"
-            d="M231.472 20.6151C231.999 20.4494 232.292 19.888 232.126 19.3611L229.426 10.7757C229.26 10.2488 228.699 9.95605 228.172 10.1217C227.645 10.2874 227.352 10.8488 227.518 11.3757L229.918 19.0072L222.286 21.4072C221.76 21.5729 221.467 22.1343 221.632 22.6612C221.798 23.188 222.36 23.4808 222.886 23.3151L231.472 20.6151ZM0.671875 58.6618L1.34423 59.402C17.4796 44.7461 51.7191 22.9456 93.5121 10.8648C135.292 -1.21229 184.508 -3.54614 230.709 20.5478L231.172 19.6611L231.634 18.7744C184.835 -5.63128 135.052 -3.22478 92.9567 8.94342C50.8747 21.1078 16.3642 43.0574 -0.000479579 57.9215L0.671875 58.6618Z"
-            fill="url(#paint0_linear_491_2020)"
-          />
-          <defs>
-            <linearGradient
-              id="paint0_linear_491_2020"
-              x1="0.671875"
-              y1="26.7347"
-              x2="219.672"
-              y2="-0.335974"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stop-color="white" stop-opacity="0" />
-              <stop offset="1" stop-color="white" />
-            </linearGradient>
-          </defs>
-        </svg>
       </div>
     </section>
     <section class="cta">
@@ -264,32 +264,45 @@ const processCards = useMapRt('services.process.cards').map((el, i) => ({
     width: max(23.05rem, 200px);
 
     &:first-of-type {
-      border: 1px solid yellow;
       top: 2.5rem;
       left: 13%;
+
+      @media screen and (max-width: vars.$bp-lg) {
+        left: 70px;
+        top: 7%;
+      }
     }
     &:nth-of-type(2) {
-      border: 1px solid red;
       top: -10%;
       right: 18%;
+      @media screen and (max-width: vars.$bp-lg) {
+        right: auto;
+        top: 0;
+        left: 526px;
+      }
     }
     &:last-of-type {
-      border: 1px solid blue;
-      bottom: -9%;
+      bottom: -3%;
       left: 50%;
       transform: translateX(-50%) rotateX(180deg) rotateZ(15deg);
+      @media screen and (max-width: vars.$bp-lg) {
+        bottom: 3%;
+        left: 319px;
+        transform: rotateX(180deg) rotateZ(15deg);
+      }
     }
-  }
-  &__container {
-    position: relative;
   }
   &__cards {
     display: grid;
     align-items: flex-start;
     grid-template-columns: repeat(4, 1fr);
     gap: max(1.6rem, 12px);
+    position: relative;
 
     @media screen and (max-width: vars.$bp-lg) {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      overflow-y: hidden;
       @include mix.grid-scroll(220px);
     }
   }
@@ -339,13 +352,17 @@ const processCards = useMapRt('services.process.cards').map((el, i) => ({
     gap: max(1.2rem, 12px);
   }
   &__card {
+    --gb-border-color: 135 217 255;
+    --gb-fade-start-opacity: 0.3;
+    --gb-angle: 170deg;
+    --gb-fade-end-pos: 70%;
+
     aspect-ratio: 113.6/18.2;
     display: flex;
     justify-content: space-between;
     padding: max(2.4rem, 16px);
     gap: 12px;
     border-radius: max(2rem, 16px);
-    border: 1px solid rgba(135, 217, 255, 0.6);
     background: linear-gradient(180deg, rgba(0, 28, 73, 0.6) 0%, rgba(0, 67, 175, 0.19) 100%);
     backdrop-filter: blur(25px);
     @media screen and (max-width: vars.$bp-sm) {

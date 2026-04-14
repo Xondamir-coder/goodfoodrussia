@@ -37,6 +37,7 @@
       <slot />
     </div>
     <div v-if="!$route.path.includes('services')" class="layout__shadows" />
+    <LayoutFooter v-if="!$route.name.includes('index')" />
   </div>
 </template>
 
@@ -164,6 +165,7 @@
     }
     &--footer {
       bottom: var(--spacing-v-bottom);
+      // display: none;
     }
     &--header {
       &:first-child {

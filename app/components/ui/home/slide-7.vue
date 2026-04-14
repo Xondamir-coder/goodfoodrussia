@@ -11,66 +11,14 @@
         <IconsRightArrow />
       </UiBaseButton>
     </div>
-    <div class="slide__container">
-      <div class="slide__block" />
-      <div class="slide__block" />
-      <div class="slide__footer">
-        <div class="slide__footer-iconbox">
-          <IconsR class="slide__footer-icon" />
-        </div>
-        <nav class="slide__footer-nav">
-          <NuxtLink
-            v-for="link in links"
-            :key="link.path"
-            :to="$localePath(link.path)"
-            active-class="active"
-            class="slide__footer-nav-link"
-          >
-            {{ link.name }}
-          </NuxtLink>
-        </nav>
-        <div class="slide__footer-socials">
-          <a
-            v-for="icon in icons"
-            :key="icon"
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="slide__footer-social"
-          >
-            <component :is="icon" class="slide__footer-social-icon" />
-          </a>
-        </div>
-      </div>
-      <div class="slide__legal">
-        <p>
-          {{
-            $t('copyright', {
-              year: new Date().getFullYear()
-            })
-          }}
-        </p>
-      </div>
-    </div>
+    <LayoutFooter class="home" />
     <UiPicture src="veggies-flying.png" alt="veggies" class="slide__pic" />
     <UiPicture src="veggies-flying.png" alt="veggies" class="slide__pic" />
     <UiPicture src="meat-burning.png" alt="meats" class="slide__pic" />
   </div>
 </template>
 
-<script setup>
-import { IconsFacebook, IconsLinkedin, IconsX } from '#components';
-
-const linkPaths = ['/', '/about', '/products', '/services', '/recipes', '/media', '/contacts'];
-const icons = [IconsX, IconsFacebook, IconsLinkedin];
-
-const links = computed(() =>
-  useMapRt('header.links').map((el, i) => ({
-    name: el,
-    path: linkPaths[i]
-  }))
-);
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
 .slide {
@@ -78,92 +26,6 @@ const links = computed(() =>
   padding-inline: 0;
   padding-bottom: 0;
   align-items: center;
-  &__block {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(217, 217, 217, 0.05);
-    backdrop-filter: blur(5px);
-    &:first-child {
-      grid-area: block-1;
-    }
-    &:nth-child(2) {
-      grid-area: block-2;
-    }
-  }
-  &__legal {
-    grid-area: legal;
-    display: flex;
-    padding: 0.6rem 2.4rem;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    color: rgba(255, 255, 255, 0.5);
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: 500;
-    line-height: 128%;
-    letter-spacing: 0.012rem;
-  }
-  &__container {
-    align-self: stretch;
-    z-index: 1;
-    display: grid;
-    grid-template-areas:
-      'block-1 content block-2'
-      '. legal .';
-    grid-template-columns: 1fr 69% 1fr;
-  }
-  &__footer {
-    grid-area: content;
-    display: flex;
-    padding: 1rem 2.4rem;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.6rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(15px);
-    &-nav {
-      display: flex;
-      gap: 1.8rem;
-      &-link {
-        font-family: vars.$font-nunito-sans;
-        font-size: 1.4rem;
-        font-weight: 400;
-        letter-spacing: 0.014rem;
-      }
-    }
-    &-iconbox {
-      @include mix.flex-center;
-      width: 4.4rem;
-      height: 4.4rem;
-      border-radius: 1rem;
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
-    }
-    &-icon {
-      width: 45.4545%;
-    }
-    &-socials {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-    }
-    &-social {
-      @include mix.flex-center;
-      width: 3.2rem;
-      height: 3.2rem;
-      &-icon {
-        width: 62.5%;
-        opacity: 0.5;
-      }
-    }
-  }
   &__pic {
     position: absolute;
 

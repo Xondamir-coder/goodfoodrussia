@@ -66,11 +66,11 @@ const { data } = defineProps({
 <style lang="scss">
 .detailed-page {
   padding-inline: var(--spacing-inline);
-  padding-top: 2.4rem;
-  padding-bottom: 13.6rem;
+  padding-top: 1.2rem;
   display: grid;
   grid-template-columns: 2.5375fr 1fr;
   gap: 2rem;
+  padding-bottom: 1.6rem;
   h3 {
     font-size: 2.4rem;
     font-weight: 700;
