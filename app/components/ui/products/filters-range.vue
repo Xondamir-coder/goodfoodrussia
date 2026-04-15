@@ -266,6 +266,14 @@ $track-height: max(0.8rem, 8px);
     gap: max(1.2rem, 12px);
   }
   &__field {
+    @include mix.glass-bezel(
+      (
+        start-opacity: 0.45,
+        end-opacity: 0,
+        mid-start-pos: 90%,
+        angle: 180deg
+      )
+    );
     display: flex;
     height: max(5rem, 50px);
     padding-inline: max(1.6rem, 16px);
@@ -275,7 +283,6 @@ $track-height: max(0.8rem, 8px);
     font-size: max(1.6rem, 16px);
     flex: 1 0 0;
     border-radius: max(0.8rem, 8px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
     background: rgba(255, 255, 255, 0.08);
     transition:
       background 0.3s,

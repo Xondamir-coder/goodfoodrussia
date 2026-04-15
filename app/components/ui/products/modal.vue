@@ -357,7 +357,12 @@ watch(
         font-size: max(1.4rem, 14px);
         font-weight: 500;
         &:first-child {
-          border: 1px solid rgba(0, 217, 255, 0.3);
+          border: none;
+          @include mix.glass-bezel(
+            (
+              border-color: 155 216 255
+            )
+          );
           background:
             linear-gradient(180deg, rgba(170, 205, 255, 0) 0%, rgba(0, 217, 255, 0.3) 100%),
             rgba(0, 67, 255, 0.2);

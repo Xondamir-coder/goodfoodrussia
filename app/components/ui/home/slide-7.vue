@@ -7,9 +7,10 @@
       <p class="slide__box-text">
         {{ $t('home.slide-7.text') }}
       </p>
-      <UiBaseButton :text="$t('readMore')" variant="glass">
+      <UiBaseButton :text="$t('readMore')" variant="glass" class="slide__box-button">
         <IconsRightArrow />
       </UiBaseButton>
+      <img src="/images/bg.png" alt="bg" class="slide__box-bg" />
     </div>
     <LayoutFooter class="home" />
     <UiPicture src="veggies-flying.png" alt="veggies" class="slide__pic" />
@@ -26,6 +27,7 @@
   padding-inline: 0;
   padding-bottom: 0;
   align-items: center;
+  gap: 0;
   &__pic {
     position: absolute;
 
@@ -44,12 +46,21 @@
     }
     &:last-of-type {
       width: 100rem;
-      top: -5%;
+      top: 5%;
       left: 50%;
       translate: -50%;
     }
   }
   &__box {
+    @include mix.glass-bezel(
+      (
+        border-color: 51 61 97,
+        start-pos: 10%,
+        angle: 230deg,
+        mid-start-pos: 50%
+      )
+    );
+
     margin-block: auto;
     z-index: 1;
     width: 69%;
@@ -59,13 +70,32 @@
     flex-direction: column;
     align-items: center;
     border-radius: 3.2rem;
-    border: 1px solid rgba(255, 255, 255, 0);
     background: linear-gradient(
       180deg,
       rgba(0, 12, 52, 0.6) 68.26%,
       var(--Smalt-700, rgba(37, 80, 181, 0.6)) 124.64%
     );
     backdrop-filter: blur(3px);
+    position: relative;
+    overflow: hidden;
+    & > *:not(:last-child) {
+      z-index: 2;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(to bottom, #04103db7 30%, transparent 100%);
+      z-index: 1;
+    }
+    &-button {
+      min-width: 28rem;
+    }
+    &-bg {
+      position: absolute;
+      inset: 0;
+      opacity: 0.3;
+    }
     &-title {
       text-align: center;
       font-size: 3.6rem;

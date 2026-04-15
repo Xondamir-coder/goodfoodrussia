@@ -355,9 +355,9 @@ const processCards = useMapRt('services.process.cards').map((el, i) => ({
     @include mix.glass-bezel(
       (
         border-color: 135 217 255,
-        fade-start-opacity: 0.3,
-        angle: 170deg,
-        fade-end-pos: 70%
+        start-opacity: 0.3,
+        end-opacity: 0,
+        mid-start-pos: 80%
       )
     );
 

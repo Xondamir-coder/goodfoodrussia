@@ -17,10 +17,7 @@ const changeLang = () => {
 .header-lang {
   @include mix.glass-bezel(
     (
-      border-color: 90 106 138,
-      fade-start-opacity: 1,
-      angle: 150deg,
-      fade-end-pos: 50%
+      border-color: 90 106 138
     )
   );
   display: flex;

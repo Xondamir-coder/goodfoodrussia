@@ -47,7 +47,14 @@ defineProps({
   }
 
   &--glass {
-    @include mix.glass-bezel;
+    @include mix.glass-bezel(
+      (
+        start-opacity: 0.45,
+        end-opacity: 0,
+        mid-start-pos: 90%,
+        angle: 180deg
+      )
+    );
     color: var(--Greyscale-200, #f1f2f4);
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
   }

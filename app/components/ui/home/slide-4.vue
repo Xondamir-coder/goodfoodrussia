@@ -74,13 +74,21 @@ const cards = computed(() =>
     }
   }
   &__card {
+    @include mix.glass-bezel(
+      (
+        border-color: 255 255 255,
+        start-opacity: 0.6,
+        end-opacity: 0,
+        mid-start-pos: 80%,
+        mid-end-pos: 0%
+      )
+    );
     display: flex;
     padding: 2rem;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     border-radius: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.6);
     background: linear-gradient(180deg, rgba(13, 18, 49, 0.2) 0%, #060d56 100%);
     backdrop-filter: blur(5px);
     &-title {
@@ -102,6 +110,7 @@ const cards = computed(() =>
     }
     &-icontainer {
       @include mix.flex-center;
+      margin-bottom: 1rem;
       width: 7.2rem;
       height: 7.2rem;
       border-radius: 1.6rem;
@@ -120,9 +129,16 @@ const cards = computed(() =>
   }
   &__producer {
     @include mix.flex-center;
+    @include mix.glass-bezel(
+      (
+        border-color: 82 155 196,
+        end-opacity: 0,
+        mid-start-pos: 80%,
+        mid-end-pos: 0%
+      )
+    );
     aspect-ratio: 27.3/18;
     border-radius: 2.4rem;
-    border: 1px solid rgba(135, 217, 255, 0.6);
     background: rgba(0, 28, 73, 0.6);
     backdrop-filter: blur(25px);
     &-pic {

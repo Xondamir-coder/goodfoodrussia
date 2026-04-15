@@ -3,28 +3,28 @@
 @use 'sass:map';
 @use 'sass:string';
 
+@function rgb-alpha($color, $alpha) {
+  @return #{'rgb(' + $color + ' / ' + $alpha + ')'};
+}
+
 @mixin glass-bezel($config: ()) {
   $defaults: (
     border-width: 1px,
     border-color: 255 255 255,
-    fade-start-opacity: 0.45,
-    fade-end-opacity: 0,
-    fade-start-pos: 0%,
-    fade-end-pos: 100%,
-    angle: 180deg
+    angle: 155deg,
+
+    start-opacity: 1,
+    mid-start-opacity: 0,
+    mid-end-opacity: 0,
+    end-opacity: 1,
+
+    start-pos: 0%,
+    mid-start-pos: 35%,
+    mid-end-pos: 62%,
+    end-pos: 100%
   );
 
   $cfg: map.merge($defaults, $config);
-
-  $color: map.get($cfg, border-color);
-  $start-opacity: map.get($cfg, fade-start-opacity);
-  $end-opacity: map.get($cfg, fade-end-opacity);
-
-  // We wrap the entire rgb() call in quotes and then unquote it.
-  // This prevents the Sass compiler from trying to process the
-  // space-separated "255 255 255" as a single argument.
-  $start-color: string.unquote('rgb(#{$color} / #{$start-opacity})');
-  $end-color: string.unquote('rgb(#{$color} / #{$end-opacity})');
 
   position: relative;
 
@@ -37,14 +37,16 @@
 
     background: linear-gradient(
       map.get($cfg, angle),
-      #{$start-color} map.get($cfg, fade-start-pos),
-      #{$end-color} map.get($cfg, fade-end-pos)
+      rgb-alpha(map.get($cfg, border-color), map.get($cfg, start-opacity)) map.get($cfg, start-pos),
+      rgb-alpha(map.get($cfg, border-color), map.get($cfg, mid-start-opacity))
+        map.get($cfg, mid-start-pos),
+      rgb-alpha(map.get($cfg, border-color), map.get($cfg, mid-end-opacity))
+        map.get($cfg, mid-end-pos),
+      rgb-alpha(map.get($cfg, border-color), map.get($cfg, end-opacity)) map.get($cfg, end-pos)
     );
 
     pointer-events: none;
 
-    // This mask logic hides the background of the pseudo-element
-    // everywhere EXCEPT where the padding (the border) exists.
     -webkit-mask:
       linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
@@ -52,7 +54,6 @@
     mask-composite: exclude;
   }
 
-  // Ensure children stay above the absolute-positioned bezel
   > * {
     position: relative;
     z-index: 1;

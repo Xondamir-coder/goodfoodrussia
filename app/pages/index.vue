@@ -22,6 +22,10 @@ const router = useRouter();
 
 const query = computed(() => route.query);
 
+if (!query.value?.slide) {
+  router.replace({ query: { slide: 0 } });
+}
+
 onUpdated(() => {
   if (!query.value?.slide) {
     router.replace({ query: { slide: 0 } });

@@ -75,7 +75,7 @@ const links = computed(() =>
     .footer__top,
     .footer__bottom {
       background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(15px);
+      backdrop-filter: blur(5px);
     }
   }
   &__block {
@@ -129,7 +129,14 @@ const links = computed(() =>
   }
   &__iconbox {
     @include mix.flex-center;
-    @include mix.glass-bezel;
+    @include mix.glass-bezel(
+      (
+        start-opacity: 0.45,
+        mid-start-pos: 100%,
+        mid-end-pos: 100%,
+        angle: 180deg
+      )
+    );
     --gb-angle: 180deg;
     width: max(4.4rem, 44px);
     height: max(4.4rem, 44px);

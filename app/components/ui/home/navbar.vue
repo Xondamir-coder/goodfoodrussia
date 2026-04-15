@@ -49,6 +49,12 @@ const items = useMapRt('home.navbar').map((l, i) => ({ label: l, icon: icons[i] 
 
 <style lang="scss" scoped>
 .navbar {
+  @include mix.glass-bezel(
+    (
+      border-color: 89 96 133,
+      angle: 275deg
+    )
+  );
   width: 5rem;
   display: flex;
   padding: 0.6rem;
@@ -64,17 +70,28 @@ const items = useMapRt('home.navbar').map((l, i) => ({ label: l, icon: icons[i] 
   translate: 0 0;
   z-index: 5;
   &__button {
+    @include mix.glass-bezel(
+      (
+        border-color: 156 193 255
+      )
+    );
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 0;
-    height: 4.2rem;
     padding: 1.1rem;
+    height: 4rem;
     border-radius: 9.9rem;
     transition: background 0.4s;
     overflow: hidden;
     position: relative;
     transition: gap 1s;
     align-self: flex-end;
+    &::before {
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
     &:hover::after {
       scale: 1 0.45;
       transition-duration: 0.4s;
@@ -102,13 +119,17 @@ const items = useMapRt('home.navbar').map((l, i) => ({ label: l, icon: icons[i] 
       overflow: hidden;
     }
     &.active {
-      gap: 1rem;
-
+      &:hover {
+        gap: 1rem;
+        .navbar__button-label {
+          max-width: 100px;
+        }
+      }
+      &::before {
+        opacity: 1;
+      }
       &::after {
         scale: 1;
-      }
-      .navbar__button-label {
-        max-width: 100px;
       }
     }
   }

@@ -54,10 +54,7 @@ const links = computed(() =>
     &-link {
       @include mix.glass-bezel(
         (
-          border-color: 156 193 255,
-          fade-start-opacity: 0.85,
-          fade-end-pos: 50%,
-          angle: 160deg
+          border-color: 156 193 255
         )
       );
       color: #e5efff;

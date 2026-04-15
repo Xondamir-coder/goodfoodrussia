@@ -24,12 +24,19 @@ const model = defineModel({
 <style lang="scss" scoped>
 .checkbox {
   @include mix.flex-center;
+  @include mix.glass-bezel(
+    (
+      start-opacity: 0.45,
+      end-opacity: 0,
+      mid-start-pos: 90%,
+      angle: 180deg
+    )
+  );
   position: relative;
   width: max(1.6rem, 16px);
   height: max(1.6rem, 16px);
   flex-shrink: 0;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
-  border: 1px solid #6b708f;
   overflow: hidden;
   border-radius: max(0.4rem, 4px);
   cursor: pointer;

@@ -107,11 +107,18 @@ const cards = computed(() =>
     }
   }
   &__card {
+    @include mix.glass-bezel(
+      (
+        border-color: 82 155 196,
+        end-opacity: 0,
+        mid-start-pos: 70%,
+        mid-end-pos: 0%
+      )
+    );
     display: flex;
     flex-direction: column;
     gap: 4rem;
     border-radius: 2rem;
-    border: 1px solid rgba(135, 217, 255, 0.6);
     background: rgba(0, 28, 73, 0.6);
     backdrop-filter: blur(25px);
     padding: 2rem;
