@@ -30,6 +30,7 @@
   "telegram": "телеграм-канал",
   "date": "Дата",
   "watch": "Посмотреть",
+  "step": "step",
 
   "home": {
     "navbar": ["Главное", "Главное", "Главное", "Главное", "Главное", "Главное", "Главное"],
@@ -204,6 +205,97 @@
     "desc": "Описание",
     "ingr": "Ингредиенты",
     "method": "Способ приготовления"
+  },
+
+  "about": {
+    "hero": {
+      "title": "Promoting food industry leaders on global markets",
+      "text": "We create a space where quality products meet real business opportunity. Through our showroom and a structured process, we simplify sourcing, build trust, and turn introductions into long-term partnerships."
+    },
+    "company": {
+      "title": "About Good Food Russia.",
+      "text": "Good Food Russia is a curated platform that connects high-quality food manufacturers with distributors, retailers, and HoReCa partners across international markets. We focus on showcasing reliable brands through a structured, transparent, and efficient business model. Our goal is to simplify procurement, reduce risk, and build long-term partnerships in the food industry. We operate through a unique showroom format where products are not just displayed — they can be tested, evaluated, and prepared for real business integration."
+    },
+    "stats": [
+      "Successful product demonstrations",
+      "Trusted business partners",
+      "Industry experts",
+      "Average partner satisfaction rate"
+    ],
+    "mission": {
+      "title": "Mission.",
+      "text": "Our mission is to connect manufacturers and buyers by creating a reliable, efficient, and transparent environment for cooperation."
+    },
+    "goals": [
+      "Promote high-quality food products worldwide",
+      "Simplify product discovery and procurement",
+      "Build long-term, trust-based partnerships"
+    ],
+    "showroom": {
+      "title": "Visit our showroom",
+      "text": "Good Food Russia gives partners a chance to evaluate products in a real business setting: review the assortment, discuss supply terms, and move from interest to a confident sourcing decision faster."
+    },
+    "process": {
+      "title": "How it works",
+      "text": "We keep the process clear and practical: from the first product review to supply alignment and long-term cooperation.",
+      "steps": [
+        {
+          "title": "Select the assortment",
+          "text": "Review categories and brands that fit your market, retail format, and customer expectations."
+        },
+        {
+          "title": "Check samples",
+          "text": "Evaluate product quality, packaging, and specifications before making a commercial decision."
+        },
+        {
+          "title": "Align terms",
+          "text": "We help coordinate volumes, pricing, documents, and operational details with the manufacturer and your team."
+        },
+        {
+          "title": "Launch the partnership",
+          "text": "We move into supply execution, support onboarding, and help keep the cooperation stable over time."
+        }
+      ]
+    },
+    "team": {
+      "title": "A strong team is the foundation of our success",
+      "text": "Experienced specialists in product, logistics, and partner sales help turn brand interest into a clear and dependable business process.",
+      "photoAlt": "Good Food Russia team member {index}"
+    },
+    "documents": {
+      "title": "Documents recognized in Uzbekistan and abroad",
+      "text": "We provide a complete package of official documents and certificates aligned with international standards. They confirm product quality and help build trust with partners both in Uzbekistan and beyond."
+    },
+    "faq": {
+      "title": "Any questions?",
+      "text": "Didn’t find the information you need? Contact us and we will be glad to help you choose the right solution.",
+      "accordions": [
+        {
+          "question": "How do I place an order?",
+          "answer": "Contact our team to discuss the assortment, required volumes, and cooperation model. We will help you shortlist products and define the next steps for procurement."
+        },
+        {
+          "question": "How long does delivery take?",
+          "answer": "Timing depends on the product category, shipment volume, and destination. Once the details are aligned, we provide a clear schedule and support the process through delivery."
+        },
+        {
+          "question": "Can I place a pre-order?",
+          "answer": "Yes, we can arrange pre-orders for selected categories and align key terms for volumes and timing in advance."
+        },
+        {
+          "question": "Which payment methods are available?",
+          "answer": "Payment terms are discussed individually based on the cooperation model, order volume, and agreed commercial conditions."
+        },
+        {
+          "question": "Is there a minimum order amount?",
+          "answer": "Minimum order volume depends on the manufacturer and product category. We will advise on the best entry format once the target assortment is defined."
+        },
+        {
+          "question": "How can I contact support?",
+          "answer": "You can leave a request through the website or contact our team directly. We will get back to you to answer questions and help with the next step."
+        }
+      ]
+    }
   },
 
   "contacts": {
