@@ -1,130 +1,130 @@
 {
-  "learnMore": "Узнать больше",
-  "exploreCatalogue": "Изучить каталог",
-  "submitRequest": "Отправить заявку",
-  "readMore": "Подробнее",
+  "learnMore": "Learn more",
+  "exploreCatalogue": "Explore the catalogue",
+  "submitRequest": "Submit a request",
+  "readMore": "Read more",
   "allRecipes": "All recipes",
   "copyright": "© {year}, All Rights Reserved",
-  "from": "от",
-  "to": "до",
-  "category": "Категория",
-  "price": "Цена",
-  "brand": "Бренд",
-  "productType": "Тип продукта",
-  "volume": "Объем",
-  "weight": "Вес",
-  "ml": "мл",
-  "kg": "кг",
-  "l": "л",
-  "fatContent": "Жирность",
-  "processingType": "Тип обработки",
-  "volumes": "Объемы",
-  "similarProducts": "Похожие продукты",
-  "share": "Поделиться",
-  "address": "Адрес",
-  "tel": "Тел.",
-  "email": "Почта",
-  "socials": "Соцсети",
-  "onMap": "На карте",
-  "messageUs": "Написать нам",
-  "telegram": "телеграм-канал",
-  "date": "Дата",
-  "watch": "Посмотреть",
-  "send": "Отправить",
-  "good": "Хорошо",
-  "step": "шаг",
-  "leaveEnquiry": "Оставить заявку",
+  "from": "from",
+  "to": "to",
+  "category": "Category",
+  "price": "Price",
+  "brand": "Brand",
+  "productType": "Product type",
+  "volume": "Volume",
+  "weight": "Weight",
+  "ml": "ml",
+  "kg": "kg",
+  "l": "l",
+  "fatContent": "Fat content",
+  "processingType": "Processing type",
+  "volumes": "Volumes",
+  "similarProducts": "Similar products",
+  "share": "Share",
+  "address": "Address",
+  "tel": "Tel.",
+  "email": "Email",
+  "socials": "Socials",
+  "onMap": "On map",
+  "messageUs": "Message us",
+  "telegram": "Telegram channel",
+  "date": "Date",
+  "watch": "Watch",
+  "send": "Send",
+  "good": "OK",
+  "step": "step",
+  "leaveEnquiry": "Leave an enquiry",
 
   "home": {
-    "navbar": ["Главное", "Главное", "Главное", "Главное", "Главное", "Главное", "Главное"],
+    "navbar": ["Home", "Home", "Home", "Home", "Home", "Home", "Home"],
     "slide-1": {
-      "label": "Проверенные производители",
-      "title": "Шоурум российских производителей в Узбекистане",
-      "text": "Исследуйте продукты, бренды и регионы - создайте надежные партнерские отношения по снабжению."
+      "label": "Verified manufacturers",
+      "title": "A showroom of Russian manufacturers in Uzbekistan",
+      "text": "Explore products, brands, and regions and build reliable supply partnerships."
     },
     "slide-2": {
-      "title": "Профессиональная презентация",
-      "text": "Возможность увидеть продукты на месте, протестировать их и провести деловые встречи.",
+      "title": "Professional presentation",
+      "text": "An opportunity to see products in person, test them, and hold business meetings.",
       "cards": [
         {
-          "title": "Сотрудничество с надежными заводами и фабриками России.",
-          "text": "Мы работаем напрямую с производителями по всей России. Вы получите гарантии по цене и качеству без посредников."
+          "title": "Cooperation with reliable Russian plants and factories.",
+          "text": "We work directly with manufacturers across Russia. You get guarantees on price and quality without intermediaries."
         },
         {
-          "title": "Широкий ассортимент качественной продукции",
-          "text": "Масштабируйте свои операции с помощью наших решений на основе ИИ, спроектированных для гибкости и адаптивности. Наша архитектура растет вместе с вашим бизнесом, обеспечивая бесперочную экспансию и инновации.",
+          "title": "A wide range of quality products",
+          "text": "Scale your operations with our AI-powered solutions designed for flexibility and adaptability. Our architecture grows with your business, enabling seamless expansion and innovation.",
           "products": [
-            "Бакалея и зерновые",
-            "Кондитерские изделия",
-            "Молочная продукция",
-            "Бакалея и зерновые",
-            "Молочная продукция"
+            "Groceries and grains",
+            "Confectionery",
+            "Dairy products",
+            "Groceries and grains",
+            "Dairy products"
           ]
         },
         {
-          "title": "Почему сотрудничать с нами выгодно",
-          "text": "Прямые контракты, эксклюзивные условия и надёжная модель долгосрочного сотрудничества для вашего бизнеса.",
+          "title": "Why it is beneficial to work with us",
+          "text": "Direct contracts, exclusive terms, and a reliable long-term cooperation model for your business.",
           "items": [
-            "Прямые контракты",
-            "Эксклюзивные дистрибьюторские возможности",
-            "Модель долгосрочного сотрудничества"
+            "Direct contracts",
+            "Exclusive distribution opportunities",
+            "Long-term cooperation model"
           ]
         }
       ]
     },
     "slide-3": {
-      "title": "Избранные категории",
-      "text": "Откройте для себя готовые к экспорту российские продукты питания в ключевых категориях. От свежих продуктов до переработанных товаров — напрямую свяжитесь с надежными производителями."
+      "title": "Featured categories",
+      "text": "Discover export-ready Russian food products in key categories. From fresh produce to processed goods, connect directly with trusted manufacturers."
     },
     "slide-4": {
-      "title": "Избранные производители",
-      "text": "Соединяем вас с готовыми к экспорту производителями.",
+      "title": "Featured manufacturers",
+      "text": "Connecting you with export-ready manufacturers.",
       "coop": {
-        "title": "Как начать сотрудничество",
-        "text": "Простой и прозрачный процесс работы с производителями - от знакомства с продукцией до стабильных поставок.",
+        "title": "How to start cooperation",
+        "text": "A simple and transparent process for working with manufacturers, from discovering products to stable deliveries.",
         "cards": [
           {
-            "title": "Демонстрация продукции",
-            "text": "Вы посещаете шоурум или просматриваете каталог, знакомитесь с ассортиментом и качеством "
+            "title": "Product demonstration",
+            "text": "You visit the showroom or browse the catalogue and get familiar with the assortment and quality "
           },
           {
-            "title": "Запрос и обсуждение",
-            "text": "Оставляете заявку, получаете коммерческое предложение и обсуждаете условия сотрудничества"
+            "title": "Request and discussion",
+            "text": "You leave a request, receive a commercial offer, and discuss the terms of cooperation"
           },
           {
-            "title": "Заключение сделки",
-            "text": "Подписываем контракт и запускаем стабильные поставки на согласованных условиях."
+            "title": "Closing the deal",
+            "text": "We sign a contract and launch stable deliveries on agreed terms."
           }
         ]
       }
     },
     "slide-5": {
-      "title": "Рецепты с нашей продукцией",
-      "text": "Соединяем вас с готовыми к экспорту производителями."
+      "title": "Recipes with our products",
+      "text": "Connecting you with export-ready manufacturers."
     },
     "slide-6": {
-      "title": "Масштаб и доверие в цифрах",
-      "text": "Мы объединяем производителей и партнёров, создавая эффективную экспортную экосистему с прозрачными условиями сотрудничества.",
+      "title": "Scale and trust in numbers",
+      "text": "We bring together manufacturers and partners, creating an efficient export ecosystem with transparent cooperation terms.",
       "cards": [
         {
           "amount": "10+ ",
-          "text": "лет на рынке"
+          "text": "years on the market"
         },
         {
           "amount": "150+ ",
-          "text": "Проверенные бренды"
+          "text": "Verified brands"
         },
         {
           "amount": "50+",
-          "text": "партнёров в Узбекистане"
+          "text": "partners in Uzbekistan"
         },
         {
           "amount": "20+",
-          "text": "География поставок"
+          "text": "Supply geography"
         },
         {
           "amount": "1 000+",
-          "text": "Широкий ассортимент продуктов"
+          "text": "Wide product assortment"
         }
       ]
     },
@@ -135,39 +135,39 @@
   },
 
   "products": {
-    "title": "Продукты",
-    "sort": ["По популярности", "По наличию", "По цене"],
+    "title": "Products",
+    "sort": ["By popularity", "By availability", "By price"],
     "filters": {
-      "title": "Филтры",
-      "new": "Новинки",
-      "special": "Спецпредложения",
-      "priceRange": "Ценовой диапазон",
+      "title": "Filters",
+      "new": "New arrivals",
+      "special": "Special offers",
+      "priceRange": "Price range",
       "categories": [
         {
           "key": "drinks",
-          "val": "Напитки"
+          "val": "Drinks"
         },
         {
           "key": "milkProducts",
-          "val": "Молочные продукты"
+          "val": "Dairy products"
         },
         {
           "key": "fruitJuices",
-          "val": "Соки и нектары"
+          "val": "Juices and nectars"
         },
         {
           "key": "yogurts",
-          "val": "Йогурты и десерты"
+          "val": "Yogurts and desserts"
         },
         {
           "key": "plantMilk",
-          "val": "Растительное молоко"
+          "val": "Plant-based milk"
         }
       ],
       "brands": [
         {
           "key": "piligrim",
-          "val": "Пилигрим"
+          "val": "Piligrim"
         },
         {
           "key": "parmalat",
@@ -177,226 +177,260 @@
       "productTypes": [
         {
           "key": "water",
-          "val": "Вода"
+          "val": "Water"
         },
         {
           "key": "milk",
-          "val": "Молоко"
+          "val": "Milk"
         }
       ],
       "volumes": [
         {
           "key": "500ml",
-          "val": "500 мл"
+          "val": "500 ml"
         },
         {
           "key": "1l",
-          "val": "1 л"
+          "val": "1 l"
         }
       ]
     }
   },
 
   "recipes": {
-    "title": "Рецепты",
-    "sort": ["Все", "Завтраки", "Основные блюда", "Десерты", "Салаты", "Супы"]
+    "title": "Recipes",
+    "sort": ["All", "Breakfasts", "Main courses", "Desserts", "Salads", "Soups"]
   },
 
   "recipe": {
-    "shareTitle": "Поделиться рецептом",
-    "shareText": "Поделитесь этим рецептом с друзьями и сохраните его, чтобы приготовить позже.",
-    "desc": "Описание",
-    "ingr": "Ингредиенты",
-    "method": "Способ приготовления"
+    "shareTitle": "Share the recipe",
+    "shareText": "Share this recipe with friends and save it to cook later.",
+    "desc": "Description",
+    "ingr": "Ingredients",
+    "method": "Cooking method"
   },
 
   "about": {
     "hero": {
-      "title": "Продвигаем лидеров продовольствия на глобальные рынки",
-      "text": "Мы создаем пространство, где качественные продукты встречаются с реальными бизнес-возможностями. Через наш шоурум и структурированный подход мы упрощаем процесс закупок, строим доверие и превращаем связи в долгосрочные партнерства."
+      "title": "Promoting food industry leaders to global markets",
+      "text": "We create a space where quality products meet real business opportunities. Through our showroom and structured approach, we simplify procurement, build trust, and turn connections into long-term partnerships."
     },
     "company": {
-      "title": "О компании Good Food Russia.",
-      "text": "Good Food Russia — это курируемая платформа, соединяющая производителей высококачественных продуктов с дистрибьюторами, розничными продавцами и партнерами HoReCa на международных рынках. Мы специализируемся на демонстрации надежных брендов через структурированную, прозрачную и эффективную бизнес-модель. Наша цель — упростить процесс закупок, снизить риски и создать долгосрочные партнерства в пищевой промышленности. Мы работаем через уникальный формат шоурума, где продукты не просто представлены — их можно испытать, оценить и подготовить к реальной бизнес-интеграции."
+      "title": "About Good Food Russia.",
+      "text": "Good Food Russia is a curated platform connecting manufacturers of high-quality products with distributors, retailers, and HoReCa partners in international markets. We specialize in showcasing reliable brands through a structured, transparent, and efficient business model. Our goal is to simplify procurement, reduce risks, and build long-term partnerships in the food industry. We operate through a unique showroom format where products are not just displayed, they can be tested, evaluated, and prepared for real business integration."
     },
     "stats": [
-      "Успешные демонстрации продуктов",
-      "Надежные бизнес-партнеры",
-      "Эксперты отрасли",
-      "Средний уровень удовлетворенности партнеров"
+      "Successful product demonstrations",
+      "Reliable business partners",
+      "Industry experts",
+      "Average partner satisfaction rate"
     ],
     "mission": {
-      "title": "Миссия.",
-      "text": "Наша миссия — соединить производителей и покупателей, создавая надежную, эффективную и прозрачную среду для сотрудничества."
+      "title": "Mission.",
+      "text": "Our mission is to connect manufacturers and buyers by creating a reliable, efficient, and transparent environment for cooperation."
     },
     "goals": [
-      "Продвигайте качественные продукты питания по всему миру",
-      "Упростите поиск и закупку продуктов",
-      "Создавайте долгосрочные, доверительные партнерства"
+      "Promote quality food products worldwide",
+      "Simplify product sourcing and procurement",
+      "Build long-term, trust-based partnerships"
     ],
     "showroom": {
-      "title": "Посетите наш шоурум",
-      "text": "Площадка Good Food Russia помогает оценить продукт не по каталогу, а в реальной среде: познакомиться с ассортиментом, обсудить детали поставок и быстрее принять решение о сотрудничестве."
+      "title": "Visit our showroom",
+      "text": "The Good Food Russia platform helps you evaluate a product not from a catalogue, but in a real environment: get acquainted with the assortment, discuss supply details, and make faster cooperation decisions."
     },
     "process": {
-      "title": "Как это работает",
-      "text": "Мы делаем процесс простым и прозрачным: от первого знакомства с продукцией до согласования поставок и долгосрочного партнерства.",
+      "title": "How it works",
+      "text": "We make the process simple and transparent, from the first introduction to products to supply coordination and long-term partnership.",
       "steps": [
         {
-          "title": "Выбор ассортимента",
-          "text": "Изучаете категории и бренды, которые подходят вашему рынку, формату торговли и ожиданиям клиентов."
+          "title": "Assortment selection",
+          "text": "You explore categories and brands that fit your market, sales format, and customer expectations."
         },
         {
-          "title": "Проверка образцов",
-          "text": "Оцениваете качество, упаковку и характеристики продукции до принятия коммерческого решения."
+          "title": "Sample review",
+          "text": "You evaluate product quality, packaging, and specifications before making a commercial decision."
         },
         {
-          "title": "Переговоры и условия",
-          "text": "Согласовываем объемы, цены, документы и операционные детали вместе с производителем и вашей командой."
+          "title": "Negotiations and terms",
+          "text": "We align volumes, prices, documents, and operational details together with the manufacturer and your team."
         },
         {
-          "title": "Запуск партнерства",
-          "text": "Переходим к поставкам, сопровождаем интеграцию продукта и поддерживаем стабильную совместную работу."
+          "title": "Partnership launch",
+          "text": "We move to deliveries, support product integration, and maintain stable ongoing cooperation."
         }
       ]
     },
     "team": {
-      "title": "Сильная команда — основа нашего успеха",
-      "text": "Опытные специалисты по продукту, логистике и партнерским продажам помогают превращать интерес к бренду в понятный и надежный бизнес-процесс.",
-      "photoAlt": "Команда Good Food Russia, фото {index}"
+      "title": "A strong team is the foundation of our success",
+      "text": "Experienced specialists in product, logistics, and partner sales help turn brand interest into a clear and reliable business process.",
+      "photoAlt": "Good Food Russia team, photo {index}",
+      "items": [
+        {
+          "name": "Jasur Karimov",
+          "job": "Head of Development"
+        },
+        {
+          "name": "Sofia Mikhailova",
+          "job": "Brand Partnerships Manager"
+        },
+        {
+          "name": "Timur Sadykov",
+          "job": "Export Operations Lead"
+        },
+        {
+          "name": "Bekzod Tursunov",
+          "job": "Supply Chain Coordinator"
+        },
+        {
+          "name": "Elena Voronina",
+          "job": "Quality Assurance Specialist"
+        },
+        {
+          "name": "Rustam Kamilov",
+          "job": "B2B Sales Manager"
+        },
+        {
+          "name": "Alisher Yuldashev",
+          "job": "Logistics Analyst"
+        },
+        {
+          "name": "Nodir Akhmedov",
+          "job": "Procurement Specialist"
+        }
+      ]
     },
     "documents": {
-      "title": "Документы и сертификаты",
-      "text": "Официальные документы и сертификаты, подтверждающие качество и соответствие продукции."
+      "title": "Documents and certificates",
+      "text": "Official documents and certificates confirming product quality and compliance."
     },
     "faq": {
-      "title": "Есть вопросы?",
-      "text": "Не нашли нужную информацию? Свяжитесь с нами - мы с радостью поможем вам с выбором",
+      "title": "Have questions?",
+      "text": "Didn't find the information you need? Contact us, we will be happy to help you choose.",
       "accordions": [
         {
-          "question": "Как оформить заказ?",
-          "answer": "Свяжитесь с нашей командой, чтобы обсудить ассортимент, объемы и формат сотрудничества. Мы поможем подобрать продукты и подготовим следующие шаги для запуска закупки."
+          "question": "How do I place an order?",
+          "answer": "Contact our team to discuss the assortment, volumes, and cooperation format. We will help you select products and prepare the next steps to launch procurement."
         },
         {
-          "question": "Сколько времени занимает доставка?",
-          "answer": "Сроки зависят от категории товара, объема партии и маршрута поставки. После согласования деталей мы формируем понятный график и сопровождаем процесс до получения продукции."
+          "question": "How long does delivery take?",
+          "answer": "Timing depends on the product category, batch volume, and supply route. After the details are agreed, we create a clear schedule and support the process until the products are received."
         },
         {
-          "question": "Можно ли оформить предзаказ?",
-          "answer": "Да, мы можем согласовать предзаказ для отдельных категорий продукции и заранее зафиксировать ключевые условия по объемам и срокам."
+          "question": "Can I place a preorder?",
+          "answer": "Yes, we can arrange preorders for selected product categories and fix the key terms for volumes and timelines in advance."
         },
         {
-          "question": "Какие способы оплаты доступны?",
-          "answer": "Формат оплаты обсуждается индивидуально в зависимости от модели сотрудничества, объема заказа и согласованных коммерческих условий."
+          "question": "What payment methods are available?",
+          "answer": "The payment format is discussed individually depending on the cooperation model, order volume, and agreed commercial terms."
         },
         {
-          "question": "Есть ли минимальная сумма заказа?",
-          "answer": "Минимальный объем зависит от конкретного производителя и категории продукта. Мы подскажем оптимальный формат входа после выбора интересующего ассортимента."
+          "question": "Is there a minimum order amount?",
+          "answer": "The minimum volume depends on the specific manufacturer and product category. We will suggest the optimal entry format after you choose the assortment you are interested in."
         },
         {
-          "question": "Как связаться с поддержкой?",
-          "answer": "Вы можете оставить заявку через сайт или написать нашей команде напрямую. Мы свяжемся с вами, чтобы ответить на вопросы и помочь с подбором решения."
+          "question": "How can I contact support?",
+          "answer": "You can leave a request through the website or write directly to our team. We will get back to you to answer your questions and help you choose the right solution."
         }
       ]
     }
   },
 
   "contacts": {
-    "title": "Контакты",
-    "text": "Свяжитесь с командой GooFood, если у вас есть вопросы, предложения или вы хотите узнать больше о нашем сервисе. Мы всегда рады помочь.",
-    "address": "Ташкент, Узбекистан ул. Шота Руставели 12"
+    "title": "Contacts",
+    "text": "Contact the GooFood team if you have questions, suggestions, or want to learn more about our service. We are always happy to help.",
+    "address": "12 Shota Rustaveli St., Tashkent, Uzbekistan"
   },
 
   "media": {
-    "title": "Медиа",
-    "types": ["Новости", "События", "Галерея"]
+    "title": "Media",
+    "types": ["News", "Events", "Gallery"]
   },
 
   "mediaIndex": {
-    "photoGallery": "Фотогалерея",
-    "shareTitle": "Поделиться новостью",
-    "shareText": "Поделитесь этой новостью с друзьями или сохраните ссылку, чтобы прочитать позже."
+    "photoGallery": "Photo gallery",
+    "shareTitle": "Share the news",
+    "shareText": "Share this news with friends or save the link to read later."
   },
 
   "header": {
-    "links": ["Главная", "О нас", "Продукты", "Услуги", "Рецепты", "Медиа", "Контакты"]
+    "links": ["Home", "About us", "Products", "Services", "Recipes", "Media", "Contacts"]
   },
 
   "contactsModal": {
-    "title": "Свяжитесь с нами",
-    "text": "Оставьте свои контакты - наша команда GooFood поможет с заказом, доставкой или ответит на любые вопросы.",
-    "name": "Ваше имя",
-    "namePlaceholder": "Введите ваше имя",
-    "phone": "Номер телефона",
-    "phonePlaceholder": "Введите номер телефона",
-    "telegram": "Telegram (по желанию)",
-    "telegramPlaceholder": "{'@'}username или номер",
-    "successTitle": "Спасибо за заявку!",
-    "successText": "Мы получили ваши контакты и скоро свяжемся с вами."
+    "title": "Contact us",
+    "text": "Leave your contact details and the GooFood team will help with orders, delivery, or any questions you may have.",
+    "name": "Your name",
+    "namePlaceholder": "Enter your name",
+    "phone": "Phone number",
+    "phonePlaceholder": "Enter your phone number",
+    "telegram": "Telegram (optional)",
+    "telegramPlaceholder": "{'@'}username or number",
+    "successTitle": "Thank you for your request!",
+    "successText": "We have received your contact details and will get in touch soon."
   },
 
   "services": {
     "hero": {
-      "title": "Услуги, которые работают на результат",
-      "text": "Комплексный подход, проверенные партнёры и эффективные процессы для стабильного роста вашего бизнеса"
+      "title": "Services that deliver results",
+      "text": "A comprehensive approach, trusted partners, and efficient processes for the steady growth of your business"
     },
     "reasons": {
-      "title": "Что мы делаем для вашего бизнеса",
-      "text": "От поиска и подбора товаров до переговоров и логистики - наши услуги выстроены в единую систему, которая помогает вам быстро и эффективно достигать результата",
+      "title": "What we do for your business",
+      "text": "From sourcing and product selection to negotiations and logistics, our services are built into a unified system that helps you achieve results quickly and efficiently",
       "cards": [
         {
-          "title": "Демонстрация в шоуруме",
-          "text": "Оцените продукцию вживую: изучите материалы, качество сборки и детали исполнения. Наши специалисты подробно расскажут о характеристиках и помогут вам принять обоснованное решение перед покупкой."
+          "title": "Showroom demonstration",
+          "text": "Evaluate products in person: study materials, build quality, and execution details. Our specialists will explain the specifications in detail and help you make an informed decision before purchase."
         },
         {
-          "title": "Поиск и подбор товаров",
-          "text": "Подбираем оптимальные решения под ваши задачи и бюджет. Анализируем потребности, сравниваем варианты и предлагаем только те товары, которые действительно подходят под ваши требования."
+          "title": "Product sourcing and selection",
+          "text": "We choose the best solutions for your goals and budget. We analyze needs, compare options, and offer only the products that truly match your requirements."
         },
         {
-          "title": "Запрос образцов",
-          "text": "Закажите образцы продукции, чтобы лично проверить качество и соответствие вашим ожиданиям. Это позволит вам принять уверенное решение перед оформлением основного заказа."
+          "title": "Sample requests",
+          "text": "Order product samples to personally verify quality and ensure they meet your expectations. This allows you to make a confident decision before placing the main order."
         },
         {
-          "title": "Поддержка B2B-переговоров",
-          "text": "Сопровождаем вас на всех этапах переговоров: от обсуждения условий до заключения сделки. Помогаем выстроить выгодные, прозрачные и долгосрочные партнёрские отношения."
+          "title": "B2B negotiation support",
+          "text": "We support you at every stage of negotiations, from discussing terms to closing the deal. We help build beneficial, transparent, and long-term partnerships."
         },
         {
-          "title": "Импорт и логистика",
-          "text": "Организуем полный цикл поставки: от оформления заказа до доставки на ваш склад. Контролируем каждый этап, обеспечивая надёжность, прозрачность и соблюдение сроков."
+          "title": "Import and logistics",
+          "text": "We organize the full supply cycle, from order processing to delivery to your warehouse. We control every stage, ensuring reliability, transparency, and on-time execution."
         }
       ]
     },
 
     "cta": {
-      "title": "Обсудить поставки",
-      "text": "Свяжитесь с нашей командой для согласования объёмов и условий сотрудничества."
+      "title": "Discuss supplies",
+      "text": "Contact our team to align volumes and cooperation terms."
     },
     "faq": {
-      "title": "Есть вопросы?",
-      "text": "Не нашли нужную информацию? Свяжитесь с нами - мы с радостью поможем вам с выбором",
+      "title": "Have questions?",
+      "text": "Didn't find the information you need? Contact us, we will be happy to help you choose.",
       "accordions": [
         {
-          "question": "Как оформить заказ?",
+          "question": "How do I place an order?",
           "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         },
         {
-          "question": "Сколько времени занимает доставка?",
+          "question": "How long does delivery take?",
           "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         },
         {
-          "question": "Можно ли оформить предзаказ?",
+          "question": "Can I place a preorder?",
           "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         },
         {
-          "question": "Какие способы оплаты доступны?",
+          "question": "What payment methods are available?",
           "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         },
         {
-          "question": "Есть ли минимальная сумма заказа?",
+          "question": "Is there a minimum order amount?",
           "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         },
         {
-          "question": "Как связаться с поддержкой?",
+          "question": "How can I contact support?",
           "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         }
       ]
@@ -404,24 +438,24 @@
   },
 
   "processSection": {
-    "title": "Как это работает",
-    "text": "Мы делаем процесс простым и прозрачным: от выбора товаров до их доставки и запуска в работу.",
+    "title": "How it works",
+    "text": "We make the process simple and transparent, from product selection to delivery and launch.",
     "cards": [
       {
-        "title": "Выбор и демонстрация",
-        "text": "Вы посещаете шоурум или изучаете каталог, оцениваете продукцию."
+        "title": "Selection and demonstration",
+        "text": "You visit the showroom or explore the catalogue and evaluate the products."
       },
       {
-        "title": "Запрос образцов",
-        "text": "Выбираете нужные продукты и заказываете образцы для проверки качества"
+        "title": "Sample requests",
+        "text": "You choose the products you need and order samples to verify quality"
       },
       {
-        "title": "Переговоры и согласование",
-        "text": "Мы помогаем вести переговоры с поставщиками и согласовываем условия сделки"
+        "title": "Negotiations and agreement",
+        "text": "We help conduct negotiations with suppliers and align the terms of the deal"
       },
       {
-        "title": "Логистика и доставка",
-        "text": "Организуем доставку и сопровождаем процесс до получения товара"
+        "title": "Logistics and delivery",
+        "text": "We organize delivery and support the process until the goods are received"
       }
     ]
   }

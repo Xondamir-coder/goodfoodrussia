@@ -2,7 +2,7 @@
   <div class="slide">
     <UiHomeSlideHeader :title="$t('home.slide-6.title')" :text="$t('home.slide-6.title')" />
     <ul class="slide__cards">
-      <li v-for="card in useMapRt('home.slide-6.cards')" :key="card.text" class="slide__card">
+      <li v-for="card in cards" :key="card.text" class="slide__card">
         <span class="slide__card-amount">{{ card.amount }}</span>
         <p class="slide__card-text">
           {{ card.text }}
@@ -14,7 +14,11 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const { tm, rt } = useI18n();
+
+const cards = mapRt(tm('home.slide-6.cards'), rt);
+</script>
 
 <style lang="scss" scoped>
 .slide {

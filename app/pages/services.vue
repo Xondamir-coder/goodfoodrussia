@@ -1,16 +1,18 @@
 <template>
   <main class="services">
     <section class="hero">
-      <Teleport to="#layout-teleport">
-        <Transition name="appear">
-          <UiPicture
-            :key="activeHeroBanner"
-            :src="heroBanners[activeHeroBanner]"
-            alt="banner"
-            class="hero__banner"
-          />
-        </Transition>
-      </Teleport>
+      <ClientOnly>
+        <Teleport to="#layout-teleport">
+          <Transition name="appear">
+            <UiPicture
+              :key="activeHeroBanner"
+              :src="heroBanners[activeHeroBanner]"
+              alt="banner"
+              class="hero__banner"
+            />
+          </Transition>
+        </Teleport>
+      </ClientOnly>
       <div class="hero__content">
         <h1 class="hero__title">
           {{ $t('services.hero.title') }}
@@ -77,7 +79,7 @@
         </h2>
         <p class="services__header-text">{{ $t('services.faq.text') }}</p>
       </div>
-      <UiAccordions :accordions="useMapRt('services.faq.accordions')" />
+      <UiAccordions :accordions="mapRt(tm('services.faq.accordions'), rt)" />
     </section>
   </main>
 </template>
@@ -91,6 +93,8 @@ import {
   IconsSupportAgent
 } from '#components';
 
+const { tm, rt } = useI18n();
+
 const activeHeroBanner = ref(0);
 
 const heroBanners = ['services-banner.jpg', 'working-man.jpg', 'man-paper.jpg'];
@@ -101,7 +105,7 @@ const reasonsIcons = [
   IconsSupportAgent,
   IconsLocalShipping
 ];
-const reasonsCards = useMapRt('services.reasons.cards').map((el, i) => ({
+const reasonsCards = mapRt(tm('services.reasons.cards'), rt).map((el, i) => ({
   ...el,
   icon: reasonsIcons[i]
 }));

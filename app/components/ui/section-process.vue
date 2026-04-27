@@ -52,8 +52,10 @@
 <script setup>
 import { IconsLocalShipping, IconsInventory, IconsFeedFade, IconsHandshakeFade } from '#components';
 
+const { tm, rt } = useI18n();
+
 const processIcons = [IconsInventory, IconsFeedFade, IconsHandshakeFade, IconsLocalShipping];
-const processCards = useMapRt('processSection.cards').map((el, i) => ({
+const processCards = mapRt(tm('processSection.cards'), rt).map((el, i) => ({
   ...el,
   icon: processIcons[i]
 }));

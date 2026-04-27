@@ -1,12 +1,14 @@
 <template>
   <main class="about">
-    <Teleport to="#layout-teleport">
-      <UiPicture
-        src="about-hero.jpg"
-        alt="Good Food Russia showroom team"
-        class="about__hero-banner"
-      />
-    </Teleport>
+    <ClientOnly>
+      <Teleport to="#layout-teleport">
+        <UiPicture
+          src="about-hero.jpg"
+          alt="Good Food Russia showroom team"
+          class="about__hero-banner"
+        />
+      </Teleport>
+    </ClientOnly>
 
     <section class="hero">
       <div class="hero__card">
@@ -93,10 +95,10 @@
       />
 
       <ul class="team">
-        <li v-for="photo in teamPhotos" :key="photo.src" class="team__item">
-          <UiPicture :src="photo.src" :alt="photo.alt" class="team__photo" />
-          <h3 class="team__item-name">Жасур Каримов</h3>
-          <p class="team__item-job">Руководитель отдела разработки</p>
+        <li v-for="teammate in team" :key="teammate.src" class="team__item">
+          <UiPicture :src="teammate.src" :alt="teammate.alt" class="team__photo" />
+          <h3 class="team__item-name">{{ teammate.name }}</h3>
+          <p class="team__item-job">{{ teammate.job }}</p>
         </li>
       </ul>
     </section>
@@ -130,7 +132,7 @@
           :text="$t('about.faq.text')"
         />
 
-        <UiAccordions :accordions="useMapRt('about.faq.accordions')" />
+        <UiAccordions :accordions="mapRt(tm('about.faq.accordions'), rt)" />
       </div>
     </section>
   </main>
@@ -145,7 +147,7 @@ import {
   IconsHandshakeStrongFade
 } from '#components';
 
-const { t } = useI18n();
+const { t, tm, rt } = useI18n();
 
 const stats = [
   { value: '1200+', text: t('about.stats.0'), icon: IconsAutoGraph },
@@ -160,9 +162,9 @@ const missionGoals = [
   { text: t('about.goals.2'), icon: IconsInventory }
 ];
 
-const teamPhotos = Array.from({ length: 8 }, (_, index) => ({
-  src: `about-team-${index + 1}.jpg`,
-  alt: t('about.team.photoAlt', { index: index + 1 })
+const team = mapRt(tm('about.team.items'), rt).map((el, i) => ({
+  src: `about-team-${i + 1}.jpg`,
+  ...el
 }));
 </script>
 

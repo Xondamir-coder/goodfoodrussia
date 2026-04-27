@@ -2,7 +2,7 @@
   <UiPageContainer
     v-slot="{ activePage, setActivePage }"
     :title="$t('recipes.title')"
-    :types="useMapRt('recipes.sort')"
+    :types="mapRt(tm('recipes.sort'), rt)"
   >
     <div class="recipes-container">
       <ul class="recipes-cards">
@@ -18,6 +18,8 @@
 </template>
 
 <script setup>
+const { tm, rt } = useI18n();
+
 const { recipes } = useApiStore();
 </script>
 

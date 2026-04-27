@@ -24,6 +24,8 @@ import {
   IconsRocket
 } from '#components';
 
+const { tm, rt } = useI18n();
+
 const route = useRoute();
 const router = useRouter();
 
@@ -44,7 +46,7 @@ const icons = [
   IconsAutoGraph,
   IconsRocket
 ];
-const items = useMapRt('home.navbar').map((l, i) => ({ label: l, icon: icons[i] }));
+const items = mapRt(tm('home.navbar'), rt).map((l, i) => ({ label: l, icon: icons[i] }));
 </script>
 
 <style lang="scss" scoped>

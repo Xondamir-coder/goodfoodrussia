@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-const { t } = useI18n();
+const { t, tm, rt } = useI18n();
 
 const data = ref({
   new: false,
@@ -31,20 +31,20 @@ const data = ref({
   volumes: []
 });
 
-const dropdownRows = computed(() => [
-  { key: 'categories', label: t('category'), items: useMapRt('products.filters.categories') },
-  { key: 'brands', label: t('brand'), items: useMapRt('products.filters.brands') },
+const dropdownRows = [
+  { key: 'categories', label: t('category'), items: mapRt(tm('products.filters.categories'), rt) },
+  { key: 'brands', label: t('brand'), items: mapRt(tm('products.filters.brands'), rt) },
   {
     key: 'productTypes',
     label: t('productType'),
-    items: useMapRt('products.filters.productTypes')
+    items: mapRt(tm('products.filters.productTypes'), rt)
   },
   {
     key: 'volumes',
     label: `${t('weight')}/${t('volume')}`,
-    items: useMapRt('products.filters.volumes')
+    items: mapRt(tm('products.filters.volumes'), rt)
   }
-]);
+];
 </script>
 
 <style lang="scss" scoped>

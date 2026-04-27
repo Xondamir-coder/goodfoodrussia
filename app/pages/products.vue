@@ -2,7 +2,7 @@
   <UiPageContainer
     v-slot="{ activePage, setActivePage }"
     :title="$t('products.title')"
-    :types="useMapRt('products.sort')"
+    :types="mapRt(tm('products.sort'), rt)"
   >
     <UiProductsModal :product-i-d="productID" @change="assignProductID" />
     <button class="products-cta" @click="showFiltersModal = true">
@@ -28,6 +28,8 @@
 </template>
 
 <script setup>
+const { tm, rt } = useI18n();
+
 const { products } = useApiStore();
 
 const showFiltersModal = useState('showFiltersModal');

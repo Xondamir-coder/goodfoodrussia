@@ -2,7 +2,7 @@
   <UiPageContainer
     v-slot="{ sortId, activePage, setActivePage }"
     :title="$t('media.title')"
-    :types="useMapRt('media.types')"
+    :types="mapRt(tm('media.types'), rt)"
   >
     <div class="media">
       <ul v-for="(el, i) in media" :key="i" class="media__list" :class="{ hidden: i !== sortId }">
@@ -17,6 +17,8 @@
 
 <script setup>
 import { UiMediaEventsCard, UiMediaGalleryCard, UiMediaNewsCard } from '#components';
+
+const { tm, rt } = useI18n();
 
 const { mediaNews, mediaEvents, mediaGallery } = useApiStore();
 

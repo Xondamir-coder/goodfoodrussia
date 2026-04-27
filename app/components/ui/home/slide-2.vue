@@ -49,8 +49,11 @@
 
 <script setup>
 import { IconsFeed, IconsGlobe, IconsHandshake } from '#components';
+
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
+
+const { tm, rt } = useI18n();
 
 const images = [
   'flour-products.png',
@@ -61,23 +64,21 @@ const images = [
 ];
 const icons = [IconsFeed, IconsGlobe, IconsHandshake];
 
-const cards = computed(() =>
-  useMapRt('home.slide-2.cards').map(el => ({
-    ...el,
-    ...(el.products && {
-      products: el.products.map((product, j) => ({
-        name: product,
-        image: images[j]
-      }))
-    }),
-    ...(el.items && {
-      items: el.items.map((item, j) => ({
-        text: item,
-        icon: icons[j]
-      }))
-    })
-  }))
-);
+const cards = mapRt(tm('home.slide-2.cards'), rt).map(el => ({
+  ...el,
+  ...(el.products && {
+    products: el.products.map((product, j) => ({
+      name: product,
+      image: images[j]
+    }))
+  }),
+  ...(el.items && {
+    items: el.items.map((item, j) => ({
+      text: item,
+      icon: icons[j]
+    }))
+  })
+}));
 </script>
 
 <style lang="scss" scoped>

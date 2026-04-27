@@ -32,6 +32,8 @@
 <script setup>
 import { Icons4Clover, Icons4Rect, IconsShuriken } from '#components';
 
+const { tm, rt } = useI18n();
+
 const images = [
   'pankie.png',
   'ferrero.png',
@@ -44,12 +46,10 @@ const images = [
 ];
 const supply = [Icons4Rect, IconsShuriken, Icons4Clover];
 
-const cards = computed(() =>
-  useMapRt('home.slide-4.coop.cards').map((el, i) => ({
-    ...el,
-    icon: supply[i]
-  }))
-);
+const cards = mapRt(tm('home.slide-4.coop.cards'), rt).map((el, i) => ({
+  ...el,
+  icon: supply[i]
+}));
 </script>
 
 <style lang="scss" scoped>

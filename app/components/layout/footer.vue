@@ -45,11 +45,13 @@
 <script setup>
 import { IconsFacebook, IconsLinkedin, IconsX } from '#components';
 
+const { tm, rt } = useI18n();
+
 const linkPaths = ['/', '/about', '/products', '/services', '/recipes', '/media', '/contacts'];
 const icons = [IconsX, IconsFacebook, IconsLinkedin];
 
 const links = computed(() =>
-  useMapRt('header.links').map((el, i) => ({
+  mapRt(tm('header.links'), rt).map((el, i) => ({
     name: el,
     path: linkPaths[i]
   }))
