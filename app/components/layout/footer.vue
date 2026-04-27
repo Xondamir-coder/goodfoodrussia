@@ -58,7 +58,7 @@ const links = computed(() =>
 
 <style lang="scss" scoped>
 .footer {
-  z-index: 1;
+  z-index: 2;
   display: grid;
   grid-template-areas:
     'block-1 top block-2'

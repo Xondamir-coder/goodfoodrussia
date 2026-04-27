@@ -1,7 +1,11 @@
 <template>
   <main class="about">
     <Teleport to="#layout-teleport">
-      <UiPicture src="about-hero.jpg" alt="Good Food Russia showroom team" class="about__hero-banner" />
+      <UiPicture
+        src="about-hero.jpg"
+        alt="Good Food Russia showroom team"
+        class="about__hero-banner"
+      />
     </Teleport>
 
     <section class="hero">
@@ -18,106 +22,91 @@
       </div>
     </section>
 
-    <section class="about__section about__section--intro">
-      <div class="about__header about__header--wide">
-        <h2 class="about__header-title">
-          {{ $t('about.company.title') }}
-        </h2>
-        <p class="about__header-text">
-          {{ $t('about.company.text') }}
-        </p>
-      </div>
+    <div class="about__wrapper">
+      <div v-for="i in 4" :key="i" class="about__wrapper-line" />
+      <section class="about__section about__section--intro">
+        <UiSectionHeader
+          class="about__header about__header--wide"
+          :title="$t('about.company.title')"
+          :text="$t('about.company.text')"
+        />
 
-      <div class="stats">
-        <article v-for="item in stats" :key="item.value" class="stats__item">
-          <div class="stats__copy">
-            <h3 class="stats__value">{{ item.value }}</h3>
-            <p class="stats__label">{{ item.text }}</p>
+        <div class="stats">
+          <article v-for="item in stats" :key="item.value" class="stats__item">
+            <div class="stats__copy">
+              <h3 class="stats__value">{{ item.value }}</h3>
+              <p class="stats__label">{{ item.text }}</p>
+            </div>
+            <component :is="item.icon" class="stats__icon" />
+          </article>
+        </div>
+      </section>
+      <section class="mission">
+        <div class="mission__circle" />
+
+        <div class="mission__wrapper">
+          <UiSectionHeader
+            class="about__header"
+            :title="$t('about.mission.title')"
+            :text="$t('about.mission.text')"
+          />
+
+          <div class="mission__cards">
+            <article v-for="goal in missionGoals" :key="goal.text" class="mission__card">
+              <component :is="goal.icon" class="mission__card-icon" />
+              <h3 class="mission__card-title">{{ goal.text }}</h3>
+            </article>
           </div>
-          <component :is="item.icon" class="stats__icon" />
-        </article>
-      </div>
-    </section>
-
-    <section class="mission">
-      <div class="about__header">
-        <h2 class="about__header-title">
-          {{ $t('about.mission.title') }}
-        </h2>
-        <p class="about__header-text">
-          {{ $t('about.mission.text') }}
-        </p>
-      </div>
-
-      <div class="mission__cards">
-        <article v-for="goal in missionGoals" :key="goal.text" class="mission__card">
-          <component :is="goal.icon" class="mission__card-icon" />
-          <h3 class="mission__card-title">{{ goal.text }}</h3>
-        </article>
-      </div>
-    </section>
+        </div>
+      </section>
+    </div>
 
     <section class="about__section">
       <div class="showroom">
-        <div class="showroom__content">
-          <div class="about__header about__header--left">
-            <h2 class="about__header-title">
-              {{ $t('about.showroom.title') }}
-            </h2>
-            <p class="about__header-text">
-              {{ $t('about.showroom.text') }}
-            </p>
-          </div>
-        </div>
-
-        <UiPicture src="about-showroom.png" alt="Good Food Russia showroom" class="showroom__image" />
-      </div>
-    </section>
-
-    <section class="about__section">
-      <div class="about__header">
-        <h2 class="about__header-title">
-          {{ $t('about.process.title') }}
-        </h2>
-        <p class="about__header-text">
-          {{ $t('about.process.text') }}
-        </p>
-      </div>
-
-      <div class="process">
-        <article v-for="(step, index) in processSteps" :key="step.title" class="process__card">
-          <span class="process__step">
-            {{ $t('step')[0].toUpperCase() + $t('step').slice(1) }} {{ index + 1 }}
-          </span>
-          <component :is="step.icon" class="process__icon" />
-          <h3 class="process__title">{{ step.title }}</h3>
-          <p class="process__text">{{ step.text }}</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="about__section">
-      <div class="about__header">
-        <h2 class="about__header-title">
-          {{ $t('about.team.title') }}
-        </h2>
-        <p class="about__header-text">
-          {{ $t('about.team.text') }}
-        </p>
-      </div>
-
-      <div class="team">
-        <UiPicture
-          v-for="photo in teamPhotos"
-          :key="photo.src"
-          :src="photo.src"
-          :alt="photo.alt"
-          class="team__photo"
+        <div class="showroom__title">SHOWROOM</div>
+        <UiSectionHeader
+          class="about__header about__header--left"
+          :title="$t('about.showroom.title')"
+          :text="$t('about.showroom.text')"
         />
+
+        <div class="showroom__wrapper">
+          <UiPicture
+            src="about-showroom.png"
+            alt="Good Food Russia showroom"
+            class="showroom__image"
+          />
+          <button class="showroom__button">
+            <IconsPlayArrow class="showroom__button-icon" />
+          </button>
+        </div>
       </div>
     </section>
 
+    <UiSectionProcess class="about__section" />
+
     <section class="about__section">
+      <UiSectionHeader
+        class="about__header"
+        :title="$t('about.team.title')"
+        :text="$t('about.team.text')"
+      />
+
+      <ul class="team">
+        <li v-for="photo in teamPhotos" :key="photo.src" class="team__item">
+          <UiPicture :src="photo.src" :alt="photo.alt" class="team__photo" />
+          <h3 class="team__item-name">Жасур Каримов</h3>
+          <p class="team__item-job">Руководитель отдела разработки</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="about__section">
+      <UiSectionHeader
+        class="about__header"
+        :title="$t('about.documents.title')"
+        :text="$t('about.documents.text')"
+      />
       <div class="documents">
         <div class="documents__content">
           <h2 class="documents__title">
@@ -135,14 +124,11 @@
 
     <section class="about__section">
       <div class="faq">
-        <div class="about__header">
-          <h2 class="about__header-title">
-            {{ $t('about.faq.title') }}
-          </h2>
-          <p class="about__header-text">
-            {{ $t('about.faq.text') }}
-          </p>
-        </div>
+        <UiSectionHeader
+          class="about__header"
+          :title="$t('about.faq.title')"
+          :text="$t('about.faq.text')"
+        />
 
         <UiAccordions :accordions="useMapRt('about.faq.accordions')" />
       </div>
@@ -153,22 +139,19 @@
 <script setup>
 import {
   IconsAutoGraph,
-  IconsHandshake,
-  IconsDescription,
-  Icons4Clover,
+  IconsAssignmentIn,
+  IconsStarOutline,
   IconsInventory,
-  IconsManageSearch,
-  IconsFeedFade,
-  IconsHandshakeFade
+  IconsHandshakeStrongFade
 } from '#components';
 
 const { t } = useI18n();
 
 const stats = [
   { value: '1200+', text: t('about.stats.0'), icon: IconsAutoGraph },
-  { value: '200+', text: t('about.stats.1'), icon: IconsHandshake },
-  { value: '30+', text: t('about.stats.2'), icon: IconsDescription },
-  { value: '4.8+', text: t('about.stats.3'), icon: Icons4Clover }
+  { value: '200+', text: t('about.stats.1'), icon: IconsHandshakeStrongFade },
+  { value: '30+', text: t('about.stats.2'), icon: IconsAssignmentIn },
+  { value: '4.8+', text: t('about.stats.3'), icon: IconsStarOutline }
 ];
 
 const missionGoals = [
@@ -176,12 +159,6 @@ const missionGoals = [
   { text: t('about.goals.1'), icon: IconsInventory },
   { text: t('about.goals.2'), icon: IconsInventory }
 ];
-
-const processIcons = [IconsManageSearch, IconsInventory, IconsFeedFade, IconsHandshakeFade];
-const processSteps = useMapRt('about.process.steps').map((step, index) => ({
-  ...step,
-  icon: processIcons[index]
-}));
 
 const teamPhotos = Array.from({ length: 8 }, (_, index) => ({
   src: `about-team-${index + 1}.jpg`,
@@ -191,16 +168,48 @@ const teamPhotos = Array.from({ length: 8 }, (_, index) => ({
 
 <style lang="scss" scoped>
 .about {
-  padding-inline: var(--spacing-inline);
   padding-bottom: max(8rem, 40px);
   display: flex;
   flex-direction: column;
-  gap: max(8rem, 36px);
-
+  & > * {
+    padding-inline: var(--spacing-inline);
+  }
+  &__wrapper {
+    position: relative;
+    margin-bottom: 0 !important;
+    padding-inline: 0;
+    display: flex;
+    gap: max(18rem, 32px);
+    flex-direction: column;
+    background: linear-gradient(180deg, #010101 0%, #061852 100%);
+    margin-bottom: max(8rem, 32px);
+    &-line {
+      position: absolute;
+      inset-inline: 0;
+      background: #051443;
+      z-index: 2;
+      height: 4px;
+      &:first-child {
+        bottom: -5px;
+      }
+      &:nth-child(2) {
+        bottom: -11px;
+      }
+      &:nth-child(3) {
+        bottom: -19px;
+      }
+      &:nth-child(4) {
+        bottom: -31px;
+      }
+    }
+    .about__section {
+      gap: 5.2rem;
+    }
+  }
   &__hero-banner {
     position: absolute;
     inset: 0 0 auto;
-    height: min(80.7rem, calc(100vh + max(6rem, 60px)));
+    height: min(max(80.7rem, 700px), calc(100vh + max(6rem, 60px)));
 
     &::after {
       content: '';
@@ -218,60 +227,38 @@ const teamPhotos = Array.from({ length: 8 }, (_, index) => ({
     gap: max(3.2rem, 20px);
     position: relative;
     z-index: 1;
+    &:not(:last-child) {
+      margin-bottom: max(8rem, 32px);
+    }
 
     &--intro {
-      padding-top: max(2rem, 8px);
-    }
-  }
-
-  &__header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: max(1.2rem, 12px);
-    text-align: center;
-    align-self: center;
-
-    &--wide {
-      max-width: min(88.4rem, 100%);
-    }
-
-    &--left {
-      align-items: flex-start;
-      text-align: left;
-      align-self: stretch;
-      max-width: 54rem;
-    }
-
-    &-title {
-      font-size: max(3.6rem, 22px);
-      line-height: 1.22;
-      font-weight: 700;
-      letter-spacing: max(0.072rem, 0.72px);
-      background: linear-gradient(203deg, #fff 26.72%, rgba(255, 255, 255, 0.2) 164.37%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      max-width: 16ch;
-    }
-
-    &-text {
-      color: #c2c2c2;
-      font-size: max(1.8rem, 14px);
-      line-height: 155%;
+      padding-inline: var(--spacing-inline);
+      padding-top: max(8rem, 32px);
+      .about__header :deep(.section-header__text) {
+        max-width: 80ch;
+      }
     }
   }
 }
 
 .hero {
-  min-height: calc(80.7rem - max(6rem, 60px));
+  min-height: calc(max(80.7rem, 700px) - max(6rem, 60px));
   display: flex;
   align-items: flex-end;
-  padding-bottom: max(3.5rem, 18px);
+  padding-bottom: max(8rem, 32px);
   position: relative;
   z-index: 1;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    inset-inline: 0;
+    height: 44.1%;
+    background: linear-gradient(0deg, #000 19.39%, rgba(0, 0, 0, 0) 100%);
+  }
 
   &__card {
+    z-index: 2;
     width: 100%;
     display: grid;
     grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
@@ -280,8 +267,12 @@ const teamPhotos = Array.from({ length: 8 }, (_, index) => ({
     padding: max(3.6rem, 18px);
     border-radius: max(3.2rem, 20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.05) 100%);
-    backdrop-filter: blur(50px);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0.05) 100%
+    );
+    backdrop-filter: blur(15px);
 
     @media screen and (max-width: vars.$bp-md) {
       grid-template-columns: 1fr;
@@ -299,12 +290,8 @@ const teamPhotos = Array.from({ length: 8 }, (_, index) => ({
       bottom: 0;
       width: min(41rem, 100%);
       height: max(5rem, 28px);
-      background:
-        linear-gradient(90deg, rgba(53, 101, 205, 0.92) 0%, rgba(53, 101, 205, 0) 100%),
-        radial-gradient(circle at left, rgba(255, 255, 255, 0.28) 0%, transparent 72%);
-      filter: blur(0.6rem);
-      opacity: 0.8;
-      pointer-events: none;
+      background: #3565cd;
+      clip-path: polygon(93% 0, 100% 50%, 93% 100%, 0 100%, 0 0);
     }
   }
 
@@ -312,9 +299,9 @@ const teamPhotos = Array.from({ length: 8 }, (_, index) => ({
     position: relative;
     z-index: 1;
     font-size: max(3.8rem, 24px);
-    line-height: 1.15;
+    line-height: 1.21;
     font-weight: 700;
-    max-width: 14ch;
+    max-width: 17ch;
   }
 
   &__divider {
@@ -329,25 +316,17 @@ const teamPhotos = Array.from({ length: 8 }, (_, index) => ({
   }
 
   &__text {
-    color: rgba(255, 255, 255, 0.88);
-    font-size: max(1.8rem, 14px);
-    line-height: 1.55;
-    letter-spacing: max(-0.036rem, -0.18px);
+    font-family: vars.$font-nunito-sans;
+    font-size: max(1.8rem, 16px);
+    letter-spacing: -0.36px;
   }
 }
 
 .stats {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(max(200px, 20.8rem), 1fr));
   gap: max(2.4rem, 16px);
-
-  @media screen and (max-width: vars.$bp-lg) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  @media screen and (max-width: vars.$bp-sm) {
-    grid-template-columns: 1fr;
-  }
+  padding-inline: 6rem;
 
   &__item {
     position: relative;
@@ -359,7 +338,10 @@ const teamPhotos = Array.from({ length: 8 }, (_, index) => ({
   &__copy {
     position: relative;
     z-index: 1;
-    max-width: 20rem;
+    max-width: 74.5%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
   }
 
   &__value {
@@ -379,38 +361,42 @@ const teamPhotos = Array.from({ length: 8 }, (_, index) => ({
   &__icon {
     position: absolute;
     top: 0;
-    right: 0;
+    right: 20%;
     width: max(11rem, 72px);
-    opacity: 0.22;
   }
 }
 
 .mission {
   position: relative;
   z-index: 1;
-  padding: max(10.5rem, 44px) max(3.2rem, 18px) max(5rem, 26px);
-  border-radius: min(76rem, 50vw) min(76rem, 50vw) 0 0;
-  overflow: hidden;
+  padding-bottom: 11.5rem;
+  display: flex;
+  clip-path: inset(-50% 0 0);
 
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(circle at 50% 100%, rgba(40, 79, 196, 0.45) 0%, rgba(19, 40, 108, 0.28) 46%, transparent 80%),
-      linear-gradient(180deg, rgba(5, 15, 56, 0) 0%, rgba(15, 34, 102, 0.56) 100%);
-  }
-
-  & > * {
-    position: relative;
+  &__wrapper {
+    padding-inline: var(--spacing-inline);
+    display: flex;
+    flex-direction: column;
+    gap: max(6rem, 24px);
     z-index: 1;
+  }
+  &__circle {
+    position: absolute;
+    width: 110%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    left: 50%;
+    translate: -50%;
+    top: -30%;
+    background: linear-gradient(180deg, #061852 0%, rgb(1, 7, 23) 100%);
+    // background: red;
   }
 
   &__cards {
-    margin-top: max(4.8rem, 24px);
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(max(250px, 30rem), 1fr));
     gap: max(3.2rem, 16px);
+    padding-inline: 6rem;
 
     @media screen and (max-width: vars.$bp-md) {
       grid-template-columns: 1fr;
@@ -422,7 +408,8 @@ const teamPhotos = Array.from({ length: 8 }, (_, index) => ({
     flex-direction: column;
     align-items: center;
     gap: max(1.6rem, 12px);
-    padding: max(2.4rem, 18px);
+    padding-block: max(2.4rem, 18px);
+    padding-inline: max(1.4rem, 10px);
     text-align: center;
     border-radius: max(1.6rem, 14px);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -437,68 +424,75 @@ const teamPhotos = Array.from({ length: 8 }, (_, index) => ({
       font-size: max(1.7rem, 14px);
       line-height: 1.35;
       font-weight: 700;
-      max-width: 20ch;
+      background: linear-gradient(203deg, #fff 26.72%, rgba(255, 255, 255, 0.2) 164.37%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
 }
 
 .showroom {
-  display: grid;
-  grid-template-columns: minmax(0, 0.44fr) minmax(0, 0.56fr);
+  display: flex;
+  flex-direction: column;
   gap: max(3.2rem, 18px);
-  align-items: center;
+  position: relative;
+  margin-top: max(12rem, 60px);
 
   @media screen and (max-width: vars.$bp-md) {
     grid-template-columns: 1fr;
   }
-
-  &__image {
-    border-radius: max(3.2rem, 20px);
+  &__wrapper {
+    position: relative;
   }
-}
-
-.process {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: max(1.2rem, 12px);
-
-  @media screen and (max-width: vars.$bp-lg) {
-    @include mix.grid-scroll(24rem);
-  }
-
-  &__card {
-    display: flex;
-    flex-direction: column;
-    gap: max(1.6rem, 12px);
-    padding: max(2rem, 16px);
-    min-height: max(22rem, 180px);
-    border-radius: max(1.6rem, 15px);
+  &__button {
+    @include mix.flex-center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: max(6.4rem, 50px);
+    height: max(6.4rem, 50px);
+    border-radius: 1.6rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
     background: linear-gradient(180deg, rgba(211, 135, 255, 0) 0%, rgba(211, 135, 255, 0.05) 100%);
     backdrop-filter: blur(50px);
+    transition: opacity 0.4s;
+    &:hover {
+      opacity: 0.75;
+    }
+    &-icon {
+      width: 50%;
+    }
   }
-
-  &__step {
-    color: rgba(255, 255, 255, 0.48);
-    font-size: max(1.2rem, 11px);
-    text-transform: uppercase;
-    letter-spacing: max(0.12rem, 1.2px);
-  }
-
-  &__icon {
-    width: max(3.2rem, 28px);
-  }
-
   &__title {
-    font-size: max(1.8rem, 15px);
-    line-height: 1.3;
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    translate: -50%;
+    font-size: max(13.5rem, 55px);
     font-weight: 700;
+    opacity: 0.2;
+    background: linear-gradient(
+      224deg,
+      rgba(255, 255, 255, 0.2) 41.03%,
+      rgba(255, 255, 255, 0.1) 56.65%,
+      rgba(255, 255, 255, 0.2) 78.15%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
-
-  &__text {
-    color: #c2c2c2;
-    font-size: max(1.4rem, 12px);
-    line-height: 1.45;
+  &__image {
+    border-radius: max(3.2rem, 20px);
+    aspect-ratio: 112.8/63.4;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
   }
 }
 
@@ -511,13 +505,57 @@ const teamPhotos = Array.from({ length: 8 }, (_, index) => ({
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  &__photo {
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: max(0.8rem, 5px);
     height: max(32rem, 180px);
     border-radius: max(2rem, 14px);
-
-    @media screen and (max-width: vars.$bp-sm) {
-      height: max(22rem, 160px);
+    overflow: hidden;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: max(1.6rem, 10px);
+    &:not(:hover) {
+      &::after {
+        opacity: 0;
+      }
+      .team__item-name,
+      .team__item-job {
+        opacity: 0;
+        transform: translateY(15px);
+      }
     }
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      inset-inline: 0;
+      height: 66.25%;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
+      transition: opacity 0.4s;
+    }
+    &-name {
+      font-size: 2.8rem;
+      font-weight: 700;
+      background: linear-gradient(203deg, #fff 26.72%, rgba(255, 255, 255, 0.2) 164.37%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: all 0.4s;
+    }
+    &-job {
+      font-family: vars.$font-nunito-sans;
+      color: rgba(#fff, 0.7);
+      transition: all 0.4s;
+    }
+    & > *:not(picture) {
+      z-index: 1;
+    }
+  }
+  &__photo {
+    position: absolute;
+    inset: 0;
   }
 }
 
@@ -525,7 +563,6 @@ const teamPhotos = Array.from({ length: 8 }, (_, index) => ({
   display: grid;
   grid-template-columns: minmax(0, 1fr) 42rem;
   gap: max(3.6rem, 18px);
-  align-items: center;
   padding: max(3.2rem, 18px);
   border-radius: max(3.2rem, 20px);
   background: #fff;
@@ -539,6 +576,7 @@ const teamPhotos = Array.from({ length: 8 }, (_, index) => ({
     display: flex;
     flex-direction: column;
     gap: max(2rem, 14px);
+    justify-content: space-between;
   }
 
   &__title {
@@ -546,14 +584,12 @@ const teamPhotos = Array.from({ length: 8 }, (_, index) => ({
     line-height: 1.2;
     font-weight: 700;
     letter-spacing: max(0.072rem, 0.72px);
-    max-width: 14ch;
   }
 
   &__text {
     color: #787878;
     font-size: max(1.6rem, 14px);
     line-height: 1.75;
-    max-width: 36ch;
   }
 
   &__visual {
@@ -561,12 +597,14 @@ const teamPhotos = Array.from({ length: 8 }, (_, index) => ({
     border-radius: max(1.6rem, 14px);
     background: #f5f5f5;
     overflow: hidden;
+    position: relative;
+    height: max(35.6rem, 200px);
 
     :deep(.my-picture) {
       align-items: flex-end;
-    }
-
-    :deep(.my-picture__image) {
+      position: absolute;
+      top: 2.8rem;
+      inset-inline: 4rem;
       border-radius: max(1.6rem, 12px) max(1.6rem, 12px) 0 0;
       box-shadow: 0 0.2rem 5.5rem rgba(0, 0, 0, 0.12);
     }
@@ -577,7 +615,11 @@ const teamPhotos = Array.from({ length: 8 }, (_, index) => ({
   padding: max(3.2rem, 18px);
   border-radius: max(3.2rem, 20px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background: linear-gradient(122deg, rgba(255, 255, 255, 0.02) 12.4%, rgba(255, 255, 255, 0.08) 100.6%);
+  background: linear-gradient(
+    122deg,
+    rgba(255, 255, 255, 0.02) 12.4%,
+    rgba(255, 255, 255, 0.08) 100.6%
+  );
   backdrop-filter: blur(50px);
   display: flex;
   flex-direction: column;

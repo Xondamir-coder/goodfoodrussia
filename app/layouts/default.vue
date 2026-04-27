@@ -36,12 +36,14 @@
     <div class="layout__slot">
       <slot />
     </div>
-    <div v-if="!$route.path.includes('services')" class="layout__shadows" />
+    <div v-if="!noShadowPages.some(e => $route.name.includes(e))" class="layout__shadows" />
     <LayoutFooter v-if="!$route.name.includes('index')" />
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const noShadowPages = ['services', 'about'];
+</script>
 
 <style lang="scss" scoped>
 @use 'sass:map';
@@ -204,7 +206,7 @@
   &__patterns {
     position: absolute;
     inset: 0;
-    z-index: 1;
+    z-index: 2;
     pointer-events: none;
   }
   &__slot {
