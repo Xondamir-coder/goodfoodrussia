@@ -11,7 +11,6 @@
             : $route.path.slice(1)
     "
   >
-    <div id="layout-teleport" />
     <LayoutHeader />
     <div class="layout__patterns">
       <!-- header -->
@@ -70,6 +69,12 @@ const noShadowPages = ['services', 'about'];
   display: flex;
   flex-direction: column;
 
+  &.about,
+  &.services {
+    .layout__slot {
+      padding-top: 0;
+    }
+  }
   &.contacts {
     .layout__dot {
       display: none;
@@ -206,11 +211,12 @@ const noShadowPages = ['services', 'about'];
   &__patterns {
     position: absolute;
     inset: 0;
-    z-index: 2;
+    z-index: 1;
     pointer-events: none;
   }
   &__slot {
     z-index: 1;
+    padding-top: max(6rem, 60px);
   }
   &__shadows {
     position: absolute;

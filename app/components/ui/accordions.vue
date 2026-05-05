@@ -86,6 +86,7 @@ defineProps({
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 4px;
     &-icon {
       transition: transform 0.5s;
     }

@@ -7,12 +7,15 @@
       {{ text }}
     </p>
     <div class="share-card__bottom">
-      <UiIconButton @click="emits('copy')" class="share-card__bottom-icbutton">
+      <UiIconButton class="share-card__bottom-icbutton" @click="emits('copy')">
         <IconsShare />
       </UiIconButton>
-      <button class="share-card__bottom-button" @click="emits('share')">
-        <span>{{ $t('share') }}</span>
-      </button>
+      <UiBaseButton
+        class="share-card__bottom-button"
+        variant="white"
+        :text="$t('share')"
+        @click="emits('share')"
+      />
     </div>
   </div>
 </template>
@@ -43,14 +46,16 @@ onBeforeUnmount(() => {
 
 <style lang="scss" scoped>
 .share-card {
-  position: sticky;
-  top: max(1.6rem, 10px);
+  @media screen and (min-width: vars.$bp-lg) {
+    position: sticky;
+    top: calc(max(6rem, 60px) + max(1.6rem, 10px));
+  }
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: max(1.2rem, 12px);
   align-self: flex-start;
-  padding: 2.4rem;
-  border-radius: 3.2rem;
+  padding: max(2.4rem, 16px);
+  border-radius: max(3.2rem, 16px);
   border: 1px solid #293d62;
   background:
     radial-gradient(
@@ -61,31 +66,23 @@ onBeforeUnmount(() => {
     rgba(0, 28, 73, 0.8);
   backdrop-filter: blur(10px);
   &__bottom {
-    margin-top: 2.4rem - 1.2rem;
     display: flex;
-    gap: 1.6rem;
-    height: 5rem;
+    gap: max(1.6rem, 12px);
+    height: max(5rem, 42px);
     &-icbutton {
-      width: 5rem;
+      width: max(5rem, 42px);
     }
     &-button {
-      padding: 0 2.4rem;
+      height: max(5rem, 42px);
       flex: 1;
-      border-radius: 0.8rem;
-      background: #fff;
-      color: var(--Main-Green-950, #001a0d);
-      font-size: 1.4rem;
-      font-weight: 700;
-      font-family: vars.$font-nunito-sans;
     }
   }
   &__title {
-    font-size: 2.4rem;
+    font-size: max(2.4rem, 16px);
     font-weight: 700;
   }
   &__text {
-    font-size: 1.4rem;
-    line-height: 135%;
+    font-size: max(1.4rem, 12px);
   }
 }
 </style>

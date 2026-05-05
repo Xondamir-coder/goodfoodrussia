@@ -22,16 +22,25 @@
         <div class="detailed-page__gallery-top">
           <h3>{{ $t('mediaIndex.photoGallery') }}</h3>
           <div class="detailed-page__gallery-top-arrows">
-            <UiIconButton>
+            <UiIconButton id="btn-prev">
               <IconsArrowLeftIos />
             </UiIconButton>
-            <UiIconButton>
+            <UiIconButton id="btn-next">
               <IconsArrowRightIos />
             </UiIconButton>
           </div>
         </div>
         <div class="detailed-page__gallery-slider">
-          <swiper :grab-cursor="true" slides-per-view="auto" :space-between="12">
+          <swiper
+            :modules="[Navigation]"
+            :grab-cursor="true"
+            slides-per-view="auto"
+            :space-between="12"
+            :navigation="{
+              nextEl: '#btn-next',
+              prevEl: '#btn-prev'
+            }"
+          >
             <swiper-slide
               v-for="image in data.gallery"
               :key="image"
@@ -48,6 +57,7 @@
 </template>
 
 <script setup>
+import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 
@@ -66,34 +76,41 @@ const { data } = defineProps({
 <style lang="scss">
 .detailed-page {
   padding-inline: var(--spacing-inline);
-  padding-top: 1.2rem;
+  padding-top: max(1.2rem, 12px);
   display: grid;
   grid-template-columns: 2.5375fr 1fr;
-  gap: 2rem;
-  padding-bottom: 1.6rem;
+  gap: max(2rem, 20px);
+  padding-bottom: max(1.6rem, 16px);
+  @media screen and (max-width: vars.$bp-lg) {
+    grid-template-columns: 1fr;
+  }
   h3 {
-    font-size: 2.4rem;
+    font-size: max(2.4rem, 16px);
     font-weight: 700;
   }
   p {
-    line-height: 135%;
+    line-height: 155%;
   }
   section {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: max(1.2rem, 12px);
   }
   &__top {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: max(2rem, 16px);
   }
   &__header {
     display: flex;
-    gap: 2rem;
+    gap: max(2rem, 16px);
     align-items: center;
+    @media screen and (max-width: vars.$bp-sm) {
+      align-items: flex-start;
+      flex-direction: column;
+    }
     &-title {
-      font-size: 2.8rem;
+      font-size: max(2.8rem, 20px);
       font-weight: 700;
     }
   }
@@ -113,11 +130,11 @@ const { data } = defineProps({
   }
   &__card {
     display: flex;
-    padding: 2rem;
+    padding: max(2rem, 12px);
     flex-direction: column;
-    gap: 0.8rem;
+    gap: max(0.8rem, 8px);
     align-self: stretch;
-    border-radius: 1.5rem;
+    border-radius: max(1.5rem, 12px);
     border: 1px solid rgba(255, 255, 255, 0.16);
     background: linear-gradient(180deg, rgba(211, 135, 255, 0) 0%, rgba(211, 135, 255, 0.05) 100%);
     backdrop-filter: blur(50px);
@@ -125,49 +142,70 @@ const { data } = defineProps({
       display: none;
     }
     &-title {
-      font-size: 1.6rem;
+      font-size: max(1.6rem, 16px);
       font-weight: 700;
       display: flex;
       gap: 7px;
     }
     &-text {
-      font-size: 1.4rem;
+      font-size: max(1.4rem, 14px);
     }
   }
   &__labels {
     display: flex;
-    gap: 1.2rem;
+    gap: max(1.2rem, 8px);
+    @media screen and (max-width: vars.$bp-md) {
+      order: 3;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      & > * {
+        scroll-snap-align: start;
+        text-wrap: nowrap;
+      }
+    }
     &-item {
+      @include mix.glass-bezel(
+        (
+          angle: 165deg,
+          border-color: 175 195 216
+        )
+      );
       display: flex;
-      padding: 1.2rem;
+      padding: max(1.2rem, 12px);
       align-items: center;
       gap: 1rem;
-      border-radius: 9.9rem;
+      border-radius: max(9.9rem, 99px);
       background: rgba(7, 37, 59, 0.2);
       font-family: vars.$font-nunito-sans;
       font-weight: 500;
-      font-size: 1.2rem;
+      font-size: max(1.2rem, 12px);
 
       &-icon {
-        width: 2rem;
+        width: max(2rem, 20px);
         fill: none;
       }
     }
   }
   &__banner {
     aspect-ratio: 81.2/42.7;
-    border-radius: 1.6rem;
+    border-radius: max(1.6rem, 16px);
+    @media screen and (max-width: vars.$bp-sm) {
+      aspect-ratio: 26.8/18;
+    }
   }
   &__container {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 3.2rem;
+    gap: max(3.2rem, 20px);
   }
   &__template {
     display: flex;
     flex-direction: column;
-    gap: 3.2rem;
+    gap: max(3.2rem, 20px);
     li {
       line-height: 135%;
       display: flex;

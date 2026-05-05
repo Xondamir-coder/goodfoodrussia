@@ -1,18 +1,14 @@
 <template>
   <main class="services">
     <section class="hero">
-      <ClientOnly>
-        <Teleport to="#layout-teleport">
-          <Transition name="appear">
-            <UiPicture
-              :key="activeHeroBanner"
-              :src="heroBanners[activeHeroBanner]"
-              alt="banner"
-              class="hero__banner"
-            />
-          </Transition>
-        </Teleport>
-      </ClientOnly>
+      <Transition name="appear">
+        <UiPicture
+          :key="activeHeroBanner"
+          :src="heroBanners[activeHeroBanner]"
+          alt="banner"
+          class="hero__banner"
+        />
+      </Transition>
       <div class="hero__content">
         <h1 class="hero__title">
           {{ $t('services.hero.title') }}
@@ -65,7 +61,12 @@
             {{ $t('services.cta.text') }}
           </p>
         </div>
-        <UiBaseButton :text="$t('leaveEnquiry')" variant="white" class="cta__button">
+        <UiBaseButton
+          :text="$t('leaveEnquiry')"
+          variant="white"
+          class="cta__button"
+          @click="showContactsModal = true"
+        >
           <IconsThickArrowRight />
         </UiBaseButton>
       </div>
@@ -81,6 +82,7 @@
       </div>
       <UiAccordions :accordions="mapRt(tm('services.faq.accordions'), rt)" />
     </section>
+    <UiContactsModal />
   </main>
 </template>
 
@@ -94,6 +96,7 @@ import {
 } from '#components';
 
 const { tm, rt } = useI18n();
+const showContactsModal = useState('showContactsModal');
 
 const activeHeroBanner = ref(0);
 
@@ -112,6 +115,46 @@ const reasonsCards = mapRt(tm('services.reasons.cards'), rt).map((el, i) => ({
 </script>
 
 <style lang="scss" scoped>
+.services {
+  padding-bottom: max(8rem, 40px);
+  display: flex;
+  flex-direction: column;
+  gap: max(8rem, 32px);
+  & > * {
+    margin-inline: var(--spacing-inline);
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: max(1.2rem, 12px);
+    text-align: center;
+    align-self: center;
+    @media screen and (min-width: vars.$bp-md) {
+      max-width: 68%;
+    }
+
+    &-title {
+      font-size: max(3.6rem, 20px);
+      font-weight: 700;
+      background: linear-gradient(203deg, #fff 26.72%, rgba(255, 255, 255, 0.2) 164.37%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      max-width: 15ch;
+    }
+    &-text {
+      color: #c2c2c2;
+      font-size: max(1.8rem, 14px);
+      line-height: 135%;
+    }
+  }
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: max(3.2rem, 20px);
+  }
+}
 .faq {
   padding-inline: max(3.2rem, 17px);
   padding-block: max(3.2rem, 32px);
@@ -201,7 +244,6 @@ const reasonsCards = mapRt(tm('services.reasons.cards'), rt).map((el, i) => ({
     --icon-size: max(2.4rem, 20px);
   }
 }
-
 .reasons {
   &__cards {
     display: flex;
@@ -261,12 +303,16 @@ const reasonsCards = mapRt(tm('services.reasons.cards'), rt).map((el, i) => ({
   }
 }
 .hero {
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: flex-end;
   gap: 32px;
   justify-content: space-between;
   padding-bottom: max(3.2rem, 16px);
-  height: calc(100vh - max(6rem, 60px));
+  height: 100dvh;
+  margin-inline: 0;
+  padding-inline: var(--spacing-inline);
   @media screen and (max-width: vars.$bp-md) {
     flex-direction: column;
     justify-content: flex-end;
@@ -274,9 +320,7 @@ const reasonsCards = mapRt(tm('services.reasons.cards'), rt).map((el, i) => ({
   }
   &__banner {
     position: absolute;
-    top: 0;
-    inset-inline: 0;
-    height: 100vh;
+    inset: 0;
     &::after {
       content: '';
       position: absolute;
@@ -285,6 +329,7 @@ const reasonsCards = mapRt(tm('services.reasons.cards'), rt).map((el, i) => ({
     }
   }
   &__content {
+    z-index: 1;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -339,44 +384,6 @@ const reasonsCards = mapRt(tm('services.reasons.cards'), rt).map((el, i) => ({
       border-radius: max(0.8rem, 8px);
       transition: opacity 0.4s;
     }
-  }
-}
-.services {
-  padding-inline: var(--spacing-inline);
-  padding-bottom: max(8rem, 40px);
-  display: flex;
-  flex-direction: column;
-  gap: max(8rem, 32px);
-  &__header {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: max(1.2rem, 12px);
-    text-align: center;
-    align-self: center;
-    @media screen and (min-width: vars.$bp-md) {
-      max-width: 68%;
-    }
-
-    &-title {
-      font-size: max(3.6rem, 20px);
-      font-weight: 700;
-      background: linear-gradient(203deg, #fff 26.72%, rgba(255, 255, 255, 0.2) 164.37%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      max-width: 15ch;
-    }
-    &-text {
-      color: #c2c2c2;
-      font-size: max(1.8rem, 14px);
-      line-height: 135%;
-    }
-  }
-  &__section {
-    display: flex;
-    flex-direction: column;
-    gap: max(3.2rem, 20px);
   }
 }
 .appear-enter-active,

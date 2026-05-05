@@ -1,16 +1,11 @@
 <template>
   <main class="about">
-    <ClientOnly>
-      <Teleport to="#layout-teleport">
-        <UiPicture
-          src="about-hero.jpg"
-          alt="Good Food Russia showroom team"
-          class="about__hero-banner"
-        />
-      </Teleport>
-    </ClientOnly>
-
     <section class="hero">
+      <UiPicture
+        src="about-hero.jpg"
+        alt="Good Food Russia showroom team"
+        class="about__hero-banner"
+      />
       <div class="hero__card">
         <div class="hero__card-title-wrap">
           <h1 class="hero__title">
@@ -173,13 +168,10 @@ const team = mapRt(tm('about.team.items'), rt).map((el, i) => ({
   padding-bottom: max(8rem, 40px);
   display: flex;
   flex-direction: column;
-  & > * {
-    padding-inline: var(--spacing-inline);
-  }
   &__wrapper {
+    z-index: 1;
     position: relative;
     margin-bottom: 0 !important;
-    padding-inline: 0;
     display: flex;
     gap: max(18rem, 32px);
     flex-direction: column;
@@ -222,8 +214,8 @@ const team = mapRt(tm('about.team.items'), rt).map((el, i) => ({
         linear-gradient(180deg, rgba(6, 24, 82, 0) 56%, #061852 100%);
     }
   }
-
   &__section {
+    padding-inline: var(--spacing-inline);
     display: flex;
     flex-direction: column;
     gap: max(3.2rem, 20px);
@@ -244,7 +236,7 @@ const team = mapRt(tm('about.team.items'), rt).map((el, i) => ({
 }
 
 .hero {
-  min-height: calc(max(80.7rem, 700px) - max(6rem, 60px));
+  min-height: 100dvh;
   display: flex;
   align-items: flex-end;
   padding-bottom: max(8rem, 32px);
@@ -258,8 +250,8 @@ const team = mapRt(tm('about.team.items'), rt).map((el, i) => ({
     height: 44.1%;
     background: linear-gradient(0deg, #000 19.39%, rgba(0, 0, 0, 0) 100%);
   }
-
   &__card {
+    margin-inline: var(--spacing-inline);
     z-index: 2;
     width: 100%;
     display: grid;
