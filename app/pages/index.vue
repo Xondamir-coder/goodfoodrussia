@@ -1,8 +1,7 @@
 <template>
-  <main class="home">
+  <main class="home" :class="`slide--${query?.slide}`">
     <component :is="slide" v-for="(slide, i) in slides" v-show="i === +query?.slide" :key="i" />
     <UiHomeNavbar />
-    <!-- <UiPicture src="home-bg.png" alt="background" class="home__bg" /> -->
   </main>
 </template>
 
@@ -45,9 +44,15 @@ const slides = [
 
 <style lang="scss" scoped>
 .home {
-  min-height: calc(100dvh - 6rem);
+  padding-top: max(6rem, 60px);
+  min-height: 100dvh;
   display: flex;
-
+  @media screen and (max-width: vars.$bp-lg) {
+    padding-bottom: calc(58px + 30px);
+  }
+  &.slide--6 {
+    padding-bottom: 0;
+  }
   &__bg {
     position: absolute;
     top: 0;
@@ -55,5 +60,13 @@ const slides = [
     width: 100%;
     height: 100%;
   }
+}
+.appear-enter-active,
+.appear-leave-active {
+  transition: opacity 0.4s;
+}
+.appear-enter-from,
+.appear-leave-to {
+  opacity: 0;
 }
 </style>

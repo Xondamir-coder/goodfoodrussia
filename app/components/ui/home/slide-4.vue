@@ -12,6 +12,7 @@
       <UiHomeSlideHeader
         :title="$t('home.slide-4.coop.title')"
         :text="$t('home.slide-4.coop.text')"
+        class="slide__header"
       />
       <ul class="slide__cards">
         <li v-for="card in cards" :key="card.title" class="slide__card">
@@ -22,7 +23,7 @@
           <p class="slide__card-text">{{ card.text }}</p>
         </li>
       </ul>
-      <UiBaseButton :text="$t('submitRequest')" variant="blue" />
+      <UiBaseButton :text="$t('submitRequest')" variant="blue" class="slide__button" />
     </div>
     <UiPicture src="strawberries.png" alt="strawberries" class="slide__pic" />
     <UiPicture src="strawberries-sliced.png" alt="strawberries" class="slide__pic" />
@@ -58,19 +59,43 @@ const cards = mapRt(tm('home.slide-4.coop.cards'), rt).map((el, i) => ({
   & > *:not(picture) {
     z-index: 1;
   }
+  &__button {
+    animation: scale-in 0.4s 0.5s backwards;
+  }
+  &__header {
+    & > *:first-child {
+      animation: slide-from-bottom-10 0.4s 0.3s backwards;
+    }
+    & > *:last-child {
+      animation: slide-from-bottom-10 0.4s 0.35s backwards;
+    }
+  }
   &__pic {
     position: absolute;
-    width: 41.9317rem;
+    width: max(41.9317rem, 250px);
+    animation: scale-up 0.6s backwards;
+    @for $i from 1 through 2 {
+      &:nth-of-type(#{$i}) {
+        animation-delay: $i * 0.1s;
+      }
+    }
 
     &:first-of-type {
       transform: rotate(17.363deg);
       left: -10%;
       top: 13%;
+      @media screen and (max-width: vars.$bp-sm) {
+        left: -38%;
+        top: 3%;
+      }
     }
     &:last-of-type {
       transform: rotate(-15deg);
       right: -9%;
       bottom: 2%;
+      @media screen and (max-width: vars.$bp-sm) {
+        right: -35%;
+      }
     }
   }
   &__card {
@@ -84,16 +109,22 @@ const cards = mapRt(tm('home.slide-4.coop.cards'), rt).map((el, i) => ({
       )
     );
     display: flex;
-    padding: 2rem;
+    padding: max(2rem, 16px);
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    border-radius: 2rem;
+    gap: max(1rem, 10px);
+    border-radius: max(2rem, 12px);
     background: linear-gradient(180deg, rgba(13, 18, 49, 0.2) 0%, #060d56 100%);
     backdrop-filter: blur(5px);
+    animation: slide-from-bottom-20 0.6s backwards;
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        animation-delay: $i * 0.07s + 0.3s;
+      }
+    }
     &-title {
       text-align: center;
-      font-size: 2.8rem;
+      font-size: max(2.8rem, 20px);
       font-weight: 700;
       line-height: 104%;
       background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
@@ -110,10 +141,10 @@ const cards = mapRt(tm('home.slide-4.coop.cards'), rt).map((el, i) => ({
     }
     &-icontainer {
       @include mix.flex-center;
-      margin-bottom: 1rem;
-      width: 7.2rem;
-      height: 7.2rem;
-      border-radius: 1.6rem;
+      margin-bottom: max(1rem, 10px);
+      width: max(7.2rem, 48px);
+      height: max(7.2rem, 48px);
+      border-radius: max(1.6rem, 8px);
       border: 1px solid rgba(255, 255, 255, 0.6);
       background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
       box-shadow: 0 16px 50px 0 rgba(13, 3, 22, 0.4);
@@ -125,7 +156,7 @@ const cards = mapRt(tm('home.slide-4.coop.cards'), rt).map((el, i) => ({
   &__cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(max(300px, 37.6rem), 1fr));
-    gap: 1.2rem;
+    gap: max(1.2rem, 8px);
   }
   &__producer {
     @include mix.flex-center;
@@ -138,23 +169,35 @@ const cards = mapRt(tm('home.slide-4.coop.cards'), rt).map((el, i) => ({
       )
     );
     aspect-ratio: 27.3/18;
-    border-radius: 2.4rem;
+    border-radius: max(2.4rem, 12px);
     background: rgba(0, 28, 73, 0.6);
     backdrop-filter: blur(25px);
+    animation: slide-from-bottom-20 0.6s backwards;
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        animation-delay: $i * 0.03s;
+      }
+    }
+    @media screen and (max-width: vars.$bp-sm) {
+      aspect-ratio: 13.2/12;
+    }
     &-pic {
       width: 50%;
+      @media screen and (max-width: vars.$bp-sm) {
+        width: 70%;
+      }
     }
   }
   &__producers {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(max(27.3rem, 200px), 1fr));
-    row-gap: 2rem;
-    column-gap: 1.6rem;
+    grid-template-columns: repeat(auto-fill, minmax(max(27.3rem, 130px), 1fr));
+    row-gap: max(2rem, 8px);
+    column-gap: max(1.6rem, 4px);
   }
   &__container {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: max(3rem, 20px);
   }
 }
 </style>

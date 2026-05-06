@@ -89,7 +89,6 @@ const labels = [data.date, data.city];
     font-weight: 700;
   }
   &__button {
-    height: max(5rem, 42px);
     padding-inline: max(2.4rem, 24px);
     border-top: 1px solid rgba(255, 255, 255, 0.12);
   }

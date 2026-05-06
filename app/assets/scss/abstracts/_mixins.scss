@@ -64,8 +64,8 @@
   padding-inline: var(--spacing-inline);
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  padding-block: 1.6rem;
+  gap: max(3rem, 20px);
+  padding-block: max(1.6rem, 16px);
   flex: 1;
   z-index: 1;
 }

@@ -23,7 +23,7 @@ defineProps({
 
 <style lang="scss" scoped>
 .button {
-  height: max(5rem, 50px);
+  height: max(5rem, 42px);
   padding-inline: max(2.4rem, 24px);
   border-radius: max(0.8rem, 8px);
   font-weight: 600;

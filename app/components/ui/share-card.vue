@@ -73,7 +73,6 @@ onBeforeUnmount(() => {
       width: max(5rem, 42px);
     }
     &-button {
-      height: max(5rem, 42px);
       flex: 1;
     }
   }

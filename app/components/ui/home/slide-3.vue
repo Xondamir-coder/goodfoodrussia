@@ -24,25 +24,52 @@ const { categories } = useApiStore();
   }
   &__pic {
     position: absolute;
-    width: 57rem;
+    width: max(57rem, 200px);
+    animation: scale-up 0.6s backwards;
+    @for $i from 1 through 2 {
+      &:nth-child(#{$i}) {
+        animation-delay: $i * 0.1s;
+      }
+    }
     &:first-of-type {
       left: -13%;
       bottom: -22%;
       transform: rotate(-33.662deg);
+      @media screen and (max-width: vars.$bp-sm) {
+        bottom: -2%;
+        left: -23%;
+      }
     }
     &:last-of-type {
       right: -13%;
       top: -6%;
       transform: rotate(-21.532deg);
+      @media screen and (max-width: vars.$bp-sm) {
+        top: 0;
+        right: -27%;
+      }
     }
   }
   &__items {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(max(27.3rem, 200px), 1fr));
-    gap: 1.6rem;
+    gap: max(1.6rem, 8px);
   }
   &__item {
+    @keyframes item-anim {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+    }
     display: flex;
+    @for $i from 1 through 20 {
+      &:nth-child(#{$i}) {
+        & > * {
+          animation: item-anim 0.6s backwards $i * 0.04s;
+        }
+      }
+    }
     & > * {
       flex: 1;
     }

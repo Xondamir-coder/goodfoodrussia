@@ -135,7 +135,7 @@
 
 <script setup>
 import {
-  IconsAutoGraph,
+  IconsAutoGraphFade,
   IconsAssignmentIn,
   IconsStarOutline,
   IconsInventory,
@@ -145,7 +145,7 @@ import {
 const { t, tm, rt } = useI18n();
 
 const stats = [
-  { value: '1200+', text: t('about.stats.0'), icon: IconsAutoGraph },
+  { value: '1200+', text: t('about.stats.0'), icon: IconsAutoGraphFade },
   { value: '200+', text: t('about.stats.1'), icon: IconsHandshakeStrongFade },
   { value: '30+', text: t('about.stats.2'), icon: IconsAssignmentIn },
   { value: '4.8+', text: t('about.stats.3'), icon: IconsStarOutline }

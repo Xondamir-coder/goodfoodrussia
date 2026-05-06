@@ -1,7 +1,7 @@
 <template>
-  <div class="header">
-    <span>{{ title }}</span>
-    <p>{{ text }}</p>
+  <div class="slide-header">
+    <h3 class="slide-header__title">{{ title }}</h3>
+    <p class="slide-header__text">{{ text }}</p>
   </div>
 </template>
 
@@ -19,25 +19,27 @@ defineProps({
 </script>
 
 <style lang="scss" scoped>
-.header {
+.slide-header {
   display: flex;
   flex-direction: column;
   align-self: center;
   gap: 1rem;
 
-  span {
+  &__title {
     text-align: center;
-    font-size: 2.6rem;
+    font-size: max(2.6rem, 18px);
     font-weight: 700;
     line-height: 128%;
+    animation: slide-from-bottom-10 0.4s;
   }
-  p {
+  &__text {
+    animation: slide-from-bottom-10 0.4s 0.05s backwards;
     color: var(--Smalt-300, #b8caed);
     text-align: center;
     font-family: vars.$font-nunito-sans;
-    font-size: 1.8rem;
+    font-size: max(1.8rem, 14px);
     line-height: 128%;
-    letter-spacing: -0.036rem;
+    letter-spacing: min(-0.036rem, -0.28px);
     max-width: 53ch;
   }
 }
