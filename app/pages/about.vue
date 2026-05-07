@@ -169,7 +169,6 @@ const team = mapRt(tm('about.team.items'), rt).map((el, i) => ({
   display: flex;
   flex-direction: column;
   &__wrapper {
-    z-index: 1;
     position: relative;
     margin-bottom: 0 !important;
     display: flex;
@@ -181,7 +180,6 @@ const team = mapRt(tm('about.team.items'), rt).map((el, i) => ({
       position: absolute;
       inset-inline: 0;
       background: #051443;
-      z-index: 2;
       height: 4px;
       &:first-child {
         bottom: -5px;
@@ -220,7 +218,6 @@ const team = mapRt(tm('about.team.items'), rt).map((el, i) => ({
     flex-direction: column;
     gap: max(3.2rem, 20px);
     position: relative;
-    z-index: 1;
     &:not(:last-child) {
       margin-bottom: max(8rem, 32px);
     }
@@ -241,7 +238,16 @@ const team = mapRt(tm('about.team.items'), rt).map((el, i) => ({
   align-items: flex-end;
   padding-bottom: max(8rem, 32px);
   position: relative;
-  z-index: 1;
+  &::before {
+    content: '';
+    position: absolute;
+    top: max(6rem, 60px);
+    left: 0;
+    width: 100%;
+    height: 1px;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.07);
+  }
   &::after {
     content: '';
     position: absolute;
@@ -252,7 +258,7 @@ const team = mapRt(tm('about.team.items'), rt).map((el, i) => ({
   }
   &__card {
     margin-inline: var(--spacing-inline);
-    z-index: 2;
+    z-index: 1;
     width: 100%;
     display: grid;
     grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
@@ -291,7 +297,6 @@ const team = mapRt(tm('about.team.items'), rt).map((el, i) => ({
 
   &__title {
     position: relative;
-    z-index: 1;
     font-size: max(3.8rem, 24px);
     line-height: 1.21;
     font-weight: 700;
@@ -331,7 +336,6 @@ const team = mapRt(tm('about.team.items'), rt).map((el, i) => ({
 
   &__copy {
     position: relative;
-    z-index: 1;
     max-width: 74.5%;
     display: flex;
     flex-direction: column;
@@ -353,6 +357,7 @@ const team = mapRt(tm('about.team.items'), rt).map((el, i) => ({
   }
 
   &__icon {
+    pointer-events: none;
     position: absolute;
     top: 0;
     right: 20%;
@@ -362,7 +367,6 @@ const team = mapRt(tm('about.team.items'), rt).map((el, i) => ({
 
 .mission {
   position: relative;
-  z-index: 1;
   padding-bottom: 11.5rem;
   display: flex;
   clip-path: inset(-50% 0 0);
@@ -383,7 +387,6 @@ const team = mapRt(tm('about.team.items'), rt).map((el, i) => ({
     translate: -50%;
     top: -30%;
     background: linear-gradient(180deg, #061852 0%, rgb(1, 7, 23) 100%);
-    // background: red;
   }
 
   &__cards {

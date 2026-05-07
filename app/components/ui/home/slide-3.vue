@@ -8,7 +8,7 @@
         <UiCategoryCard :category />
       </li>
     </ul>
-    <UiBaseButton :text="$t('exploreCatalogue')" variant="blue" />
+    <UiBaseButton :text="$t('exploreCatalogue')" variant="blue" class="slide__button" />
   </div>
 </template>
 
@@ -21,6 +21,10 @@ const { categories } = useApiStore();
   @include mix.home-slide;
   & > *:not(picture) {
     z-index: 1;
+  }
+  &__button {
+    animation: scale-in 0.4s 0.5s backwards;
+    margin-inline: var(--spacing-inline);
   }
   &__pic {
     position: absolute;
@@ -51,6 +55,7 @@ const { categories } = useApiStore();
     }
   }
   &__items {
+    margin-inline: var(--spacing-inline);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(max(27.3rem, 200px), 1fr));
     gap: max(1.6rem, 8px);

@@ -30,7 +30,8 @@
 <style lang="scss" scoped>
 .slide {
   @include mix.home-slide;
-  align-items: center;
+  gap: 0;
+
   &__pictures {
     &-tom {
       position: absolute;
@@ -70,19 +71,19 @@
       bottom: 0;
       translate: -50% 63%;
       @media screen and (min-width: vars.$bp-xl) and (max-height: 900px) {
-        width: 45%;
+        width: 40%;
+        translate: -50% 65%;
       }
     }
   }
   &__content {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: max(2rem, 16px);
     text-align: center;
     z-index: 1;
     & > * {
       animation: slide-from-bottom-20 0.4s backwards;
+      padding-inline: var(--spacing-inline);
       @for $i from 1 through 5 {
         &:nth-child(#{$i}) {
           animation-delay: $i * 0.07s;
@@ -94,7 +95,11 @@
       text-align: start;
     }
     &-buttons {
+      @include mix.dots(bottom, #fff);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      padding-block: max(2rem, 16px);
       display: flex;
+      justify-content: center;
       gap: max(1.6rem, 12px);
 
       @media screen and (max-width: vars.$bp-sm) {
@@ -103,6 +108,9 @@
       }
     }
     &-title {
+      @include mix.dots;
+      padding-block: max(3.2rem, 16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
       font-size: max(8rem, 28px);
       font-style: normal;
       font-weight: 700;
@@ -116,6 +124,9 @@
       }
     }
     &-text {
+      @include mix.dots(bottom, #fff);
+      padding-block: max(1.6rem, 16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
       font-family: vars.$font-nunito-sans;
       font-size: max(2rem, 14px);
       font-weight: 400;
@@ -124,9 +135,14 @@
     }
   }
   &__label {
+    border-block: 1px solid rgba(255, 255, 255, 0.07);
+    padding-block: max(2.3rem, 16px);
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: max(1.6rem, 10px);
+    position: relative;
+    @include mix.dots;
     &-line {
       width: max(8.8rem, 32px);
       height: 1px;

@@ -48,11 +48,9 @@ const { recipes } = useApiStore();
     display: flex;
     flex-direction: column;
     gap: max(5.25rem, 20px);
-    & > *:last-child {
-      align-self: center;
-    }
   }
   &-cards {
+    padding-inline: var(--spacing-inline);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(max(37rem, 250px), 1fr));
     row-gap: max(2rem, 12px);

@@ -99,6 +99,7 @@ const cards = mapRt(tm('home.slide-2.cards'), rt).map(el => ({
 <style lang="scss" scoped>
 .slide {
   @include mix.home-slide;
+
   &__lemon {
     position: absolute;
     pointer-events: none;
@@ -257,6 +258,7 @@ const cards = mapRt(tm('home.slide-2.cards'), rt).map(el => ({
     }
   }
   &__cards {
+    margin-inline: var(--spacing-inline);
     display: grid;
     grid-template-areas:
       'card-1 card-2'

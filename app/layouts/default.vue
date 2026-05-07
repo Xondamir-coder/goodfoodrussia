@@ -12,10 +12,16 @@
     "
   >
     <LayoutHeader />
+    <div v-if="!noShadowPages.some(e => $route.name.includes(e))" class="layout__shadows" />
+    <div
+      class="layout__lines"
+      :class="{ priority: $route.name.includes('about') || $route.name.includes('services') }"
+    >
+      <div v-for="i in 4" :key="i" class="layout__line" />
+    </div>
     <div class="layout__slot">
       <slot />
     </div>
-    <div v-if="!noShadowPages.some(e => $route.name.includes(e))" class="layout__shadows" />
     <LayoutFooter v-if="!$route.name.includes('index')" />
   </div>
 </template>
@@ -42,7 +48,6 @@ const noShadowPages = ['services', 'about'];
     }
   }
   &__slot {
-    z-index: 1;
     padding-top: max(6rem, 60px);
   }
   &__shadows {
@@ -56,6 +61,34 @@ const noShadowPages = ['services', 'about'];
       rgba(13, 3, 22, 0.15) 75.35%,
       #0d0316 100%
     );
+  }
+  &__lines {
+    z-index: 1;
+    &.priority {
+      z-index: 3;
+    }
+  }
+  &__slot {
+    z-index: 2;
+  }
+  &__line {
+    position: absolute;
+    background-color: #ffffff12;
+    height: 100%;
+    width: 1px;
+    top: 0;
+    &:first-child {
+      left: max(5.5rem, 15px);
+    }
+    &:nth-child(2) {
+      left: var(--line-spacing);
+    }
+    &:nth-child(3) {
+      right: var(--line-spacing);
+    }
+    &:nth-child(4) {
+      right: max(5.5rem, 15px);
+    }
   }
 }
 </style>

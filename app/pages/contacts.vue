@@ -109,6 +109,16 @@ const showContactsModal = useState('showContactsModal');
   min-height: calc(100vh - max(6rem, 60px));
   display: grid;
   grid-template-columns: 1fr 1.4042fr;
+  &::before {
+    content: '';
+    position: absolute;
+    top: max(6rem, 60px);
+    left: 0;
+    width: 100%;
+    height: 1px;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.07);
+  }
   @media screen and (max-width: vars.$bp-md) {
     grid-template-columns: 1fr;
   }

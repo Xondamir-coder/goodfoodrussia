@@ -11,10 +11,13 @@ $font-dongle: 'Dongle', Arial;
 
 :root {
   --spacing-inline: 14.4rem;
+  --line-spacing: 12rem;
   @media screen and (max-width: $bp-xl) {
+    --line-spacing: max(7.6rem, 31px);
     --spacing-inline: max(10rem, 46px);
   }
   @media screen and (max-width: $bp-lg) {
+    --line-spacing: max(7rem, 31px);
     --spacing-inline: max(7rem, 46px);
   }
 }

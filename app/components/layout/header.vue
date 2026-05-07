@@ -128,7 +128,7 @@ const links = computed(() =>
     height 0.4s;
   &.stuck {
     backdrop-filter: blur(3px);
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(#0c0825, 0.3);
   }
   &.shown {
     height: calc(60px + (39px * 7) + (20px * 2));

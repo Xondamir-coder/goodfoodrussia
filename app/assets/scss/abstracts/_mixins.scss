@@ -61,13 +61,52 @@
 }
 
 @mixin home-slide {
-  padding-inline: var(--spacing-inline);
   display: flex;
   flex-direction: column;
-  gap: max(3rem, 20px);
-  padding-block: max(1.6rem, 16px);
+  gap: max(1.6rem, 16px);
+  padding-bottom: max(1.6rem, 16px);
   flex: 1;
-  z-index: 1;
+  z-index: 2;
+}
+
+@mixin dots($align: bottom, $color: #2550b5) {
+  position: relative;
+  @if ($align == bottom) {
+    &::after,
+    &::before {
+      bottom: 0;
+    }
+    &::before {
+      left: var(--line-spacing);
+      transform: translate(-37%, 50%);
+    }
+    &::after {
+      right: var(--line-spacing);
+      transform: translate(37%, 50%);
+    }
+  } @else {
+    &::before {
+      left: var(--line-spacing);
+      transform: translate(-37%, -50%);
+    }
+    &::after {
+      right: var(--line-spacing);
+      transform: translate(37%, -50%);
+    }
+    &::after,
+    &::before {
+      top: 0;
+    }
+  }
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    width: 3px;
+    height: 3px;
+    background-color: $color;
+  }
 }
 
 // Layout related

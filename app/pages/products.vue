@@ -11,12 +11,14 @@
     </button>
     <UiProductsFiltersModal />
     <div class="products-container">
-      <UiProductsFilters />
-      <ul class="products-cards">
-        <li v-for="(product, i) in products" :key="i">
-          <UiProductsCard :product @click="assignProductID(product.id)" />
-        </li>
-      </ul>
+      <div class="products-wrapper">
+        <UiProductsFilters />
+        <ul class="products-cards">
+          <li v-for="(product, i) in products" :key="i">
+            <UiProductsCard :product @click="assignProductID(product.id)" />
+          </li>
+        </ul>
+      </div>
       <UiPagination
         class="products-pagination"
         :total="7"
@@ -62,15 +64,14 @@ const assignProductID = id => {
       width: 20px;
     }
   }
-  &-pagination {
-    align-self: center;
-  }
-  &-container {
+  &-wrapper {
+    padding-inline: var(--spacing-inline);
     display: grid;
     grid-template-columns: 1fr 2.8fr;
     align-items: flex-start;
     column-gap: 2rem;
     row-gap: max(5.25rem, 20px);
+
     @media screen and (max-width: vars.$bp-xl) {
       grid-template-columns: 270px 1fr;
     }
@@ -78,12 +79,10 @@ const assignProductID = id => {
       grid-template-columns: 1fr;
       column-gap: 0;
     }
-    @media screen and (min-width: vars.$bp-lg) {
-      & > *:last-child {
-        grid-column: 2 / 3;
-        padding-left: 6.4rem;
-      }
-    }
+  }
+  &-container {
+    display: flex;
+    flex-direction: column;
   }
   &-cards {
     display: grid;

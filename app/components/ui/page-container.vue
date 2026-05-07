@@ -13,6 +13,7 @@
           {{ type }}
         </button>
       </div>
+      <div class="page-container__header-container" />
     </div>
     <slot :sort-id="sortID" :active-page="activePage" :set-active-page="setActivePage" />
   </main>
@@ -44,16 +45,24 @@ defineProps({
   flex-direction: column;
   gap: max(3.9rem, 16px);
   font-family: vars.$font-nunito-sans;
-  padding-inline: var(--spacing-inline);
-  padding-top: max(2rem, 16px);
-  padding-bottom: max(3.75rem, 20px);
+
   &__header {
+    @include mix.dots;
+    padding-inline: var(--spacing-inline);
     display: flex;
     justify-content: space-between;
     gap: 16px;
     flex-wrap: wrap;
+    padding-block: max(2.4rem, 16px);
+    border-block: 1px solid #ffffff12;
     @media screen and (max-width: vars.$bp-sm) {
       flex-direction: column;
+    }
+    &-container {
+      @include mix.dots(top);
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
     }
   }
   &__title {

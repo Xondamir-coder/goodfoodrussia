@@ -66,9 +66,10 @@ const items = mapRt(tm('home.navbar'), rt).map((l, i) => ({ label: l, icon: icon
         angle: 275deg
       )
     );
-    position: absolute;
-    right: 2rem;
-    top: 25vh;
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    translate: 0 -50%;
     width: max(5rem, 44px);
     flex-direction: column;
   }

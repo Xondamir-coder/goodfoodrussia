@@ -1,5 +1,6 @@
 <template>
   <div class="slide">
+    <div v-for="i in 3" :key="i" class="slide__line" />
     <div class="slide__box">
       <h2 class="slide__box-title">
         {{ $t('home.slide-7.title') }}
@@ -24,10 +25,35 @@
 <style lang="scss" scoped>
 .slide {
   @include mix.home-slide;
-  padding-inline: 0;
   padding-bottom: 0;
   align-items: center;
   gap: 0;
+  position: relative;
+  &__line {
+    position: absolute;
+    background-color: #ffffff1a;
+    top: 0;
+
+    &:first-child {
+      left: 0;
+      height: 1px;
+      width: 100%;
+    }
+    &:nth-child(2),
+    &:nth-child(3) {
+      height: 100%;
+      width: 1px;
+      @media screen and (max-width: vars.$bp-md) {
+        display: none;
+      }
+    }
+    &:nth-child(2) {
+      left: 16.5%;
+    }
+    &:nth-child(3) {
+      right: 16.5%;
+    }
+  }
   &__pic {
     position: absolute;
     animation: scale-up 0.6s backwards;
@@ -80,7 +106,7 @@
 
     margin-block: auto;
     z-index: 1;
-    width: 69%;
+    width: 64%;
     padding-inline: 15px;
     padding-block: max(7.4rem, 74px);
     display: flex;

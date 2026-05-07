@@ -7,6 +7,7 @@
       </li>
     </ul>
     <UiBaseButton
+      class="slide__button"
       :text="$t('allRecipes')"
       variant="blue"
       @click="$router.push($localePath('/recipes'))"
@@ -23,8 +24,15 @@ const { recipes } = useApiStore();
 <style lang="scss" scoped>
 .slide {
   @include mix.home-slide;
+  gap: 0;
+  padding-bottom: 0;
   & > *:not(picture) {
     z-index: 1;
+  }
+  &__button {
+    animation: scale-in 0.4s 0.5s backwards;
+    margin-inline: var(--spacing-inline);
+    margin-block: 3.6rem;
   }
   &__pic {
     position: absolute;
@@ -54,10 +62,14 @@ const { recipes } = useApiStore();
     }
   }
   &__cards {
+    margin-top: max(1.6rem, 16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    padding-bottom: max(1.6rem, 16px);
+    padding-inline: var(--spacing-inline);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(max(36rem, 250px), 1fr));
-    row-gap: 2rem;
-    column-gap: 1.6rem;
+    row-gap: max(2rem, 12px);
+    column-gap: max(1.6rem, 10px);
   }
   &__card {
     display: flex;

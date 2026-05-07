@@ -30,6 +30,7 @@
     <UiIconButton @click="changePage('next')">
       <IconsArrowRightIos />
     </UiIconButton>
+    <div class="pagination__box" />
   </div>
 </template>
 <script setup>
@@ -142,7 +143,17 @@ const changePage = dir => {
 .pagination {
   display: flex;
   gap: 12px;
-
+  padding-block: max(3.75rem, 20px);
+  justify-content: center;
+  margin-top: max(1.6rem, 16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  @include mix.dots;
+  &__box {
+    @include mix.dots(top);
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
   &__container {
     padding-inline: 2px;
     display: flex;

@@ -60,6 +60,7 @@ const cards = mapRt(tm('home.slide-4.coop.cards'), rt).map((el, i) => ({
     z-index: 1;
   }
   &__button {
+    margin-inline: var(--spacing-inline);
     animation: scale-in 0.4s 0.5s backwards;
   }
   &__header {
@@ -154,6 +155,7 @@ const cards = mapRt(tm('home.slide-4.coop.cards'), rt).map((el, i) => ({
     }
   }
   &__cards {
+    margin-inline: var(--spacing-inline);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(max(300px, 37.6rem), 1fr));
     gap: max(1.2rem, 8px);
@@ -189,6 +191,7 @@ const cards = mapRt(tm('home.slide-4.coop.cards'), rt).map((el, i) => ({
     }
   }
   &__producers {
+    margin-inline: var(--spacing-inline);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(max(27.3rem, 130px), 1fr));
     row-gap: max(2rem, 8px);
@@ -197,7 +200,7 @@ const cards = mapRt(tm('home.slide-4.coop.cards'), rt).map((el, i) => ({
   &__container {
     display: flex;
     flex-direction: column;
-    gap: max(3rem, 20px);
+    gap: max(1.6rem, 16px);
   }
 }
 </style>

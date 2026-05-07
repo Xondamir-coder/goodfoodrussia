@@ -42,11 +42,8 @@ const media = [
 .media {
   display: flex;
   flex-direction: column;
-  & > *:last-child {
-    align-self: center;
-    margin-top: max(5.25rem, 20px);
-  }
   &__list {
+    padding-inline: var(--spacing-inline);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(max(250px, 37.6rem), 1fr));
     gap: max(1.2rem, 12px);

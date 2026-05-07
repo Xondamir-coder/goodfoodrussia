@@ -1,6 +1,10 @@
 <template>
   <div class="slide">
-    <UiHomeSlideHeader :title="$t('home.slide-6.title')" :text="$t('home.slide-6.title')" />
+    <UiHomeSlideHeader
+      class="slide__header"
+      :title="$t('home.slide-6.title')"
+      :text="$t('home.slide-6.title')"
+    />
     <ul class="slide__cards">
       <li v-for="card in cards" :key="card.text" class="slide__card">
         <span class="slide__card-amount">{{ card.amount }}</span>
@@ -24,9 +28,13 @@ const cards = mapRt(tm('home.slide-6.cards'), rt);
 <style lang="scss" scoped>
 .slide {
   @include mix.home-slide;
+  gap: 0;
   padding-bottom: 2px;
   & > *:not(picture) {
     z-index: 1;
+  }
+  &__header {
+    border-bottom: none;
   }
   &__pic {
     position: absolute;
@@ -69,6 +77,42 @@ const cards = mapRt(tm('home.slide-6.cards'), rt);
     background: linear-gradient(180deg, rgba(211, 135, 255, 0) 0%, rgba(211, 135, 255, 0.05) 100%);
     backdrop-filter: blur(50px);
     animation: slide-from-bottom-30 0.6s 0.1s backwards;
+    &:nth-child(odd)::after {
+      left: 0;
+      translate: -100%;
+    }
+    &:nth-child(even)::after {
+      right: 0;
+      translate: 100%;
+    }
+
+    &:first-child::before {
+      content: '';
+      left: 0;
+      translate: -100%;
+    }
+    &:nth-child(2)::before {
+      content: '';
+      right: 0;
+      translate: 100%;
+    }
+
+    &::before {
+      top: -1px;
+    }
+    &::after {
+      bottom: -1px;
+    }
+
+    &:first-child::before,
+    &:nth-child(2)::before,
+    &:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
 
     &:first-child {
       border-right: none;
@@ -176,6 +220,7 @@ const cards = mapRt(tm('home.slide-6.cards'), rt);
     }
   }
   &__cards {
+    margin-inline: var(--spacing-inline);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding-inline: 12rem;

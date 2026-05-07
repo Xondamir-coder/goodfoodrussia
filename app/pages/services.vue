@@ -313,6 +313,16 @@ const reasonsCards = mapRt(tm('services.reasons.cards'), rt).map((el, i) => ({
   height: 100dvh;
   margin-inline: 0;
   padding-inline: var(--spacing-inline);
+  &::before {
+    content: '';
+    position: absolute;
+    top: max(6rem, 60px);
+    left: 0;
+    width: 100%;
+    height: 1px;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.07);
+  }
   @media screen and (max-width: vars.$bp-md) {
     flex-direction: column;
     justify-content: flex-end;

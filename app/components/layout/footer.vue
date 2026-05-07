@@ -60,13 +60,13 @@ const links = computed(() =>
 
 <style lang="scss" scoped>
 .footer {
-  z-index: 2;
+  z-index: 1;
   display: grid;
   grid-template-areas:
     'block-1 top block-2'
     '. bottom .';
-  grid-template-columns: 1fr 69% 1fr;
-  backdrop-filter: blur(24px);
+  grid-template-columns: 1fr 67% 1fr;
+  backdrop-filter: blur(25px);
   @media screen and (max-width: vars.$bp-sm) {
     grid-template-columns: 1fr 91.7% 1fr;
   }
