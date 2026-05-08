@@ -44,6 +44,13 @@ const labels = [data.date, data.city];
   background: linear-gradient(180deg, rgba(211, 135, 255, 0) 0%, rgba(211, 135, 255, 0.05) 100%);
   backdrop-filter: blur(50px);
   padding-top: max(1.6rem, 12px);
+  transition:
+    transform 0.3s,
+    border-color 0.3s;
+  &:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.64);
+  }
   &__top {
     display: flex;
     flex-direction: column;
@@ -90,7 +97,9 @@ const labels = [data.date, data.city];
   }
   &__button {
     padding-inline: max(2.4rem, 24px);
+    height: max(5rem, 42px);
     border-top: 1px solid rgba(255, 255, 255, 0.12);
+    transition: letter-spacing 0.3s;
   }
 }
 </style>

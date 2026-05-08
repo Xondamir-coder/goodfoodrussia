@@ -68,7 +68,12 @@ defineProps({
   backdrop-filter: blur(50px);
   padding: max(2rem, 12px);
   gap: 0;
-  transition: gap 0.4s;
+  transition:
+    gap 0.4s,
+    background 0.4s;
+  &:hover {
+    background: #ffffff20;
+  }
   &.active {
     gap: max(1rem, 8px);
     .accordion__top-icon {

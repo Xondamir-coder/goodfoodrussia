@@ -47,6 +47,9 @@ const noShadowPages = ['services', 'about'];
       padding-top: 0;
     }
   }
+  &.about {
+    background: linear-gradient(180deg, #061852 0%, #061852 78.67%, #0d36b8 100%);
+  }
   &__slot {
     padding-top: max(6rem, 60px);
   }

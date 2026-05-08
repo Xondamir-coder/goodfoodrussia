@@ -301,6 +301,7 @@ const team = mapRt(tm('about.team.items'), rt).map((el, i) => ({
     line-height: 1.21;
     font-weight: 700;
     max-width: 17ch;
+    z-index: 1;
   }
 
   &__divider {

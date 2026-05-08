@@ -46,6 +46,7 @@ const assignProductID = id => {
 <style lang="scss" scoped>
 .products {
   &-cta {
+    margin-inline: var(--spacing-inline);
     align-self: flex-start;
     display: flex;
     height: 40px;

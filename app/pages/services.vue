@@ -178,6 +178,14 @@ const reasonsCards = mapRt(tm('services.reasons.cards'), rt).map((el, i) => ({
   @media screen and (max-width: vars.$bp-sm) {
     aspect-ratio: 26.7/42;
   }
+  @supports (hanging-punctuation: first) and (font: -apple-system-body) and
+    (-webkit-appearance: none) {
+    aspect-ratio: initial;
+    min-height: max(34.5rem, 300px);
+    @media screen and (max-width: vars.$bp-sm) {
+      min-height: 420px;
+    }
+  }
   &__banner {
     position: absolute;
     &:first-of-type {
@@ -213,6 +221,7 @@ const reasonsCards = mapRt(tm('services.reasons.cards'), rt).map((el, i) => ({
     justify-content: space-between;
     gap: 14px;
     z-index: 2;
+
     @media screen and (min-width: vars.$bp-sm) {
       max-width: 44.7%;
     }
@@ -381,6 +390,9 @@ const reasonsCards = mapRt(tm('services.reasons.cards'), rt).map((el, i) => ({
       backdrop-filter: blur(50px);
       transition-property: border, background;
       transition-duration: 0.4s;
+      &:hover {
+        border-color: rgba(255, 255, 255, 0.64);
+      }
       &.active {
         border-color: rgba(255, 255, 255, 0.64);
         background: rgba(255, 255, 255, 0.32);

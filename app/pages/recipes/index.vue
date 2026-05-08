@@ -47,7 +47,6 @@ const { recipes } = useApiStore();
   &-container {
     display: flex;
     flex-direction: column;
-    gap: max(5.25rem, 20px);
   }
   &-cards {
     padding-inline: var(--spacing-inline);

@@ -122,11 +122,18 @@ const links = computed(() =>
     display: flex;
     flex-wrap: wrap;
     gap: max(1.8rem, 18px);
+    &:has(.footer__nav-link:hover) .footer__nav-link:not(:hover) {
+      opacity: 0.15;
+    }
     &-link {
       font-family: vars.$font-nunito-sans;
       font-size: max(1.4rem, 14px);
       font-weight: 400;
       letter-spacing: max(0.014rem, 0.14px);
+      transition: all 0.3s;
+      &:hover {
+        transform: translateY(-2px);
+      }
     }
   }
   &__iconbox {
@@ -152,11 +159,20 @@ const links = computed(() =>
     display: flex;
     align-items: center;
     gap: max(0.8rem, 8px);
+    &:has(.footer__social:hover) .footer__social:not(:hover) {
+      opacity: 0.15;
+    }
   }
   &__social {
     @include mix.flex-center;
     width: max(3.2rem, 32px);
     height: max(3.2rem, 32px);
+    transition:
+      opacity 0.3s,
+      transform 0.3s;
+    &:hover {
+      transform: translateY(-3px);
+    }
     &-icon {
       width: 62.5%;
       opacity: 0.5;

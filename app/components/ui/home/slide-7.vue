@@ -2,9 +2,9 @@
   <div class="slide">
     <div v-for="i in 3" :key="i" class="slide__line" />
     <div class="slide__box">
-      <h2 class="slide__box-title">
+      <h1 class="slide__box-title">
         {{ $t('home.slide-7.title') }}
-      </h2>
+      </h1>
       <p class="slide__box-text">
         {{ $t('home.slide-7.text') }}
       </p>

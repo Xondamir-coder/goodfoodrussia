@@ -20,7 +20,7 @@
 </template>
 
 <script setup>
-const sortID = ref(0);
+const sortID = ref(1);
 const activePage = ref(1);
 
 const setActivePage = value => {
@@ -57,6 +57,8 @@ defineProps({
     border-block: 1px solid #ffffff12;
     @media screen and (max-width: vars.$bp-sm) {
       flex-direction: column;
+      border-bottom: none;
+      padding-bottom: 0;
     }
     &-container {
       @include mix.dots(top);
@@ -89,6 +91,9 @@ defineProps({
     letter-spacing: -0.036rem;
     color: #b8caed;
     transition: color 0.3s;
+    &:hover {
+      color: #ffffffe0;
+    }
     &.active {
       color: #fff;
     }

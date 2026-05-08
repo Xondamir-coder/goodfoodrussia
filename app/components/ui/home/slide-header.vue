@@ -1,6 +1,6 @@
 <template>
   <div class="slide-header">
-    <h3 class="slide-header__title">{{ title }}</h3>
+    <h1 class="slide-header__title">{{ title }}</h1>
     <p class="slide-header__text">{{ text }}</p>
     <div class="slide-header__container" />
   </div>

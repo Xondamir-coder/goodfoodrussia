@@ -40,6 +40,13 @@ defineProps({
   border: 1px solid rgba(255, 255, 255, 0.16);
   background: linear-gradient(180deg, rgba(211, 135, 255, 0) 0%, rgba(211, 135, 255, 0.05) 100%);
   backdrop-filter: blur(50px);
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.64);
+    box-shadow: 0 10px 50px 0px rgba(255, 255, 255, 0.2);
+  }
   &__content {
     display: flex;
     flex-direction: column;

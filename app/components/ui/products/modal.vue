@@ -475,6 +475,12 @@ watch(
       border-radius: max(1.2rem, 12px);
       aspect-ratio: 1;
       position: relative;
+      &:hover::after {
+        opacity: 0.75;
+      }
+      &.active::after {
+        opacity: 1;
+      }
       &::after {
         content: '';
         position: absolute;
@@ -484,11 +490,6 @@ watch(
         border: 2px solid #accaff;
         transition: opacity 0.4s;
         border-radius: inherit;
-      }
-      &.active {
-        &::after {
-          opacity: 1;
-        }
       }
     }
   }

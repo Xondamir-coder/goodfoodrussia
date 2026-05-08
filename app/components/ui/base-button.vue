@@ -22,6 +22,12 @@ defineProps({
 </script>
 
 <style lang="scss" scoped>
+@property --glass-angle {
+  syntax: '<angle>';
+  initial-value: 180deg;
+  inherits: false;
+}
+
 .button {
   height: max(5rem, 42px);
   padding-inline: max(2.4rem, 24px);
@@ -29,21 +35,36 @@ defineProps({
   font-weight: 600;
   font-size: max(1.4rem, 14px);
   font-family: vars.$font-nunito-sans;
-  transition: all 0.4s;
   display: flex;
   justify-content: center;
   gap: max(1rem, 10px);
   align-items: center;
   fill: #fff;
+  transition:
+    background 0.3s,
+    fill 0.3s,
+    color 0.3s,
+    --glass-angle 0.3s;
+
   --icon-size: max(1.6rem, 14px);
+
+  &:has(svg):hover {
+    .button__icon {
+      transform: translateX(3px);
+    }
+  }
 
   &__icon {
     @include mix.flex-center;
     width: var(--icon-size);
+    transition: transform 0.3s;
   }
 
   &--blue {
     background: #1238a3;
+    &:hover {
+      background: #1238a3b1;
+    }
   }
 
   &--glass {
@@ -56,17 +77,26 @@ defineProps({
       )
     );
     color: var(--Greyscale-200, #f1f2f4);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
+    background: linear-gradient(
+      var(--glass-angle),
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.2) 100%
+    );
+    &:hover {
+      --glass-angle: 90deg;
+    }
   }
 
   &--white {
     fill: #000;
     background: #fff;
     color: var(--Main-Green-950, #001a0d);
-  }
 
-  &:hover {
-    opacity: 0.5;
+    &:hover {
+      fill: #fff;
+      background-color: #001a0db1;
+      color: #fff;
+    }
   }
 }
 </style>

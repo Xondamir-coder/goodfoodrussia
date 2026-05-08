@@ -81,6 +81,7 @@ const { data } = defineProps({
   grid-template-columns: 2.5375fr 1fr;
   gap: max(2rem, 20px);
   padding-bottom: max(1.6rem, 16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
   @media screen and (max-width: vars.$bp-lg) {
     grid-template-columns: 1fr;
   }

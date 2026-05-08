@@ -10,9 +10,9 @@
           <IconsClover class="slide__card-icon" />
         </div>
         <div class="slide__card-content">
-          <h3 class="slide__card-content-title">
+          <h2 class="slide__card-content-title">
             {{ card.title }}
-          </h3>
+          </h2>
           <p class="slide__card-content-text">
             {{ card.text }}
           </p>

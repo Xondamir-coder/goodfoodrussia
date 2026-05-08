@@ -56,7 +56,8 @@ onMounted(() => {
       trigger: headerRef.value,
       endTrigger: 'body',
       toggleClass: 'stuck',
-      start: 'top top'
+      start: 'top top',
+      end: 'bottom bottom'
     }
   });
 });

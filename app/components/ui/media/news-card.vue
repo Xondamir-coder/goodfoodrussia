@@ -30,6 +30,13 @@ defineProps({
   background: linear-gradient(180deg, rgba(211, 135, 255, 0) 0%, rgba(211, 135, 255, 0.05) 100%);
   backdrop-filter: blur(50px);
   font-family: vars.$font-nunito-sans;
+  transition:
+    transform 0.3s,
+    border-color 0.3s;
+  &:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.64);
+  }
   &__banner {
     border-radius: max(1.2rem, 18px);
     aspect-ratio: 34.4/18.1;

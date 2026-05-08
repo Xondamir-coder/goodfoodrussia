@@ -107,6 +107,12 @@
     height: 3px;
     background-color: $color;
   }
+  @media screen and (max-width: vars.$bp-sm) {
+    &::after,
+    &::before {
+      display: none;
+    }
+  }
 }
 
 // Layout related

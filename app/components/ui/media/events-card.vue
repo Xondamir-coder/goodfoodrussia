@@ -33,12 +33,26 @@ defineProps({
   font-family: vars.$font-nunito-sans;
   border-right: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition:
+    border-color 0.3s,
+    background 0.3s;
 
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.24);
+    background: #ffffff13;
+
+    .card__banner > * {
+      transform: scale(1.07);
+    }
+  }
   @media screen and (max-width: vars.$bp-md) {
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
   &__banner {
     aspect-ratio: 38.5/18.1;
+    & > * {
+      transition: transform 0.3s;
+    }
     @media screen and (max-width: vars.$bp-sm) {
       aspect-ratio: 26.8/18;
     }
@@ -47,6 +61,7 @@ defineProps({
     font-size: max(1.4rem, 12px);
     line-height: 135%;
     opacity: 0.5;
+    transition: opacity 0.3s;
   }
   &__title {
     font-size: max(1.8rem, 14px);
@@ -64,6 +79,7 @@ defineProps({
   }
   &__button {
     padding-inline: max(2.4rem, 24px);
+    height: max(5rem, 42px);
     border-top: 1px solid rgba(255, 255, 255, 0.12);
   }
 }

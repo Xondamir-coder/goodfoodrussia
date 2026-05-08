@@ -141,13 +141,18 @@ const changePage = dir => {
 
 <style lang="scss" scoped>
 .pagination {
+  @include mix.dots;
   display: flex;
   gap: 12px;
   padding-block: max(3.75rem, 20px);
   justify-content: center;
   margin-top: max(1.6rem, 16px);
   border-top: 1px solid rgba(255, 255, 255, 0.07);
-  @include mix.dots;
+  @media screen and (max-width: vars.$bp-sm) {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 20px;
+  }
   &__box {
     @include mix.dots(top);
     position: absolute;

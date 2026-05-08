@@ -29,7 +29,10 @@ const changeLang = () => {
   background: rgba(8, 18, 59, 0.6);
   backdrop-filter: blur(15px);
   font-size: max(1.4rem, 14px);
-
+  transition: background 0.4s;
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
   &__icon {
     width: max(2rem, 20px);
   }
