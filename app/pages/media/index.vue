@@ -18,7 +18,7 @@
 <script setup>
 import { UiMediaEventsCard, UiMediaGalleryCard, UiMediaNewsCard } from '#components';
 
-const { tm, rt } = useI18n();
+const { t, tm, rt } = useI18n();
 
 const { mediaNews, mediaEvents, mediaGallery } = useApiStore();
 
@@ -36,6 +36,13 @@ const media = [
     card: UiMediaGalleryCard
   }
 ];
+
+useSeoMeta({
+  title: t('seo.media.title'),
+  description: t('seo.media.description'),
+  ogImage: '/images/compressed/media-news-1.jpg',
+  twitterImage: '/images/compressed/media-news-1.jpg'
+});
 </script>
 
 <style lang="scss" scoped>

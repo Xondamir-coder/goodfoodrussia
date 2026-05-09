@@ -95,7 +95,7 @@ import {
   IconsSupportAgent
 } from '#components';
 
-const { tm, rt } = useI18n();
+const { t, tm, rt } = useI18n();
 const showContactsModal = useState('showContactsModal');
 
 const activeHeroBanner = ref(0);
@@ -112,6 +112,13 @@ const reasonsCards = mapRt(tm('services.reasons.cards'), rt).map((el, i) => ({
   ...el,
   icon: reasonsIcons[i]
 }));
+
+useSeoMeta({
+  title: t('seo.services.title'),
+  description: t('seo.services.description'),
+  ogImage: '/images/compressed/services-banner.jpg',
+  twitterImage: '/images/compressed/services-banner.jpg'
+});
 </script>
 
 <style lang="scss" scoped>

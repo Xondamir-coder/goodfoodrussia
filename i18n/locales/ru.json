@@ -3,8 +3,8 @@
   "exploreCatalogue": "Изучить каталог",
   "submitRequest": "Отправить заявку",
   "readMore": "Подробнее",
-  "allRecipes": "All recipes",
-  "copyright": "© {year}, All Rights Reserved",
+  "allRecipes": "Все рецепты",
+  "copyright": "© {year}, Все права защищены",
   "from": "от",
   "to": "до",
   "category": "Категория",
@@ -129,8 +129,8 @@
       ]
     },
     "slide-7": {
-      "title": "Build Reliable Supply Partnerships",
-      "text": "Explore export-ready products and start cooperation with trusted Russian manufacturers through our official showroom platform."
+      "title": "Создавайте надежные партнерские отношения",
+      "text": "Ознакомьтесь с продукцией, готовой к экспорту, и начните сотрудничество с проверенными российскими производителями."
     }
   },
 
@@ -458,5 +458,41 @@
         "text": "Организуем доставку и сопровождаем процесс до получения товара"
       }
     ]
+  },
+
+  "seo": {
+    "siteName": "Good Food Russia",
+    "home": {
+      "title": "Шоурум российских продуктов в Узбекистане",
+      "description": "Изучайте экспортно-ориентированных российских производителей, продукты, услуги, рецепты и медиа на официальной платформе Good Food Russia."
+    },
+    "about": {
+      "title": "О Good Food Russia",
+      "description": "Узнайте, как Good Food Russia соединяет производителей и покупателей через прозрачную модель шоурума для долгосрочного сотрудничества."
+    },
+    "services": {
+      "title": "Услуги по поставкам и подбору продукции",
+      "description": "Изучите услуги Good Food Russia: демонстрации в шоуруме, подбор продукции, запрос образцов, поддержку B2B-переговоров и логистику."
+    },
+    "products": {
+      "title": "Каталог российских продуктов питания",
+      "description": "Просматривайте каталог Good Food Russia с экспортно-ориентированными продуктами, брендами, типами продукции и вариантами поставки."
+    },
+    "recipes": {
+      "title": "Рецепты с нашей продукцией",
+      "description": "Смотрите рецепты с продукцией Good Food Russia и находите идеи подачи для дистрибуции, ритейла и HoReCa."
+    },
+    "media": {
+      "title": "Новости, события и галерея",
+      "description": "Читайте последние новости Good Food Russia, узнавайте о событиях и просматривайте медиагалерею платформы."
+    },
+    "contacts": {
+      "title": "Контакты и данные шоурума",
+      "description": "Свяжитесь с Good Food Russia по вопросам поставок, посещения шоурума, партнерства и подбора продукции."
+    },
+    "homeBreadcrumb": "Главная",
+    "recipeFallbackTitle": "Рецепт",
+    "recipeDescriptionSuffix": "Опубликовано {date}.",
+    "mediaItemFallbackTitle": "Материал"
   }
 }

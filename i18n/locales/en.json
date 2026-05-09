@@ -458,5 +458,41 @@
         "text": "We organize delivery and support the process until the goods are received"
       }
     ]
+  },
+
+  "seo": {
+    "siteName": "Good Food Russia",
+    "home": {
+      "title": "Russian food showroom in Uzbekistan",
+      "description": "Explore export-ready Russian manufacturers, products, services, recipes, and media through the official Good Food Russia showroom platform."
+    },
+    "about": {
+      "title": "About Good Food Russia",
+      "description": "Learn how Good Food Russia connects manufacturers and buyers through a transparent showroom model built for long-term supply partnerships."
+    },
+    "services": {
+      "title": "Supply and sourcing services",
+      "description": "Discover Good Food Russia services for showroom demonstrations, product sourcing, sample requests, B2B negotiation support, and logistics."
+    },
+    "products": {
+      "title": "Catalogue of Russian food products",
+      "description": "Browse the Good Food Russia catalogue of export-ready food products, brands, product types, and supply options."
+    },
+    "recipes": {
+      "title": "Recipes with our products",
+      "description": "View recipes created with Good Food Russia products and explore serving ideas for distributors, retail, and HoReCa."
+    },
+    "media": {
+      "title": "News, events, and gallery",
+      "description": "Read the latest Good Food Russia news, discover events, and browse the media gallery from the showroom platform."
+    },
+    "contacts": {
+      "title": "Contacts and showroom details",
+      "description": "Contact Good Food Russia for supply inquiries, showroom visits, partnerships, and product sourcing questions."
+    },
+    "homeBreadcrumb": "Home",
+    "recipeFallbackTitle": "Recipe",
+    "recipeDescriptionSuffix": "Published on {date}.",
+    "mediaItemFallbackTitle": "Media article"
   }
 }

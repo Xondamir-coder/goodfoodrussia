@@ -16,6 +16,7 @@ import {
   UiHomeSlide7
 } from '#components';
 
+const { t } = useI18n();
 const route = useRoute();
 const router = useRouter();
 
@@ -40,6 +41,11 @@ const slides = [
   UiHomeSlide6,
   UiHomeSlide7
 ];
+
+useSeoMeta({
+  title: t('seo.home.title'),
+  description: t('seo.home.description')
+});
 </script>
 
 <style lang="scss" scoped>

@@ -1,19 +1,51 @@
+const siteUrl = process.env.NUXT_SITE_URL || 'https://goodfoodrussia.uz';
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/google-fonts', '@nuxtjs/i18n', '@nuxt/eslint', '@pinia/nuxt'],
+  modules: ['@nuxtjs/google-fonts', '@nuxtjs/i18n', '@nuxt/eslint', '@pinia/nuxt', '@nuxtjs/seo'],
   css: ['~/assets/scss/main.scss'],
+  site: {
+    url: siteUrl,
+    name: 'Good Food Russia',
+    description:
+      'Official Good Food Russia showroom platform for products, services, recipes, and media.',
+    defaultLocale: 'ru'
+  },
   app: {
     head: {
-      title: 'GoodFoodRussia',
-      meta: [
+      title: 'Good Food Russia',
+      titleTemplate: '%s | Good Food Russia',
+      htmlAttrs: {
+        lang: 'ru'
+      },
+      link: [
         {
-          name: 'description',
-          content: 'Landing page for GoodFoodRussia'
+          rel: 'icon',
+          href: '/favicon.ico'
         }
       ]
     }
+  },
+  schemaOrg: {
+    identity: {
+      type: 'Organization',
+      name: 'Good Food Russia',
+      url: siteUrl,
+      logo: '/favicon.ico',
+      email: 'support@goofood.uz',
+      telephone: '+998901234567'
+    }
+  },
+  sitemap: {
+    discoverImages: true
+  },
+  robots: {
+    credits: false
+  },
+  ogImage: {
+    enabled: false
   },
   vite: {
     css: {
@@ -37,7 +69,7 @@ export default defineNuxtConfig({
   },
   i18n: {
     defaultLocale: 'ru',
-    // baseUrl: 'https://www.tifw.uz/',
+    baseUrl: siteUrl,
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_redirected',

@@ -30,7 +30,7 @@
 </template>
 
 <script setup>
-const { tm, rt } = useI18n();
+const { t, tm, rt } = useI18n();
 
 const { products } = useApiStore();
 
@@ -41,6 +41,13 @@ const productID = ref();
 const assignProductID = id => {
   productID.value = id;
 };
+
+useSeoMeta({
+  title: t('seo.products.title'),
+  description: t('seo.products.description'),
+  ogImage: '/images/compressed/piligrim.jpg',
+  twitterImage: '/images/compressed/piligrim.jpg'
+});
 </script>
 
 <style lang="scss" scoped>

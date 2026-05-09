@@ -18,9 +18,16 @@
 </template>
 
 <script setup>
-const { tm, rt } = useI18n();
+const { t, tm, rt } = useI18n();
 
 const { recipes } = useApiStore();
+
+useSeoMeta({
+  title: t('seo.recipes.title'),
+  description: t('seo.recipes.description'),
+  ogImage: '/images/compressed/recipes-1.jpg',
+  twitterImage: '/images/compressed/recipes-1.jpg'
+});
 </script>
 
 <style lang="scss" scoped>

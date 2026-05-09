@@ -161,6 +161,13 @@ const team = mapRt(tm('about.team.items'), rt).map((el, i) => ({
   src: `about-team-${i + 1}.jpg`,
   ...el
 }));
+
+useSeoMeta({
+  title: t('seo.about.title'),
+  description: t('seo.about.description'),
+  ogImage: '/images/compressed/about-hero.jpg',
+  twitterImage: '/images/compressed/about-hero.jpg'
+});
 </script>
 
 <style lang="scss" scoped>

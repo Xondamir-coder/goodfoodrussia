@@ -100,6 +100,14 @@
 
 <script setup>
 const showContactsModal = useState('showContactsModal');
+const { t } = useI18n();
+
+useSeoMeta({
+  title: t('seo.contacts.title'),
+  description: t('seo.contacts.description'),
+  ogImage: '/images/compressed/map.jpg',
+  twitterImage: '/images/compressed/map.jpg'
+});
 </script>
 
 <style lang="scss" scoped>
