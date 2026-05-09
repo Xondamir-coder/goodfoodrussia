@@ -1,7 +1,12 @@
 <template>
   <Teleport to="body">
     <Transition name="appear">
-      <div v-if="showFiltersModal" class="filters-container" @click.self="showFiltersModal = false">
+      <div
+        v-if="showFiltersModal"
+        data-lenis-prevent
+        class="filters-container"
+        @click.self="showFiltersModal = false"
+      >
         <div class="modal">
           <div class="modal__top">
             <h2 class="modal__title">

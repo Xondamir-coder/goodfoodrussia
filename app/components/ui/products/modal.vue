@@ -4,6 +4,7 @@
       <div
         v-if="productID"
         ref="containerRef"
+        data-lenis-prevent
         class="modal-container"
         @click.self="emits('change', null)"
       >

@@ -45,6 +45,7 @@
 <script setup>
 const showContactsModal = useState('showContactsModal', () => false);
 const { t } = useI18n();
+const { $toggleLenis } = useNuxtApp();
 
 const success = ref(false);
 const isLoading = ref(false);
@@ -52,6 +53,9 @@ const name = ref('');
 const phone = ref('');
 const telegram = ref('');
 
+watch(showContactsModal, () => {
+  $toggleLenis();
+});
 watch(phone, () => {
   phone.value = phone.value.replace(/[^0-9+ ]/g, '').replace(/(?!^)\+/g, '');
 });
