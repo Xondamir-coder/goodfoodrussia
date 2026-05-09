@@ -9,7 +9,12 @@
         @click.self="emits('change', null)"
       >
         <div class="modal-container__images">
-          <button v-for="item in mappedProducts" :key="item.id" @click="emits('change', item.id)">
+          <button
+            v-for="item in mappedProducts"
+            :key="item.id"
+            :aria-label="$t('accessibility.openProductImage', { title: item.title })"
+            @click="emits('change', item.id)"
+          >
             <UiPicture
               :src="item.image"
               :class="{ active: item.id === productID }"
@@ -93,7 +98,11 @@
             </div>
           </Transition>
         </div>
-        <button class="modal-container__close" @click="emits('change', null)" />
+        <button
+          class="modal-container__close"
+          :aria-label="$t('accessibility.closeModal')"
+          @click="emits('change', null)"
+        />
       </div>
     </Transition>
   </Teleport>
@@ -103,22 +112,6 @@
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 
-const { products } = useApiStore();
-
-const containerRef = ref();
-const activeTab = ref(0);
-
-const mappedProducts = products.map(p => ({
-  image: p.image,
-  id: p.id
-}));
-
-const product = computed(() => products.find(p => p.id === productID));
-const productOptions = computed(() => {
-  const opts = product.value.options;
-  return Object.fromEntries(Object.entries(opts).filter(([_, items]) => items.length));
-});
-
 const { productID } = defineProps({
   productID: {
     required: false,
@@ -127,6 +120,17 @@ const { productID } = defineProps({
   }
 });
 const emits = defineEmits(['change']);
+
+const { products } = useApiStore();
+
+const containerRef = ref();
+const activeTab = ref(0);
+const mappedProducts = products.map(p => ({ image: p.image, id: p.id, title: p.title }));
+const product = computed(() => products.find(p => p.id === productID));
+const productOptions = computed(() => {
+  const opts = product.value.options;
+  return Object.fromEntries(Object.entries(opts).filter(([_, items]) => items.length));
+});
 
 watch(
   () => productID,

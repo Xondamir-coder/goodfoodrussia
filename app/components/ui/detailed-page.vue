@@ -4,7 +4,7 @@
     <div class="detailed-page__container">
       <div class="detailed-page__top">
         <div class="detailed-page__header">
-          <UiIconButton @click="$router.back()">
+          <UiIconButton :aria-label="$t('accessibility.goToPreviousPage')" @click="$router.back()">
             <IconsArrowLeftIos />
           </UiIconButton>
           <h1 class="detailed-page__header-title">{{ data.title }}</h1>
@@ -22,10 +22,10 @@
         <div class="detailed-page__gallery-top">
           <h3>{{ $t('mediaIndex.photoGallery') }}</h3>
           <div class="detailed-page__gallery-top-arrows">
-            <UiIconButton id="btn-prev">
+            <UiIconButton id="btn-prev" :aria-label="$t('accessibility.previousPage')">
               <IconsArrowLeftIos />
             </UiIconButton>
-            <UiIconButton id="btn-next">
+            <UiIconButton id="btn-next" :aria-label="$t('accessibility.nextPage')">
               <IconsArrowRightIos />
             </UiIconButton>
           </div>

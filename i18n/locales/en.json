@@ -34,6 +34,23 @@
   "good": "OK",
   "step": "step",
   "leaveEnquiry": "Leave an enquiry",
+  "copy": "Copy",
+  "accessibility": {
+    "goHome": "Go to home page",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "closeModal": "Close modal",
+    "changeLanguage": "Change language",
+    "goToPreviousPage": "Go to previous page",
+    "previousPage": "Previous page",
+    "nextPage": "Next page",
+    "expandPagination": "Show all pages",
+    "copyLink": "Copy link",
+    "openTelegram": "Open Telegram",
+    "playShowroomVideo": "Play showroom video",
+    "toggleOption": "Toggle {label}",
+    "openProductImage": "Open product image: {title}"
+  },
 
   "home": {
     "navbar": ["Home", "Home", "Home", "Home", "Home", "Home", "Home"],

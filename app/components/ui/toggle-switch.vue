@@ -11,6 +11,7 @@ defineProps({
     required: true
   }
 });
+
 const emits = defineEmits(['switch']);
 </script>
 

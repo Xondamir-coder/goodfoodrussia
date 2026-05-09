@@ -96,8 +96,8 @@ import {
 } from '#components';
 
 const { t, tm, rt } = useI18n();
-const showContactsModal = useState('showContactsModal');
 
+const showContactsModal = useState('showContactsModal');
 const activeHeroBanner = ref(0);
 
 const heroBanners = ['services-banner.jpg', 'working-man.jpg', 'man-paper.jpg'];

@@ -1,6 +1,6 @@
 <template>
   <header ref="headerRef" class="header" :class="{ shown: showMenu }">
-    <NuxtLink :to="$localePath('/')" class="header__logo-container">
+    <NuxtLink :to="$localePath('/')" class="header__logo-container" :aria-label="$t('accessibility.goHome')">
       <SvgLogo class="header__logo" />
     </NuxtLink>
     <div class="header__right">
@@ -11,13 +11,18 @@
           :to="$localePath(link.path)"
           class="header__nav-link"
           active-class="active"
-          :class="{ active: link.path !== '/' && $route.path.includes(link.path) }"
+          :class="{ active: link.path !== '/' && $route?.path?.includes(link.path) }"
         >
           <span>{{ link.name }}</span>
         </NuxtLink>
       </nav>
       <UiHeaderLang />
-      <button class="header__ham" :class="{ active: showMenu }" @click="showMenu = !showMenu">
+      <button
+        class="header__ham"
+        :class="{ active: showMenu }"
+        :aria-label="showMenu ? $t('accessibility.closeMenu') : $t('accessibility.openMenu')"
+        @click="showMenu = !showMenu"
+      >
         <IconsHam class="header__ham-icon" />
         <IconsClose class="header__ham-icon" />
       </button>
@@ -30,7 +35,7 @@
           :to="$localePath(link.path)"
           class="menu__nav-link"
           active-class="active"
-          :class="{ active: link.path !== '/' && $route.path.includes(link.path) }"
+          :class="{ active: link.path !== '/' && $route?.path?.includes(link.path) }"
           @click="showMenu = false"
         >
           <span>{{ link.name }}</span>
@@ -46,7 +51,16 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const { tm, rt } = useI18n();
 
+const headerRef = ref();
 const showMenu = ref(false);
+const linkPaths = ['/', '/about', '/products', '/services', '/recipes', '/media', '/contacts'];
+
+const links = computed(() =>
+  mapRt(tm('header.links'), rt).map((el, i) => ({
+    name: el,
+    path: linkPaths[i]
+  }))
+);
 
 onMounted(() => {
   gsap.registerPlugin(ScrollTrigger);
@@ -61,16 +75,6 @@ onMounted(() => {
     }
   });
 });
-
-const headerRef = ref();
-const linkPaths = ['/', '/about', '/products', '/services', '/recipes', '/media', '/contacts'];
-
-const links = computed(() =>
-  mapRt(tm('header.links'), rt).map((el, i) => ({
-    name: el,
-    path: linkPaths[i]
-  }))
-);
 </script>
 
 <style lang="scss" scoped>

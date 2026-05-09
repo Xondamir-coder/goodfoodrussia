@@ -12,7 +12,11 @@
             <h2 class="modal__title">
               {{ $t('products.filters.title') }}
             </h2>
-            <button class="modal__close" @click="showFiltersModal = false">
+            <button
+              class="modal__close"
+              :aria-label="$t('accessibility.closeModal')"
+              @click="showFiltersModal = false"
+            >
               <IconsClose class="modal__close-icon" />
             </button>
           </div>

@@ -7,7 +7,11 @@
       {{ text }}
     </p>
     <div class="share-card__bottom">
-      <UiIconButton class="share-card__bottom-icbutton" @click="emits('copy')">
+      <UiIconButton
+        class="share-card__bottom-icbutton"
+        :aria-label="$t('accessibility.copyLink')"
+        @click="emits('copy')"
+      >
         <IconsShare />
       </UiIconButton>
       <UiBaseButton
@@ -21,7 +25,6 @@
 </template>
 
 <script setup>
-const emits = defineEmits(['share', 'copy']);
 defineProps({
   title: {
     type: String,
@@ -32,8 +35,10 @@ defineProps({
     required: true
   }
 });
+const emits = defineEmits(['share', 'copy']);
 
 let layoutEl;
+
 onMounted(() => {
   layoutEl = document.querySelector('.layout');
   layoutEl.style.overflow = 'visible';

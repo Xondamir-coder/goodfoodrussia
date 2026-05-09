@@ -15,10 +15,10 @@
 <script setup>
 defineOptions({ inheritAttrs: false });
 
-const attrs = useAttrs();
 const model = defineModel({
   type: Boolean
 });
+const attrs = useAttrs();
 </script>
 
 <style lang="scss" scoped>

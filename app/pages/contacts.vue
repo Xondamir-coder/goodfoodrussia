@@ -52,7 +52,7 @@
         </li>
       </ul>
       <div class="contacts__cta">
-        <UiIconButton class="contacts__cta-tg">
+        <UiIconButton class="contacts__cta-tg" :aria-label="$t('accessibility.openTelegram')">
           <IconsTelegram />
         </UiIconButton>
         <UiBaseButton :text="$t('messageUs')" variant="white" @click="showContactsModal = true" />
@@ -99,8 +99,8 @@
 </template>
 
 <script setup>
-const showContactsModal = useState('showContactsModal');
 const { t } = useI18n();
+const showContactsModal = useState('showContactsModal');
 
 useSeoMeta({
   title: t('seo.contacts.title'),

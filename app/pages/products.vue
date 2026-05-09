@@ -31,11 +31,9 @@
 
 <script setup>
 const { t, tm, rt } = useI18n();
-
 const { products } = useApiStore();
 
 const showFiltersModal = useState('showFiltersModal');
-
 const productID = ref();
 
 const assignProductID = id => {

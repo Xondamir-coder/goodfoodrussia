@@ -21,17 +21,6 @@ const route = useRoute();
 const router = useRouter();
 
 const query = computed(() => route.query);
-
-if (!query.value?.slide) {
-  router.replace({ query: { slide: 0 } });
-}
-
-onUpdated(() => {
-  if (!query.value?.slide) {
-    router.replace({ query: { slide: 0 } });
-  }
-});
-
 const slides = [
   UiHomeSlide1,
   UiHomeSlide2,
@@ -41,6 +30,18 @@ const slides = [
   UiHomeSlide6,
   UiHomeSlide7
 ];
+
+const ensureSlideQuery = () => {
+  if (!query.value?.slide) {
+    router.replace({ query: { slide: 0 } });
+  }
+};
+
+ensureSlideQuery();
+
+onUpdated(() => {
+  ensureSlideQuery();
+});
 
 useSeoMeta({
   title: t('seo.home.title'),

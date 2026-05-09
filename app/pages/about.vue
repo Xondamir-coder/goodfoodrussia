@@ -73,7 +73,7 @@
             alt="Good Food Russia showroom"
             class="showroom__image"
           />
-          <button class="showroom__button">
+          <button class="showroom__button" :aria-label="$t('accessibility.playShowroomVideo')">
             <IconsPlayArrow class="showroom__button-icon" />
           </button>
         </div>

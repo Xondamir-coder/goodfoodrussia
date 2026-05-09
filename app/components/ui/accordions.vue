@@ -31,6 +31,13 @@
 </template>
 
 <script setup>
+defineProps({
+  accordions: {
+    type: Array,
+    default: null
+  }
+});
+
 const activeAccordions = ref([]);
 const textRef = ref();
 
@@ -46,13 +53,6 @@ const toggleAccordion = i => {
     textEl.style.height = `${textEl.scrollHeight}px`;
   }
 };
-
-defineProps({
-  accordions: {
-    type: Array,
-    default: null
-  }
-});
 </script>
 
 <style lang="scss" scoped>

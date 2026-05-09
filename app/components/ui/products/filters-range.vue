@@ -76,7 +76,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { computed, ref } from 'vue';
 
 const props = defineProps({
   modelValue: {
@@ -90,84 +90,6 @@ const props = defineProps({
 
 const emit = defineEmits(['update:modelValue']);
 
-const trackRef = ref(null);
-const minInputRef = ref(null);
-const maxInputRef = ref(null);
-const dragging = ref(null);
-const minFocused = ref(false);
-const maxFocused = ref(false);
-
-// Resolve effective slider positions: fall back to min/max when null (untouched)
-const minVal = computed(() => props.modelValue.from ?? props.min);
-const maxVal = computed(() => props.modelValue.to ?? props.max);
-
-const fillLeft = computed(() => ((minVal.value - props.min) / (props.max - props.min)) * 100);
-const fillRight = computed(() => ((maxVal.value - props.min) / (props.max - props.min)) * 100);
-const fillWidth = computed(() => fillRight.value - fillLeft.value);
-
-function formatNumber(val) {
-  return new Intl.NumberFormat('ru-RU').format(val);
-}
-
-function parseInput(str) {
-  return parseInt(str.replace(/\D/g, ''), 10) || 0;
-}
-
-// Show empty string when null (untouched); formatted number when set
-const minDisplayValue = computed(() =>
-  props.modelValue.from === null ? '' : formatNumber(props.modelValue.from)
-);
-const maxDisplayValue = computed(() =>
-  props.modelValue.to === null ? '' : formatNumber(props.modelValue.to)
-);
-
-// Emit null when value snaps back to the boundary (treat as "cleared")
-function emitFrom(val) {
-  emit('update:modelValue', {
-    ...props.modelValue,
-    from: val === props.min ? null : val
-  });
-}
-
-function emitTo(val) {
-  emit('update:modelValue', {
-    ...props.modelValue,
-    to: val === props.max ? null : val
-  });
-}
-
-// --- Input handlers ---
-function onMinFocus() {
-  minFocused.value = true;
-}
-function onMinBlur() {
-  minFocused.value = false;
-  const raw = parseInput(minInputRef.value.value);
-  emitFrom(Math.min(Math.max(raw, props.min), maxVal.value - props.step));
-}
-function onMinInput(e) {
-  const raw = parseInput(e.target.value);
-  if (!isNaN(raw)) {
-    emitFrom(Math.min(Math.max(raw, props.min), maxVal.value - props.step));
-  }
-}
-
-function onMaxFocus() {
-  maxFocused.value = true;
-}
-function onMaxBlur() {
-  maxFocused.value = false;
-  const raw = parseInput(maxInputRef.value.value);
-  emitTo(raw === 0 ? props.max : Math.min(Math.max(raw, minVal.value + props.step), props.max));
-}
-function onMaxInput(e) {
-  const raw = parseInput(e.target.value);
-  if (!isNaN(raw)) {
-    emitTo(Math.min(Math.max(raw, minVal.value + props.step), props.max));
-  }
-}
-
-// --- Numeric-only guards ---
 const ALLOWED_KEYS = new Set([
   'Backspace',
   'Delete',
@@ -181,29 +103,97 @@ const ALLOWED_KEYS = new Set([
   'Home',
   'End'
 ]);
+const numberFormatter = new Intl.NumberFormat('ru-RU');
 
-function onNumericKeydown(e) {
+const trackRef = ref(null);
+const minInputRef = ref(null);
+const maxInputRef = ref(null);
+const dragging = ref(null);
+const minFocused = ref(false);
+const maxFocused = ref(false);
+const minVal = computed(() => props.modelValue.from ?? props.min);
+const maxVal = computed(() => props.modelValue.to ?? props.max);
+const fillLeft = computed(() => ((minVal.value - props.min) / (props.max - props.min)) * 100);
+const fillRight = computed(() => ((maxVal.value - props.min) / (props.max - props.min)) * 100);
+const fillWidth = computed(() => fillRight.value - fillLeft.value);
+const minDisplayValue = computed(() =>
+  props.modelValue.from === null ? '' : numberFormatter.format(props.modelValue.from)
+);
+const maxDisplayValue = computed(() =>
+  props.modelValue.to === null ? '' : numberFormatter.format(props.modelValue.to)
+);
+
+const parseInput = str => parseInt(str.replace(/\D/g, ''), 10) || 0;
+
+const emitFrom = val => {
+  emit('update:modelValue', {
+    ...props.modelValue,
+    from: val === props.min ? null : val
+  });
+};
+
+const emitTo = val => {
+  emit('update:modelValue', {
+    ...props.modelValue,
+    to: val === props.max ? null : val
+  });
+};
+
+const onMinFocus = () => {
+  minFocused.value = true;
+};
+
+const onMinBlur = () => {
+  minFocused.value = false;
+  const raw = parseInput(minInputRef.value.value);
+  emitFrom(Math.min(Math.max(raw, props.min), maxVal.value - props.step));
+};
+
+const onMinInput = e => {
+  const raw = parseInput(e.target.value);
+  if (!isNaN(raw)) {
+    emitFrom(Math.min(Math.max(raw, props.min), maxVal.value - props.step));
+  }
+};
+
+const onMaxFocus = () => {
+  maxFocused.value = true;
+};
+
+const onMaxBlur = () => {
+  maxFocused.value = false;
+  const raw = parseInput(maxInputRef.value.value);
+  emitTo(raw === 0 ? props.max : Math.min(Math.max(raw, minVal.value + props.step), props.max));
+};
+
+const onMaxInput = e => {
+  const raw = parseInput(e.target.value);
+  if (!isNaN(raw)) {
+    emitTo(Math.min(Math.max(raw, minVal.value + props.step), props.max));
+  }
+};
+
+const onNumericKeydown = e => {
   if (ALLOWED_KEYS.has(e.key)) return;
   if ((e.ctrlKey || e.metaKey) && ['a', 'c', 'v', 'x'].includes(e.key.toLowerCase())) return;
   if (!/^\d$/.test(e.key)) e.preventDefault();
-}
+};
 
-function onNumericPaste(e) {
+const onNumericPaste = e => {
   e.preventDefault();
   const text = (e.clipboardData || window.clipboardData).getData('text');
   const digits = text.replace(/\D/g, '');
   if (digits) document.execCommand('insertText', false, digits);
-}
+};
 
-// --- Slider ---
-function valueFromPosition(clientX) {
+const valueFromPosition = clientX => {
   const rect = trackRef.value.getBoundingClientRect();
   const ratio = Math.min(Math.max((clientX - rect.left) / rect.width, 0), 1);
   const raw = props.min + ratio * (props.max - props.min);
   return Math.round(raw / props.step) * props.step;
-}
+};
 
-function startDrag(thumb) {
+const startDrag = thumb => {
   dragging.value = thumb;
   const moveHandler = e => {
     const clientX = e.touches ? e.touches[0].clientX : e.clientX;
@@ -225,9 +215,9 @@ function startDrag(thumb) {
   window.addEventListener('mouseup', upHandler);
   window.addEventListener('touchmove', moveHandler);
   window.addEventListener('touchend', upHandler);
-}
+};
 
-function onTrackClick(event) {
+const onTrackClick = event => {
   const val = valueFromPosition(event.clientX);
   const distMin = Math.abs(val - minVal.value);
   const distMax = Math.abs(val - maxVal.value);
@@ -236,9 +226,9 @@ function onTrackClick(event) {
   } else {
     emitTo(Math.max(val, minVal.value + props.step));
   }
-}
+};
 
-function onKeydown(thumb, event) {
+const onKeydown = (thumb, event) => {
   const delta = props.step;
   if (thumb === 'min') {
     if (event.key === 'ArrowRight') emitFrom(Math.min(minVal.value + delta, maxVal.value - delta));
@@ -247,7 +237,7 @@ function onKeydown(thumb, event) {
     if (event.key === 'ArrowRight') emitTo(Math.min(maxVal.value + delta, props.max));
     if (event.key === 'ArrowLeft') emitTo(Math.max(maxVal.value - delta, minVal.value + delta));
   }
-}
+};
 </script>
 
 <style lang="scss">

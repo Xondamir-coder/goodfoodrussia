@@ -34,6 +34,23 @@
   "good": "Хорошо",
   "step": "шаг",
   "leaveEnquiry": "Оставить заявку",
+  "copy": "Скопировать",
+  "accessibility": {
+    "goHome": "Перейти на главную страницу",
+    "openMenu": "Открыть меню",
+    "closeMenu": "Закрыть меню",
+    "closeModal": "Закрыть модальное окно",
+    "changeLanguage": "Сменить язык",
+    "goToPreviousPage": "Вернуться на предыдущую страницу",
+    "previousPage": "Предыдущая страница",
+    "nextPage": "Следующая страница",
+    "expandPagination": "Показать все страницы",
+    "copyLink": "Скопировать ссылку",
+    "openTelegram": "Открыть Telegram",
+    "playShowroomVideo": "Воспроизвести видео шоурума",
+    "toggleOption": "Переключить {label}",
+    "openProductImage": "Открыть изображение товара: {title}"
+  },
 
   "home": {
     "navbar": ["Главное", "Главное", "Главное", "Главное", "Главное", "Главное", "Главное"],

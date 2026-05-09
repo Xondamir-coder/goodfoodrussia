@@ -32,7 +32,11 @@
               <UiSpinLoader />
             </div>
           </form>
-          <button class="modal__close" @click="showContactsModal = false">
+          <button
+            class="modal__close"
+            :aria-label="$t('accessibility.closeModal')"
+            @click="showContactsModal = false"
+          >
             <IconsClose class="modal__close-icon" />
           </button>
         </div>
@@ -43,41 +47,15 @@
 </template>
 
 <script setup>
-const showContactsModal = useState('showContactsModal', () => false);
 const { t } = useI18n();
 const { $toggleLenis } = useNuxtApp();
 
+const showContactsModal = useState('showContactsModal', () => false);
 const success = ref(false);
 const isLoading = ref(false);
 const name = ref('');
 const phone = ref('');
 const telegram = ref('');
-
-watch(showContactsModal, () => {
-  $toggleLenis();
-});
-watch(phone, () => {
-  phone.value = phone.value.replace(/[^0-9+ ]/g, '').replace(/(?!^)\+/g, '');
-});
-
-const submitForm = async () => {
-  try {
-    isLoading.value = true;
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    success.value = true;
-  } catch (error) {
-    console.log(`Error submitting contacts form: ${error}`);
-  } finally {
-    isLoading.value = false;
-    setTimeout(() => {
-      showContactsModal.value = false;
-      success.value = false;
-      name.value = '';
-      phone.value = '';
-      telegram.value = '';
-    }, 3000);
-  }
-};
 
 const rows = [
   {
@@ -102,6 +80,33 @@ const rows = [
     val: telegram
   }
 ];
+
+const submitForm = async () => {
+  try {
+    isLoading.value = true;
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    success.value = true;
+  } catch (error) {
+    console.log(`Error submitting contacts form: ${error}`);
+  } finally {
+    isLoading.value = false;
+    setTimeout(() => {
+      showContactsModal.value = false;
+      success.value = false;
+      name.value = '';
+      phone.value = '';
+      telegram.value = '';
+    }, 3000);
+  }
+};
+
+watch(showContactsModal, () => {
+  $toggleLenis();
+});
+
+watch(phone, () => {
+  phone.value = phone.value.replace(/[^0-9+ ]/g, '').replace(/(?!^)\+/g, '');
+});
 </script>
 
 <style lang="scss" scoped>

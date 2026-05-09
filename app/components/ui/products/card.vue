@@ -20,14 +20,14 @@
 <script setup>
 import Product from '~/types/product';
 
-const emits = defineEmits(['click']);
-
 defineProps({
   product: {
     required: true,
     type: Product
   }
 });
+
+const emits = defineEmits(['click']);
 </script>
 <style lang="scss" scoped>
 .card {

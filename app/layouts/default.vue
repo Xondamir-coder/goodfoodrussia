@@ -12,17 +12,17 @@
     "
   >
     <LayoutHeader />
-    <div v-if="!noShadowPages.some(e => $route.name.includes(e))" class="layout__shadows" />
+    <div v-if="!noShadowPages.some(e => $route?.name?.includes(e))" class="layout__shadows" />
     <div
       class="layout__lines"
-      :class="{ priority: $route.name.includes('about') || $route.name.includes('services') }"
+      :class="{ priority: $route?.name?.includes('about') || $route?.name?.includes('services') }"
     >
       <div v-for="i in 4" :key="i" class="layout__line" />
     </div>
     <div class="layout__slot">
       <slot />
     </div>
-    <LayoutFooter v-if="!$route.name.includes('index')" />
+    <LayoutFooter v-if="!$route?.name?.includes('index')" />
   </div>
 </template>
 

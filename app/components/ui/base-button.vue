@@ -8,7 +8,6 @@
 </template>
 
 <script setup>
-defineEmits(['click']);
 defineProps({
   variant: {
     type: String,
@@ -19,6 +18,7 @@ defineProps({
     required: true
   }
 });
+defineEmits(['click']);
 </script>
 
 <style lang="scss" scoped>

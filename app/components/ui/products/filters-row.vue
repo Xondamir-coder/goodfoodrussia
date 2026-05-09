@@ -33,9 +33,6 @@
 </template>
 
 <script setup>
-const showDropdown = ref(true);
-const contentRef = ref();
-
 const model = defineModel({ type: Array });
 defineProps({
   label: {
@@ -48,6 +45,10 @@ defineProps({
   }
 });
 
+const showDropdown = ref(true);
+const contentRef = ref();
+const dropdownHeight = ref(0);
+
 const toggle = (key, checked) => {
   if (checked) {
     model.value = [...model.value, key];
@@ -55,8 +56,6 @@ const toggle = (key, checked) => {
     model.value = model.value.filter(k => k !== key);
   }
 };
-
-const dropdownHeight = ref(0);
 
 onMounted(() => {
   if (contentRef.value) {

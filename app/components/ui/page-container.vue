@@ -20,13 +20,6 @@
 </template>
 
 <script setup>
-const sortID = ref(1);
-const activePage = ref(1);
-
-const setActivePage = value => {
-  activePage.value = value;
-};
-
 defineProps({
   title: {
     type: String,
@@ -37,6 +30,13 @@ defineProps({
     required: true
   }
 });
+
+const sortID = ref(1);
+const activePage = ref(1);
+
+const setActivePage = value => {
+  activePage.value = value;
+};
 </script>
 
 <style lang="scss" scoped>

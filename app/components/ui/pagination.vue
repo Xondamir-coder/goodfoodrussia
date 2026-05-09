@@ -1,6 +1,6 @@
 <template>
   <div class="pagination">
-    <UiIconButton @click="changePage('prev')">
+    <UiIconButton :aria-label="$t('accessibility.previousPage')" @click="changePage('prev')">
       <IconsArrowLeftIos />
     </UiIconButton>
     <div class="pagination__container">
@@ -9,6 +9,7 @@
           v-if="item === '…' && !isMobile"
           type="button"
           class="pagination__ellipsis pagination__ellipsis--button"
+          :aria-label="$t('accessibility.expandPagination')"
           @click="expandPagination"
         >
           …
@@ -27,7 +28,7 @@
         </button>
       </template>
     </div>
-    <UiIconButton @click="changePage('next')">
+    <UiIconButton :aria-label="$t('accessibility.nextPage')" @click="changePage('next')">
       <IconsArrowRightIos />
     </UiIconButton>
     <div class="pagination__box" />
@@ -35,7 +36,6 @@
 </template>
 <script setup>
 const model = defineModel({ type: Number });
-
 const { total } = defineProps({
   total: {
     type: Number,
@@ -45,42 +45,21 @@ const { total } = defineProps({
 
 const isMobile = ref(false);
 const expanded = ref(false);
+const visiblePages = computed(() => {
+  const current = model.value;
 
-const updateIsMobile = () => {
-  isMobile.value = window.innerWidth <= 768;
-};
-
-const handlePageClick = page => {
-  if (typeof page !== 'number') return;
-  model.value = page;
-};
-
-onMounted(() => {
-  updateIsMobile();
-  window.addEventListener('resize', updateIsMobile);
-});
-
-onBeforeUnmount(() => {
-  window.removeEventListener('resize', updateIsMobile);
-});
-
-// reset only when total changes or viewport mode changes
-watch(
-  () => total,
-  () => {
-    expanded.value = false;
-
-    if (model.value > total) {
-      model.value = total;
+  if (!isMobile.value) {
+    if (total <= 4) {
+      return Array.from({ length: total }, (_, i) => i + 1);
     }
+
+    if (expanded.value) {
+      return Array.from({ length: total }, (_, i) => i + 1);
+    }
+
+    return [1, 2, 3, 4, '…', total];
   }
-);
 
-watch(isMobile, () => {
-  expanded.value = false;
-});
-
-const getMobilePages = (current, total) => {
   if (total <= 4) {
     return Array.from({ length: total }, (_, i) => i + 1);
   }
@@ -94,27 +73,16 @@ const getMobilePages = (current, total) => {
   }
 
   return [1, '…', current, total];
+});
+
+const updateIsMobile = () => {
+  isMobile.value = window.innerWidth <= 768;
 };
 
-const visiblePages = computed(() => {
-  const current = model.value;
-
-  // desktop
-  if (!isMobile.value) {
-    if (total <= 4) {
-      return Array.from({ length: total }, (_, i) => i + 1);
-    }
-
-    if (expanded.value) {
-      return Array.from({ length: total }, (_, i) => i + 1);
-    }
-
-    return [1, 2, 3, 4, '…', total];
-  }
-
-  // mobile
-  return getMobilePages(current, total);
-});
+const handlePageClick = page => {
+  if (typeof page !== 'number') return;
+  model.value = page;
+};
 
 const expandPagination = () => {
   expanded.value = true;
@@ -137,6 +105,30 @@ const changePage = dir => {
     expanded.value = true;
   }
 };
+
+watch(
+  () => total,
+  () => {
+    expanded.value = false;
+
+    if (model.value > total) {
+      model.value = total;
+    }
+  }
+);
+
+watch(isMobile, () => {
+  expanded.value = false;
+});
+
+onMounted(() => {
+  updateIsMobile();
+  window.addEventListener('resize', updateIsMobile);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', updateIsMobile);
+});
 </script>
 
 <style lang="scss" scoped>
