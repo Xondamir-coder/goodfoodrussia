@@ -25,7 +25,7 @@
             :space-between="10"
             :loop="true"
             :allow-touch-move="false"
-            :autoplay="{ delay: 0, disableOnInteraction: false, pauseOnMouseEnter: true }"
+            :autoplay="{ delay: 0, disableOnInteraction: false }"
             :speed="3500"
           >
             <swiper-slide
@@ -44,7 +44,7 @@
             :space-between="10"
             :loop="true"
             :allow-touch-move="false"
-            :autoplay="{ delay: 0, disableOnInteraction: false, pauseOnMouseEnter: true, reverseDirection: true }"
+            :autoplay="{ delay: 0, disableOnInteraction: false, reverseDirection: true }"
             :speed="3500"
           >
             <swiper-slide

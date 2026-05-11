@@ -38,6 +38,7 @@
           })
         }}
       </p>
+      <a href="https://spacelabs.studio" target="_blank"> Spacelabs </a>
     </div>
   </footer>
 </template>
@@ -113,9 +114,15 @@ const links = computed(() =>
     font-weight: 500;
     letter-spacing: max(0.012rem, 0.12px);
     text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 3px;
     @media screen and (max-width: vars.$bp-sm) {
       margin-inline: 14.5px;
       border-top: none;
+    }
+    a {
+      text-decoration: underline;
     }
   }
   &__nav {

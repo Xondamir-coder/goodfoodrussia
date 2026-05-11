@@ -2,7 +2,7 @@
   <NuxtLink class="card" :to="$localePath(`/media/${data.id}`)">
     <div class="card__container">
       <div class="card__top">
-        <h4 class="card__title">{{ data.title }}</h4>
+        <h4 class="card__title">{{ data[`title_${locale}`] }}</h4>
         <ul class="card__labels">
           <li v-for="label in labels" :key="label" class="card__label card__text">
             <span>{{ label }}</span>
@@ -11,7 +11,7 @@
       </div>
       <UiPicture :src="data.banner" alt="banner" class="card__banner" />
       <p class="card__text">
-        {{ data.text }}
+        {{ data[`text_${locale}`] }}
       </p>
     </div>
     <button class="card__button">
@@ -21,16 +21,17 @@
 </template>
 
 <script setup>
-import Media from '~/types/media';
+
+const { locale } = useI18n();
 
 const { data } = defineProps({
   data: {
     required: true,
-    type: Media
+    type: Object
   }
 });
 
-const labels = [data.date, data.city];
+const labels = computed(() => [data[`date_${locale.value}`], data[`city_${locale.value}`]]);
 </script>
 
 <style lang="scss" scoped>

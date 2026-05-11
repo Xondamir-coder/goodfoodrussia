@@ -1,16 +1,16 @@
 <template>
   <NuxtLink :to="$localePath(`/recipes/${recipe.id}`)" class="recipes-card">
-    <UiPicture :src="recipe.banner" :alt="recipe.title" class="recipes-card__pic" />
+    <UiPicture :src="recipe.banner" :alt="recipe[`title_${locale}`]" class="recipes-card__pic" />
     <div class="recipes-card__content">
       <span class="recipes-card__date">
-        {{ recipe.date }}
+        {{ recipe[`date_${locale}`] }}
       </span>
       <p class="recipes-card__title">
-        {{ recipe.title }}
+        {{ recipe[`title_${locale}`] }}
       </p>
     </div>
     <ul class="recipes-card__cats">
-      <li v-for="cat in recipe.categories" :key="cat" class="recipes-card__cat">
+      <li v-for="cat in recipe[`categories_${locale}`]" :key="cat" class="recipes-card__cat">
         {{ cat }}
       </li>
     </ul>
@@ -18,14 +18,15 @@
 </template>
 
 <script setup>
-import Recipe from '~/types/recipe';
 
 defineProps({
   recipe: {
     required: true,
-    type: Recipe
+    type: Object
   }
 });
+
+const { locale } = useI18n();
 </script>
 
 <style lang="scss" scoped>

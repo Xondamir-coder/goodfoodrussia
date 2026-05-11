@@ -2,109 +2,118 @@
   {
     "id": 10,
     "banner": "media-gallery-1.jpg",
-    "title": "Гастрономический фестиваль GooFood",
-    "text": "В GooFood стартовали новые акции и скидки от популярных ресторанов. Заказывайте любимые блюда по выгодным ценам и открывайте для себя новые вкусы.",
-    "date": "20 марта 2026",
-    "city": "Ташкент",
-    "category": {
-      "id": 2,
-      "name": "Галерея"
-    }
+    "title_ru": "Гастрономический фестиваль GooFood",
+    "title_uz": "GooFood gastronomik festivali",
+    "text_ru": "В GooFood стартовали новые акции и скидки от популярных ресторанов. Заказывайте любимые блюда по выгодным ценам и открывайте для себя новые вкусы.",
+    "text_uz": "GooFood'da mashhur restoranlardan yangi aksiyalar va chegirmalar boshlandi. Sevimli taomlaringizni qulay narxlarda buyurtma qiling va yangi ta'mlarni kashf eting.",
+    "date_ru": "20 марта 2026",
+    "date_uz": "20 mart 2026",
+    "city_ru": "Ташкент",
+    "city_uz": "Toshkent",
+    "category": { "id": 2, "name_ru": "Галерея", "name_uz": "Galereya" }
   },
   {
     "id": 11,
     "banner": "media-gallery-2.jpg",
-    "title": "Дегустация новых блюд",
-    "text": "В GooFood стартовали новые акции и скидки от популярных ресторанов. Заказывайте любимые блюда по выгодным ценам и открывайте для себя новые вкусы.",
-    "date": "20 марта 2026",
-    "city": "Ташкент",
-    "category": {
-      "id": 2,
-      "name": "Галерея"
-    }
+    "title_ru": "Дегустация новых блюд",
+    "title_uz": "Yangi taomlarni tatib ko'rish",
+    "text_ru": "В GooFood стартовали новые акции и скидки от популярных ресторанов. Заказывайте любимые блюда по выгодным ценам и открывайте для себя новые вкусы.",
+    "text_uz": "GooFood'da mashhur restoranlardan yangi aksiyalar va chegirmalar boshlandi. Sevimli taomlaringizni qulay narxlarda buyurtma qiling va yangi ta'mlarni kashf eting.",
+    "date_ru": "20 марта 2026",
+    "date_uz": "20 mart 2026",
+    "city_ru": "Ташкент",
+    "city_uz": "Toshkent",
+    "category": { "id": 2, "name_ru": "Галерея", "name_uz": "Galereya" }
   },
   {
     "id": 12,
     "banner": "media-gallery-3.jpg",
-    "title": "Фестиваль уличной еды с GooFood",
-    "text": "В GooFood стартовали новые акции и скидки от популярных ресторанов. Заказывайте любимые блюда по выгодным ценам и открывайте для себя новые вкусы.",
-    "date": "20 марта 2026",
-    "city": "Ташкент",
-    "category": {
-      "id": 2,
-      "name": "Галерея"
-    }
+    "title_ru": "Фестиваль уличной еды с GooFood",
+    "title_uz": "GooFood bilan ko'cha ovqatlari festivali",
+    "text_ru": "В GooFood стартовали новые акции и скидки от популярных ресторанов. Заказывайте любимые блюда по выгодным ценам и открывайте для себя новые вкусы.",
+    "text_uz": "GooFood'da mashhur restoranlardan yangi aksiyalar va chegirmalar boshlandi. Sevimli taomlaringizni qulay narxlarda buyurtma qiling va yangi ta'mlarni kashf eting.",
+    "date_ru": "20 марта 2026",
+    "date_uz": "20 mart 2026",
+    "city_ru": "Ташкент",
+    "city_uz": "Toshkent",
+    "category": { "id": 2, "name_ru": "Галерея", "name_uz": "Galereya" }
   },
   {
     "id": 13,
     "banner": "media-gallery-4.jpg",
-    "title": "Дегустация новых блюд",
-    "text": "В GooFood стартовали новые акции и скидки от популярных ресторанов. Заказывайте любимые блюда по выгодным ценам и открывайте для себя новые вкусы.",
-    "date": "20 марта 2026",
-    "city": "Ташкент",
-    "category": {
-      "id": 2,
-      "name": "Галерея"
-    }
+    "title_ru": "Дегустация новых блюд",
+    "title_uz": "Yangi taomlarni tatib ko'rish",
+    "text_ru": "В GooFood стартовали новые акции и скидки от популярных ресторанов. Заказывайте любимые блюда по выгодным ценам и открывайте для себя новые вкусы.",
+    "text_uz": "GooFood'da mashhur restoranlardan yangi aksiyalar va chegirmalar boshlandi. Sevimli taomlaringizni qulay narxlarda buyurtma qiling va yangi ta'mlarni kashf eting.",
+    "date_ru": "20 марта 2026",
+    "date_uz": "20 mart 2026",
+    "city_ru": "Ташкент",
+    "city_uz": "Toshkent",
+    "category": { "id": 2, "name_ru": "Галерея", "name_uz": "Galereya" }
   },
   {
     "id": 14,
     "banner": "media-gallery-5.jpg",
-    "title": "Гастрономический фестиваль GooFood",
-    "text": "В GooFood стартовали новые акции и скидки от популярных ресторанов. Заказывайте любимые блюда по выгодным ценам и открывайте для себя новые вкусы.",
-    "date": "20 марта 2026",
-    "city": "Ташкент",
-    "category": {
-      "id": 2,
-      "name": "Галерея"
-    }
+    "title_ru": "Гастрономический фестиваль GooFood",
+    "title_uz": "GooFood gastronomik festivali",
+    "text_ru": "В GooFood стартовали новые акции и скидки от популярных ресторанов. Заказывайте любимые блюда по выгодным ценам и открывайте для себя новые вкусы.",
+    "text_uz": "GooFood'da mashhur restoranlardan yangi aksiyalar va chegirmalar boshlandi. Sevimli taomlaringizni qulay narxlarda buyurtma qiling va yangi ta'mlarni kashf eting.",
+    "date_ru": "20 марта 2026",
+    "date_uz": "20 mart 2026",
+    "city_ru": "Ташкент",
+    "city_uz": "Toshkent",
+    "category": { "id": 2, "name_ru": "Галерея", "name_uz": "Galereya" }
   },
   {
     "id": 15,
     "banner": "media-gallery-6.jpg",
-    "title": "Фестиваль уличной еды с GooFood",
-    "text": "В GooFood стартовали новые акции и скидки от популярных ресторанов. Заказывайте любимые блюда по выгодным ценам и открывайте для себя новые вкусы.",
-    "date": "20 марта 2026",
-    "city": "Ташкент",
-    "category": {
-      "id": 2,
-      "name": "Галерея"
-    }
+    "title_ru": "Фестиваль уличной еды с GooFood",
+    "title_uz": "GooFood bilan ko'cha ovqatlari festivali",
+    "text_ru": "В GooFood стартовали новые акции и скидки от популярных ресторанов. Заказывайте любимые блюда по выгодным ценам и открывайте для себя новые вкусы.",
+    "text_uz": "GooFood'da mashhur restoranlardan yangi aksiyalar va chegirmalar boshlandi. Sevimli taomlaringizni qulay narxlarda buyurtma qiling va yangi ta'mlarni kashf eting.",
+    "date_ru": "20 марта 2026",
+    "date_uz": "20 mart 2026",
+    "city_ru": "Ташкент",
+    "city_uz": "Toshkent",
+    "category": { "id": 2, "name_ru": "Галерея", "name_uz": "Galereya" }
   },
   {
     "id": 16,
     "banner": "media-gallery-7.jpg",
-    "title": "Дегустация новых блюд",
-    "text": "В GooFood стартовали новые акции и скидки от популярных ресторанов. Заказывайте любимые блюда по выгодным ценам и открывайте для себя новые вкусы.",
-    "date": "20 марта 2026",
-    "city": "Ташкент",
-    "category": {
-      "id": 2,
-      "name": "Галерея"
-    }
+    "title_ru": "Дегустация новых блюд",
+    "title_uz": "Yangi taomlarni tatib ko'rish",
+    "text_ru": "В GooFood стартовали новые акции и скидки от популярных ресторанов. Заказывайте любимые блюда по выгодным ценам и открывайте для себя новые вкусы.",
+    "text_uz": "GooFood'da mashhur restoranlardan yangi aksiyalar va chegirmalar boshlandi. Sevimli taomlaringizni qulay narxlarda buyurtma qiling va yangi ta'mlarni kashf eting.",
+    "date_ru": "20 марта 2026",
+    "date_uz": "20 mart 2026",
+    "city_ru": "Ташкент",
+    "city_uz": "Toshkent",
+    "category": { "id": 2, "name_ru": "Галерея", "name_uz": "Galereya" }
   },
   {
     "id": 17,
     "banner": "media-gallery-8.jpg",
-    "title": "Фестиваль уличной еды с GooFood",
-    "text": "В GooFood стартовали новые акции и скидки от популярных ресторанов. Заказывайте любимые блюда по выгодным ценам и открывайте для себя новые вкусы.",
-    "date": "20 марта 2026",
-    "city": "Ташкент",
-    "category": {
-      "id": 2,
-      "name": "Галерея"
-    }
+    "title_ru": "Фестиваль уличной еды с GooFood",
+    "title_uz": "GooFood bilan ko'cha ovqatlari festivali",
+    "text_ru": "В GooFood стартовали новые акции и скидки от популярных ресторанов. Заказывайте любимые блюда по выгодным ценам и открывайте для себя новые вкусы.",
+    "text_uz": "GooFood'da mashhur restoranlardan yangi aksiyalar va chegirmalar boshlandi. Sevimli taomlaringizni qulay narxlarda buyurtma qiling va yangi ta'mlarni kashf eting.",
+    "date_ru": "20 марта 2026",
+    "date_uz": "20 mart 2026",
+    "city_ru": "Ташкент",
+    "city_uz": "Toshkent",
+    "category": { "id": 2, "name_ru": "Галерея", "name_uz": "Galereya" }
   },
   {
     "id": 18,
     "banner": "media-gallery-9.jpg",
-    "title": "Гастрономический фестиваль GooFood",
-    "text": "В GooFood стартовали новые акции и скидки от популярных ресторанов. Заказывайте любимые блюда по выгодным ценам и открывайте для себя новые вкусы.",
-    "date": "20 марта 2026",
-    "city": "Ташкент",
-    "category": {
-      "id": 2,
-      "name": "Галерея"
-    }
+    "title_ru": "Гастрономический фестиваль GooFood",
+    "title_uz": "GooFood gastronomik festivali",
+    "text_ru": "В GooFood стартовали новые акции и скидки от популярных ресторанов. Заказывайте любимые блюда по выгодным ценам и открывайте для себя новые вкусы.",
+    "text_uz": "GooFood'da mashhur restoranlardan yangi aksiyalar va chegirmalar boshlandi. Sevimli taomlaringizni qulay narxlarda buyurtma qiling va yangi ta'mlarni kashf eting.",
+    "date_ru": "20 марта 2026",
+    "date_uz": "20 mart 2026",
+    "city_ru": "Ташкент",
+    "city_uz": "Toshkent",
+    "category": { "id": 2, "name_ru": "Галерея", "name_uz": "Galereya" }
   }
 ]

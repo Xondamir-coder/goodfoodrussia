@@ -13,6 +13,7 @@
             v-for="item in mappedProducts"
             :key="item.id"
             :aria-label="$t('accessibility.openProductImage', { title: item.title })"
+
             @click="emits('change', item.id)"
           >
             <UiPicture
@@ -32,10 +33,10 @@
               <div class="modal__middle">
                 <div class="modal__middle-top">
                   <h3 class="modal__middle-title">
-                    {{ product.title }}
+                    {{ product[`title_${locale}`] }}
                   </h3>
                   <span class="modal__middle-volume">
-                    {{ product.volume }}
+                    {{ product[`volume_${locale}`] }}
                   </span>
                 </div>
                 <div v-for="(items, key) in productOptions" :key="key" class="modal__middle-row">
@@ -53,14 +54,14 @@
                     class="modal__middle-bottom-col"
                   >
                     <img :src="`/images/${badge.icon}.png`" class="modal__middle-bottom-icon" />
-                    <span class="modal__middle-bottom-label">{{ badge.label }}</span>
+                    <span class="modal__middle-bottom-label">{{ badge[`label_${locale}`] }}</span>
                   </div>
                 </div>
               </div>
-              <div v-if="product.tabs.length" class="modal__content">
+              <div v-if="product[`tabs_${locale}`].length" class="modal__content">
                 <div class="modal__content-top" :style="`--travel: ${activeTab * 50}%`">
                   <button
-                    v-for="(tab, i) in product.tabs"
+                    v-for="(tab, i) in product[`tabs_${locale}`]"
                     :key="tab"
                     class="modal__content-top-button"
                     @click="activeTab = i"
@@ -68,14 +69,14 @@
                     {{ tab }}
                   </button>
                 </div>
-                <div v-for="spec in product.specs" :key="spec.group" class="modal__content-row">
+                <div v-for="spec in product.specs" :key="spec.group_ru" class="modal__content-row">
                   <span class="modal__content-row-label">
-                    {{ spec.group }}
+                    {{ spec[`group_${locale}`] }}
                   </span>
-                  <div v-for="item in spec.items" :key="item.label" class="modal__content-row-item">
-                    <span>{{ item.label }}</span>
+                  <div v-for="item in spec.items" :key="item.label_ru" class="modal__content-row-item">
+                    <span>{{ item[`label_${locale}`] }}</span>
                     <div class="modal__content-row-dots" />
-                    <span>{{ item.value }}</span>
+                    <span>{{ item[`value_${locale}`] }}</span>
                   </div>
                 </div>
               </div>
@@ -121,15 +122,23 @@ const { productID } = defineProps({
 });
 const emits = defineEmits(['change']);
 
+const { locale } = useI18n();
 const { products } = useApiStore();
 
 const containerRef = ref();
 const activeTab = ref(0);
-const mappedProducts = products.map(p => ({ image: p.image, id: p.id, title: p.title }));
+const mappedProducts = computed(() =>
+  products.map(p => ({ image: p.image, id: p.id, title: p[`title_${locale.value}`] }))
+);
 const product = computed(() => products.find(p => p.id === productID));
 const productOptions = computed(() => {
   const opts = product.value.options;
-  return Object.fromEntries(Object.entries(opts).filter(([_, items]) => items.length));
+  const l = locale.value;
+  return {
+    ...(opts.fatContent?.length ? { fatContent: opts.fatContent } : {}),
+    ...(opts[`volumes_${l}`]?.length ? { volumes: opts[`volumes_${l}`] } : {}),
+    ...(opts[`processingType_${l}`]?.length ? { processingType: opts[`processingType_${l}`] } : {})
+  };
 });
 
 watch(

@@ -5,34 +5,37 @@
 <script setup>
 import { IconsCalendar, IconsClock, IconsList } from '#components';
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
 const { recipes } = useApiStore();
 const route = useRoute();
 const site = useSiteConfig();
 
 const recipe = recipes.find(p => p.id === route.params.id);
 
-const labels = computed(() => [
-  {
-    icon: IconsCalendar,
-    label: recipe?.date ?? '—'
-  },
-  {
-    icon: IconsList,
-    label: recipe?.categories?.length
-      ? `${t('categories')}: ${recipe.categories.join(' • ')}`
-      : '—'
-  },
-  {
-    icon: IconsClock,
-    label: `${t('cookingTime')}: ${recipe?.cookingTime ?? '—'}`
-  }
-]);
+const labels = computed(() => {
+  const l = locale.value;
+  return [
+    {
+      icon: IconsCalendar,
+      label: recipe?.[`date_${l}`] ?? '—'
+    },
+    {
+      icon: IconsList,
+      label: recipe?.[`categories_${l}`]?.length
+        ? `${t('categories')}: ${recipe[`categories_${l}`].join(' • ')}`
+        : '—'
+    },
+    {
+      icon: IconsClock,
+      label: `${t('cookingTime')}: ${recipe?.cookingTime ?? '—'}`
+    }
+  ];
+});
 
 const recipeImagePath = recipe
   ? `/images/compressed/${recipe.banner.replace(/\.[^.]+$/, '.jpg')}`
   : '/images/compressed/recipes-banner.png';
-const recipePublishedAt = recipe?.date
+const recipePublishedAt = recipe?.date_ru
   ? (() => {
       const monthMap = {
         января: '01', февраля: '02', марта: '03', апреля: '04',
@@ -48,9 +51,9 @@ const recipePublishedAt = recipe?.date
   : '2025-01-01';
 
 useSeoMeta({
-  title: recipe?.title || t('seo.recipeFallbackTitle'),
+  title: recipe?.[`title_${locale.value}`] || t('seo.recipeFallbackTitle'),
   description: recipe
-    ? `${recipe.categories.join(', ')}. ${t('seo.recipeDescriptionSuffix', { date: recipe.date })}`
+    ? `${recipe[`categories_${locale.value}`].join(', ')}. ${t('seo.recipeDescriptionSuffix', { date: recipe[`date_${locale.value}`] })}`
     : t('seo.recipes.description'),
   ogType: 'article',
   ogImage: recipeImagePath,
@@ -62,11 +65,11 @@ if (recipe) {
   useSchemaOrg([
     {
       '@type': 'Recipe',
-      name: recipe.title,
-      description: `${recipe.categories.join(', ')}. ${t('seo.recipeDescriptionSuffix', { date: recipe.date })}`,
+      name: recipe[`title_${locale.value}`],
+      description: `${recipe[`categories_${locale.value}`].join(', ')}. ${t('seo.recipeDescriptionSuffix', { date: recipe[`date_${locale.value}`] })}`,
       image: [`${site.url}${recipeImagePath}`],
       datePublished: recipePublishedAt,
-      recipeCategory: recipe.categories,
+      recipeCategory: recipe[`categories_${locale.value}`],
       inLanguage: route.path.startsWith('/uz') ? 'uz-UZ' : 'ru-RU'
     },
     {

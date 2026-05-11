@@ -1,62 +1,86 @@
 [
   {
-    "name": "Fruits & Vegetables",
-    "country": "Uzbekistan",
+    "name_ru": "Фрукты и овощи",
+    "name_uz": "Mevalar va sabzavotlar",
+    "country_ru": "Краснодарский край",
+    "country_uz": "Krasnodar o'lkasi",
     "image": "veggies.png"
   },
   {
-    "name": "Dried Fruits & Nuts",
-    "country": "Moscow",
+    "name_ru": "Сухофрукты и орехи",
+    "name_uz": "Quritilgan mevalar va yong'oqlar",
+    "country_ru": "Ставропольский край",
+    "country_uz": "Stavropol o'lkasi",
     "image": "nuts.png"
   },
   {
-    "name": "Confectionery",
-    "country": "Norway",
+    "name_ru": "Кондитерские изделия",
+    "name_uz": "Qandolat mahsulotlari",
+    "country_ru": "Москва",
+    "country_uz": "Moskva",
     "image": "sweets.png"
   },
   {
-    "name": "Dairy Products",
-    "country": "Norway",
+    "name_ru": "Молочные продукты",
+    "name_uz": "Sut mahsulotlari",
+    "country_ru": "Воронежская область",
+    "country_uz": "Voronej viloyati",
     "image": "dairy.png"
   },
   {
-    "name": "Meat & Poultry",
-    "country": "Norway",
+    "name_ru": "Мясо и птица",
+    "name_uz": "Go'sht va parrandalar",
+    "country_ru": "Белгородская область",
+    "country_uz": "Belgorod viloyati",
     "image": "meats.png"
   },
   {
-    "name": "Grains & Cereals",
-    "country": "Norway",
+    "name_ru": "Зерновые и крупы",
+    "name_uz": "Don va yorma mahsulotlari",
+    "country_ru": "Алтайский край",
+    "country_uz": "Oltoy o'lkasi",
     "image": "grains.png"
   },
   {
-    "name": "Beverages",
-    "country": "Norway",
+    "name_ru": "Напитки",
+    "name_uz": "Ichimliklar",
+    "country_ru": "Москва",
+    "country_uz": "Moskva",
     "image": "drinks.png"
   },
   {
-    "name": "Canned Foods",
-    "country": "Norway",
+    "name_ru": "Консервированные продукты",
+    "name_uz": "Konservalangan mahsulotlar",
+    "country_ru": "Липецкая область",
+    "country_uz": "Lipetsk viloyati",
     "image": "cans.png"
   },
   {
-    "name": "Dairy Products",
-    "country": "Norway",
+    "name_ru": "Молочные продукты",
+    "name_uz": "Sut mahsulotlari",
+    "country_ru": "Воронежская область",
+    "country_uz": "Voronej viloyati",
     "image": "dairy.png"
   },
   {
-    "name": "Dried Fruits & Nuts",
-    "country": "Norway",
+    "name_ru": "Сухофрукты и орехи",
+    "name_uz": "Quritilgan mevalar va yong'oqlar",
+    "country_ru": "Краснодарский край",
+    "country_uz": "Krasnodar o'lkasi",
     "image": "nuts.png"
   },
   {
-    "name": "Fruits & Vegetables",
-    "country": "Uzbekistan",
+    "name_ru": "Фрукты и овощи",
+    "name_uz": "Mevalar va sabzavotlar",
+    "country_ru": "Краснодарский край",
+    "country_uz": "Krasnodar o'lkasi",
     "image": "veggies.png"
   },
   {
-    "name": "Confectionery",
-    "country": "Norway",
+    "name_ru": "Кондитерские изделия",
+    "name_uz": "Qandolat mahsulotlari",
+    "country_ru": "Москва",
+    "country_uz": "Moskva",
     "image": "sweets.png"
   }
 ]

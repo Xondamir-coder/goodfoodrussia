@@ -1,22 +1,23 @@
 <template>
   <NuxtLink class="card" :to="$localePath(`/media/${data.id}`)">
     <UiPicture :src="data.banner" alt="banner" class="card__banner" />
-    <span class="card__text"> {{ $t('date') }}: {{ data.date }} </span>
-    <h4 class="card__title">{{ data.title }}</h4>
-    <p class="card__text">{{ data.text }}</p>
+    <span class="card__text"> {{ $t('date') }}: {{ data[`date_${locale}`] }} </span>
+    <h4 class="card__title">{{ data[`title_${locale}`] }}</h4>
+    <p class="card__text">{{ data[`text_${locale}`] }}</p>
     <UiBaseButton :text="$t('readMore')" variant="glass" class="card__button" />
   </NuxtLink>
 </template>
 
 <script setup>
-import Media from '~/types/media';
 
 defineProps({
   data: {
     required: true,
-    type: Media
+    type: Object
   }
 });
+
+const { locale } = useI18n();
 </script>
 
 <style lang="scss" scoped>

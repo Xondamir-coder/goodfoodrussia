@@ -1,24 +1,25 @@
 <template>
   <div class="category-card">
     <h3 class="category-card__name">
-      {{ category.name }}
+      {{ category[`name_${locale}`] }}
     </h3>
     <span class="category-card__country">
-      {{ category.country }}
+      {{ category[`country_${locale}`] }}
     </span>
     <UiPicture :src="category.image" class="category-card__pic" />
   </div>
 </template>
 
 <script setup>
-import Category from '~/types/category';
 
 defineProps({
   category: {
     required: true,
-    type: Category
+    type: Object
   }
 });
+
+const { locale } = useI18n();
 </script>
 
 <style lang="scss" scoped>
@@ -68,6 +69,7 @@ defineProps({
     font-family: vars.$font-dongle;
     font-size: max(3.2rem, 24px);
     font-weight: 700;
+    line-height: 0.9;
   }
   &__country {
     color: rgba(255, 255, 255, 0.6);

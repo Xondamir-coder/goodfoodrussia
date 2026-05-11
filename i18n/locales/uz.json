@@ -4,7 +4,7 @@
   "submitRequest": "Ariza yuborish",
   "readMore": "Batafsil",
   "allRecipes": "Barcha retseptlar",
-  "copyright": "© {year}, Barcha huquqlar himoyalangan",
+  "copyright": "© {year}, Barcha huquqlar himoyalangan. Tuzildi",
   "from": "dan",
   "to": "gacha",
   "category": "Kategoriya",
@@ -383,7 +383,15 @@
   },
 
   "header": {
-    "links": ["Bosh sahifa", "Biz haqimizda", "Mahsulotlar", "Xizmatlar", "Retseptlar", "Media", "Kontaktlar"]
+    "links": [
+      "Bosh sahifa",
+      "Biz haqimizda",
+      "Mahsulotlar",
+      "Xizmatlar",
+      "Retseptlar",
+      "Media",
+      "Kontaktlar"
+    ]
   },
 
   "contactsModal": {

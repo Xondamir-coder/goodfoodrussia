@@ -3,10 +3,10 @@
     <UiPicture :src="product.image" alt="card title" class="card__pic" />
     <div class="card__content">
       <h3 class="card__content-title">
-        {{ product.title }}
+        {{ product[`title_${locale}`] }}
       </h3>
       <span class="card__content-weight">
-        {{ product.volume }}
+        {{ product[`volume_${locale}`] }}
       </span>
     </div>
     <UiBaseButton
@@ -18,16 +18,16 @@
   </div>
 </template>
 <script setup>
-import Product from '~/types/product';
 
 defineProps({
   product: {
     required: true,
-    type: Product
+    type: Object
   }
 });
 
 const emits = defineEmits(['click']);
+const { locale } = useI18n();
 </script>
 <style lang="scss" scoped>
 .card {

@@ -2,43 +2,52 @@
   {
     "id": "a1",
     "image": "parmalat.jpg",
-    "title": "Молоко Parmalat ультрапастеризованное",
-    "volume": "500 мл",
+    "title_ru": "Молоко Parmalat ультрапастеризованное",
+    "title_uz": "Parmalat ultra-pasterizatsiya qilingan sut",
+    "volume_ru": "500 мл",
+    "volume_uz": "500 ml",
     "options": {
       "fatContent": ["1.5%", "2.5%", "3.2%"],
-      "processingType": ["Ультрапастеризованное", "Пастеризованное"],
-      "volumes": ["500 мл", "1 л", "1.5 л"]
+      "processingType_ru": ["Ультрапастеризованное", "Пастеризованное"],
+      "processingType_uz": ["Ultra-pasterizatsiya", "Pasterizatsiya qilingan"],
+      "volumes_ru": ["500 мл", "1 л", "1.5 л"],
+      "volumes_uz": ["500 ml", "1 l", "1.5 l"]
     },
     "badges": [
-      { "icon": "warranty", "label": "Гарантия один год" },
-      { "icon": "delivery", "label": "Доступна служба доставки" }
+      { "icon": "warranty", "label_ru": "Гарантия один год",          "label_uz": "Bir yillik kafolat" },
+      { "icon": "delivery", "label_ru": "Доступна служба доставки",   "label_uz": "Yetkazib berish xizmati mavjud" }
     ],
-    "tabs": ["Характеристики", "Описание"],
+    "tabs_ru": ["Характеристики", "Описание"],
+    "tabs_uz": ["Xususiyatlar", "Tavsif"],
     "specs": [
       {
-        "group": "Основные особенности",
+        "group_ru": "Основные характеристики",
+        "group_uz": "Asosiy xususiyatlar",
         "items": [
-          { "label": "Бренд", "value": "Xiaomi" },
-          { "label": "Частота обновления экрана", "value": "120 Гц" },
-          { "label": "Основная камера", "value": "108 МП, 8 МП, 2 МП" },
-          { "label": "Процессор", "value": "Qualcomm Snapdragon 685" }
+          { "label_ru": "Бренд",    "label_uz": "Brend",        "value_ru": "Parmalat",                        "value_uz": "Parmalat" },
+          { "label_ru": "Тип",      "label_uz": "Turi",         "value_ru": "Молоко ультрапастеризованное",    "value_uz": "Ultra-pasterizatsiya qilingan sut" },
+          { "label_ru": "Жирность", "label_uz": "Yog' miqdori", "value_ru": "3.2%",                           "value_uz": "3.2%" },
+          { "label_ru": "Объём",    "label_uz": "Hajm",         "value_ru": "500 мл",                         "value_uz": "500 ml" }
         ]
       },
       {
-        "group": "Дисплей",
+        "group_ru": "Пищевая ценность (на 100 мл)",
+        "group_uz": "Ozuqaviy qiymat (100 ml ga)",
         "items": [
-          { "label": "Бренд", "value": "Xiaomi" },
-          { "label": "Частота обновления экрана", "value": "120 Гц" },
-          { "label": "Основная камера", "value": "108 МП, 8 МП, 2 МП" }
+          { "label_ru": "Калорийность", "label_uz": "Kaloriyalik", "value_ru": "61 ккал",  "value_uz": "61 kkal" },
+          { "label_ru": "Белки",        "label_uz": "Oqsillar",    "value_ru": "3.0 г",    "value_uz": "3.0 g" },
+          { "label_ru": "Жиры",         "label_uz": "Yog'lar",     "value_ru": "3.2 г",    "value_uz": "3.2 g" },
+          { "label_ru": "Углеводы",     "label_uz": "Uglevodlar",  "value_ru": "4.7 г",    "value_uz": "4.7 g" }
         ]
       },
       {
-        "group": "Память и процессор",
+        "group_ru": "Условия хранения",
+        "group_uz": "Saqlash shartlari",
         "items": [
-          { "label": "Бренд", "value": "Xiaomi" },
-          { "label": "Частота обновления экрана", "value": "120 Гц" },
-          { "label": "Основная камера", "value": "108 МП, 8 МП, 2 МП" },
-          { "label": "Процессор", "value": "Qualcomm Snapdragon 685" }
+          { "label_ru": "Срок хранения",   "label_uz": "Saqlash muddati",      "value_ru": "180 суток",                    "value_uz": "180 kun" },
+          { "label_ru": "Температура",     "label_uz": "Harorat",              "value_ru": "от 0 до +25 °C",               "value_uz": "0 dan +25 °C gacha" },
+          { "label_ru": "После вскрытия",  "label_uz": "Ochilgandan keyin",    "value_ru": "до 3 суток при +2…+6 °C",      "value_uz": "+2…+6 °C da 3 kungacha" },
+          { "label_ru": "Сертификат",      "label_uz": "Sertifikat",           "value_ru": "ГОСТ 31450",                   "value_uz": "GOST 31450" }
         ]
       }
     ],
@@ -46,28 +55,34 @@
       {
         "id": "a4",
         "image": "piligrim.jpg",
-        "title": "Вода Пилигрим минеральная негазирован...",
-        "volume": "500 мл",
-        "options": {
-          "fatContent": ["1.5%", "2.5%", "3.2%"]
-        }
+        "title_ru": "Вода Пилигрим минеральная негазирован...",
+        "title_uz": "Piligrim mineralli gazsiз suv...",
+        "volume_ru": "500 мл",
+        "volume_uz": "500 ml",
+        "options": { "fatContent": [] }
       },
       {
         "id": "a5",
         "image": "parmalat.jpg",
-        "title": "Молоко Parmalat ультрапастеризованное",
-        "volume": "500 мл",
+        "title_ru": "Молоко Parmalat ультрапастеризованное",
+        "title_uz": "Parmalat ultra-pasterizatsiya qilingan sut",
+        "volume_ru": "500 мл",
+        "volume_uz": "500 ml",
         "options": {
-          "processingType": ["Ультрапастеризованное", "Пастеризованное"]
+          "processingType_ru": ["Ультрапастеризованное", "Пастеризованное"],
+          "processingType_uz": ["Ultra-pasterizatsiya", "Pasterizatsiya qilingan"]
         }
       },
       {
         "id": "a6",
         "image": "danone.jpg",
-        "title": "Йогурт Danone натура...",
-        "volume": "400 г",
+        "title_ru": "Йогурт Danone натура...",
+        "title_uz": "Danone tabiiy yogurt...",
+        "volume_ru": "400 г",
+        "volume_uz": "400 g",
         "options": {
-          "volumes": ["500 мл", "1 л", "1.5 л"]
+          "volumes_ru": ["500 мл", "1 л", "1.5 л"],
+          "volumes_uz": ["500 ml", "1 l", "1.5 l"]
         }
       }
     ]
@@ -75,41 +90,48 @@
   {
     "id": "a2",
     "image": "piligrim.jpg",
-    "title": "Вода Пилигрим минеральная негазированная",
-    "volume": "500 мл",
+    "title_ru": "Вода Пилигрим минеральная негазированная",
+    "title_uz": "Piligrim mineralli gazsiз suv",
+    "volume_ru": "500 мл",
+    "volume_uz": "500 ml",
     "options": {
-      "volumes": ["500 мл", "1 л", "1.5 л", "5 л"]
+      "volumes_ru": ["500 мл", "1 л", "1.5 л", "5 л"],
+      "volumes_uz": ["500 ml", "1 l", "1.5 l", "5 l"]
     },
     "badges": [
-      { "icon": "warranty", "label": "Гарантия один год" },
-      { "icon": "delivery", "label": "Доступна служба доставки" }
+      { "icon": "warranty", "label_ru": "Гарантия один год",        "label_uz": "Bir yillik kafolat" },
+      { "icon": "delivery", "label_ru": "Доступна служба доставки", "label_uz": "Yetkazib berish xizmati mavjud" }
     ],
-    "tabs": ["Характеристики", "Описание"],
+    "tabs_ru": ["Характеристики", "Описание"],
+    "tabs_uz": ["Xususiyatlar", "Tavsif"],
     "specs": [
       {
-        "group": "Основные особенности",
+        "group_ru": "Основные особенности",
+        "group_uz": "Asosiy xususiyatlar",
         "items": [
-          { "label": "Бренд", "value": "Пилигрим" },
-          { "label": "Тип", "value": "Минеральная негазированная" },
-          { "label": "Источник", "value": "Природный родник" },
-          { "label": "Минерализация", "value": "0.2–0.5 г/л" }
+          { "label_ru": "Бренд",         "label_uz": "Brend",           "value_ru": "Пилигрим",                    "value_uz": "Piligrim" },
+          { "label_ru": "Тип",           "label_uz": "Turi",            "value_ru": "Минеральная негазированная",   "value_uz": "Mineralli gazsiз" },
+          { "label_ru": "Источник",      "label_uz": "Manba",           "value_ru": "Природный родник",             "value_uz": "Tabiiy buloq" },
+          { "label_ru": "Минерализация", "label_uz": "Mineralizatsiya", "value_ru": "0.2–0.5 г/л",                 "value_uz": "0.2–0.5 g/l" }
         ]
       },
       {
-        "group": "Состав и качество",
+        "group_ru": "Состав и качество",
+        "group_uz": "Tarkib va sifat",
         "items": [
-          { "label": "pH", "value": "7.2" },
-          { "label": "Кальций", "value": "до 130 мг/л" },
-          { "label": "Магний", "value": "до 50 мг/л" },
-          { "label": "Сертификат", "value": "ГОСТ Р 54316" }
+          { "label_ru": "pH",          "label_uz": "pH",         "value_ru": "7.2",             "value_uz": "7.2" },
+          { "label_ru": "Кальций",     "label_uz": "Kaltsiy",    "value_ru": "до 130 мг/л",     "value_uz": "130 mg/l gacha" },
+          { "label_ru": "Магний",      "label_uz": "Magniy",     "value_ru": "до 50 мг/л",      "value_uz": "50 mg/l gacha" },
+          { "label_ru": "Сертификат",  "label_uz": "Sertifikat", "value_ru": "ГОСТ Р 54316",    "value_uz": "GOST R 54316" }
         ]
       },
       {
-        "group": "Упаковка",
+        "group_ru": "Упаковка",
+        "group_uz": "Qadoqlash",
         "items": [
-          { "label": "Материал", "value": "ПЭТ" },
-          { "label": "Объём", "value": "500 мл" },
-          { "label": "Крышка", "value": "Защитная с контролем вскрытия" }
+          { "label_ru": "Материал", "label_uz": "Material", "value_ru": "ПЭТ",                               "value_uz": "PET" },
+          { "label_ru": "Объём",    "label_uz": "Hajm",     "value_ru": "500 мл",                            "value_uz": "500 ml" },
+          { "label_ru": "Крышка",   "label_uz": "Qopqoq",   "value_ru": "Защитная с контролем вскрытия",     "value_uz": "Ochilishni nazorat qiluvchi himoya" }
         ]
       }
     ],
@@ -118,43 +140,50 @@
   {
     "id": "a",
     "image": "danone.jpg",
-    "title": "Йогурт Danone натуральный",
-    "volume": "400 г",
+    "title_ru": "Йогурт Danone натуральный",
+    "title_uz": "Danone tabiiy yogurt",
+    "volume_ru": "400 г",
+    "volume_uz": "400 g",
     "options": {
       "fatContent": ["1.5%", "3.3%"],
-      "volumes": ["200 г", "400 г", "800 г"]
+      "volumes_ru": ["200 г", "400 г", "800 г"],
+      "volumes_uz": ["200 g", "400 g", "800 g"]
     },
     "badges": [
-      { "icon": "warranty", "label": "Гарантия свежести 14 дней" },
-      { "icon": "delivery", "label": "Доступна служба доставки" }
+      { "icon": "warranty", "label_ru": "Гарантия свежести 14 дней", "label_uz": "14 kunlik yangilik kafolati" },
+      { "icon": "delivery", "label_ru": "Доступна служба доставки",  "label_uz": "Yetkazib berish xizmati mavjud" }
     ],
-    "tabs": ["Характеристики", "Описание"],
+    "tabs_ru": ["Характеристики", "Описание"],
+    "tabs_uz": ["Xususiyatlar", "Tavsif"],
     "specs": [
       {
-        "group": "Основные особенности",
+        "group_ru": "Основные особенности",
+        "group_uz": "Asosiy xususiyatlar",
         "items": [
-          { "label": "Бренд", "value": "Danone" },
-          { "label": "Тип", "value": "Йогурт натуральный" },
-          { "label": "Жирность", "value": "3.3%" },
-          { "label": "Без добавок", "value": "Да" }
+          { "label_ru": "Бренд",      "label_uz": "Brend",        "value_ru": "Danone",             "value_uz": "Danone" },
+          { "label_ru": "Тип",        "label_uz": "Turi",         "value_ru": "Йогурт натуральный", "value_uz": "Tabiiy yogurt" },
+          { "label_ru": "Жирность",   "label_uz": "Yog' miqdori", "value_ru": "3.3%",               "value_uz": "3.3%" },
+          { "label_ru": "Без добавок","label_uz": "Qo'shimchasiz","value_ru": "Да",                 "value_uz": "Ha" }
         ]
       },
       {
-        "group": "Пищевая ценность (на 100 г)",
+        "group_ru": "Пищевая ценность (на 100 г)",
+        "group_uz": "Ozuqaviy qiymat (100 g ga)",
         "items": [
-          { "label": "Калорийность", "value": "68 ккал" },
-          { "label": "Белки", "value": "4.3 г" },
-          { "label": "Жиры", "value": "3.3 г" },
-          { "label": "Углеводы", "value": "5.5 г" }
+          { "label_ru": "Калорийность", "label_uz": "Kaloriyalik", "value_ru": "68 ккал", "value_uz": "68 kkal" },
+          { "label_ru": "Белки",        "label_uz": "Oqsillar",    "value_ru": "4.3 г",   "value_uz": "4.3 g" },
+          { "label_ru": "Жиры",         "label_uz": "Yog'lar",     "value_ru": "3.3 г",   "value_uz": "3.3 g" },
+          { "label_ru": "Углеводы",     "label_uz": "Uglevodlar",  "value_ru": "5.5 г",   "value_uz": "5.5 g" }
         ]
       },
       {
-        "group": "Состав и хранение",
+        "group_ru": "Состав и хранение",
+        "group_uz": "Tarkib va saqlash",
         "items": [
-          { "label": "Состав", "value": "Молоко, закваска" },
-          { "label": "Срок хранения", "value": "14 суток" },
-          { "label": "Температура хранения", "value": "от +2 до +6 °C" },
-          { "label": "Сертификат", "value": "ГОСТ 31981" }
+          { "label_ru": "Состав",              "label_uz": "Tarkib",           "value_ru": "Молоко, закваска",       "value_uz": "Sut, achitqi" },
+          { "label_ru": "Срок хранения",       "label_uz": "Saqlash muddati",  "value_ru": "14 суток",               "value_uz": "14 kun" },
+          { "label_ru": "Температура хранения","label_uz": "Saqlash harorati", "value_ru": "от +2 до +6 °C",         "value_uz": "+2 dan +6 °C gacha" },
+          { "label_ru": "Сертификат",          "label_uz": "Sertifikat",       "value_ru": "ГОСТ 31981",             "value_uz": "GOST 31981" }
         ]
       }
     ],
@@ -163,28 +192,34 @@
   {
     "id": "a4",
     "image": "piligrim.jpg",
-    "title": "Вода Пилигрим минеральная негазирован...",
-    "volume": "500 мл",
-    "options": {
-      "fatContent": ["1.5%", "2.5%", "3.2%"]
-    }
+    "title_ru": "Вода Пилигрим минеральная негазирован...",
+    "title_uz": "Piligrim mineralli gazsiз suv...",
+    "volume_ru": "500 мл",
+    "volume_uz": "500 ml",
+    "options": { "fatContent": [] }
   },
   {
     "id": "a5",
     "image": "parmalat.jpg",
-    "title": "Молоко Parmalat ультрапастеризованное",
-    "volume": "500 мл",
+    "title_ru": "Молоко Parmalat ультрапастеризованное",
+    "title_uz": "Parmalat ultra-pasterizatsiya qilingan sut",
+    "volume_ru": "500 мл",
+    "volume_uz": "500 ml",
     "options": {
-      "processingType": ["Ультрапастеризованное", "Пастеризованное"]
+      "processingType_ru": ["Ультрапастеризованное", "Пастеризованное"],
+      "processingType_uz": ["Ultra-pasterizatsiya", "Pasterizatsiya qilingan"]
     }
   },
   {
     "id": "a6",
     "image": "danone.jpg",
-    "title": "Йогурт Danone натура...",
-    "volume": "400 г",
+    "title_ru": "Йогурт Danone натура...",
+    "title_uz": "Danone tabiiy yogurt...",
+    "volume_ru": "400 г",
+    "volume_uz": "400 g",
     "options": {
-      "volumes": ["500 мл", "1 л", "1.5 л"]
+      "volumes_ru": ["500 мл", "1 л", "1.5 л"],
+      "volumes_uz": ["500 ml", "1 l", "1.5 l"]
     }
   }
 ]

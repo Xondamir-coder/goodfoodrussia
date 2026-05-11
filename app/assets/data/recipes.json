@@ -1,44 +1,62 @@
 [
   {
     "id": "1",
-    "date": "12 марта 2025",
+    "date_ru": "12 марта 2025",
+    "date_uz": "12 mart 2025",
     "banner": "recipes-1.jpg",
-    "title": "Крем-суп с молочными сливками 20%",
-    "categories": ["Для HoReCa", "Супы"]
+    "title_ru": "Крем-суп с молочными сливками 20%",
+    "title_uz": "Sut qaymog'li krem-sho'rva 20%",
+    "categories_ru": ["Для HoReCa", "Супы"],
+    "categories_uz": ["HoReCa uchun", "Sho'rvalar"]
   },
   {
     "id": "2",
-    "date": "12 марта 2025",
+    "date_ru": "12 марта 2025",
+    "date_uz": "12 mart 2025",
     "banner": "recipes-2.jpg",
-    "title": "Крем-суп с молочными сливками 20%",
-    "categories": ["Для HoReCa", "Супы"]
+    "title_ru": "Крем-суп с молочными сливками 20%",
+    "title_uz": "Sut qaymog'li krem-sho'rva 20%",
+    "categories_ru": ["Для HoReCa", "Супы"],
+    "categories_uz": ["HoReCa uchun", "Sho'rvalar"]
   },
   {
     "id": "3",
-    "date": "12 марта 2025",
+    "date_ru": "12 марта 2025",
+    "date_uz": "12 mart 2025",
     "banner": "recipes-3.jpg",
-    "title": "Крем-суп с молочными сливками 20%",
-    "categories": ["Для HoReCa", "Супы"]
+    "title_ru": "Крем-суп с молочными сливками 20%",
+    "title_uz": "Sut qaymog'li krem-sho'rva 20%",
+    "categories_ru": ["Для HoReCa", "Супы"],
+    "categories_uz": ["HoReCa uchun", "Sho'rvalar"]
   },
   {
     "id": "4",
-    "date": "12 марта 2025",
+    "date_ru": "12 марта 2025",
+    "date_uz": "12 mart 2025",
     "banner": "recipes-4.jpg",
-    "title": "Крем-суп с молочными сливками 20%",
-    "categories": ["Для HoReCa", "Супы"]
+    "title_ru": "Крем-суп с молочными сливками 20%",
+    "title_uz": "Sut qaymog'li krem-sho'rva 20%",
+    "categories_ru": ["Для HoReCa", "Супы"],
+    "categories_uz": ["HoReCa uchun", "Sho'rvalar"]
   },
   {
     "id": "5",
-    "date": "12 марта 2025",
+    "date_ru": "12 марта 2025",
+    "date_uz": "12 mart 2025",
     "banner": "recipes-5.jpg",
-    "title": "Крем-суп с молочными сливками 20%",
-    "categories": ["Для HoReCa", "Супы"]
+    "title_ru": "Крем-суп с молочными сливками 20%",
+    "title_uz": "Sut qaymog'li krem-sho'rva 20%",
+    "categories_ru": ["Для HoReCa", "Супы"],
+    "categories_uz": ["HoReCa uchun", "Sho'rvalar"]
   },
   {
     "id": "6",
-    "date": "12 марта 2025",
+    "date_ru": "12 марта 2025",
+    "date_uz": "12 mart 2025",
     "banner": "recipes-6.jpg",
-    "title": "Крем-суп с молочными сливками 20%",
-    "categories": ["Для HoReCa", "Супы"]
+    "title_ru": "Крем-суп с молочными сливками 20%",
+    "title_uz": "Sut qaymog'li krem-sho'rva 20%",
+    "categories_ru": ["Для HoReCa", "Супы"],
+    "categories_uz": ["HoReCa uchun", "Sho'rvalar"]
   }
 ]
