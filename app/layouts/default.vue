@@ -6,7 +6,7 @@
         ? `${$route.path.split('/')[2]} index`
         : $route.query?.slide
           ? `home--${$route.query?.slide}`
-          : $i18n.locale === 'en'
+          : $i18n.locale === 'uz'
             ? $route.path.split('/')[2]
             : $route.path.slice(1)
     "

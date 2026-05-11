@@ -60,7 +60,7 @@
 
     <section class="about__section">
       <div class="showroom">
-        <div class="showroom__title">SHOWROOM</div>
+        <div class="showroom__title">{{ $t('about.showroomLabel') }}</div>
         <UiSectionHeader
           class="about__header about__header--left"
           :title="$t('about.showroom.title')"

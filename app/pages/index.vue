@@ -43,6 +43,71 @@ onUpdated(() => {
   ensureSlideQuery();
 });
 
+const SLIDE_COUNT = 6;
+const LOCK_MS = 900;
+
+const { $lenis } = useNuxtApp();
+
+let isLocked = false;
+let touchStartY = 0;
+
+const currentIndex = computed(() => Math.min(Math.max(+(query.value?.slide ?? 0), 0), SLIDE_COUNT));
+
+// Returns true when scroll position allows switching in the given direction.
+// For tall slides this lets natural page scroll happen until the edge is reached.
+const canSwitch = (down) => {
+  const atTop = window.scrollY <= 0;
+  const atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 10;
+  return down ? atBottom : atTop;
+};
+
+const goToSlide = (direction) => {
+  if (isLocked) return;
+
+  const next = Math.min(Math.max(currentIndex.value + direction, 0), SLIDE_COUNT);
+  if (next === currentIndex.value) return;
+
+  isLocked = true;
+  window.scrollTo(0, 0);
+  router.replace({ query: { slide: next } });
+  setTimeout(() => { isLocked = false; }, LOCK_MS);
+};
+
+const onWheel = (e) => {
+  if (isLocked) return;
+  const down = e.deltaY > 0;
+  if (!canSwitch(down)) return;
+  if (Math.abs(e.deltaY) < 30) return;
+  goToSlide(down ? 1 : -1);
+};
+
+const onTouchStart = (e) => {
+  touchStartY = e.touches[0].clientY;
+};
+
+const onTouchEnd = (e) => {
+  if (isLocked) return;
+  const delta = touchStartY - e.changedTouches[0].clientY;
+  if (Math.abs(delta) < 50) return;
+  const down = delta > 0;
+  if (!canSwitch(down)) return;
+  goToSlide(down ? 1 : -1);
+};
+
+onMounted(() => {
+  $lenis?.stop();
+  window.addEventListener('wheel', onWheel, { passive: true });
+  window.addEventListener('touchstart', onTouchStart, { passive: true });
+  window.addEventListener('touchend', onTouchEnd, { passive: true });
+});
+
+onUnmounted(() => {
+  $lenis?.start();
+  window.removeEventListener('wheel', onWheel);
+  window.removeEventListener('touchstart', onTouchStart);
+  window.removeEventListener('touchend', onTouchEnd);
+});
+
 useSeoMeta({
   title: t('seo.home.title'),
   description: t('seo.home.description')

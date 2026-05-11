@@ -5,10 +5,14 @@
     :types="mapRt(tm('products.sort'), rt)"
   >
     <UiProductsModal :product-i-d="productID" @change="assignProductID" />
-    <button class="products-cta" @click="showFiltersModal = true">
-      <span>{{ $t('products.filters.title') }}</span>
-      <IconsFilters class="products-cta__icon" />
-    </button>
+    <ClientOnly>
+      <Teleport to="#filtersDropdownTeleport">
+        <button class="products-cta" @click="showFiltersModal = true">
+          <span>{{ $t('products.filters.title') }}</span>
+          <IconsFilters class="products-cta__icon" />
+        </button>
+      </Teleport>
+    </ClientOnly>
     <UiProductsFiltersModal />
     <div class="products-container">
       <div class="products-wrapper">
@@ -51,8 +55,6 @@ useSeoMeta({
 <style lang="scss" scoped>
 .products {
   &-cta {
-    margin-inline: var(--spacing-inline);
-    align-self: flex-start;
     display: flex;
     height: 40px;
     padding: 12px;

@@ -20,9 +20,13 @@
         <div v-if="card.products" class="slide__card-wrapper">
           <swiper
             class="slide__card-slider"
-            :grab-cursor="true"
+            :modules="swiperModules"
             slides-per-view="auto"
             :space-between="10"
+            :loop="true"
+            :allow-touch-move="false"
+            :autoplay="{ delay: 0, disableOnInteraction: false, pauseOnMouseEnter: true }"
+            :speed="3500"
           >
             <swiper-slide
               v-for="(product, i) in card.products"
@@ -35,9 +39,13 @@
           </swiper>
           <swiper
             class="slide__card-slider"
-            :grab-cursor="true"
+            :modules="swiperModules"
             slides-per-view="auto"
             :space-between="10"
+            :loop="true"
+            :allow-touch-move="false"
+            :autoplay="{ delay: 0, disableOnInteraction: false, pauseOnMouseEnter: true, reverseDirection: true }"
+            :speed="3500"
           >
             <swiper-slide
               v-for="(product, i) in card.products"
@@ -66,7 +74,10 @@
 import { IconsFeed, IconsGlobe, IconsHandshake } from '#components';
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
+
+const swiperModules = [Autoplay];
 
 const { tm, rt } = useI18n();
 
@@ -239,6 +250,7 @@ const cards = mapRt(tm('home.slide-2.cards'), rt).map(el => ({
       }
     }
     &-slider {
+      cursor: default;
       &-name {
         font-size: max(2rem, 8px);
       }

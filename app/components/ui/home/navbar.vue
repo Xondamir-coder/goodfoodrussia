@@ -25,17 +25,8 @@ import {
 } from '#components';
 
 const { tm, rt } = useI18n();
-
 const route = useRoute();
 const router = useRouter();
-
-const query = computed(() => route.query);
-
-const changeSlide = newIndex => {
-  router.replace({
-    query: { slide: newIndex }
-  });
-};
 
 const icons = [
   IconsHome,
@@ -47,6 +38,21 @@ const icons = [
   IconsRocket
 ];
 const items = mapRt(tm('home.navbar'), rt).map((l, i) => ({ label: l, icon: icons[i] }));
+const query = computed(() => route.query);
+
+const changeSlide = newIndex => {
+  router.replace({
+    query: { slide: newIndex }
+  });
+};
+
+onMounted(() => {
+  const elements = document.querySelectorAll('.navbar__button');
+  elements.forEach(el => {
+    const textEl = el.querySelector('.navbar__button-label');
+    el.style.setProperty('--textWidth', `${textEl.scrollWidth}px`);
+  });
+});
 </script>
 
 <style lang="scss" scoped>
@@ -147,7 +153,7 @@ const items = mapRt(tm('home.navbar'), rt).map((l, i) => ({ label: l, icon: icon
         @media screen and (min-width: vars.$bp-xl) {
           gap: 1rem;
           .navbar__button-label {
-            max-width: 100px;
+            max-width: var(--textWidth);
           }
         }
       }

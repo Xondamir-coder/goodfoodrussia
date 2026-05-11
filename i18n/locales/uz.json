@@ -1,0 +1,528 @@
+{
+  "learnMore": "Ko'proq bilish",
+  "exploreCatalogue": "Katalogni ko'rish",
+  "submitRequest": "Ariza yuborish",
+  "readMore": "Batafsil",
+  "allRecipes": "Barcha retseptlar",
+  "copyright": "© {year}, Barcha huquqlar himoyalangan",
+  "from": "dan",
+  "to": "gacha",
+  "category": "Kategoriya",
+  "price": "Narx",
+  "brand": "Brend",
+  "productType": "Mahsulot turi",
+  "volume": "Hajm",
+  "weight": "Og'irlik",
+  "ml": "ml",
+  "kg": "kg",
+  "l": "l",
+  "fatContent": "Yog' miqdori",
+  "processingType": "Qayta ishlash turi",
+  "volumes": "Hajmlar",
+  "similarProducts": "O'xshash mahsulotlar",
+  "share": "Ulashish",
+  "address": "Manzil",
+  "tel": "Tel.",
+  "email": "Elektron pochta",
+  "socials": "Ijtimoiy tarmoqlar",
+  "onMap": "Xaritada",
+  "messageUs": "Bizga yozing",
+  "telegram": "Telegram kanal",
+  "instagram": "Instagram",
+  "facebook": "Facebook",
+  "cookingTime": "Tayyorlash vaqti",
+  "categories": "Kategoriyalar",
+  "date": "Sana",
+  "watch": "Ko'rish",
+  "send": "Yuborish",
+  "good": "Yaxshi",
+  "step": "qadam",
+  "leaveEnquiry": "Ariza qoldirish",
+  "copy": "Nusxa olish",
+  "accessibility": {
+    "goHome": "Bosh sahifaga o'tish",
+    "openMenu": "Menyuni ochish",
+    "closeMenu": "Menyuni yopish",
+    "closeModal": "Modal oynani yopish",
+    "changeLanguage": "Tilni o'zgartirish",
+    "goToPreviousPage": "Oldingi sahifaga o'tish",
+    "previousPage": "Oldingi sahifa",
+    "nextPage": "Keyingi sahifa",
+    "expandPagination": "Barcha sahifalarni ko'rsatish",
+    "copyLink": "Havolani nusxalash",
+    "openTelegram": "Telegramni ochish",
+    "playShowroomVideo": "Showroom videosini ijro etish",
+    "toggleOption": "{label} ni almashtirish",
+    "openProductImage": "Mahsulot rasmini ochish: {title}"
+  },
+
+  "home": {
+    "navbar": [
+      "Bosh sahifa",
+      "Taqdimot",
+      "Kategoriyalar",
+      "Ishlab chiqaruvchilar",
+      "Retseptlar",
+      "Raqamlar",
+      "Hamkorlik"
+    ],
+    "slide-1": {
+      "label": "Tasdiqlangan ishlab chiqaruvchilar",
+      "title": "O'zbekistondagi Rossiya ishlab chiqaruvchilarining showroom'i",
+      "text": "Mahsulotlar, brendlar va mintaqalarni o'rganing — ishonchli ta'minot hamkorligini o'rnating."
+    },
+    "slide-2": {
+      "title": "Professional taqdimot",
+      "text": "Mahsulotlarni joyida ko'rish, sinab ko'rish va ishbilarmon uchrashuvlar o'tkazish imkoniyati.",
+      "cards": [
+        {
+          "title": "Rossiyaning ishonchli zavodlari va fabrikalari bilan hamkorlik.",
+          "text": "Biz Rossiya bo'ylab ishlab chiqaruvchilar bilan bevosita ishlaymiz. Siz vositachilarsiz narx va sifat bo'yicha kafolatlar olasiz."
+        },
+        {
+          "title": "Keng assortimentdagi sifatli mahsulotlar",
+          "text": "Moslashuvchanlik va adaptivlik uchun mo'ljallangan echimlarimiz bilan operatsiyalaringizni kengaytiring. Bizning arxitektura biznesingiz bilan birga o'sadi, uzluksiz kengayish va innovatsiyalarni ta'minlaydi.",
+          "products": [
+            "Non mahsulotlari va donlar",
+            "Konditeriya mahsulotlari",
+            "Sut mahsulotlari",
+            "Non mahsulotlari va donlar",
+            "Sut mahsulotlari"
+          ]
+        },
+        {
+          "title": "Nima uchun biz bilan hamkorlik qilish foydali",
+          "text": "To'g'ridan-to'g'ri shartnomalar, eksklyuziv shartlar va biznesingiz uchun ishonchli uzoq muddatli hamkorlik modeli.",
+          "items": [
+            "To'g'ridan-to'g'ri shartnomalar",
+            "Eksklyuziv distribyutorlik imkoniyatlari",
+            "Uzoq muddatli hamkorlik modeli"
+          ]
+        }
+      ]
+    },
+    "slide-3": {
+      "title": "Tanlangan kategoriyalar",
+      "text": "Asosiy kategoriyalarda eksportga tayyor Rossiya oziq-ovqat mahsulotlarini kashf eting. Yangi mahsulotlardan qayta ishlangan tovarlargacha — ishonchli ishlab chiqaruvchilar bilan bevosita bog'laning."
+    },
+    "slide-4": {
+      "title": "Tanlangan ishlab chiqaruvchilar",
+      "text": "Sizni eksportga tayyor ishlab chiqaruvchilar bilan bog'laymiz.",
+      "coop": {
+        "title": "Hamkorlikni qanday boshlash",
+        "text": "Mahsulotlarni tanishdan barqaror yetkazib berishlargacha ishlab chiqaruvchilar bilan ishlashning oddiy va shaffof jarayoni.",
+        "cards": [
+          {
+            "title": "Mahsulotni namoyish qilish",
+            "text": "Siz showroom'ga tashrif buyurasiz yoki katalogni ko'rasiz, assortiment va sifat bilan tanishasiz"
+          },
+          {
+            "title": "So'rov va muhokama",
+            "text": "Ariza qoldirasiz, tijorat taklifi olasiz va hamkorlik shartlarini muhokama qilasiz"
+          },
+          {
+            "title": "Bitimni yakunlash",
+            "text": "Kelishilgan shartlarda shartnoma imzalaymiz va barqaror yetkazib berishlarni boshlaymiz."
+          }
+        ]
+      }
+    },
+    "slide-5": {
+      "title": "Mahsulotlarimiz bilan retseptlar",
+      "text": "Sizni eksportga tayyor ishlab chiqaruvchilar bilan bog'laymiz."
+    },
+    "slide-6": {
+      "title": "Raqamlarda ko'lam va ishonch",
+      "text": "Biz ishlab chiqaruvchilar va hamkorlarni birlashtirgan holda shaffof hamkorlik shartlari bilan samarali eksport ekotizimini yaratamiz.",
+      "cards": [
+        {
+          "amount": "10+ ",
+          "text": "yil bozorda"
+        },
+        {
+          "amount": "150+ ",
+          "text": "Tasdiqlangan brendlar"
+        },
+        {
+          "amount": "50+",
+          "text": "O'zbekistondagi hamkorlar"
+        },
+        {
+          "amount": "20+",
+          "text": "Yetkazib berish geografiyasi"
+        },
+        {
+          "amount": "1 000+",
+          "text": "Keng mahsulot assortimenti"
+        }
+      ]
+    },
+    "slide-7": {
+      "title": "Ishonchli ta'minot hamkorligini o'rnating",
+      "text": "Eksportga tayyor mahsulotlarni o'rganing va rasmiy showroom platformamiz orqali ishonchli Rossiya ishlab chiqaruvchilari bilan hamkorlikni boshlang."
+    }
+  },
+
+  "products": {
+    "title": "Mahsulotlar",
+    "sort": ["Mashhurlik bo'yicha", "Mavjudlik bo'yicha", "Narx bo'yicha"],
+    "filters": {
+      "title": "Filtrlar",
+      "new": "Yangiliklar",
+      "special": "Maxsus takliflar",
+      "priceRange": "Narx diapazoni",
+      "categories": [
+        {
+          "key": "drinks",
+          "val": "Ichimliklar"
+        },
+        {
+          "key": "milkProducts",
+          "val": "Sut mahsulotlari"
+        },
+        {
+          "key": "fruitJuices",
+          "val": "Sharbatlar va nektarlar"
+        },
+        {
+          "key": "yogurts",
+          "val": "Yogurtlar va desertlar"
+        },
+        {
+          "key": "plantMilk",
+          "val": "O'simlik suti"
+        }
+      ],
+      "brands": [
+        {
+          "key": "piligrim",
+          "val": "Piligrim"
+        },
+        {
+          "key": "parmalat",
+          "val": "Parmalat"
+        }
+      ],
+      "productTypes": [
+        {
+          "key": "water",
+          "val": "Suv"
+        },
+        {
+          "key": "milk",
+          "val": "Sut"
+        }
+      ],
+      "volumes": [
+        {
+          "key": "500ml",
+          "val": "500 ml"
+        },
+        {
+          "key": "1l",
+          "val": "1 l"
+        }
+      ]
+    }
+  },
+
+  "recipes": {
+    "title": "Retseptlar",
+    "sort": ["Barchasi", "Nonushtalar", "Asosiy taomlar", "Desertlar", "Salatlar", "Sho'rvalar"]
+  },
+
+  "recipe": {
+    "shareTitle": "Retseptni ulashish",
+    "shareText": "Bu retseptni do'stlaringiz bilan ulashing va keyinroq pishirish uchun saqlang.",
+    "desc": "Tavsif",
+    "ingr": "Ingredientlar",
+    "method": "Tayyorlash usuli"
+  },
+
+  "about": {
+    "hero": {
+      "title": "Oziq-ovqat sanoati yetakchilarini global bozorlarga chiqaramiz",
+      "text": "Biz sifatli mahsulotlar real biznes imkoniyatlari bilan uchrashadigan makon yaratamiz. Showroom'imiz va tizimli yondashuvimiz orqali ta'minotni soddalashtiradi, ishonch uyg'otamiz va aloqalarni uzoq muddatli hamkorlikka aylantiramiz."
+    },
+    "company": {
+      "title": "Good Food Russia haqida.",
+      "text": "Good Food Russia — xalqaro bozorlarda distribyutorlar, chakana sotuvchilar va HoReCa hamkorlari bilan yuqori sifatli mahsulotlar ishlab chiqaruvchilarni bog'laydigan kurated platforma. Biz ishonchli brendlarni tizimli, shaffof va samarali biznes modeli orqali namoyish qilishga ixtisoslashamiz. Maqsadimiz — ta'minotni soddalashtirish, xavflarni kamaytirish va oziq-ovqat sanoatida uzoq muddatli hamkorliklarni yaratish. Biz mahsulotlar faqat namoyish etilmasdan — sinovdan o'tkazilishi, baholanishi va real biznes integratsiyasiga tayyorlanishi mumkin bo'lgan noyob showroom formatida ishlaymiz."
+    },
+    "stats": [
+      "Muvaffaqiyatli mahsulot namoyishlari",
+      "Ishonchli biznes hamkorlari",
+      "Soha mutaxassislari",
+      "O'rtacha hamkor qoniqish darajasi"
+    ],
+    "mission": {
+      "title": "Missiya.",
+      "text": "Bizning missiyamiz — ishlab chiqaruvchilar va xaridorlarni bog'lash, hamkorlik uchun ishonchli, samarali va shaffof muhit yaratish."
+    },
+    "goals": [
+      "Sifatli oziq-ovqat mahsulotlarini butun dunyoga targ'ib qilish",
+      "Mahsulot izlash va ta'minotni soddalashtirish",
+      "Uzoq muddatli, ishonchga asoslangan hamkorliklarni yaratish"
+    ],
+    "showroomLabel": "SHOWROOM",
+    "showroom": {
+      "title": "Showroom'imizga tashrif buyuring",
+      "text": "Good Food Russia platformasi mahsulotni katalog bo'yicha emas, balki real muhitda baholashga yordam beradi: assortiment bilan tanishish, yetkazib berish tafsilotlarini muhokama qilish va hamkorlik to'g'risida tezroq qaror qabul qilish."
+    },
+    "process": {
+      "title": "Bu qanday ishlaydi",
+      "text": "Biz jarayonni oddiy va shaffof qilamiz: mahsulotlar bilan birinchi tanishishdan yetkazib berishni muvofiqlashtirish va uzoq muddatli hamkorlikkacha.",
+      "steps": [
+        {
+          "title": "Assortimentni tanlash",
+          "text": "Siz bozor, savdo formati va mijozlar kutganlariga mos keladigan kategoriyalar va brendlarni o'rganasiz."
+        },
+        {
+          "title": "Namunalarni ko'rib chiqish",
+          "text": "Tijorat qarori qabul qilishdan oldin mahsulot sifati, qadoqlanishi va xususiyatlarini baholaysiz."
+        },
+        {
+          "title": "Muzokaralar va shartlar",
+          "text": "Biz hajmlar, narxlar, hujjatlar va operatsion tafsilotlarni ishlab chiqaruvchi va jamoangiz bilan birgalikda kelishib olamiz."
+        },
+        {
+          "title": "Hamkorlikni boshlash",
+          "text": "Biz yetkazib berishlarga o'tamiz, mahsulot integratsiyasini qo'llab-quvvatlaymiz va barqaror doimiy hamkorlikni saqlaymiz."
+        }
+      ]
+    },
+    "team": {
+      "title": "Kuchli jamoa — muvaffaqiyatimiz asosi",
+      "text": "Mahsulot, logistika va hamkor savdolarda tajribali mutaxassislar brend qiziqishini aniq va ishonchli biznes jarayoniga aylantirishga yordam beradi.",
+      "photoAlt": "Good Food Russia jamoasi, {index}-rasm",
+      "items": [
+        {
+          "name": "Jasur Karimov",
+          "job": "Ishlanma bo'limi boshlig'i"
+        },
+        {
+          "name": "Sofiya Mixaylova",
+          "job": "Brend hamkorlik menejeri"
+        },
+        {
+          "name": "Timur Sadykov",
+          "job": "Eksport operatsiyalari rahbari"
+        },
+        {
+          "name": "Bekzod Tursunov",
+          "job": "Ta'minot zanjiri koordinatori"
+        },
+        {
+          "name": "Elena Voronina",
+          "job": "Sifat nazorati mutaxassisi"
+        },
+        {
+          "name": "Rustam Komilov",
+          "job": "B2B savdo menejeri"
+        },
+        {
+          "name": "Alisher Yuldashev",
+          "job": "Logistika analitigi"
+        },
+        {
+          "name": "Nodir Ahmedov",
+          "job": "Ta'minot mutaxassisi"
+        }
+      ]
+    },
+    "documents": {
+      "title": "Hujjatlar va sertifikatlar",
+      "text": "Mahsulot sifati va muvofiqligini tasdiqlovchi rasmiy hujjatlar va sertifikatlar."
+    },
+    "faq": {
+      "title": "Savollaringiz bormi?",
+      "text": "Kerakli ma'lumotni topa olmadingizmi? Biz bilan bog'laning — tanlashda yordam berishdan mamnun bo'lamiz",
+      "accordions": [
+        {
+          "question": "Buyurtma qanday beriladi?",
+          "answer": "Assortiment, hajmlar va hamkorlik formati haqida muhokama qilish uchun jamoamiz bilan bog'laning. Mahsulotlarni tanlashga va ta'minotni boshlash uchun keyingi qadamlarni tayyorlashga yordam beramiz."
+        },
+        {
+          "question": "Yetkazib berish qancha vaqt oladi?",
+          "answer": "Muddatlar mahsulot kategoriyasi, partiya hajmi va yetkazib berish yo'nalishiga bog'liq. Tafsilotlar kelishilgandan so'ng biz aniq jadval tuzamiz va mahsulotlar olinmaguncha jarayonni qo'llab-quvvatlaymiz."
+        },
+        {
+          "question": "Oldindan buyurtma berish mumkinmi?",
+          "answer": "Ha, biz alohida mahsulot kategoriyalari uchun oldindan buyurtmani kelishib olishimiz va hajmlar hamda muddatlar bo'yicha asosiy shartlarni oldindan belgilashimiz mumkin."
+        },
+        {
+          "question": "Qanday to'lov usullari mavjud?",
+          "answer": "To'lov formati hamkorlik modeli, buyurtma hajmi va kelishilgan tijorat shartlariga qarab individual ravishda muhokama qilinadi."
+        },
+        {
+          "question": "Minimal buyurtma summasi bormi?",
+          "answer": "Minimal hajm ma'lum ishlab chiqaruvchi va mahsulot kategoriyasiga bog'liq. Qiziqtirgan assortimentni tanlagandan so'ng optimal kirish formatini tavsiya etamiz."
+        },
+        {
+          "question": "Qo'llab-quvvatlash bilan qanday bog'lanish mumkin?",
+          "answer": "Sayt orqali ariza qoldirishingiz yoki jamoamizga bevosita yozishingiz mumkin. Savollarga javob berish va mos echimni tanlashda yordam berish uchun siz bilan bog'lanamiz."
+        }
+      ]
+    }
+  },
+
+  "contacts": {
+    "title": "Kontaktlar",
+    "text": "GooFood jamoasi bilan bog'laning — savollar, takliflar yoki xizmatimiz haqida ko'proq bilib olmoqchi bo'lsangiz. Har doim yordam berishga tayyormiz.",
+    "address": "Toshkent, O'zbekiston, Shota Rustaveli ko'chasi, 12"
+  },
+
+  "media": {
+    "title": "Media",
+    "types": ["Yangiliklar", "Tadbirlar", "Galereya"]
+  },
+
+  "mediaIndex": {
+    "photoGallery": "Foto galereya",
+    "shareTitle": "Yangiliklarni ulashish",
+    "shareText": "Bu yangiliklarni do'stlaringiz bilan ulashing yoki havolani keyinroq o'qish uchun saqlang."
+  },
+
+  "header": {
+    "links": ["Bosh sahifa", "Biz haqimizda", "Mahsulotlar", "Xizmatlar", "Retseptlar", "Media", "Kontaktlar"]
+  },
+
+  "contactsModal": {
+    "title": "Biz bilan bog'laning",
+    "text": "Kontaktlaringizni qoldiring — GooFood jamoasi buyurtma, yetkazib berish yoki har qanday savollaringizda yordam beradi.",
+    "name": "Ismingiz",
+    "namePlaceholder": "Ismingizni kiriting",
+    "phone": "Telefon raqami",
+    "phonePlaceholder": "Telefon raqamini kiriting",
+    "telegram": "Telegram (ixtiyoriy)",
+    "telegramPlaceholder": "{'@'}username yoki raqam",
+    "successTitle": "Arizangiz uchun rahmat!",
+    "successText": "Biz kontaktlaringizni oldik va tez orada siz bilan bog'lanamiz."
+  },
+
+  "services": {
+    "hero": {
+      "title": "Natijaga yo'naltirilgan xizmatlar",
+      "text": "Keng qamrovli yondashuv, ishonchli hamkorlar va biznesingizning barqaror o'sishi uchun samarali jarayonlar"
+    },
+    "reasons": {
+      "title": "Biznesingiz uchun nima qilamiz",
+      "text": "Mahsulot izlash va tanlashdan muzokaralar va logistikagacha — xizmatlarimiz tez va samarali natijaga erishishga yordam beradigan yagona tizimga qurilgan",
+      "cards": [
+        {
+          "title": "Showroom'da namoyish",
+          "text": "Mahsulotlarni joyida baholang: materiallar, yig'ish sifati va bajarish tafsilotlarini o'rganing. Mutaxassislarimiz xususiyatlar haqida batafsil ma'lumot beradi va sotib olishdan oldin asosli qaror qabul qilishga yordam beradi."
+        },
+        {
+          "title": "Mahsulot izlash va tanlash",
+          "text": "Vazifalaringiz va byudjetingizga mos optimal echimlarni tanlaymiz. Ehtiyojlarni tahlil qilamiz, variantlarni solishtiramiz va faqat talablaringizga mos mahsulotlarni tavsiya etamiz."
+        },
+        {
+          "title": "Namuna so'rovlari",
+          "text": "Sifatni shaxsan tekshirish va kutganlaringizga mosligini aniqlash uchun mahsulot namunalari buyurtma qiling. Bu asosiy buyurtmani berishdan oldin ishonchli qaror qabul qilish imkonini beradi."
+        },
+        {
+          "title": "B2B muzokaralarni qo'llab-quvvatlash",
+          "text": "Siz bilan muzokaralarning barcha bosqichlarida — shartlarni muhokama qilishdan bitimni yakunlashgacha bo'lamiz. Foydali, shaffof va uzoq muddatli hamkorlik o'rnatishga yordam beramiz."
+        },
+        {
+          "title": "Import va logistika",
+          "text": "To'liq ta'minot siklini tashkil etamiz: buyurtmani rasmiylashtirishdan omboringizga yetkazib berishgacha. Har bir bosqichni nazorat qilamiz, ishonchlilik, shaffoflik va muddatlarga rioya qilishni ta'minlaymiz."
+        }
+      ]
+    },
+
+    "cta": {
+      "title": "Yetkazib berishlarni muhokama qilish",
+      "text": "Hajmlar va hamkorlik shartlarini kelishib olish uchun jamoamiz bilan bog'laning."
+    },
+    "faq": {
+      "title": "Savollaringiz bormi?",
+      "text": "Kerakli ma'lumotni topa olmadingizmi? Biz bilan bog'laning — tanlashda yordam berishdan mamnun bo'lamiz",
+      "accordions": [
+        {
+          "question": "Buyurtma qanday beriladi?",
+          "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+          "question": "Yetkazib berish qancha vaqt oladi?",
+          "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+          "question": "Oldindan buyurtma berish mumkinmi?",
+          "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+          "question": "Qanday to'lov usullari mavjud?",
+          "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+          "question": "Minimal buyurtma summasi bormi?",
+          "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+          "question": "Qo'llab-quvvatlash bilan qanday bog'lanish mumkin?",
+          "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        }
+      ]
+    }
+  },
+
+  "processSection": {
+    "title": "Bu qanday ishlaydi",
+    "text": "Biz jarayonni oddiy va shaffof qilamiz: mahsulotlarni tanlashdan yetkazib berish va ishga kirishgacha.",
+    "cards": [
+      {
+        "title": "Tanlash va namoyish",
+        "text": "Siz showroom'ga tashrif buyurasiz yoki katalogni ko'rasiz va mahsulotlarni baholaysiz."
+      },
+      {
+        "title": "Namuna so'rovlari",
+        "text": "Kerakli mahsulotlarni tanlab, sifatni tekshirish uchun namunalar buyurtma qilasiz"
+      },
+      {
+        "title": "Muzokaralar va kelishuv",
+        "text": "Yetkazib beruvchilar bilan muzokaralarda yordam beramiz va bitim shartlarini kelishib olamiz"
+      },
+      {
+        "title": "Logistika va yetkazib berish",
+        "text": "Yetkazib berishni tashkil etamiz va tovar olinmaguncha jarayonni qo'llab-quvvatlaymiz"
+      }
+    ]
+  },
+
+  "seo": {
+    "siteName": "Good Food Russia",
+    "home": {
+      "title": "O'zbekistondagi Rossiya oziq-ovqat showroom'i",
+      "description": "Good Food Russia rasmiy showroom platformasi orqali eksportga tayyor Rossiya ishlab chiqaruvchilari, mahsulotlar, xizmatlar, retseptlar va medialarni o'rganing."
+    },
+    "about": {
+      "title": "Good Food Russia haqida",
+      "description": "Good Food Russia ishlab chiqaruvchilar va xaridorlarni uzoq muddatli ta'minot hamkorligi uchun qurilgan shaffof showroom modeli orqali qanday bog'lashini bilib oling."
+    },
+    "services": {
+      "title": "Ta'minot va mahsulot tanlash xizmatlari",
+      "description": "Good Food Russia xizmatlarini o'rganing: showroom namoyishlari, mahsulot tanlash, namuna so'rovlari, B2B muzokaralarni qo'llab-quvvatlash va logistika."
+    },
+    "products": {
+      "title": "Rossiya oziq-ovqat mahsulotlari katalogi",
+      "description": "Good Food Russia katalogidagi eksportga tayyor oziq-ovqat mahsulotlari, brendlar, mahsulot turlari va ta'minot imkoniyatlarini ko'rib chiqing."
+    },
+    "recipes": {
+      "title": "Mahsulotlarimiz bilan retseptlar",
+      "description": "Good Food Russia mahsulotlari bilan tayyorlangan retseptlarni ko'ring va distribyutorlar, chakana savdo va HoReCa uchun taqdimot g'oyalarini toping."
+    },
+    "media": {
+      "title": "Yangiliklar, tadbirlar va galereya",
+      "description": "Good Food Russia so'nggi yangiliklarini o'qing, tadbirlar haqida bilib oling va showroom platformasidan media galereyasini ko'rib chiqing."
+    },
+    "contacts": {
+      "title": "Kontaktlar va showroom ma'lumotlari",
+      "description": "Ta'minot so'rovlari, showroom tashrifi, hamkorlik va mahsulot tanlash masalalari bo'yicha Good Food Russia bilan bog'laning."
+    },
+    "homeBreadcrumb": "Bosh sahifa",
+    "recipeFallbackTitle": "Retsept",
+    "recipeDescriptionSuffix": "{date} da nashr etilgan.",
+    "mediaItemFallbackTitle": "Media maqola"
+  }
+}

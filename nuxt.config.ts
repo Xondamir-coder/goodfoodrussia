@@ -21,10 +21,15 @@ export default defineNuxtConfig({
         lang: 'ru'
       },
       link: [
-        {
-          rel: 'icon',
-          href: '/favicon.ico'
-        }
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/favicon-96x96.png' },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+        { rel: 'manifest', href: '/site.webmanifest' }
+      ],
+      meta: [
+        { name: 'theme-color', content: '#ffffff' },
+        { name: 'msapplication-TileColor', content: '#ffffff' }
       ]
     }
   },
@@ -33,7 +38,7 @@ export default defineNuxtConfig({
       type: 'Organization',
       name: 'Good Food Russia',
       url: siteUrl,
-      logo: '/favicon.ico',
+      logo: `${siteUrl}/web-app-manifest-512x512.png`,
       email: 'support@goofood.uz',
       telephone: '+998901234567'
     }
@@ -77,10 +82,10 @@ export default defineNuxtConfig({
     },
     locales: [
       {
-        code: 'en',
-        language: 'en-US',
-        name: 'Eng',
-        file: 'en.json'
+        code: 'uz',
+        language: 'uz-UZ',
+        name: "O'zb",
+        file: 'uz.json'
       },
       {
         code: 'ru',

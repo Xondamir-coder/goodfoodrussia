@@ -66,7 +66,7 @@ if (currentMedia) {
       image: [`${site.url}${mediaImagePath}`],
       ...(mediaPublishedAt && { datePublished: mediaPublishedAt }),
       articleSection: currentMedia.category.name,
-      inLanguage: route.path.startsWith('/en') ? 'en-US' : 'ru-RU'
+      inLanguage: route.path.startsWith('/uz') ? 'uz-UZ' : 'ru-RU'
     },
     {
       '@type': 'BreadcrumbList',
@@ -81,7 +81,7 @@ if (currentMedia) {
           '@type': 'ListItem',
           position: 2,
           name: t('media.title'),
-          item: `${site.url}${route.path.startsWith('/en') ? '/en/media' : '/media'}`
+          item: `${site.url}${route.path.startsWith('/uz') ? '/uz/media' : '/media'}`
         },
         {
           '@type': 'ListItem',

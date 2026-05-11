@@ -26,7 +26,7 @@ const emits = defineEmits(['switch']);
   transition: background 0.3s;
 
   &.active {
-    background-color: #0caf60;
+    background-color: #2f68cf;
 
     &::before {
       scale: 1;

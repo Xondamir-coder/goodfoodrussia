@@ -46,8 +46,8 @@
             <a href="http://telegram.org" target="_blank" rel="noopener noreferrer">
               {{ $t('telegram') }}
             </a>
-            <a href="http://instagram.com" target="_blank" rel="noopener noreferrer"> instagram </a>
-            <a href="http://facebook.com" target="_blank" rel="noopener noreferrer"> facebook </a>
+            <a href="http://instagram.com" target="_blank" rel="noopener noreferrer">{{ $t('instagram') }}</a>
+            <a href="http://facebook.com" target="_blank" rel="noopener noreferrer">{{ $t('facebook') }}</a>
           </div>
         </li>
       </ul>
