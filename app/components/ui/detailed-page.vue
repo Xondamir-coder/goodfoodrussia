@@ -7,7 +7,7 @@
           <UiIconButton :aria-label="$t('accessibility.goToPreviousPage')" @click="$router.back()">
             <IconsArrowLeftIos />
           </UiIconButton>
-          <h1 class="detailed-page__header-title">{{ data.title }}</h1>
+          <h1 class="detailed-page__header-title">{{ data[`title_${$i18n.locale}`] }}</h1>
         </div>
         <ul class="detailed-page__labels">
           <li v-for="label in labels" :key="label.label" class="detailed-page__labels-item">
