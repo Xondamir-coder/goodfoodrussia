@@ -7,36 +7,39 @@
         class="about__hero-banner"
       />
       <div class="hero__card">
-        <div class="hero__card-title-wrap">
-          <h1 class="hero__title">
-            {{ $t('about.hero.title') }}
-          </h1>
-        </div>
+        <h1 class="hero__title">
+          <span>{{ $t('about.hero.title') }}</span>
+        </h1>
         <div class="hero__divider" />
         <p class="hero__text">
           {{ $t('about.hero.text') }}
         </p>
       </div>
     </section>
-
     <div class="about__wrapper">
       <div v-for="i in 4" :key="i" class="about__wrapper-line" />
       <section class="about__section about__section--intro">
         <UiSectionHeader
-          class="about__header about__header--wide"
+          class="about__header"
           :title="$t('about.company.title')"
           :text="$t('about.company.text')"
         />
-
         <div class="stats">
-          <article v-for="item in stats" :key="item.value" class="stats__item">
+          <article v-for="stat in stats" :key="stat.title" class="stats__item">
             <div class="stats__copy">
-              <h3 class="stats__value">{{ item.value }}</h3>
-              <p class="stats__label">{{ item.text }}</p>
+              <h3 class="stats__value">{{ stat.title }}</h3>
+              <p class="stats__label">{{ stat.text }}</p>
             </div>
-            <component :is="item.icon" class="stats__icon" />
+            <component :is="stat.icon" class="stats__icon" />
           </article>
         </div>
+        <UiPicture
+          v-for="i in 2"
+          :key="i"
+          class="stats__pic"
+          alt="veggies-flying.png"
+          src="veggies-flying.png"
+        />
       </section>
       <section class="mission">
         <div class="mission__circle" />
@@ -57,47 +60,26 @@
         </div>
       </section>
     </div>
-
-    <section class="about__section">
-      <div class="showroom">
-        <div class="showroom__title">{{ $t('about.showroomLabel') }}</div>
-        <UiSectionHeader
-          class="about__header about__header--left"
-          :title="$t('about.showroom.title')"
-          :text="$t('about.showroom.text')"
-        />
-
-        <div class="showroom__wrapper">
-          <UiPicture
-            src="about-showroom.png"
-            alt="Good Food Russia showroom"
-            class="showroom__image"
-          />
-          <button class="showroom__button" :aria-label="$t('accessibility.playShowroomVideo')">
-            <IconsPlayArrow class="showroom__button-icon" />
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <UiSectionProcess class="about__section" />
-
-    <section class="about__section">
+    <section class="showroom about__section">
+      <div class="showroom__title">{{ $t('about.showroomLabel') }}</div>
       <UiSectionHeader
         class="about__header"
-        :title="$t('about.team.title')"
-        :text="$t('about.team.text')"
+        :title="$t('about.showroom.title')"
+        :text="$t('about.showroom.text')"
       />
-
-      <ul class="team">
-        <li v-for="teammate in team" :key="teammate.src" class="team__item">
-          <UiPicture :src="teammate.src" :alt="teammate.alt" class="team__photo" />
-          <h3 class="team__item-name">{{ teammate.name }}</h3>
-          <p class="team__item-job">{{ teammate.job }}</p>
-        </li>
-      </ul>
+      <UiPicture v-for="i in 2" :key="i" class="showroom__pic" alt="tomato" src="tomatoes.png" />
+      <div class="showroom__wrapper">
+        <UiPicture
+          src="about-showroom.png"
+          alt="Good Food Russia showroom"
+          class="showroom__image"
+        />
+        <button class="showroom__button" :aria-label="$t('accessibility.playShowroomVideo')">
+          <IconsPlayArrow class="showroom__button-icon" />
+        </button>
+      </div>
     </section>
-
+    <UiSectionProcess class="about__section" />
     <section class="about__section">
       <UiSectionHeader
         class="about__header"
@@ -118,18 +100,15 @@
         </div>
       </div>
     </section>
-
-    <section class="about__section">
-      <div class="faq">
-        <UiSectionHeader
-          class="about__header"
-          :title="$t('about.faq.title')"
-          :text="$t('about.faq.text')"
-        />
-
-        <UiAccordions :accordions="mapRt(tm('about.faq.accordions'), rt)" />
-      </div>
+    <section class="faq about__section">
+      <UiSectionHeader
+        class="about__header"
+        :title="$t('about.faq.title')"
+        :text="$t('about.faq.text')"
+      />
+      <UiAccordions :accordions="mapRt(tm('about.faq.accordions'), rt)" />
     </section>
+    <UiSectionCta class="about-cta" :title="$t('about.cta.title')" :text="$t('about.cta.text')" />
   </main>
 </template>
 
@@ -144,22 +123,20 @@ import {
 
 const { t, tm, rt } = useI18n();
 
-const stats = [
-  { value: '1200+', text: t('about.stats.0'), icon: IconsAutoGraphFade },
-  { value: '200+', text: t('about.stats.1'), icon: IconsHandshakeStrongFade },
-  { value: '30+', text: t('about.stats.2'), icon: IconsAssignmentIn },
-  { value: '4.8+', text: t('about.stats.3'), icon: IconsStarOutline }
+const statsIcons = [
+  IconsAutoGraphFade,
+  IconsHandshakeStrongFade,
+  IconsAssignmentIn,
+  IconsStarOutline
 ];
-
-const missionGoals = [
-  { text: t('about.goals.0'), icon: IconsInventory },
-  { text: t('about.goals.1'), icon: IconsInventory },
-  { text: t('about.goals.2'), icon: IconsInventory }
-];
-
-const team = mapRt(tm('about.team.items'), rt).map((el, i) => ({
-  src: `about-team-${i + 1}.jpg`,
-  ...el
+const goalIcons = [IconsInventory, IconsInventory, IconsInventory];
+const stats = mapRt(tm('about.stats'), rt).map((el, i) => ({
+  ...el,
+  icon: statsIcons[i]
+}));
+const missionGoals = mapRt(tm('about.mission.goals'), rt).map((el, i) => ({
+  text: el,
+  icon: goalIcons[i]
 }));
 
 useSeoMeta({
@@ -172,7 +149,7 @@ useSeoMeta({
 
 <style lang="scss" scoped>
 .about {
-  padding-bottom: max(8rem, 40px);
+  padding-bottom: max(8rem, 30px);
   display: flex;
   flex-direction: column;
   &__wrapper {
@@ -235,10 +212,14 @@ useSeoMeta({
       .about__header :deep(.section-header__text) {
         max-width: 80ch;
       }
+      .about__header {
+        @media screen and (max-width: vars.$bp-sm) {
+          text-align: start;
+        }
+      }
     }
   }
 }
-
 .hero {
   min-height: 100dvh;
   display: flex;
@@ -269,7 +250,7 @@ useSeoMeta({
     width: 100%;
     display: grid;
     grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
-    gap: max(3.2rem, 18px);
+    gap: max(3.2rem, 12px);
     align-items: center;
     padding: max(3.6rem, 18px);
     border-radius: max(3.2rem, 20px);
@@ -286,22 +267,6 @@ useSeoMeta({
     }
   }
 
-  &__card-title-wrap {
-    position: relative;
-    min-height: max(14.4rem, 96px);
-
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: min(41rem, 100%);
-      height: max(5rem, 28px);
-      background: #3565cd;
-      clip-path: polygon(93% 0, 100% 50%, 93% 100%, 0 100%, 0 0);
-    }
-  }
-
   &__title {
     position: relative;
     font-size: max(3.8rem, 24px);
@@ -309,16 +274,30 @@ useSeoMeta({
     font-weight: 700;
     max-width: 17ch;
     z-index: 1;
+    display: flex;
+    span {
+      z-index: 2;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: max(5rem, 30px);
+      background: #3565cd;
+      clip-path: polygon(93% 0, 100% 50%, 93% 100%, 0 100%, 0 0);
+    }
   }
 
   &__divider {
     width: 1px;
-    height: 100%;
-    min-height: max(14.4rem, 110px);
+    height: max(14.4rem, 110px);
     background: rgba(255, 255, 255, 0.2);
 
     @media screen and (max-width: vars.$bp-md) {
-      display: none;
+      height: 1px;
+      width: 100%;
     }
   }
 
@@ -328,30 +307,68 @@ useSeoMeta({
     letter-spacing: -0.36px;
   }
 }
-
 .stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(max(200px, 20.8rem), 1fr));
-  gap: max(2.4rem, 16px);
+  gap: max(2.4rem, 10px);
   padding-inline: 6rem;
+  position: relative;
+  @media screen and (max-width: vars.$bp-md) {
+    padding-inline: 0;
+  }
+
+  &__pic {
+    position: absolute;
+    &:last-of-type {
+      width: max(34rem, 130px);
+      bottom: -20%;
+      left: -9%;
+      transform: rotate(7.391deg);
+      @media screen and (max-width: vars.$bp-md) {
+        bottom: initial;
+        top: 0;
+        left: -18%;
+      }
+    }
+    &:first-of-type {
+      width: max(30rem, 130px);
+      bottom: -60%;
+      right: -11%;
+      transform: rotate(20.355deg) rotateX(180deg);
+      @media screen and (max-width: vars.$bp-md) {
+        bottom: 5%;
+        right: -20%;
+        transform: rotateX(180deg);
+      }
+    }
+  }
 
   &__item {
     position: relative;
-    min-height: max(11rem, 88px);
     display: flex;
     align-items: flex-end;
+    @media screen and (min-width: vars.$bp-sm) {
+      height: max(11rem, 80px);
+    }
+    @media screen and (max-width: vars.$bp-sm) {
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 
   &__copy {
     position: relative;
-    max-width: 74.5%;
+    max-width: 83%;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 5px;
+    @media screen and (max-width: vars.$bp-sm) {
+      max-width: 55%;
+    }
   }
 
   &__value {
-    font-size: max(3.6rem, 24px);
+    font-size: max(2rem, 14px);
     line-height: 1.05;
     font-weight: 700;
     letter-spacing: max(0.072rem, 0.72px);
@@ -360,22 +377,23 @@ useSeoMeta({
 
   &__label {
     font-size: max(1.4rem, 12px);
-    line-height: 1.25;
+    line-height: 1.4;
     color: #fff;
   }
 
   &__icon {
     pointer-events: none;
-    position: absolute;
-    top: 0;
-    right: 20%;
-    width: max(11rem, 72px);
+    width: max(11rem, 80px);
+    @media screen and (min-width: vars.$bp-sm) {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   }
 }
-
 .mission {
   position: relative;
-  padding-bottom: 11.5rem;
+  padding-bottom: max(11.5rem, 40px);
   display: flex;
   clip-path: inset(-50% 0 0);
 
@@ -389,12 +407,16 @@ useSeoMeta({
   &__circle {
     position: absolute;
     width: 110%;
+    min-width: 820px;
     aspect-ratio: 1;
     border-radius: 50%;
     left: 50%;
     translate: -50%;
     top: -30%;
     background: linear-gradient(180deg, #061852 0%, rgb(1, 7, 23) 100%);
+    @media screen and (max-width: vars.$bp-md) {
+      top: -30px;
+    }
   }
 
   &__cards {
@@ -436,16 +458,39 @@ useSeoMeta({
     }
   }
 }
-
 .showroom {
-  display: flex;
-  flex-direction: column;
-  gap: max(3.2rem, 18px);
   position: relative;
   margin-top: max(12rem, 60px);
 
   @media screen and (max-width: vars.$bp-md) {
     grid-template-columns: 1fr;
+    .about__header {
+      align-items: flex-start;
+      text-align: start;
+    }
+  }
+  &__pic {
+    position: absolute;
+    width: max(53.4rem, 150px);
+    &:first-of-type {
+      left: -8%;
+      top: -5%;
+      transform: rotateY(180deg);
+      @media screen and (max-width: vars.$bp-md) {
+        top: 40%;
+        left: -5%;
+      }
+    }
+    &:last-of-type {
+      right: -10%;
+      bottom: -35%;
+      z-index: 2;
+      transform: rotate(45deg);
+      @media screen and (max-width: vars.$bp-md) {
+        bottom: -20%;
+        right: -15%;
+      }
+    }
   }
   &__wrapper {
     position: relative;
@@ -475,7 +520,7 @@ useSeoMeta({
     top: -10%;
     left: 50%;
     translate: -50%;
-    font-size: max(13.5rem, 55px);
+    font-size: max(13.5rem, 32px);
     font-weight: 700;
     opacity: 0.2;
     background: linear-gradient(
@@ -487,6 +532,10 @@ useSeoMeta({
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    @media screen and (max-width: vars.$bp-md) {
+      top: 0;
+      translate: -50% -50%;
+    }
   }
   &__image {
     border-radius: max(3.2rem, 20px);
@@ -500,70 +549,6 @@ useSeoMeta({
     }
   }
 }
-
-.team {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: max(1.2rem, 12px);
-
-  @media screen and (max-width: vars.$bp-lg) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  &__item {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: max(0.8rem, 5px);
-    height: max(32rem, 180px);
-    border-radius: max(2rem, 14px);
-    overflow: hidden;
-    justify-content: flex-end;
-    align-items: flex-start;
-    padding: max(1.6rem, 10px);
-    &:not(:hover) {
-      &::after {
-        opacity: 0;
-      }
-      .team__item-name,
-      .team__item-job {
-        opacity: 0;
-        transform: translateY(15px);
-      }
-    }
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      inset-inline: 0;
-      height: 66.25%;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
-      transition: opacity 0.4s;
-    }
-    &-name {
-      font-size: 2.8rem;
-      font-weight: 700;
-      background: linear-gradient(203deg, #fff 26.72%, rgba(255, 255, 255, 0.2) 164.37%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      transition: all 0.4s;
-    }
-    &-job {
-      font-family: vars.$font-nunito-sans;
-      color: rgba(#fff, 0.7);
-      transition: all 0.4s;
-    }
-    & > *:not(picture) {
-      z-index: 1;
-    }
-  }
-  &__photo {
-    position: absolute;
-    inset: 0;
-  }
-}
-
 .documents {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 42rem;
@@ -615,8 +600,8 @@ useSeoMeta({
     }
   }
 }
-
 .faq {
+  margin-inline: var(--spacing-inline);
   padding: max(3.2rem, 18px);
   border-radius: max(3.2rem, 20px);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -626,8 +611,8 @@ useSeoMeta({
     rgba(255, 255, 255, 0.08) 100.6%
   );
   backdrop-filter: blur(50px);
-  display: flex;
-  flex-direction: column;
-  gap: max(3.2rem, 20px);
+}
+.about-cta {
+  margin-inline: var(--spacing-inline);
 }
 </style>

@@ -11,7 +11,6 @@
 </template>
 
 <script setup>
-
 defineProps({
   category: {
     required: true,
@@ -39,7 +38,7 @@ const { locale } = useI18n();
   padding-inline: max(2.4rem, 16px);
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: max(2.5rem, 10px);
   position: relative;
   overflow: hidden;
   aspect-ratio: 27.3/18;
@@ -52,7 +51,6 @@ const { locale } = useI18n();
         mid-end-pos: 0%
       )
     );
-    gap: 0;
     aspect-ratio: 26.8/14;
   }
   &__pic {
@@ -66,10 +64,9 @@ const { locale } = useI18n();
   }
   &__name {
     color: #fff;
-    font-family: vars.$font-dongle;
-    font-size: max(3.2rem, 24px);
+    font-size: max(2.2rem, 18px);
     font-weight: 700;
-    line-height: 0.9;
+    font-family: vars.$font-nunito-sans;
   }
   &__country {
     color: rgba(255, 255, 255, 0.6);

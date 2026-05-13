@@ -68,8 +68,7 @@ export default defineNuxtConfig({
     display: 'swap',
     families: {
       Inter: '300..700',
-      'Nunito Sans': '300..700',
-      Dongle: [700]
+      'Nunito Sans': '300..700'
     }
   },
   i18n: {

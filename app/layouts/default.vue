@@ -22,6 +22,7 @@
     <div class="layout__slot">
       <slot />
     </div>
+    <UiContactsModal />
     <LayoutFooter v-if="!$route?.name?.includes('index')" />
   </div>
 </template>

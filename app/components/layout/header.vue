@@ -1,6 +1,10 @@
 <template>
   <header ref="headerRef" class="header" :class="{ shown: showMenu }">
-    <NuxtLink :to="$localePath('/')" class="header__logo-container" :aria-label="$t('accessibility.goHome')">
+    <NuxtLink
+      :to="$localePath('/')"
+      class="header__logo-container"
+      :aria-label="$t('accessibility.goHome')"
+    >
       <SvgLogo class="header__logo" />
     </NuxtLink>
     <div class="header__right">
@@ -71,7 +75,7 @@ onMounted(() => {
       endTrigger: 'body',
       toggleClass: 'stuck',
       start: 'top top',
-      end: 'bottom bottom'
+      end: 'bottom top'
     }
   });
 });

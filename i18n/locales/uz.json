@@ -249,20 +249,32 @@
       "text": "Good Food Russia — xalqaro bozorlarda distribyutorlar, chakana sotuvchilar va HoReCa hamkorlari bilan yuqori sifatli mahsulotlar ishlab chiqaruvchilarni bog'laydigan kurated platforma. Biz ishonchli brendlarni tizimli, shaffof va samarali biznes modeli orqali namoyish qilishga ixtisoslashamiz. Maqsadimiz — ta'minotni soddalashtirish, xavflarni kamaytirish va oziq-ovqat sanoatida uzoq muddatli hamkorliklarni yaratish. Biz mahsulotlar faqat namoyish etilmasdan — sinovdan o'tkazilishi, baholanishi va real biznes integratsiyasiga tayyorlanishi mumkin bo'lgan noyob showroom formatida ishlaymiz."
     },
     "stats": [
-      "Muvaffaqiyatli mahsulot namoyishlari",
-      "Ishonchli biznes hamkorlari",
-      "Soha mutaxassislari",
-      "O'rtacha hamkor qoniqish darajasi"
+      {
+        "title": "Muvaffaqiyatli namoyishlar",
+        "text": "Haqiqatan ham taassurot qoldiruvchi mahsulotlar"
+      },
+      {
+        "title": "Ishonchli hamkorlar",
+        "text": "Barqarorlik va o'zaro manfaat"
+      },
+      {
+        "title": "Soha mutaxassislari",
+        "text": "Soha mutaxassislari"
+      },
+      {
+        "title": "Yuqori qoniqish darajasi",
+        "text": "Hamkorlar hamkorlikdan mamnun"
+      }
     ],
     "mission": {
       "title": "Missiya.",
-      "text": "Bizning missiyamiz — ishlab chiqaruvchilar va xaridorlarni bog'lash, hamkorlik uchun ishonchli, samarali va shaffof muhit yaratish."
+      "text": "Bizning missiyamiz — ishlab chiqaruvchilar va xaridorlarni bog'lash, hamkorlik uchun ishonchli, samarali va shaffof muhit yaratish.",
+      "goals": [
+        "Sifatli oziq-ovqat mahsulotlarini butun dunyoga targ'ib qilish",
+        "Mahsulot izlash va ta'minotni soddalashtirish",
+        "Uzoq muddatli, ishonchga asoslangan hamkorliklarni yaratish"
+      ]
     },
-    "goals": [
-      "Sifatli oziq-ovqat mahsulotlarini butun dunyoga targ'ib qilish",
-      "Mahsulot izlash va ta'minotni soddalashtirish",
-      "Uzoq muddatli, ishonchga asoslangan hamkorliklarni yaratish"
-    ],
     "showroomLabel": "SHOWROOM",
     "showroom": {
       "title": "Showroom'imizga tashrif buyuring",
@@ -287,45 +299,6 @@
         {
           "title": "Hamkorlikni boshlash",
           "text": "Biz yetkazib berishlarga o'tamiz, mahsulot integratsiyasini qo'llab-quvvatlaymiz va barqaror doimiy hamkorlikni saqlaymiz."
-        }
-      ]
-    },
-    "team": {
-      "title": "Kuchli jamoa — muvaffaqiyatimiz asosi",
-      "text": "Mahsulot, logistika va hamkor savdolarda tajribali mutaxassislar brend qiziqishini aniq va ishonchli biznes jarayoniga aylantirishga yordam beradi.",
-      "photoAlt": "Good Food Russia jamoasi, {index}-rasm",
-      "items": [
-        {
-          "name": "Jasur Karimov",
-          "job": "Ishlanma bo'limi boshlig'i"
-        },
-        {
-          "name": "Sofiya Mixaylova",
-          "job": "Brend hamkorlik menejeri"
-        },
-        {
-          "name": "Timur Sadykov",
-          "job": "Eksport operatsiyalari rahbari"
-        },
-        {
-          "name": "Bekzod Tursunov",
-          "job": "Ta'minot zanjiri koordinatori"
-        },
-        {
-          "name": "Elena Voronina",
-          "job": "Sifat nazorati mutaxassisi"
-        },
-        {
-          "name": "Rustam Komilov",
-          "job": "B2B savdo menejeri"
-        },
-        {
-          "name": "Alisher Yuldashev",
-          "job": "Logistika analitigi"
-        },
-        {
-          "name": "Nodir Ahmedov",
-          "job": "Ta'minot mutaxassisi"
         }
       ]
     },
